@@ -9,7 +9,10 @@ module.exports = {
         './resources/js/**/*.jsx',
     ],
 
+    plugins: [require("daisyui")],
+
     theme: {
+
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],

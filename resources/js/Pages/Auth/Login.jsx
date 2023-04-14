@@ -35,10 +35,10 @@ export default function Login({ status, canResetPassword }) {
 
             <form onSubmit={submit}>
 
-            <div className='bg-[#B2D4FB] w-full h-screen flex items-start'>
+            <div className='w-full h-screen md:flex items-start'>
                
                 {/* left side */}
-                <div className='relative w-1/2 h-full flex flex-col'>
+                <div className='relative md:w-1/2 lg:w-1/2 md:h-full flex flex-col'>
                     {/* put left side image here */}
                     <img 
                         className='w-full h-full object-cover'
@@ -47,19 +47,20 @@ export default function Login({ status, canResetPassword }) {
                 </div>
 
                 {/* right side */}
-                <div className='w-1/2 h-full bg-[#FFFFFF] flex flex-col p-20 justify-between items-center'>
-                    <div className='w-full flex flex-col max-w-[525px] pt-8 mt-2'>
+                <div className='md:w-1/2 lg:w-1/2 h-full bg-[#FFFFFF] flex flex-col justify-between items-center p-10 mt-5 md:p-20 lg:p-20'>
+                    <div className='w-full flex flex-col max-w-[525px] pt-0 sm:pt-8'>
                         {/* title */}
                         
-                        <div> 
+                        <div className='w-full flex flex-col max-w-[500px] sm:pt-10'>  
+                            {/* text-lg sm:text-xl md:text-2xl lg:text-3xl */}
                             {/*  className='w-full flex flex-col' */}
-                            <h1 className='text-[#4C9BF5] text-[48px] font-bold mb-2'>Wecome Back</h1>
-                            <p className='text-[#333333] text-[24px] font-semibold mb-7'>Welcome to Mental Health. Please enter your details</p>
+                            <h1 className='text-[#4C9BF5] text-2xl sm:text-xl md:text-3xl lg:text-[48px] font-bold mb-5'>Welcome Back</h1>
+                            <p className='text-[#333333] text-lg sm:text-xl md:text-2xl lg:text-[24px] font-semibold mb-7 px-1'>Welcome to Mental Health. Please enter your details</p>
                         </div>
 
                         {/* login box -> w594 h60 */}
-                        <div>
-                            <div className='mt-4 mb-10'>
+                        <div className='w-full flex flex-col'>
+                            <div className='w-full mt-4 pb-10'>
                                 <InputLabel htmlFor="email" />
 
                                 <TextInput
@@ -93,7 +94,7 @@ export default function Login({ status, canResetPassword }) {
 
                                 <InputError message={errors.password} className="mt-2" />
                             </div>
-
+                            {/* max-w-[1240px] mx-auto grid lg:grid-cols-3 */}
                             <div className="block mb-10 flex justify-between">
                                 <label className="flex items-center">
                                     <Checkbox
@@ -103,7 +104,7 @@ export default function Login({ status, canResetPassword }) {
                                     />
                                     <span className="font-semibold ml-2 text-sm text-gray-600">Remember Me</span>
                                 </label>
-      
+        
                                 {canResetPassword && (
                                     <Link
                                         href={route('password.request')}
@@ -130,8 +131,7 @@ export default function Login({ status, canResetPassword }) {
                                         Don’t have an account? <span className='text-[#4C9BF5]'>Sign up for free</span> 
                                     </Link>                                     
                                 )}
-                            </div>
-                            
+                            </div>                                                    
                     </div>
                 </div>
             </div>
