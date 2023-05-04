@@ -7,7 +7,7 @@ export default function CardsCarousel({ className = '', disabled, ...props }) {
                             lg:w-[500px] lg:h-[450px]">                                
                                 <div className='p-10 lg:p-20'>
                                     <img 
-                                        className='pb-15'
+                                        className='pb-10'
                                         src={props.imageSrc}
                                     />
                                     <h3 className='text-2xl md:text-3xl lg:text-3xl font-semibold '>{props.text}</h3>
