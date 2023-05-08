@@ -14,13 +14,14 @@ module.exports = {
             colors: {
                 primary: "#246CBE",
                 putih: "#FDFDFD",
-                hitam: "333333",
+                hitam: "#333333",
+                primaryDisabled: "#EFF2FF",
             },
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
             },
             backgroundColor: {
-                white: "#FDFDFD",
+                putih: "#FDFDFD",
             },
             colors: {
                 primary: '#4C9BF5',

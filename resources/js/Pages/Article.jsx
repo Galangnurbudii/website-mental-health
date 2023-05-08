@@ -15,7 +15,7 @@ export default function Article() {
                 <div className="flex flex-col justify-between gap-10 py-10">
                     <SearchBar />
 
-                    <h1 className="text-2xl text-black gap-10 font-bold">
+                    <h1 className="text-2xl text-hitam gap-10 font-bold">
                         Topik Terkini
                     </h1>
 
@@ -27,7 +27,7 @@ export default function Article() {
                     </div>
                     <BigCard />
 
-                    <h1 className="text-2xl text-black gap-10 font-bold">
+                    <h1 className="text-2xl text-hitam gap-10 font-bold">
                         Artikel Lainnya
                     </h1>
 
