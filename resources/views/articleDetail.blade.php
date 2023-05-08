@@ -6,6 +6,6 @@
     </head>
     <body>
         <div id="root"></div>
-        <script src="{{ mix('js/Pages/article/article.jsx') }}"></script>
+        <script src="{{ mix('js/articleDetail.jsx') }}"></script>
     </body>
 </html>
