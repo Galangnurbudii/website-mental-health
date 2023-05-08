@@ -117,7 +117,7 @@ export default function Login({ status, canResetPassword }) {
                             </div>
 
                             <div>
-                            <PrimaryButton className='bg-[#4C9BF5] mb-5' disabled={processing}>
+                                <PrimaryButton className='bg-[#4C9BF5] mb-5' disabled={processing}>
                                     Log In
                                 </PrimaryButton>
                             </div>
