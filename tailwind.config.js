@@ -12,10 +12,6 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                primary: "#246CBE",
-                putih: "#FDFDFD",
-                hitam: "#333333",
-                primaryDisabled: "#EFF2FF",
             },
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
@@ -24,6 +20,13 @@ module.exports = {
                 putih: "#FDFDFD",
             },
             colors: {
+                primaryPost: '#4C9BF5',
+                secondaryPost: '#FFFFFF',
+                thirdPost: '#DDDDDD',
+                fourthPost: "#4C9BF5",
+                // Pakai colors dari const di atas
+                blurPost: "#D9D9D9",
+                
                 primary: '#4C9BF5',
                 disabled: '#736D6D',
                 hoverbBackground: '#7EB8F8',
