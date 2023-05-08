@@ -43,6 +43,7 @@ export default function Footer() {
                         <a href='#'>
                             <FaTwitterSquare size={25}/>
                         </a>                  
+
                     </div>
                 </div>  
             </div>    

@@ -142,6 +142,7 @@ export default function Dashboard({ auth }) {
                 </div>
 
             </div>
+            
         </AuthenticatedLayout>
         
     );
