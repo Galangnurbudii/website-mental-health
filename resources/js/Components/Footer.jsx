@@ -34,9 +34,16 @@ export default function Footer() {
                 <div className='flex flex-col ml-auto pb-10 gap-2'>
                     <span className="footer-title">Follow Kami</span> 
                     <div className="grid grid-flow-col gap-4">
-                        <FaFacebookSquare size={25}/>
-                        <FaInstagram size={25}/>
-                        <FaTwitterSquare size={25}/>
+                        <a href='#'>
+                            <FaFacebookSquare size={25}/>
+                        </a>
+                        <a href='#'>
+                            <FaInstagram size={25}/>
+                        </a>
+                        <a href='#'>
+                            <FaTwitterSquare size={25}/>
+                        </a>                  
+
                     </div>
                 </div>  
             </div>    
