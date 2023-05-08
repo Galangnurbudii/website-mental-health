@@ -1,21 +1,26 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
-        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
-        './storage/framework/views/*.php',
-        './resources/views/**/*.blade.php',
-        './resources/js/**/*.jsx',
+        "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
+        "./storage/framework/views/*.php",
+        "./resources/views/**/*.blade.php",
+        "./resources/js/**/*.jsx",
     ],
 
-    plugins: [require("daisyui")],
-
     theme: {
-
         extend: {
+            colors: {
+                primary: "#246CBE",
+                putih: "#FDFDFD",
+                hitam: "333333",
+            },
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+            },
+            backgroundColor: {
+                white: "#FDFDFD",
             },
             colors: {
                 primary: '#4C9BF5',
@@ -38,13 +43,6 @@ module.exports = {
             },
         },
     },
-
-    daisyui: {
-        themes: false
-    },
-
-    plugins: [require('@tailwindcss/forms')],
-
-    plugins: [require("daisyui")],
+    plugins: [require("@tailwindcss/forms"), require("daisyui")],
 
 };
