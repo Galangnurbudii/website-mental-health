@@ -32,7 +32,7 @@ export default function Footer() {
                 
                 {/* Follow Kami */}
                 <div className='flex flex-col ml-auto pb-10 gap-2'>
-                    <span className="font-medium">Follow Kami</span> 
+                    <span className="footer-title">Follow Kami</span> 
                     <div className="grid grid-flow-col gap-4">
                         <a href='#'>
                             <FaFacebookSquare size={25}/>
