@@ -47,6 +47,11 @@ module.exports = {
             },
         },
     },
+
+    daisyui: {
+        themes : false
+    },
+    
     plugins: [require("@tailwindcss/forms"), require("daisyui")],
 
 };

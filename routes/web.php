@@ -41,6 +41,15 @@ Route::get('/forumHome', function () {
     return Inertia::render('ForumHome');
 })->name('forumHome');
 
+Route::get('/layanan', function () {
+    return Inertia::render('Layanan');
+})->name('layanan');
+
+Route::get('/konsultasi', function () {
+    return Inertia::render('Konsultasi');
+})->name('konsultasi');
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
