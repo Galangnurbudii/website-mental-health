@@ -5,7 +5,7 @@ import NavBarUser from '@/Components/NavBarUser';
 
 export default function Konsultasi() {
     return (           
-            <div className="pt-15">
+            <div className="pt-15 overflow-x-hidden">
                 <NavBarUser />
                 {/* Banner */}
                 <div className="w-full h-[615px] md:h-[615px] lg:h-[615px] bg-center" style={{ backgroundImage: "url('images/konsultasiBanner.jpg')" }}>
