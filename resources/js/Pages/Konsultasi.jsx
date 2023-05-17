@@ -8,7 +8,12 @@ export default function Konsultasi() {
             <div className="pt-15 overflow-x-hidden">
                 <NavBarUser />
                 {/* Banner */}
-                <div className="w-full h-[615px] md:h-[615px] lg:h-[615px] bg-center" style={{ backgroundImage: "url('images/konsultasiBanner.jpg')" }}>
+                <div className="w-full 
+                                h-[615px] 
+                                md:h-[615px] 
+                                lg:h-[615px] 
+                                bg-center" 
+                                style={{ backgroundImage: "url('images/konsultasiBanner.jpg')" }}>
                     <div className=''>
                         {/* <img src='images/konsultasiBanner.jpg' alt=''/>    */}
                         <div className='flex flex-col'>
