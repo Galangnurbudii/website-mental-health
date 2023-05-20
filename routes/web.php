@@ -49,6 +49,11 @@ Route::get('/konsultasi', function () {
     return Inertia::render('Konsultasi');
 })->name('konsultasi');
 
+Route::get('/home', function () {
+    return Inertia::render('Home');
+})->name('home');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
