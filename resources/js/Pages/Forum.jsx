@@ -7,9 +7,9 @@ export default function Forum() {
         <>
             <NavBarUser/>
             <div className="flex items-center justify-center mt-[50px]">
-                <div className="rounded-sm w-[79.5%] h-[625px] bg-fourth">
+                <div className="rounded-sm w-[79.5%] h-[575px] mb-[50px] bg-[#00FFFF] border border-black">
                     <div className="w-full h-[100px] relative flex">
-                        <button className="absolute bg-[#FF0000] text-[#FFFFFF] w-[120px] h-[51px] text-base rounded-lg ml-[25px] mt-[25px]">
+                        <button className="bg-[#FF0000] text-[#FFFFFF] w-[120px] h-[51px] text-base rounded-lg ml-[25px] mt-[25px]">
                             Batal
                         </button>
                         <button className="absolute bg-[#4C9BF5] text-[#FFFFFF] text-base rounded-lg right-6 ml-[25px] mt-[25px] w-[139px] h-[51px] md:w-[]">
@@ -21,7 +21,7 @@ export default function Forum() {
                         <label type="" className="ml-[5px]">Sembunyikan Nama dari Orang Lain</label>
                     </div>
                     <div className="flex justify-center items-center mt-[20px]">
-                        <div className="absolute border rounded-xl border-black bg-[#FFFFFF] w-[200px] h-[80px]">
+                        <div className="hidden absolute border rounded-xl border-black bg-[#FFFFFF] w-[200px] h-[80px]">
                             <div className="text-center">
                                 Apakah Anda Yakin?
                             </div>
