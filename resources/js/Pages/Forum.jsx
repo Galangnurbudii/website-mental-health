@@ -18,7 +18,7 @@ export default function Forum() {
                     </div>
                     <div className="mt-[26px]">
                         <input type="checkbox" className="ml-[40px] sm:ml-[100px] md:ml-[120px]" placeholder='Hai'></input>
-                        <label type="checkbox" className="ml-[5px]">Sembunyikan Nama dari Orang Lain</label>
+                        <label type="" className="ml-[5px]">Sembunyikan Nama dari Orang Lain</label>
                     </div>
                     <div className="flex justify-center items-center mt-[20px]">
                         <div className="absolute border rounded-xl border-black bg-[#FFFFFF] w-[200px] h-[80px]">
