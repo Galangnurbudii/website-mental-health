@@ -13,7 +13,7 @@ module.exports = {
         extend: {
             colors: {},
             fontFamily: {
-                sans: ["Inter", ...defaultTheme.fontFamily.sans],
+                sans: ["Figtree", ...defaultTheme.fontFamily.sans],
             },
             backgroundColor: {
                 putih: "#FDFDFD",
@@ -33,6 +33,9 @@ module.exports = {
                 whiteFABackground: "#FAFAFA",
                 cardBlue: "#B2D4FB",
                 putih: "#FDFDFD",
+            },
+            screens: {
+                xs: "320px",
             },
         },
     },

@@ -9,7 +9,7 @@ export default function Home() {
     return (
         <>
             <NavBarUser />
-            <div className="flex flex-col justify-between gap-20 pb-20">
+            <div className="min h-screen bg-putih w-full flex flex-col justify-between">
                 <div className="bg-cardBlue flex flex-row justify-between px-40">
                     <div className="flex flex-col justify-center">
                         <div className="flex flex-col justify-between gap-4">
@@ -21,22 +21,25 @@ export default function Home() {
                                 dan mencarikan solusi
                             </p>
                             <div className="">
-                                <PrimaryButton className="h-14 justify-center">
-                                    Konsultasi Sekarang
+                                <PrimaryButton className="justify-center">
+                                    Konsultasi
                                 </PrimaryButton>
                             </div>
                         </div>
                     </div>
 
-                    <img src="images/landingPage.png" alt="Psikolog" />
+                    <img
+                        className="w-"
+                        src="images/landingPage.png"
+                        alt="Psikolog"
+                    />
                 </div>
 
-                <div className="px-40">
+                {/* <div className="px-40">
                     <p className="text-4xl font-semibold pb-10">
                         Artikel Terbaru
                     </p>
                     <div className="flex flex-row justify-between gap-10">
-                        <CardArticle />
                         <CardArticle />
                         <CardArticle />
                         <CardArticle />
@@ -94,7 +97,7 @@ export default function Home() {
                         text="Berkat konsultasi di sini rasanya jadi lebih plong. Tenang dan bahagia banget"
                         names="Tatang Munajir - Mahasiswa"
                     />
-                </div>
+                </div> */}
             </div>
             <Footer />
         </>
