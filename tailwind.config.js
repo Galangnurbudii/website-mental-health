@@ -33,6 +33,7 @@ module.exports = {
                 whiteFABackground: "#FAFAFA",
                 cardBlue: "#B2D4FB",
                 putih: "#FDFDFD",
+                hitam: "#333333",
             },
             screens: {
                 xs: "320px",

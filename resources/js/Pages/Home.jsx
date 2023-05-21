@@ -2,13 +2,13 @@ import PrimaryButton from "@/Components/PrimaryButton";
 import CardArticle from "@/Components/CardArticle";
 import CardsCarousel from "@/Components/CardsCarousel";
 import React from "react";
-import NavBarUser from "@/Components/NavBarUser";
-import Footer from "@/Components/Footer";
+import NavBar from "@/Components/NavBar";
+import Footer from "@/Components/Footer1";
 
 export default function Home() {
     return (
         <>
-            <NavBarUser />
+            <NavBar />
             <div className="min h-screen bg-putih w-full flex flex-col justify-between">
                 <div className="bg-cardBlue flex flex-row justify-between px-40">
                     <div className="flex flex-col justify-center">

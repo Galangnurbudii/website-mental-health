@@ -1,14 +1,14 @@
 import Badge from "@/Components/Badge";
 import Directory from "@/Components/Directory";
-import Footer from "@/Components/Footer";
-import NavBarUser from "@/Components/NavBarUser";
+import Footer from "@/Components/Footer1";
+import NavBar from "@/Components/NavBar";
 import React from "react";
 
 export default function ArticleDetail() {
     return (
         <>
             <div className="bg-putih h-screen w-full">
-                <NavBarUser />
+                <NavBar />
                 <Directory />
                 <div className="flex flex-row gap-10 px-44 pb-20">
                     <div className="w-2/3 flex flex-col justify-between gap-10">

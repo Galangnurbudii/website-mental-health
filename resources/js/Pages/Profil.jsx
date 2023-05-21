@@ -1,5 +1,10 @@
+import Navbar from "@/Components/NavBar";
 import React from "react";
 
 export default function Profil() {
-    return <div>Profil</div>;
+    return (
+        <div>
+            <Navbar />
+        </div>
+    );
 }
