@@ -1,6 +1,6 @@
 import React from "react";
 import Footer from "@/Components/Footer";
-import NavBarUser from "@/Components/NavBarUser";
+import NavBar from "@/Components/NavBar";
 import CardArticle from "@/Components/CardArticle";
 import SearchBar from "@/Components/SearchBar";
 import BigCard from "@/Components/BigCard";
@@ -9,7 +9,7 @@ import Badge from "@/Components/Badge";
 export default function Article() {
     return (
         <>
-            <NavBarUser />
+            <NavBar />
 
             <div className="flex flex-row px-44">
                 <div className="flex flex-col justify-between gap-10 py-10">
