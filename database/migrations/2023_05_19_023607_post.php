@@ -15,9 +15,9 @@ return new class extends Migration {
         Schema::create('post', function (Blueprint $table) {
             $table->id();
             $table->text('konten');
-            $table->unsignedBigInteger('id_pengguna');
+            $table->unsignedBigInteger('id_user');
             $table->timestamps();
-            $table->foreign('id_pengguna')->references('id')->on('pengguna');
+            $table->foreign('id_user')->references('id')->on('users');
         });
 
     }
