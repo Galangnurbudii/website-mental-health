@@ -29,6 +29,23 @@ export default function Forum() {
                         <label type="" className="ml-[5px]">Sembunyikan Nama dari Orang Lain</label>
                     </div>
                     <div className="flex justify-center items-center mt-[20px]">
+                        <div id="myDiv" className="hidden absolute flex justify-center items-center w-full max-h-screen">
+                            <div className=" w-full h-screen bg-gray-700 opacity-50">
+                            </div>
+                            <div className="absolute border rounded-xl border-black bg-[#FFFFFF] w-[200px] h-[80px]">
+                                <div className="text-center">
+                                    Apakah Anda Yakin?
+                                </div>
+                                <div className="pl-[10px] pt-[6px]">
+                                    <button className="w-[41%] h-[39px] bg-[#4C9BF5] rounded-3xl">
+                                        Ya
+                                    </button>
+                                    <button onClick={toggleDiv} className="w-[41%] h-[39px] bg-[#F54C60] rounded-3xl ml-[25px]">
+                                        Tidak
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                         <div id="myDiv" className="hidden absolute flex justify-center items-center w-full h-full bg-gray-200 opacity-50">
                             <div className="absolute border rounded-xl border-black bg-[#FFFFFF] w-[200px] h-[80px]">
                                 <div className="text-center">
