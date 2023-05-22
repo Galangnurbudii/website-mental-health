@@ -112,23 +112,6 @@ export default function Register() {
                                 <InputError message={errors.password} className="mt-2" />
                             </div>
                             
-                            <div className="mb-12">
-                                <InputLabel htmlFor="password_confirmation" />
-
-                                <TextInput
-                                    id="password_confirmation"
-                                    placeholder="Password Confirmation"
-                                    type="password_confirmation"
-                                    name="password_confirmation"
-                                    value={data.password_confirmation}
-                                    className="mt-1 block w-full"
-                                    autoComplete="new-password"
-                                    onChange={(e) => setData('password_confirmation', e.target.value)}
-                                    required
-                                />
-
-                                <InputError message={errors.password} className="mt-2" />
-                            </div>
 
                             <div className="mb-12">
                                 <InputLabel htmlFor="password_confirmation" />
