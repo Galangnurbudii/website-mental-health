@@ -10,7 +10,7 @@ const Navbar = () => {
     };
 
     return (
-        <div className="flex justify-between items-center h-20 max-w-screen mx-auto px-4 md:px-16 text-putih">
+        <div className="flex justify-between items-center h-20 max-w-screen mx-auto px-6 md:px-16 text-putih">
             <h1 className="w-full text-2xl font-bold text-hitam">
                 <Link href={route("home")}>Mental Health</Link>
             </h1>

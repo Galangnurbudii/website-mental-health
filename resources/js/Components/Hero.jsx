@@ -4,7 +4,7 @@ import PrimaryButton from "./PrimaryButton";
 function Hero() {
     return (
         <div className="bg-hoverBackground w-full md:h-[80vh] mx-auto flex flex-col md:flex-row items-center ">
-            <div className="flex flex-wrap flex-col max-full p-4 md:w-1/2 md:pl-16">
+            <div className="flex flex-wrap flex-col max-full p-6 md:w-1/2 md:pl-16 lg:px-32">
                 <div className="flex flex-col justify-center gap-2 pb-4 ">
                     <h1 className="text-hitam font-bold text-2xl md:text-4xl">
                         Konsultasikan Masalahmu dengan Psikolog

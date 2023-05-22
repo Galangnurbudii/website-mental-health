@@ -1,10 +1,10 @@
 import React from "react";
 import Footer from "@/Components/Footer";
 import NavBar from "@/Components/NavBar";
-import CardArticle from "@/Components/CardArticle";
 import SearchBar from "@/Components/SearchBar";
 import BigCard from "@/Components/BigCard";
 import Badge from "@/Components/Badge";
+import ArticleCard from "@/Components/ArticleCard";
 
 export default function Article() {
     return (
@@ -32,10 +32,10 @@ export default function Article() {
                     </h1>
 
                     <div className="flex flex-row justify-between gap-10">
-                        <CardArticle />
-                        <CardArticle />
-                        <CardArticle />
-                        <CardArticle />
+                        <ArticleCard />
+                        <ArticleCard />
+                        <ArticleCard />
+                        <ArticleCard />
                     </div>
                 </div>
             </div>
