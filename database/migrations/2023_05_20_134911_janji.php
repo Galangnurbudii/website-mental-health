@@ -15,13 +15,13 @@ return new class extends Migration {
         Schema::create('janji', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_psikolog');
-            $table->unsignedBigInteger('id_pengguna');
+            $table->unsignedBigInteger('id_user');
             $table->date('tanggal');
             $table->enum('jam', ['10:00', '12:00', '14:00', '16:00']);
             $table->timestamps();
 
             $table->foreign('id_psikolog')->references('id')->on('psikolog');
-            $table->foreign('id_pengguna')->references('id')->on('pengguna');
+            $table->foreign('id_user')->references('id')->on('users');
         });
 
 
