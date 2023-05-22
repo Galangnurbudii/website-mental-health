@@ -3,7 +3,7 @@ import React from 'react'
 export default function Post() {
     return (
         <div className="relative flex items-center justify-center">
-            <div className="bg-blurPost bg-opacity-50 mt-[50px] text-base w-5/6 lg:w-[900px] h-[236px]">
+            <div className="bg-blurPost bg-opacity-50 mt-[50px] text-base w-5/6 lg:w-[900px] h-[236px] rounded-md">
                 <h6 className="mt-[15px] ml-[15px]">
                     Anonymous
                 </h6>
@@ -19,7 +19,7 @@ export default function Post() {
                     sed faucibus.
                 </h6>
                 <div className="relative">
-                    <button className="absolute border-2 border-fourthPost text-primaryPost w-[157px] h-[42px] text-base rounded-lg right-12">
+                    <button className="absolute border-2 border-primary text-primary w-[125px] h-[35px] text-base rounded-lg right-12">
                         Lanjut Baca
                     </button>
                 </div>
