@@ -1,10 +1,11 @@
 import React from "react";
 import PrimaryButton from "./PrimaryButton";
+import { Link } from "@inertiajs/react";
 
 function Hero() {
     return (
-        <div className="bg-hoverBackground w-full md:h-[80vh] mx-auto flex flex-col md:flex-row items-center ">
-            <div className="flex flex-wrap flex-col max-full p-4 md:w-1/2 md:pl-16">
+        <div className="bg-hoverBackground w-full md:h-[80vh] mx-auto flex flex-col md:flex-row items-center md:px-16 lg:px-32">
+            <div className="flex flex-wrap flex-col max-full p-6 md:p-0 md:w-1/2 ">
                 <div className="flex flex-col justify-center gap-2 pb-4 ">
                     <h1 className="text-hitam font-bold text-2xl md:text-4xl">
                         Konsultasikan Masalahmu dengan Psikolog
@@ -14,12 +15,13 @@ function Hero() {
                         mencarikan solusi
                     </h2>
                 </div>
-
-                <PrimaryButton className="text-xs px-2 py-1 w-44 md:w-56 md:text-base">
-                    Konsultasi Sekarang
-                </PrimaryButton>
+                <Link href={route("konsultasi")}>
+                    <PrimaryButton className="text-xs px-2 py-1 w-44 md:w-56 md:text-base">
+                        Konsultasi Sekarang
+                    </PrimaryButton>
+                </Link>
             </div>
-            <div className="max-full md:flex md:justify-center px-4 md:w-1/2 sm:flex  md:pr-10 md:self-end">
+            <div className="max-full md:flex md:justify-center px-4 md:w-1/2 sm:flex md:self-end">
                 <img
                     src="images/landingPage.png"
                     alt="landingPage"

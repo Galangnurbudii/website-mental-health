@@ -1,10 +1,11 @@
 import React from "react";
 import PrimaryButton from "./PrimaryButton";
+import { Link } from "@inertiajs/react";
 
 function ForumHero() {
     return (
-        <div className="bg-hoverBackground w-full mx-auto flex flex-col md:flex-row items-center pb-6 md:py-16">
-            <div className="flex flex-wrap flex-col max-full p-4 md:w-1/2 md:pl-16">
+        <div className="bg-hoverBackground w-full mx-auto flex flex-col md:flex-row items-center pb-6 md:py-16 md:px-16 lg:px-32">
+            <div className="flex flex-wrap flex-col max-full p-6 md:w-1/2 md:p-0">
                 <div className="flex flex-col justify-center gap-2 pb-4">
                     <h1 className="text-hitam font-bold text-2xl md:text-4xl">
                         Tuliskan Ceritamu di Forum
@@ -13,10 +14,11 @@ function ForumHero() {
                         Forum bersama jadi wadah untuk bertukar rasa dan cerita
                     </h2>
                 </div>
-
-                <PrimaryButton className="text-xs px-2 py-1 w-40 md:w-44 md:text-base">
-                    Tulis Ceritamu
-                </PrimaryButton>
+                <Link href={route("forumHome")}>
+                    <PrimaryButton className="text-xs px-2 py-1 w-40 md:w-44 md:text-base">
+                        Tulis Ceritamu
+                    </PrimaryButton>
+                </Link>
             </div>
             <div className="max-full md:flex md:justify-center px-4 md:w-1/2 md:pr-10 md:self-end">
                 <img
