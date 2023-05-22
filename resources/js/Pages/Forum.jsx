@@ -15,7 +15,7 @@ export default function Forum() {
         <>
             <NavBar/>
             <div className="flex items-center justify-center mt-[50px]">
-                <div className="rounded-sm w-[79.5%] h-[575px] mb-[50px] bg-cardBlue border border-black">
+                <div className="rounded-md w-[79.5%] h-[575px] mb-[50px] bg-cardBlue">
                     <div className="w-full h-[100px] relative flex">
                         <button onClick={toggleDiv} className="bg-[#FF0000] text-[#FFFFFF] w-[120px] h-[51px] text-base rounded-lg ml-[25px] mt-[25px]">
                             Batal
@@ -32,15 +32,15 @@ export default function Forum() {
                         <div id="myDiv" className="hidden absolute flex justify-center items-center w-full max-h-screen">
                             <div className=" w-full h-screen bg-gray-700 opacity-50">
                             </div>
-                            <div className="absolute border rounded-xl border-black bg-[#FFFFFF] w-[200px] h-[80px]">
+                            <div className="absolute border rounded-xl border-black bg-[#FFFFFF] w-[250px] h-[100px] pt-[10px]">
                                 <div className="text-center">
                                     Apakah Anda Yakin?
                                 </div>
-                                <div className="pl-[10px] pt-[6px]">
-                                    <button className="w-[41%] h-[39px] bg-[#4C9BF5] rounded-3xl">
+                                <div className="pl-[27px] pt-[6px]">
+                                    <button className="w-[85px] h-[39px] bg-[#4C9BF5] rounded-lg">
                                         Ya
                                     </button>
-                                    <button onClick={toggleDiv} className="w-[41%] h-[39px] bg-[#F54C60] rounded-3xl ml-[25px]">
+                                    <button onClick={toggleDiv} className="w-[85px] h-[39px] bg-[#F54C60] rounded-lg ml-[25px]">
                                         Tidak
                                     </button>
                                 </div>

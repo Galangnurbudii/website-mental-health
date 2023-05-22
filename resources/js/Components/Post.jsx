@@ -3,7 +3,7 @@ import React from 'react'
 export default function Post() {
     return (
         <div className="relative flex items-center justify-center">
-            <div className="bg-blurPost bg-opacity-50 mt-[50px] text-base w-5/6 lg:w-[900px] h-[236px] rounded-md">
+            <div className="bg-disabledBackground mt-[50px] text-base w-5/6 lg:w-[900px] h-[236px] rounded-md">
                 <h6 className="mt-[15px] ml-[15px]">
                     Anonymous
                 </h6>
