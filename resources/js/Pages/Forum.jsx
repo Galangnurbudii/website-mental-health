@@ -1,5 +1,5 @@
 import Footer from "@/Components/Footer";
-import NavBarUser from "@/Components/NavBarUser";
+import NavBar from "@/Components/NavBar";
 import React from "react";
 
 export default function Forum() {
@@ -13,7 +13,7 @@ export default function Forum() {
     }
     return (
         <>
-            <NavBarUser/>
+            <NavBar/>
             <div className="flex items-center justify-center mt-[50px]">
                 <div className="rounded-sm w-[79.5%] h-[575px] mb-[50px] bg-cardBlue border border-black">
                     <div className="w-full h-[100px] relative flex">
