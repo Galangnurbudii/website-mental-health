@@ -3,10 +3,10 @@ import PrimaryButton from "./PrimaryButton";
 
 function Hero() {
     return (
-        <div className="bg-hoverBackground w-full mx-auto flex-wrap md:flex items-center">
+        <div className="bg-hoverBackground w-full md:h-[80vh] mx-auto flex flex-col md:flex-row items-center ">
             <div className="flex flex-wrap flex-col max-full p-4 md:w-1/2 md:pl-16">
-                <div className="flex flex-col justify-center gap-2 pb-4">
-                    <h1 className="text-hitam font-bold text-lg md:text-4xl">
+                <div className="flex flex-col justify-center gap-2 pb-4 ">
+                    <h1 className="text-hitam font-bold text-2xl md:text-4xl">
                         Konsultasikan Masalahmu dengan Psikolog
                     </h1>
                     <h2 className="text-hitam font-medium text-md md:text-2xl">
@@ -19,11 +19,11 @@ function Hero() {
                     Konsultasi Sekarang
                 </PrimaryButton>
             </div>
-            <div className="max-full md:flex md:justify-center px-4 md:w-1/2 md:pr-10">
+            <div className="max-full md:flex md:justify-center px-4 md:w-1/2 sm:flex  md:pr-10 md:self-end">
                 <img
                     src="images/landingPage.png"
                     alt="landingPage"
-                    className="w-[364px] h-[283px] md:w-[600px] md:h-[400px] lg:h-[500px]"
+                    className="max-h-fit md:pt-32"
                 />
             </div>
         </div>
