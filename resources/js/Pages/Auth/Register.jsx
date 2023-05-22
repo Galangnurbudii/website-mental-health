@@ -100,26 +100,30 @@ export default function Register() {
                                         required
                                     />
 
-                                    <InputError
-                                        message={errors.email}
-                                        className="mt-2"
-                                    />
-                                </div>
+                            <div className="mb-12">
+                                <InputLabel htmlFor="password_confirmation" />
 
-                                <div className="mb-12">
-                                    <InputLabel htmlFor="password" />
+                                <TextInput
+                                    id="password_confirmation"
+                                    placeholder="password confirmation"
+                                    type="password"
+                                    name="password_confirmation"
+                                    value={data.password_confirmation}
+                                    className="mt-1 block w-full"
+                                    autoComplete="new-password"
+                                    onChange={(e) => setData('password_confirmation', e.target.value)}
+                                    required
+                                />
 
-                                    <TextInput
-                                        id="password"
-                                        placeholder="Password"
-                                        type="password"
-                                        name="password"
-                                        value={data.password}
-                                        className="mt-1 block w-full"
-                                        autoComplete="new-password"
-                                        onChange={(e) =>
-                                            setData("password", e.target.value)
-                                        }
+                                <InputError message={errors.password} className="mt-2" />
+                            </div>
+
+                            <div className="block mb-10">
+                                <label className="flex items-center">
+                                    <Checkbox
+                                        name="remember"
+                                        checked={data.remember}
+                                        onChange={(e) => setData('remember', e.target.checked)}
                                         required
                                     />
 
