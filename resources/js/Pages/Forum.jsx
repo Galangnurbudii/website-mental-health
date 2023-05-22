@@ -15,7 +15,7 @@ export default function Forum() {
         <>
             <NavBarUser/>
             <div className="flex items-center justify-center mt-[50px]">
-                <div className="rounded-sm w-[79.5%] h-[575px] mb-[50px] bg-[#00FFFF] border border-black">
+                <div className="rounded-sm w-[79.5%] h-[575px] mb-[50px] bg-cardBlue border border-black">
                     <div className="w-full h-[100px] relative flex">
                         <button onClick={toggleDiv} className="bg-[#FF0000] text-[#FFFFFF] w-[120px] h-[51px] text-base rounded-lg ml-[25px] mt-[25px]">
                             Batal
