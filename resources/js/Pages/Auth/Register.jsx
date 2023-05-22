@@ -118,7 +118,7 @@ export default function Register() {
 
                                 <TextInput
                                     id="password_confirmation"
-                                    placeholder="password confirmation"
+                                    placeholder="Confirm Password"
                                     type="password"
                                     name="password_confirmation"
                                     value={data.password_confirmation}
