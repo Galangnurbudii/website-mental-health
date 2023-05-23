@@ -1,19 +1,18 @@
 import React from "react";
 import Badge from "./Badge";
-import SecondaryButton from "./SecondaryButton";
 
-function BigCard() {
+function ArticleCard() {
     return (
-        <div className="card w-full bg-putih shadow-xl grid md:grid-cols-2">
-            <figure dir="ltr">
+        <div className="card w-full md:w-96 bg-putih shadow-xl">
+            <figure className="md:h-2/4">
                 <img
-                    src="images/Gambar2.png"
+                    src="images/Gambar1.png"
                     alt="Foto Berita"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full"
                 />
             </figure>
-            <div className="card-body flex flex-col justify-center md:pl-8 md:gap-6">
-                <h2 className="text-xl md:text-3xl font-semibold text-hitam">
+            <div className="card-body">
+                <h2 className="text-xl font-semibold text-hitam">
                     Judul Berita
                 </h2>
                 <div className="flex gap-8 md:gap-16">
@@ -21,15 +20,14 @@ function BigCard() {
                     <p className="text-hitam font-bold text-base">3 Mei 2023</p>
                 </div>
 
-                <p className="text-sm lg:text-base md:line-clamp-3">
+                <p className="text-sm md:text-base">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Fusce non magna vel nulla dignissim tincidunt sit amet eget
                     metus.
                 </p>
-                <SecondaryButton>Lanjut Baca</SecondaryButton>
             </div>
         </div>
     );
 }
 
-export default BigCard;
+export default ArticleCard;

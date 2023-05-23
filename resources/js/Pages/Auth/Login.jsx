@@ -53,6 +53,7 @@ export default function Login({ status, canResetPassword }) {
                             md:h-full               
                             object-cover"
                             src="images/bgregisterfix.png"
+
                         />
                     </div>
 

@@ -6,7 +6,7 @@ import SearchBar from "@/Components/SearchBar";
 import Badge from "@/Components/Badge";
 import BigCard from "@/Components/BigCard";
 
-export default function Article() {
+export default function Coba() {
     return (
         <>
             <NavBar />

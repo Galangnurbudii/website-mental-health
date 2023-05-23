@@ -1,3 +1,4 @@
+
 import Footer from "@/Components/Footer";
 import { Link } from "@inertiajs/react";
 import NavBarUser from "@/Components/NavBarUser";

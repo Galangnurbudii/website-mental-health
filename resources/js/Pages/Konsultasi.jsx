@@ -1,17 +1,13 @@
 import BackUpButton from "@/Components/BackUpButton";
 import CardsCarousel from "@/Components/CardsCarousel";
 import Cards from "@/Components/Cards";
-import NavBarUser from "@/Components/NavBarUser";
-import Scrollbars from 'react-scrollbars-custom';
-import React from 'react';
-import SimpleBar from 'simplebar-react';
-import 'simplebar-react/dist/simplebar.min.css';
 
-// import 'react-custom-scrollbars/dist/custom-scrollbars.css'; // Import the default styles
+import NavBar from "@/Components/NavBar";
 
 export default function Konsultasi() {
     return (
         <div className="pt-15 overflow-x-hidden">
+
             <NavBarUser />
             {/* Banner */}
             <div
@@ -33,15 +29,18 @@ export default function Konsultasi() {
                             sm:text-6xl sm:pt-40 sm:pb-5 sm:px-16                                    
                             md:text-6xl md:pt-40 md:pb-5 md:px-16                                    
                             lg:text-6xl lg:pt-40 lg:pb-5 lg:px-32"
+
                         >
                             Konseling dengan Psikolog Terbaik
                         </h1>
                         <p
                             className="font-semibold 
                             xs:text-2xl xs:px-10
+
                             sm:text-3xl sm:px-16
                             md:text-3xl md:px-16
                             lg:text-3xl lg:px-32"
+
                         >
                             Ceritakan isi hatimu, temukan akar masalah <br />
                             dan jadi pribadi lebih baik
@@ -50,6 +49,7 @@ export default function Konsultasi() {
                             <BackUpButton
                                 className="bg-primary
                                  mt-12 mx-10 
+
                                  sm:mx-16
                                  md:mx-16 
                                  lg:mx-32"
@@ -66,9 +66,11 @@ export default function Konsultasi() {
             </div>
 
             {/* 3 Langkah Melakukan Konseling */}
+
             <div className="absolute w-full pt-24">
                 {/* w-full py-[6rem] px-4 */}
                 <div className="w-full py-[1rem] pl-4 pr-5">
+
                     <h1
                         className="font-semibold pb-5
                         px-10
@@ -98,6 +100,7 @@ export default function Konsultasi() {
                     <div className="w-full py-[1rem] ">
                         <h1
                             className="font-semibold pb-5
+
                         px-6
                         md:px-16
                         lg:px-32
@@ -109,13 +112,16 @@ export default function Konsultasi() {
                         </h1>
                     </div>
                     {/* Carousel Cerita Mereka */}
+
                     <div className="overflow-x-auto px-6 md:px-16 lg:px-32">
                         <Scrollbars className="scrollbar-container overflow-x-auto"></Scrollbars>
+
                         <CardsCarousel
                             imageSrc="images/petik.png"
                             text="Berkat konsultasi di sini rasanya jadi lebih plong. Tenang dan bahagia banget"
                             names="Tatang Munajir - Mahasiswa"
                         />                        
+
                     </div>
                 </div>
             </div>

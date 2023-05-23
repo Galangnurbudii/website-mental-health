@@ -116,6 +116,44 @@ export default function Register() {
                                         required
                                     />
 
+                            <div className="mb-12">
+                                <InputLabel htmlFor="password_confirmation" />
+
+                                <TextInput
+                                    id="password_confirmation"
+                                    placeholder="password confirmation"
+                                    type="password"
+                                    name="password_confirmation"
+                                    value={data.password_confirmation}
+                                    className="mt-1 block w-full"
+                                    autoComplete="new-password"
+                                    onChange={(e) => setData('password_confirmation', e.target.value)}
+                                    required
+                                />
+
+                                    <InputError
+                                        message={errors.name}
+                                        className="mt-2"
+                                    />
+                                </div>
+
+                                <div className="mb-10">
+                                    <InputLabel htmlFor="email" />
+
+                                    <TextInput
+                                        id="email"
+                                        placeholder="Email"
+                                        type="email"
+                                        name="email"
+                                        value={data.email}
+                                        className="mt-1 block w-full"
+                                        autoComplete="username"
+                                        onChange={(e) =>
+                                            setData("email", e.target.value)
+                                        }
+                                        required
+                                    />
+
                                     <InputError
                                         message={errors.email}
                                         className="mt-2"
@@ -160,7 +198,8 @@ export default function Register() {
                                         />
                                         <span className="font-semibold ml-2 text-sm text-gray-600">
                                             I Agree to{" "}
-                                            <span className="text-[#4C9BF5]">
+                                            <span className="text-primary">
+
                                                 terms & conditions
                                             </span>
                                         </span>
@@ -168,7 +207,8 @@ export default function Register() {
                                 </div>
 
                                 <PrimaryButton
-                                    className="bg-[#4C9BF5] mb-5"
+                                    className="bg-primary mb-5"
+
                                     disabled={processing}
                                 >
                                     Create Account
@@ -180,7 +220,8 @@ export default function Register() {
                                         className="font-semibold text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none"
                                     >
                                         Already have an account?{" "}
-                                        <span className="text-[#4C9BF5]">
+
+                                        <span className="text-primary">
                                             Log In here
                                         </span>
                                     </Link>

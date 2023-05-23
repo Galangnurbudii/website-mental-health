@@ -2,6 +2,7 @@ import PrimaryButton from "@/Components/PrimaryButton";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head } from "@inertiajs/react";
 import BackUpButton from "@/Components/BackUpButton";
+
 import Footer from "@/Components/Footer";
 import NumberBox from "@/Components/NumberBox";
 import CardsCarousel from "@/Components/CardsCarousel";

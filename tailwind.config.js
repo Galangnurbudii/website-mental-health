@@ -19,31 +19,29 @@ module.exports = {
                 putih: "#FDFDFD",
             },
             colors: {
-                primaryPost: "#4C9BF5",
+
                 secondaryPost: "#FFFFFF",
                 thirdPost: "#DDDDDD",
-                fourthPost: "#4C9BF5",
                 // Pakai colors dari const di atas
                 blurPost: "#D9D9D9",
 
                 primary: "#4C9BF5",
                 disabled: "#736D6D",
-                hoverbBackground: "#7EB8F8",
+                hoverBackground: "#7EB8F8",
+
                 clickedBackground: "#0974F1",
                 disabledBackground: "#EFF2FF",
                 counselingBackground: "#D7E8FC",
                 whiteFABackground: "#FAFAFA",
                 cardBlue: "#B2D4FB",
+                putih: "#FDFDFD",
+                hitam: "#333333",
             },
-            // screens: {
-            //     xs2: "320px",
-            //     sm2: "668px",
-            //     md2: "896px",
-            //     lg2: "1181px",
-            //     xl2: "1080px",
-            //     "2xl2": "1536px",
-            //     // 1180 x 880
-            // },
+
+            screens: {
+                xs: "320px",
+            },
+
         },
     },
 

@@ -49,9 +49,23 @@ Route::get('/konsultasi', function () {
     return Inertia::render('Konsultasi');
 })->name('konsultasi');
 
+
 Route::get('/detaillayanan', function () {
     return Inertia::render('DetailLayanan');
 })->name('detaillayanan');
+
+Route::get('/home', function () {
+    return Inertia::render('Home');
+})->name('home');
+
+Route::get('/coba', function () {
+    return Inertia::render('Coba');
+})->name('coba');
+
+Route::get('/profil', function () {
+    return Inertia::render('Profil');
+})->name('profil');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
