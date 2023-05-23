@@ -9,7 +9,7 @@ function NavBarUser() {
                         Mental Health
                     </a>
                 </div>
-                
+
                 <div className="relative flex flex-row items-center gap-10">
                     <a
                         href="#"

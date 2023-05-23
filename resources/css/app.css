@@ -5,3 +5,64 @@
 body {
     background-color: #fdfdfd;
 }
+
+/* For Date Picker */
+@import "node_modules/react-datepicker/src/stylesheets/datepicker.scss";
+
+.react-datepicker-wrapper,
+.react-datepicker__input-container,
+.react-datepicker__input-container input {
+    display: block;
+    width: 375px;
+    min-width: 30%;
+    max-width: 100%;
+    border-color: #d8dbe1;
+    border-radius: 5px;
+    font-family: "Figtree";
+    font-size: 14px;
+    font-weight: 600;
+    color: #736d6d;
+    cursor: pointer;
+}
+
+.react-datepicker__month-container {
+    background-color: #fafafa;
+    color: #969eac;
+    font-size: 1rem;
+
+    .react-datepicker__month {
+        padding: 1rem 0;
+    }
+
+    .react-datepicker__month-text {
+        display: inline-block;
+        width: 5rem;
+        margin: 0.5rem;
+        font-size: 1rem;
+        padding: 0.2rem;
+        &:hover {
+            background-color: #534cea;
+        }
+    }
+
+/* Show scrollbar on all elements */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+}
