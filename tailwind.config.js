@@ -19,6 +19,7 @@ module.exports = {
                 putih: "#FDFDFD",
             },
             colors: {
+
                 secondaryPost: "#FFFFFF",
                 thirdPost: "#DDDDDD",
                 // Pakai colors dari const di atas
@@ -27,6 +28,7 @@ module.exports = {
                 primary: "#4C9BF5",
                 disabled: "#736D6D",
                 hoverBackground: "#7EB8F8",
+
                 clickedBackground: "#0974F1",
                 disabledBackground: "#EFF2FF",
                 counselingBackground: "#D7E8FC",
@@ -35,9 +37,11 @@ module.exports = {
                 putih: "#FDFDFD",
                 hitam: "#333333",
             },
+
             screens: {
                 xs: "320px",
             },
+
         },
     },
 

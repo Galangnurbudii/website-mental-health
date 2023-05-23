@@ -1,4 +1,4 @@
-import { Link } from '@inertiajs/react';
+import { Link } from "@inertiajs/react";
 
 export default function Guest({ children }) {
     return (
@@ -10,9 +10,7 @@ export default function Guest({ children }) {
                 </Link> */}
             </div>
 
-            <div className="w-full">
-                {children}
-            </div>
+            <div className="w-full">{children}</div>
         </div>
     );
 }
