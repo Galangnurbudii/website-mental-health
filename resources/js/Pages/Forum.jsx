@@ -1,7 +1,6 @@
 import Footer from "@/Components/Footer";
 import NavBar from "@/Components/NavBar";
 import React, { useState } from "react";
-import ForumHome from "./ForumHome";
 
 export default function Forum() {
     const [showPopup, setShowPopup] = useState(false);
