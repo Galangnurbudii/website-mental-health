@@ -7,6 +7,7 @@ export default function Post() {
                 <h6 className="mt-[15px] ml-[15px]">
                     Anonymous
                 </h6>
+                </div>
             <div className="bg-blurPost bg-opacity-50 mt-[50px] text-base w-5/6 lg:w-[900px] h-[236px]">
                 <h6 className="mt-[15px] ml-[15px]">Anonymous</h6>
                 <h6 className="my-[25px] mx-[50px] text-justify leading-4 line-clamp-5">
@@ -28,5 +29,3 @@ export default function Post() {
         </div>
     );
 }
-
-// export default Post;
