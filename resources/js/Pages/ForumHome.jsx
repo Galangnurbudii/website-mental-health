@@ -33,6 +33,14 @@ export default function ForumHome() {
                             A
                         </div>
                     </div>
+                    <h1 className="font-bold text-xl md:text-2xl text-hitam md:px-16 lg:px-20">
+                        Artikel Lainnya
+                    </h1>
+                    <div className="flex justify-center flex-col md:flex-row md:flex-wrap md:items-stretch items-center gap-6">
+                        <ArticleCard />
+                        <ArticleCard />
+                        <ArticleCard />
+                    </div>
                 </div>
             </div>
             <Footer/>

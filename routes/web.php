@@ -53,7 +53,6 @@ Route::get('/konsultasi', function () {
     return Inertia::render('Konsultasi');
 })->name('konsultasi');
 
-
 Route::get('/detaillayanan', function () {
     return Inertia::render('DetailLayanan');
 })->name('detaillayanan');
