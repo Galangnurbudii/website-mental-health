@@ -3,6 +3,7 @@ import CardsCarousel from "@/Components/CardsCarousel";
 import Cards from "@/Components/Cards";
 import NavBar from "@/Components/NavBar";
 import Footer from "@/Components/Footer";
+import { Scrollbar } from 'react-scrollbars-custom';
 
 export default function Konsultasi() {
     return (
@@ -107,6 +108,9 @@ export default function Konsultasi() {
                     {/* Carousel Cerita Mereka */}
 
                     <div className="overflow-x-auto px-6 md:px-16 lg:px-32">                    
+                    <Scrollbar style={{ width: 250, height: 250 }}>
+                        <p>Hello world!</p>
+                    </Scrollbar>;
                         <CardsCarousel
                             imageSrc="images/petik.png"
                             text="Berkat konsultasi di sini rasanya jadi lebih plong. Tenang dan bahagia banget"
