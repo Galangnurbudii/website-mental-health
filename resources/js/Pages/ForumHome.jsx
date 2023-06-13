@@ -1,8 +1,9 @@
 import Post from "@/Components/Post";
-import ArticleCard from "@/Components/ArticleCard";
+import ArticleRec from "@/Components/ArticleRec";
 import Footer from "@/Components/Footer1";
 import NavBar from "@/Components/NavBar";
 import React from "react";
+import PrimaryButton from "@/Components/PrimaryButton";
 
 export default function ForumHome() {
     return (
@@ -29,18 +30,39 @@ export default function ForumHome() {
                         <Post/>
                         <Post/>
                     </div>
-                    <div className="w-5/6 lg:w-[900px]">
-                        <div className="border border-black mt-[50px]">
-                            A
+                    <div className="w-5/6 lg:w-[900px] mt-[100px] mb-[50px] ml-[60px] md:ml-[50px] relative">
+                        <h1 className="font-bold text-xl md:text-2xl text-hitam md:px-16 lg:px-20 mb-[20px]">
+                            Rekomendasi Topik
+                        </h1>
+                        <button className="disabled border border-black rounded ml-[80px] mb-[25px] py-[5px] px-[15px]">
+                            Depresi
+                        </button>
+                        <h1 className="font-bold text-xl md:text-2xl text-hitam md:px-16 lg:px-20 mb-[25px]">
+                            Artikel Lainnya
+                        </h1>
+                        <div className="justify-center md:flex-wrap md:items-stretch items-center gap-6 mb-[50px]">
+                            <ArticleRec/>
+                            <ArticleRec/>
+                            <ArticleRec/>
                         </div>
-                    </div>
-                    <h1 className="font-bold text-xl md:text-2xl text-hitam md:px-16 lg:px-20">
-                        Artikel Lainnya
-                    </h1>
-                    <div className="flex justify-center flex-col md:flex-row md:flex-wrap md:items-stretch items-center gap-6">
-                        <ArticleCard />
-                        <ArticleCard />
-                        <ArticleCard />
+                        <div>
+                            <h1 className="font-bold text-xl md:text-2xl text-hitam md:px-16 lg:px-20 mb-[10px]">Konsultasikan dengan Ahli</h1>
+                            <h2 className="text-hitam md:px-16 lg:px-20 mb-[20px]">Ingin bercerita? Psikolog siap mendengarkan</h2>
+                            <div className="md:px-16 lg:px-20 w-[75%] md:w-[100%]">
+                                <div className="xl:flex border border-black rounded-lg w-[50%]">
+                                    <img src="images/pasangan.jpg" alt="" className="w-[75%] lg:w-[50%] mx-[25px] my-[25px] rounded-lg"/>
+                                    <div className="mt-[25px] ml-[25px] mb-[25px]">
+                                        <h2 className="font-bold text-lg">Psikolog</h2>
+                                        <h3>Kami siap mendengarkan cerita Anda</h3>
+                                        <a href={route("konsultasi")}>
+                                            <PrimaryButton className="border border-black rounded-lg px-[10px] py-[2px] mt-[25px]">
+                                                Konsultasi
+                                            </PrimaryButton>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
