@@ -15,7 +15,7 @@ export default function Header({ className = "", disabled, ...props }) {
             <div className="w-full bg-disabledBackground p-3 pl-10 sm:pl-16 md:pl-16 lg:pl-32">
             <p className="font-semibold">
                 <span className="text-primary pr-4">
-                <Link href={route("dashboard")}>{props.pages}</Link>
+                <Link href={route("konsultasi")}>{props.pages}</Link>
                 </span>
                 {">"}
                 <span className="pl-4">{props.currpages}</span>

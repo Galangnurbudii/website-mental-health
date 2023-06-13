@@ -1,14 +1,14 @@
 import BackUpButton from "@/Components/BackUpButton";
 import CardsCarousel from "@/Components/CardsCarousel";
 import Cards from "@/Components/Cards";
-
 import NavBar from "@/Components/NavBar";
+import Footer from "@/Components/Footer";
 
 export default function Konsultasi() {
     return (
         <div className="pt-15 overflow-x-hidden">
 
-            <NavBarUser />
+            <NavBar />
             {/* Banner */}
             <div
                 className="w-full 
@@ -21,7 +21,6 @@ export default function Konsultasi() {
                 }}
             >
                 <div className="">
-                    {/* <img src='images/konsultasiBanner.jpg' alt=''/>    */}
                     <div className="flex flex-col">
                         <h1
                             className="font-semibold   
@@ -36,7 +35,6 @@ export default function Konsultasi() {
                         <p
                             className="font-semibold 
                             xs:text-2xl xs:px-10
-
                             sm:text-3xl sm:px-16
                             md:text-3xl md:px-16
                             lg:text-3xl lg:px-32"
@@ -49,7 +47,6 @@ export default function Konsultasi() {
                             <BackUpButton
                                 className="bg-primary
                                  mt-12 mx-10 
-
                                  sm:mx-16
                                  md:mx-16 
                                  lg:mx-32"
@@ -59,15 +56,11 @@ export default function Konsultasi() {
                         </div>
                     </div>
                 </div>
-
-                {/* <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 text-gray-900">You're logged in!</div>
-                    </div> */}
             </div>
 
             {/* 3 Langkah Melakukan Konseling */}
 
-            <div className="absolute w-full pt-24">
+            <div className="w-full pt-24">
                 {/* w-full py-[6rem] px-4 */}
                 <div className="w-full py-[1rem] pl-4 pr-5">
 
@@ -96,7 +89,7 @@ export default function Konsultasi() {
                 />
 
                 {/* Cerita Mereka */}
-                <div className="bg-cardBlue absolute w-full pt-20 pb-10">
+                <div className="bg-cardBlue  w-full pt-20 pb-10">
                     <div className="w-full py-[1rem] ">
                         <h1
                             className="font-semibold pb-5
@@ -113,18 +106,17 @@ export default function Konsultasi() {
                     </div>
                     {/* Carousel Cerita Mereka */}
 
-                    <div className="overflow-x-auto px-6 md:px-16 lg:px-32">
-                        <Scrollbars className="scrollbar-container overflow-x-auto"></Scrollbars>
-
+                    <div className="overflow-x-auto px-6 md:px-16 lg:px-32">                    
                         <CardsCarousel
                             imageSrc="images/petik.png"
                             text="Berkat konsultasi di sini rasanya jadi lebih plong. Tenang dan bahagia banget"
                             names="Tatang Munajir - Mahasiswa"
                         />                        
-
                     </div>
                 </div>
+                
             </div>
+            <Footer />
         </div>
     );
 }

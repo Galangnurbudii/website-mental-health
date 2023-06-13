@@ -54,7 +54,7 @@ export default function Register() {
                     {/* right side */}
                     <div className="md:w-3/4
                                     lg:w-1/2 h-full
-                                    md:p-20 lg:p-20 
+                                    md:p-20 lg:p-10 
                                     flex flex-col justify-between items-center p-10">
                         <div className="w-full flex flex-col max-w-[525px] sm:pt-8">
                             {/* title */}
@@ -99,7 +99,7 @@ export default function Register() {
                                     />
                                 </div>
 
-                                <div className="mb-10">
+                                <div className="mb-14">
                                     <InputLabel htmlFor="email" />
 
                                     <TextInput
@@ -116,7 +116,7 @@ export default function Register() {
                                         required
                                     />
 
-                            <div className="mb-12">
+                            <div className="mt-10 mb-14">
                                 <InputLabel htmlFor="password_confirmation" />
 
                                 <TextInput
@@ -133,52 +133,6 @@ export default function Register() {
 
                                     <InputError
                                         message={errors.name}
-                                        className="mt-2"
-                                    />
-                                </div>
-
-                                <div className="mb-10">
-                                    <InputLabel htmlFor="email" />
-
-                                    <TextInput
-                                        id="email"
-                                        placeholder="Email"
-                                        type="email"
-                                        name="email"
-                                        value={data.email}
-                                        className="mt-1 block w-full"
-                                        autoComplete="username"
-                                        onChange={(e) =>
-                                            setData("email", e.target.value)
-                                        }
-                                        required
-                                    />
-
-                                    <InputError
-                                        message={errors.email}
-                                        className="mt-2"
-                                    />
-                                </div>
-
-                                <div className="mb-12">
-                                    <InputLabel htmlFor="password" />
-
-                                    <TextInput
-                                        id="password"
-                                        placeholder="Password"
-                                        type="password"
-                                        name="password"
-                                        value={data.password}
-                                        className="mt-1 block w-full"
-                                        autoComplete="new-password"
-                                        onChange={(e) =>
-                                            setData("password", e.target.value)
-                                        }
-                                        required
-                                    />
-
-                                    <InputError
-                                        message={errors.password}
                                         className="mt-2"
                                     />
                                 </div>
@@ -230,6 +184,7 @@ export default function Register() {
                         </div>
                     </div>
                 </div>
+            </div>
             </form>
         </GuestLayout>
     );

@@ -1,5 +1,5 @@
 import Footer from "@/Components/Footer";
-import NavBarUser from "@/Components/NavBarUser";
+import NavBar from "@/Components/NavBar";
 import BackUpButton from "@/Components/BackUpButton";
 import { useState } from "react";
 import "react-datepicker/dist/react-datepicker.css";
@@ -31,7 +31,7 @@ export default function Layanan() {
 
     return (
         <div className="overflow-x-hidden">
-            <NavBarUser />
+            <NavBar />
             <Header 
                 pages2 = "Konsultasi"
                 currpages2 = "Layanan"
@@ -185,7 +185,7 @@ export default function Layanan() {
                     </div>
                 </div>
             </div>
-            {/* <Footer /> */}
+            <Footer />
 
         </div>
     );
