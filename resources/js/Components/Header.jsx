@@ -25,7 +25,7 @@ export default function Header({ className = "", disabled, ...props }) {
 
         {state === 2 && (
             // State 2
-            <div className="w-full bg-disabledBackground p-3 pl-10 sm:pl-16 md:pl-16 lg:pl-32">
+            <div className="w-full bg-disabledBackground p-3 pl-6 sm:pl-6 md:pl-16 lg:pl-16">
             <p className="font-semibold">
                 <span className="text-primary pr-4">
                 <Link href={route("dashboard")}>{props.pages2}</Link>
