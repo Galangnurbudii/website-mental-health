@@ -57,9 +57,10 @@ export default function Register() {
                     <div
                         className="md:w-3/4
                                     lg:w-1/2 h-full
-                                    md:p-20 lg:p-20 
-                                    flex flex-col justify-between items-center p-10"
-                    >
+
+                                    md:p-20 lg:p-10 
+                                    flex flex-col justify-between items-center p-10">
+
                         <div className="w-full flex flex-col max-w-[525px] sm:pt-8">
                             {/* title */}
                             <div
@@ -107,7 +108,7 @@ export default function Register() {
                                     />
                                 </div>
 
-                                <div className="mb-10">
+                                <div className="mb-14">
                                     <InputLabel htmlFor="email" />
 
                                     <TextInput
@@ -217,6 +218,7 @@ export default function Register() {
                         </div>
                     </div>
                 </div>
+            </div>
             </form>
         </GuestLayout>
     );
