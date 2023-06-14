@@ -54,6 +54,10 @@ Route::get('/detaillayanan', function () {
     return Inertia::render('DetailLayanan');
 })->name('detaillayanan');
 
+Route::get('/detaillayananonline', function () {
+    return Inertia::render('DetailLayananOnline');
+})->name('detaillayananonline');
+
 Route::get('/home', function () {
     return Inertia::render('Home');
 })->name('home');
