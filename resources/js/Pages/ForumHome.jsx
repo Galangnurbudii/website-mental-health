@@ -30,7 +30,7 @@ export default function ForumHome() {
                         <Post/>
                         <Post/>
                     </div>
-                    <div className="w-5/6 lg:w-[900px] mt-[100px] mb-[50px] ml-[60px] md:ml-[50px] relative">
+                    <div className="w-5/6 mt-[100px] mb-[50px] ml-[60px] md:ml-[20px] relative">
                         <h1 className="font-bold text-xl md:text-2xl text-hitam md:px-16 lg:px-20 mb-[20px]">
                             Rekomendasi Topik
                         </h1>
@@ -49,8 +49,8 @@ export default function ForumHome() {
                             <h1 className="font-bold text-xl md:text-2xl text-hitam md:px-16 lg:px-20 mb-[10px]">Konsultasikan dengan Ahli</h1>
                             <h2 className="text-hitam md:px-16 lg:px-20 mb-[20px]">Ingin bercerita? Psikolog siap mendengarkan</h2>
                             <div className="md:px-16 lg:px-20 w-[75%] md:w-[100%]">
-                                <div className="xl:flex border border-black rounded-lg w-[50%]">
-                                    <img src="images/pasangan.jpg" alt="" className="w-[75%] lg:w-[50%] mx-[25px] my-[25px] rounded-lg"/>
+                                <div className="xl:flex border border-black rounded-lg md:w-[100%] lg:w-[50%] xl:w-[65%] 2xl:w-[100%]">
+                                    <img src="images/pasangan.jpg" alt="" className="w-[75%] lg:w-[50%] xl:w-[40%] mx-[25px] my-[25px] rounded-lg"/>
                                     <div className="mt-[25px] ml-[25px] mb-[25px]">
                                         <h2 className="font-bold text-lg">Psikolog</h2>
                                         <h3>Kami siap mendengarkan cerita Anda</h3>
