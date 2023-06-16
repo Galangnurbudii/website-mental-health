@@ -32,7 +32,7 @@ export default function Layanan() {
                     className="
                             w-full
                             sm:w-full 
-                            md:w-[100%]
+                            md:w-[60%]
                             lg:w-[60%]
                             h-full bg-white p-6 md:pl-16 lg:pr-28 md:pr-16
                             flex flex-col"
@@ -45,10 +45,9 @@ export default function Layanan() {
                             <div className="w-full shadow-xl border bg-disabledBackground mx-auto my-auto 
                                             md:pb-5 
                                             xs:p-5
-                                            sm:px-20 sm:py-20
-                                            md:p-10
-                                            lg:px-20 lg:py-20
-                                            xl:px-20">
+                                            sm:p-5
+                                            md:p-5
+                                            lg:p-10">
 
                                
                                 <DetailPayment
@@ -59,7 +58,7 @@ export default function Layanan() {
 
                             <div className="pt-5">
                                 <div className="border border-gray-100 card lg:card-side bg-base-100 shadow-sm rounded-sm overflow-x-auto">
-                                    <div className="card-body lg:px-10 md:px-10 sm:px-10 xs:px-4">
+                                    <div className="card-body xl:px-10 lg:px-4 md:px-10 sm:px-10 xs:px-4">
                                         <div className="flex flex-row justify-between">
                                             <h2 className="card-title text-sm text-disabled">Biaya sesi untuk 1 jam</h2>
                                             <h2 className="card-title text-sm text-disabled">Rp 200.000</h2>
@@ -75,9 +74,9 @@ export default function Layanan() {
 
                             <div className="py-5">
                                 <div className="border border-gray-100 card lg:card-side bg-base-100 shadow-sm rounded-sm overflow-x-auto">
-                                    <div className="card-body flex flex-row lg:px-10 md:px-10 sm:px-10 xs:px-4">
+                                    <div className="card-body flex flex-row xl:px-10 lg:px-4 md:px-10 sm:px-10 xs:px-4">
                                         {/* "Pakai" Button */}
-                                        <input type="text" placeholder="Masukkan kode promo" className="input input-bordered w-full max-w-md h-[34px]" />                                        
+                                        <input type="text" placeholder="Promo" className="input input-bordered w-full max-w-md h-[34px]" />                                        
                                         <CouponButton
                                             className="h-0"
                                             onClick={handleClick2}>
