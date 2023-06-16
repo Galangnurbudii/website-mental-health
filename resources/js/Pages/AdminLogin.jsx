@@ -60,8 +60,11 @@ export default function Login({ status, canResetPassword }) {
                     <div className="md:w-3/4
                                     lg:w-1/2 h-full
                                     md:p-20 lg:p-20 
-                                    flex flex-col justify-between items-center p-10 mt-5">
-                        <div className="w-full flex flex-col max-w-[525px] pt-0 sm:pt-8">
+                                    flex flex-col justify-between items-center p-10 bg-black">
+                        <div className="w-full flex flex-col 
+                                        max-w-[715px] 
+                                        pt-0 sm:pt-8 sm:px-14 sm:pb-24
+                                        bg-white">
                             {/* title */}
 
                             <div className="w-full flex flex-col 
@@ -79,7 +82,9 @@ export default function Login({ status, canResetPassword }) {
                                                 text-lg 
                                                 sm:text-xl 
                                                 md:text-2xl 
-                                                lg:text-[24px] font-semibold mb-7 px-1">
+                                                lg:text-[24px] 
+                                                font-semibold 
+                                                mb-7 pl-1 sm:pb-10">
                                     Ready to serve the best services to customer
                                 </p>
                             </div>
@@ -131,7 +136,7 @@ export default function Login({ status, canResetPassword }) {
                                     />
                                 </div>
                                 {/* max-w-[1240px] mx-auto grid lg:grid-cols-3 */}
-                                <div className="block mb-10 flex justify-between">
+                                <div className="mb-10 flex justify-between">
                                     <label className="flex items-center">
                                         <Checkbox
                                             name="remember"
@@ -147,7 +152,7 @@ export default function Login({ status, canResetPassword }) {
                                             Remember Me
                                         </span>
                                     </label>
-
+                                    
                                     {canResetPassword && (
                                         <Link
                                             href={route("password.request")}
