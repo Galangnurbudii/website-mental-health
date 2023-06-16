@@ -59,12 +59,12 @@ export default function Login({ status, canResetPassword }) {
                     {/* right side */}
                     <div className="md:w-3/4
                                     lg:w-1/2 h-full
-                                    md:p-20 lg:p-20 
+                                    md:p-32 lg:p-32 
                                     flex flex-col justify-between items-center p-10 bg-black">
                         <div className="w-full flex flex-col 
                                         max-w-[715px] 
-                                        pt-0 sm:pt-8 sm:px-14 sm:pb-24
-                                        bg-white">
+                                        pt-0 sm:pt-8 sm:px-14 sm:pb-16
+                                        bg-white rounded-2xl">
                             {/* title */}
 
                             <div className="w-full flex flex-col 
