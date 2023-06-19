@@ -70,6 +70,10 @@ Route::get('/adminlogin', function () {
     return Inertia::render('AdminLogin');
 })->name('adminlogin');
 
+Route::get('/psikologlogin', function () {
+    return Inertia::render('PsikologLogin');
+})->name('psikologlogin');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
