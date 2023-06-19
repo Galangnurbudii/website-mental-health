@@ -16,7 +16,11 @@ export default function Post() {
                     volutpat leo mauris. Pulvinar quis ultricies sed faucibus.
                 </h6>
                 <div className="relative">
-                    <button className="absolute border-2 border-fourthPost text-primaryPost w-[157px] h-[42px] text-base rounded-lg right-12">
+                    <button className="absolute 
+                                    text-primary 
+                                    w-[157px] h-[42px] text-base 
+                                    rounded-lg border-2 border-primary
+                                    right-12">
                         Lanjut Baca
                     </button>
                 </div>
