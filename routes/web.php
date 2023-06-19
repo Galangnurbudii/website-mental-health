@@ -74,6 +74,10 @@ Route::get('/psikologlogin', function () {
     return Inertia::render('PsikologLogin');
 })->name('psikologlogin');
 
+Route::get('/dashboardadmin', function () {
+    return Inertia::render('DashboardAdmin');
+})->name('dashboardadmin');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
