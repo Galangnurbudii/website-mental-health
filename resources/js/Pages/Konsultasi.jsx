@@ -1,15 +1,21 @@
 import BackUpButton from "@/Components/BackUpButton";
 import CardsCarousel from "@/Components/CardsCarousel";
 import Cards from "@/Components/Cards";
+
 import NavBar from "@/Components/NavBar";
 
 export default function Konsultasi() {
     return (
         <div className="pt-15 overflow-x-hidden">
-            <NavBar />
+
+            <NavBarUser />
             {/* Banner */}
             <div
-                className="w-full h-[615px] md:h-[615px] lg:h-[615px] bg-center"
+                className="w-full 
+                                h-[615px] 
+                                md:h-[615px] 
+                                lg:h-[615px] 
+                                bg-center"
                 style={{
                     backgroundImage: "url('images/konsultasiBanner.jpg')",
                 }}
@@ -19,19 +25,22 @@ export default function Konsultasi() {
                     <div className="flex flex-col">
                         <h1
                             className="font-semibold   
-                            xs:text-4xl pt-40 pb-5 px-10
-                            sm:text-6xl sm:pt-40 sm:pb-5 sm:px-20                                    
-                            md:text-6xl md:pt-40 md:pb-5 md:px-20                                    
-                            lg:text-6xl lg:pt-40 lg:pb-5 lg:px-40"
+                            xs:text-4xl pt-40 pb-5 px-6
+                            sm:text-6xl sm:pt-40 sm:pb-5 sm:px-16                                    
+                            md:text-6xl md:pt-40 md:pb-5 md:px-16                                    
+                            lg:text-6xl lg:pt-40 lg:pb-5 lg:px-32"
+
                         >
                             Konseling dengan Psikolog Terbaik
                         </h1>
                         <p
                             className="font-semibold 
                             xs:text-2xl xs:px-10
-                            sm:text-3xl sm:px-20
-                            md:text-3xl md:px-20
-                            lg:text-3xl lg:px-40"
+
+                            sm:text-3xl sm:px-16
+                            md:text-3xl md:px-16
+                            lg:text-3xl lg:px-32"
+
                         >
                             Ceritakan isi hatimu, temukan akar masalah <br />
                             dan jadi pribadi lebih baik
@@ -40,9 +49,10 @@ export default function Konsultasi() {
                             <BackUpButton
                                 className="bg-primary
                                  mt-12 mx-10 
-                                 sm:mx-20
-                                 md:mx-20 
-                                 lg:mx-40"
+
+                                 sm:mx-16
+                                 md:mx-16 
+                                 lg:mx-32"
                             >
                                 Konsultasi Sekarang
                             </BackUpButton>
@@ -56,15 +66,18 @@ export default function Konsultasi() {
             </div>
 
             {/* 3 Langkah Melakukan Konseling */}
-            <div className="absolute w-full pt-20">
+
+            <div className="absolute w-full pt-24">
                 {/* w-full py-[6rem] px-4 */}
-                <div className="w-full py-[1rem] pl-4 pr-20">
+                <div className="w-full py-[1rem] pl-4 pr-5">
+
                     <h1
                         className="font-semibold pb-5
                         px-10
-                        md:px-20
-                        lg:px-40
-                        text-3xl
+                        md:px-16
+                        lg:px-32
+                        text-lg
+                        sm:text-xl
                         md:text-4xl
                         lg:text-5xl"
                     >
@@ -87,9 +100,10 @@ export default function Konsultasi() {
                     <div className="w-full py-[1rem] ">
                         <h1
                             className="font-semibold pb-5
-                        px-10
-                        md:px-20
-                        lg:px-40
+
+                        px-6
+                        md:px-16
+                        lg:px-32
                         text-3xl
                         md:text-4xl
                         lg:text-5xl"
@@ -98,12 +112,16 @@ export default function Konsultasi() {
                         </h1>
                     </div>
                     {/* Carousel Cerita Mereka */}
-                    <div className="px-10 md:px-20 lg:px-40">
+
+                    <div className="overflow-x-auto px-6 md:px-16 lg:px-32">
+                        <Scrollbars className="scrollbar-container overflow-x-auto"></Scrollbars>
+
                         <CardsCarousel
                             imageSrc="images/petik.png"
                             text="Berkat konsultasi di sini rasanya jadi lebih plong. Tenang dan bahagia banget"
                             names="Tatang Munajir - Mahasiswa"
-                        />
+                        />                        
+
                     </div>
                 </div>
             </div>

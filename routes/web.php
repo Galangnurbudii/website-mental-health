@@ -41,6 +41,10 @@ Route::get('/forumHome', function () {
     return Inertia::render('ForumHome');
 })->name('forumHome');
 
+Route::get('/forum', function () {
+    return Inertia::render('Forum');
+})->name('forum');
+
 Route::get('/layanan', function () {
     return Inertia::render('Layanan');
 })->name('layanan');
@@ -48,6 +52,10 @@ Route::get('/layanan', function () {
 Route::get('/konsultasi', function () {
     return Inertia::render('Konsultasi');
 })->name('konsultasi');
+
+Route::get('/detaillayanan', function () {
+    return Inertia::render('DetailLayanan');
+})->name('detaillayanan');
 
 Route::get('/home', function () {
     return Inertia::render('Home');
@@ -60,6 +68,11 @@ Route::get('/coba', function () {
 Route::get('/profil', function () {
     return Inertia::render('Profil');
 })->name('profil');
+
+Route::get('/adminlogin', function () {
+    return Inertia::render('AdminLogin');
+})->name('adminlogin');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

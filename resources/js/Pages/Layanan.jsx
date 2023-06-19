@@ -1,95 +1,48 @@
-import PrimaryButton from "@/Components/PrimaryButton";
-import Authenticated from "@/Layouts/AuthenticatedLayout";
-import Footer from "@/Components/Footer1";
+
+import Footer from "@/Components/Footer";
 import { Link } from "@inertiajs/react";
-import Navbar from "@/Components/Navbar";
+import NavBarUser from "@/Components/NavBarUser";
+import Header from "@/Components/Header";
+import LeftSideLayanan from "@/Components/LeftSideLayanan";
+import CardsLayanan from "@/Components/CardsLayanan";
 
 export default function Layanan() {
     return (
-        <div>
-            <Navbar />
-            <div className="w-full bg-disabledBackground p-3 pl-20">
-                <p className="font-semibold">
-                    <span className="text-primary pr-4">
-                        <Link href={route("dashboard")}>Konsultasi</Link>
-                    </span>{" "}
-                    {">"} <span className="pl-4">Layanan</span>
-                </p>
-            </div>
-            <div className="w-full h-screen flex items-start">
+        <div className="overflow-x-hidden">
+            <NavBarUser />
+            <Header 
+                pages = "Konsultasi"            
+                currpages = "Layanan"                
+            />
+            <div className="w-full h-screen flex items-start sm:flex-col md:flex-row lg:flex-row">
                 {/* left side */}
-                <div className="relative w-[40%] h-full flex flex-col p-20">
-                    <h1 className="font-bold text-4xl">Ceritakan Masalahmu</h1>
-                    <p className="text-lg py-3">
-                        Ceritakan semua masalahmu ke psikolog, buat dirimu lega
-                        dan temukan solusi atas permasalahanmu
-                    </p>
-                    {/* ConsultationImage */}
-                    <div className="py-5 flex justify-center">
-                        <img
-                            className="w-[423px] h-[350px] py-4"
-                            src="images/layananImage.png"
-                        />
-                    </div>
-
-                    <h2 className="font-semibold text-xl py-5">
-                        Mengapa konsultasi di website ini?
-                    </h2>
-                    <p className="py-1">
-                        1. Psikolog terbaik siap mendengar dan membantu
-                        mendengarkan permasalahanmu
-                    </p>
-                    <p className="py-1">
-                        2. Dapatkan ketenangan dan solusi atas permasahanmu
-                    </p>
-                    <p className="py-1">
-                        3. Semua cerita dan permasahanmu terjamin kerahasiaannya
-                    </p>
-                </div>
+                <LeftSideLayanan />
                 {/* right side */}
-                <div className="w-[60%] h-full bg-white p-10">
-                    <div className="w-full flex flex-col pt-8 mt-2">
+                <div
+                    className=" w-full 
+                                sm:w-full 
+                                md:w-[100%]                        
+                                lg:w-[60%]
+                                h-full bg-white p-10 lg:pr-32 md:pr-16 md:pl-16
+                                flex flex-col"
+                >
+                    <div className="w-full flex flex-col pt-4 md:pt-8 lg:pt-8 mt-2">
                         <h2 className="font-bold text-2xl pb-6">
                             Layanan Konsultasi
                         </h2>
-                        <div className="w-full h-[700px] shadow-xl border bg-disabledBackground mx-auto">
-                            <div className="pt-20 p-5">
-                                <h3 className="font-semibold text-lg">
-                                    Ayo pilih layanan konsultasimu
-                                </h3>
-                                <p className="text-md">
-                                    Sesuaikan layanan konsultasi dengan
-                                    kebutuhanmu
-                                </p>
-                            </div>
-
-                            <div className="grid md:grid-cols-2 p-5 gap-5">
-                                <div className="card w-90 bg-base-100 shadow-xl border border-gray-100 cursor-pointer transition duration-300 ease-in-out hover:shadow-2xl">
-                                    <div className="card-body">
-                                        <h2 className="card-title">
-                                            Tatap Muka
-                                        </h2>
-                                    </div>
-                                    <figure>
-                                        <img
-                                            className="pb-6"
-                                            src="/images/TatapMuka.png"
-                                        />
-                                    </figure>
+                        <div className="pb-10">
+                            <div className="w-full shadow-xl border bg-disabledBackground mx-auto md:my-auto pb-5 md:pb-20 lg:pb-20">
+                                {/* h-[700px] */}
+                                <div className="pt-10 md:pt-20 lg:pt-20 p-5">
+                                    <h3 className="font-semibold text-lg2">
+                                        Ayo pilih layanan konsultasimu
+                                    </h3>
+                                    <p className="text-md2">
+                                        Sesuaikan layanan konsultasi dengan
+                                        kebutuhanmu
+                                    </p>
                                 </div>
-                                <div className="card w-90 bg-base-100 shadow-xl border border-gray-100 cursor-pointer transition duration-300 ease-in-out hover:shadow-2xl">
-                                    <div className="card-body">
-                                        <h2 className="card-title">
-                                            Video Call
-                                        </h2>
-                                    </div>
-                                    <figure>
-                                        <img
-                                            className="pb-6"
-                                            src="/images/VideoCall.png"
-                                        />
-                                    </figure>
-                                </div>
+                                <CardsLayanan />
                             </div>
                         </div>
                     </div>
