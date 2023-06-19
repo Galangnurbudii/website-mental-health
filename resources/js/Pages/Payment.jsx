@@ -18,11 +18,7 @@ export default function Layanan() {
 
     return (
         <div className="overflow-x-hidden">
-            <NavBar />
-            <Header 
-                pages2 = "Konsultasi"
-                currpages2 = "Layanan"
-                currpages = "Detail"/>
+            <NavBar />            
             <div className="w-full flex items-start flex-col sm:flex-col md:flex-row lg:flex-row">
                 <DetailPsikolog 
                     badge1 = "5 Tahun"
@@ -42,7 +38,7 @@ export default function Layanan() {
                     <div className="w-full flex flex-col pt-4 md:pt-8 lg:pt-12 mt-2">
                         <h2 className="font-bold text-2xl pb-6">Rincian Pembayaran</h2>
                         <div className="pb-10">
-                            <div className="w-full shadow-xl border bg-disabledBackground mx-auto my-auto 
+                            <div className="w-full shadow-xl border rounded-lg bg-disabledBackground mx-auto my-auto 
                                             md:pb-5 
                                             xs:p-5
                                             sm:p-5
@@ -76,7 +72,7 @@ export default function Layanan() {
                                 <div className="border border-gray-100 card lg:card-side bg-base-100 shadow-sm rounded-sm overflow-x-auto">
                                     <div className="card-body flex flex-row xl:px-10 lg:px-4 md:px-10 sm:px-10 xs:px-4">
                                         {/* "Pakai" Button */}
-                                        <input type="text" placeholder="Promo" className="input input-bordered w-full max-w-md h-[34px]" />                                        
+                                        <input type="text" placeholder="Promo" className="input input-bordered w-full max-w-lg h-[34px]" />                                        
                                         <CouponButton
                                             className="h-0"
                                             onClick={handleClick2}>

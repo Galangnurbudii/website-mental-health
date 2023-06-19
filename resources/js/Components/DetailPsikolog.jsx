@@ -10,13 +10,13 @@ export default function DetailPsikolog({ className = "", disabled, ...props }){
                         lg:pl-32 lg:pr-10 md:pl-16 p-6
                         xs:w-full
                         sm:w-full flex
-                        md:w-[50%] 
+                        md:w-[50%]
                         lg:w-[50%]
                         xl:w-[40%]">
             
             <h2 className="font-bold text-2xl pb-6">Detail Psikolog</h2>
             {/* Cards */}
-            <div className="flex sm:items-center">
+            <div className="flex sm:items-center pb-10">
             
             <div className="w-full shadow-xl border bg-white mx-auto my-auto rounded-lg">
                 <figure className="px-6 sm:px-8 md:px-8 lg:px-8 py-5 flex justify-center"><img src="/images/caraKonseling1.jpg" alt="Shoes" /></figure>
