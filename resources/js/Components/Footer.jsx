@@ -1,9 +1,9 @@
-import React from "react";
-import { FaFacebookSquare, FaInstagram, FaTwitterSquare } from "react-icons/fa";
+import React from 'react'
+import { FaFacebookSquare, FaInstagram, FaTwitterSquare } from 'react-icons/fa'
 
 function Footer() {
     return (
-        <footer className="bg-primary pt-10 pb-6">
+        <footer className="bg-footer pt-10 pb-6">
             <div className="flex flex-wrap sm:flex-row-wrap mx-auto">
                 <div className="mb-8 sm:mb-0 w-full px-4 md:pl-16 font-medium text-putih md:w-1/5">
                     <h2 className="mb-3 text-3xl font-bold text-putih">
@@ -131,7 +131,7 @@ function Footer() {
                 </p>
             </div>
         </footer>
-    );
+    )
 }
 
-export default Footer;
+export default Footer
