@@ -1,7 +1,5 @@
-
 import Footer from "@/Components/Footer";
-import { Link } from "@inertiajs/react";
-import NavBarUser from "@/Components/NavBarUser";
+import NavBar from "@/Components/NavBar";
 import Header from "@/Components/Header";
 import LeftSideLayanan from "@/Components/LeftSideLayanan";
 import CardsLayanan from "@/Components/CardsLayanan";
@@ -9,12 +7,12 @@ import CardsLayanan from "@/Components/CardsLayanan";
 export default function Layanan() {
     return (
         <div className="overflow-x-hidden">
-            <NavBarUser />
+            <NavBar/>
             <Header 
                 pages = "Konsultasi"            
                 currpages = "Layanan"                
             />
-            <div className="w-full h-screen flex items-start sm:flex-col md:flex-row lg:flex-row">
+            <div className="w-full flex items-start sm:flex-col md:flex-row lg:flex-row">
                 {/* left side */}
                 <LeftSideLayanan />
                 {/* right side */}
@@ -42,13 +40,16 @@ export default function Layanan() {
                                         kebutuhanmu
                                     </p>
                                 </div>
-                                <CardsLayanan />
+                                <CardsLayanan/>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            {/* <Footer /> */}
+            <div>
+                <Footer />
+            </div>
+            
         </div>
     );
 }
