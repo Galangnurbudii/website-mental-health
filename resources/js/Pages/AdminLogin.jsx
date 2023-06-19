@@ -7,7 +7,7 @@ import PrimaryButton from "@/Components/PrimaryButton";
 import TextInput from "@/Components/TextInput";
 import { Head, Link, useForm } from "@inertiajs/react";
 
-export default function Login({ status, canResetPassword }) {
+export default function AdminLogin({ status1, canResetPassword1 }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         name: "",
         email: "",
@@ -31,9 +31,9 @@ export default function Login({ status, canResetPassword }) {
         <GuestLayout>
             <Head title="Log in" />
 
-            {status && (
+            {status1 && (
                 <div className="mb-4 font-medium text-sm text-green-600">
-                    {status}
+                    {status1}
                 </div>
             )}
 
@@ -59,8 +59,8 @@ export default function Login({ status, canResetPassword }) {
                     {/* right side */}
                     <div className="md:w-3/4
                                     lg:w-1/2 h-full
-                                    md:p-32 lg:p-32 
-                                    flex flex-col justify-between items-center p-10 bg-black">
+                                    p-10 md:p-26 lg:p-6 xl:p-10 2xl:p-32
+                                    flex flex-col justify-between items-center bg-black">
                         <div className="w-full flex flex-col 
                                         max-w-[715px] 
                                         pt-0 sm:pt-8 sm:px-14 sm:pb-16
@@ -68,23 +68,22 @@ export default function Login({ status, canResetPassword }) {
                             {/* title */}
 
                             <div className="w-full flex flex-col 
-                                            max-w-[500px] sm:pt-10">
+                                            max-w-[500px] 
+                                            sm:pt-10 md:pt-5 lg:pt-10">
                                 {/* text-lg sm:text-xl md:text-2xl lg:text-3xl */}
                                 {/*  className='w-full flex flex-col' */}
                                 <h1 className="text-primary 
-                                                text-2xl 
-                                                sm:text-3xl 
-                                                md:text-3xl 
-                                                lg:text-[48px] font-bold mb-5">
+                                                text-2xl
+                                                lg:text-[48px] font-bold 
+                                                sm:mb-2 lg:mb-5">
                                     Welcome Admin
                                 </h1>
                                 <p className="text-[#333333] 
                                                 text-lg 
-                                                sm:text-xl 
-                                                md:text-2xl 
-                                                lg:text-[24px] 
+                                                sm:text-base 
+                                                md:text-xl
                                                 font-semibold 
-                                                mb-7 pl-1 sm:pb-10">
+                                                lg:mb-7 pl-1 sm:pb-10">
                                     Ready to serve the best services to customer
                                 </p>
                             </div>
@@ -148,12 +147,12 @@ export default function Login({ status, canResetPassword }) {
                                                 )
                                             }
                                         />
-                                        <span className="font-semibold ml-2 text-sm text-gray-600">
+                                        <span className="font-semibold text-sm text-gray-600 ml-2">
                                             Remember Me
                                         </span>
                                     </label>
                                     
-                                    {canResetPassword && (
+                                    {canResetPassword1 || (
                                         <Link
                                             href={route("password.request")}
                                             className="font-semibold text-sm text-primary hover:text-[#2d8efd] rounded-md"
@@ -173,7 +172,7 @@ export default function Login({ status, canResetPassword }) {
                                 </div>
 
                                 <div className="flex justify-center mt-4">
-                                    {canResetPassword && (
+                                    {canResetPassword1 && (
                                         <Link
                                             href={route("register")}
                                             className="font-semibold text-sm text-gray-600 hover:text-gray-900 rounded-md"
