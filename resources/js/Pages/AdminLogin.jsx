@@ -8,6 +8,7 @@ import TextInput from "@/Components/TextInput";
 import { Head, Link, useForm } from "@inertiajs/react";
 
 export default function AdminLogin({ status1, canResetPassword1 }) {
+
     const { data, setData, post, processing, errors, reset } = useForm({
         name: "",
         email: "",
@@ -34,6 +35,7 @@ export default function AdminLogin({ status1, canResetPassword1 }) {
             {status1 && (
                 <div className="mb-4 font-medium text-sm text-green-600">
                     {status1}
+
                 </div>
             )}
 
@@ -76,6 +78,7 @@ export default function AdminLogin({ status1, canResetPassword1 }) {
                                                 text-2xl
                                                 lg:text-[48px] font-bold 
                                                 sm:mb-2 lg:mb-5">
+
                                     Welcome Admin
                                 </h1>
                                 <p className="text-[#333333] 
@@ -84,6 +87,7 @@ export default function AdminLogin({ status1, canResetPassword1 }) {
                                                 md:text-xl
                                                 font-semibold 
                                                 lg:mb-7 pl-1 sm:pb-10">
+
                                     Ready to serve the best services to customer
                                 </p>
                             </div>
@@ -136,6 +140,7 @@ export default function AdminLogin({ status1, canResetPassword1 }) {
                                 </div>
                                 {/* max-w-[1240px] mx-auto grid lg:grid-cols-3 */}
                                 <div className="mb-10 flex justify-between">
+
                                     <label className="flex items-center">
                                         <Checkbox
                                             name="remember"
@@ -147,12 +152,14 @@ export default function AdminLogin({ status1, canResetPassword1 }) {
                                                 )
                                             }
                                         />
+ MHW-74-Design-Login-Page-Interface-for-Psychologists-and-Administrators
                                         <span className="font-semibold text-sm text-gray-600 ml-2">
                                             Remember Me
                                         </span>
                                     </label>
                                     
                                     {canResetPassword1 || (
+
                                         <Link
                                             href={route("password.request")}
                                             className="font-semibold text-sm text-primary hover:text-[#2d8efd] rounded-md"
@@ -173,6 +180,7 @@ export default function AdminLogin({ status1, canResetPassword1 }) {
 
                                 <div className="flex justify-center mt-4">
                                     {canResetPassword1 && (
+
                                         <Link
                                             href={route("register")}
                                             className="font-semibold text-sm text-gray-600 hover:text-gray-900 rounded-md"
