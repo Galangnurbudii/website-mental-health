@@ -39,6 +39,10 @@ Route::get('/forumHome', function () {
     return Inertia::render('ForumHome');
 })->name('forumHome');
 
+Route::get('/forum', function () {
+    return Inertia::render('Forum');
+})->name('forum');
+
 Route::get('/layanan', function () {
     return Inertia::render('Layanan');
 })->name('layanan');
@@ -46,7 +50,6 @@ Route::get('/layanan', function () {
 Route::get('/konsultasi', function () {
     return Inertia::render('Konsultasi');
 })->name('konsultasi');
-
 
 Route::get('/detaillayanan', function () {
     return Inertia::render('DetailLayanan');
@@ -62,6 +65,24 @@ Route::get('/profil', function () {
     return Inertia::render('Profil');
 })->name('profil');
 
+<<<<<<< HEAD
+=======
+Route::get('/adminlogin', function () {
+    return Inertia::render('AdminLogin');
+})->name('adminlogin');
+
+
+Route::get('/psikologlogin', function () {
+    return Inertia::render('PsikologLogin');
+})->name('psikologlogin');
+
+Route::get('/dashboardadmin', function () {
+    return Inertia::render('DashboardAdmin');
+})->name('dashboardadmin');
+
+
+
+>>>>>>> bbafbe83cfdd7bf866247429f6b60e9139bec567
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
