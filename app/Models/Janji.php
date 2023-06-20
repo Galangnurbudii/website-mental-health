@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User;
 
 class Janji extends Model
 {
@@ -12,7 +13,7 @@ class Janji extends Model
 
     protected $fillable = [
         'id_psikolog',
-        'id_pengguna',
+        'id_user',
         'tanggal',
         'jam',
     ];
@@ -24,8 +25,8 @@ class Janji extends Model
         return $this->belongsTo(Psikolog::class, 'id_psikolog');
     }
 
-    public function pengguna()
+    public function user()
     {
-        return $this->belongsTo(Pengguna::class, 'id_pengguna');
+        return $this->belongsTo(User::class, 'id_user');
     }
 }

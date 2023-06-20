@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\ForumController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -35,9 +36,7 @@ Route::get('/article', [ArtikelController::class, 'index'])->name('article');
 
 Route::get('/articleDetail/{id}', [ArtikelController::class, 'detail'])->name('articleDetail');
 
-Route::get('/forumHome', function () {
-    return Inertia::render('ForumHome');
-})->name('forumHome');
+Route::get('/forumHome', [ForumController::class,'index'])->name('forumHome');
 
 Route::get('/forum', function () {
     return Inertia::render('Forum');
