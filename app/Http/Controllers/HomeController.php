@@ -11,8 +11,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $articles = Artikel::all()->random(3);
-        $quote = Quote::all()->random(1);
+        $articles = Artikel::inRandomOrder()->limit(3)->get();
+        $quote = Quote::inRandomOrder()->first();
         return Inertia::render('Home', ['articles' => $articles, 'quote' => $quote]);
     }
 }

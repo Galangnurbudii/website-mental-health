@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -30,13 +31,9 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/article', function () {
-    return Inertia::render('Article');
-})->name('article');
+Route::get('/article', [ArtikelController::class, 'index'])->name('article');
 
-Route::get('/articleDetail', function () {
-    return Inertia::render('ArticleDetail');
-})->name('articleDetail');
+Route::get('/articleDetail/{id}', [ArtikelController::class, 'detail'])->name('articleDetail');
 
 Route::get('/forumHome', function () {
     return Inertia::render('ForumHome');
@@ -55,7 +52,7 @@ Route::get('/detaillayanan', function () {
     return Inertia::render('DetailLayanan');
 })->name('detaillayanan');
 
-Route::get('/home', [HomeController::class,'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/coba', function () {
     return Inertia::render('Coba');
@@ -65,11 +62,10 @@ Route::get('/profil', function () {
     return Inertia::render('Profil');
 })->name('profil');
 
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
