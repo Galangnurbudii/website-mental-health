@@ -7,6 +7,8 @@ import DetailPsikolog from "@/Components/DetailPsikolog";
 import DetailPayment from "@/Components/DetailPayment";
 import Header from "@/Components/Header";
 import CouponButton from "@/Components/CouponButton";
+import PrimaryButton from "@/Components/PrimaryButton";
+import Popup from "@/Components/Popup";
 
 export default function Layanan() {
     
@@ -43,8 +45,8 @@ export default function Layanan() {
                                             xs:p-5
                                             sm:p-5
                                             md:p-5
-                                            lg:p-10">
-
+                                            lg:p-10 lg:py-20"> 
+                                            {/* lg:p-10 */}
                                
                                 <DetailPayment
                                                 imageSrc="../images/doctorImage.png"
@@ -81,10 +83,10 @@ export default function Layanan() {
                                     </div>     
                       
                                 </div>
-                            </div>
-                                
+                            </div>                            
 
                             </div>
+                            <Popup/>                          
                         </div>
                     </div>
                 </div>
