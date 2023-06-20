@@ -65,8 +65,6 @@ Route::get('/profil', function () {
     return Inertia::render('Profil');
 })->name('profil');
 
-<<<<<<< HEAD
-=======
 Route::get('/adminlogin', function () {
     return Inertia::render('AdminLogin');
 })->name('adminlogin');
@@ -82,7 +80,6 @@ Route::get('/dashboardadmin', function () {
 
 
 
->>>>>>> bbafbe83cfdd7bf866247429f6b60e9139bec567
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
