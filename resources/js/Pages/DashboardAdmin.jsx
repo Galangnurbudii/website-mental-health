@@ -1,15 +1,13 @@
 import Footer from "@/Components/Footer1";
-import NavBar from "@/Components/NavBar";
+import NavBarAdmin from "@/Components/NavBarAdmin";
 import React from "react";
 
 export default function DashboardAdmin() {
     return (
         <>
-            <NavBar />
+            <NavBarAdmin />
 
-            <div>
-                A
-            </div>
+            
 
             <Footer />
         </>
