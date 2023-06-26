@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\ForumController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -29,17 +32,11 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/article', function () {
-    return Inertia::render('Article');
-})->name('article');
+Route::get('/article', [ArtikelController::class, 'index'])->name('article');
 
-Route::get('/articleDetail', function () {
-    return Inertia::render('ArticleDetail');
-})->name('articleDetail');
+Route::get('/articleDetail/{id}', [ArtikelController::class, 'detail'])->name('articleDetail');
 
-Route::get('/forumHome', function () {
-    return Inertia::render('ForumHome');
-})->name('forumHome');
+Route::get('/forumHome', [ForumController::class,'index'])->name('forumHome');
 
 Route::get('/forum', function () {
     return Inertia::render('Forum');
@@ -57,9 +54,7 @@ Route::get('/detaillayanan', function () {
     return Inertia::render('DetailLayanan');
 })->name('detaillayanan');
 
-Route::get('/home', function () {
-    return Inertia::render('Home');
-})->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/coba', function () {
     return Inertia::render('Coba');
