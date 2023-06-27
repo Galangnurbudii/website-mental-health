@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\ForumController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -29,17 +32,15 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/article', function () {
-    return Inertia::render('Article');
-})->name('article');
+Route::get('/article', [ArtikelController::class, 'index'])->name('article');
 
-Route::get('/articleDetail', function () {
-    return Inertia::render('ArticleDetail');
-})->name('articleDetail');
+Route::get('/articleDetail/{id}', [ArtikelController::class, 'detail'])->name('articleDetail');
 
-Route::get('/forumHome', function () {
-    return Inertia::render('ForumHome');
-})->name('forumHome');
+Route::get('/forumHome', [ForumController::class,'index'])->name('forumHome');
+
+Route::get('/forum', function () {
+    return Inertia::render('Forum');
+})->name('forum');
 
 Route::get('/layanan', function () {
     return Inertia::render('Layanan');
@@ -49,14 +50,17 @@ Route::get('/konsultasi', function () {
     return Inertia::render('Konsultasi');
 })->name('konsultasi');
 
-
 Route::get('/detaillayanan', function () {
     return Inertia::render('DetailLayanan');
 })->name('detaillayanan');
 
-Route::get('/home', function () {
-    return Inertia::render('Home');
-})->name('home');
+
+Route::get('/payment', function () {
+    return Inertia::render('Payment');
+})->name('payment');
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
 
 Route::get('/coba', function () {
     return Inertia::render('Coba');
@@ -66,6 +70,20 @@ Route::get('/profil', function () {
     return Inertia::render('Profil');
 })->name('profil');
 
+Route::get('/adminlogin', function () {
+    return Inertia::render('AdminLogin');
+})->name('adminlogin');
+
+
+Route::get('/psikologlogin', function () {
+    return Inertia::render('PsikologLogin');
+})->name('psikologlogin');
+
+Route::get('/dashboardadmin', function () {
+    return Inertia::render('DashboardAdmin');
+})->name('dashboardadmin');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -73,4 +91,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

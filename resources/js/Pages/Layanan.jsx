@@ -29,7 +29,7 @@ export default function Layanan() {
                             Layanan Konsultasi
                         </h2>
                         <div className="pb-10">
-                            <div className="w-full shadow-xl border bg-disabledBackground mx-auto md:my-auto pb-5 md:pb-20 lg:pb-20">
+                            <div className="w-full shadow-xl rounded-lg border bg-disabledBackground mx-auto md:my-auto pb-5 md:pb-20 lg:pb-20">
                                 {/* h-[700px] */}
                                 <div className="pt-10 md:pt-20 lg:pt-20 p-5">
                                     <h3 className="font-semibold text-lg2">

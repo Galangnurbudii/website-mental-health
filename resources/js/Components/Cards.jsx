@@ -2,7 +2,7 @@ import NumberBox from "./NumberBox";
 
 export default function Cards({ className = "", disabled, ...props }) {
     return (
-        <div className="overflow-x-auto scrollbar">        
+        <div className="overflow-x-auto">        
         <div
             className="
             grid mx-auto gap-6 pb-10 
@@ -13,7 +13,7 @@ export default function Cards({ className = "", disabled, ...props }) {
                     md:px-16
                     lg:px-32"
         >
-            <div className="card w-100 h-[480px] bg-base-100 shadow-xl border border-gray-300">
+            <div className="carousel flex-col rounded-box w-100 h-[480px] bg-base-100 shadow-xl border border-gray-300">
                 <figure className="bg-counselingBackground">
                     <img src="images/CaraKonseling1.jpg" />
                 </figure>
@@ -27,7 +27,7 @@ export default function Cards({ className = "", disabled, ...props }) {
                     <p className="pb-6">{props.desc1}</p>
                 </div>
             </div>
-            <div className="card w-100 h-[480px] bg-base-100 shadow-xl border border-gray-300">
+            <div className="carousel flex-col rounded-box g w-100 h-[480px] bg-base-100 shadow-xl border border-gray-300">
                 <figure className="bg-counselingBackground">
                     <img src="images/CaraKonseling2.jpg" />
                 </figure>
@@ -41,7 +41,7 @@ export default function Cards({ className = "", disabled, ...props }) {
                     <p className="pb-6">{props.desc2}</p>
                 </div>
             </div>
-            <div className="card w-100 h-[480px] bg-base-100 shadow-xl border border-gray-300">
+            <div className="carousel flex-col rounded-box w-100 h-[480px] bg-base-100 shadow-xl border border-gray-300">
                 <figure className="bg-counselingBackground">
                     <img src="images/CaraKonseling3.png" />
                 </figure>
