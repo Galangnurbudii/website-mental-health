@@ -51,7 +51,7 @@ export default function Layanan() {
                     <div className="w-full flex flex-col pt-4 md:pt-8 lg:pt-12 mt-2">
                         <h2 className="font-bold text-2xl pb-6">Detail Layanan</h2>
                         <div className="pb-10">
-                            <div className="p-5 w-full shadow-xl border bg-disabledBackground mx-auto my-auto md:pb-5 lg:pb-5">
+                            <div className="p-5 w-full rounded-lg shadow-xl border bg-disabledBackground mx-auto my-auto md:pb-5 lg:pb-5">
 
                                 {/* Dividing Section */}
                                 <div>
