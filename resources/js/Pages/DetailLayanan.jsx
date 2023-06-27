@@ -57,7 +57,7 @@ export default function Layanan() {
                                 <div>
                                     {showContent ? (
                                         // Section 2
-                                        <div className="pt-5 grid md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-1 px-3 pb-5">
+                                        <div className="pt-5 grid md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-1 px-3 pb-5 gap-2">
                                             <CardsDetail
                                                 imageSrc="../images/doctorImage.png"
                                                 names="Putu Agus Parimartha"
@@ -142,7 +142,7 @@ export default function Layanan() {
                                                         <p className="text-disabled font-semibold">16:00</p>
                                                     </div>
                                                     <div
-                                                        className={`cursor-pointer badge badge-outline py-4 px-4 rounded-md border border-[#d8dbe1] bg-white hover:bg-gray-300 ${
+                                                        className={`cursor-pointer badge badge-outline py-4 px-4 rounded-md border border-[#d8dbe1] bg-white hover:bg-gray-300 focus:outline-none ${
                                                             activeIndex === 4
                                                                 ? "bg-gray-300"
                                                                 : ""

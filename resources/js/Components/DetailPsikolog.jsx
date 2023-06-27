@@ -19,7 +19,7 @@ export default function DetailPsikolog({ className = "", disabled, ...props }){
             <div className="flex sm:items-center pb-10">
             
             <div className="w-full shadow-xl border bg-white mx-auto my-auto rounded-lg">
-                <figure className="px-6 sm:px-8 md:px-8 lg:px-8 py-5 flex justify-center"><img src="/images/caraKonseling1.jpg" alt="Shoes" /></figure>
+                <figure className="px-6 sm:px-8 md:px-8 lg:px-8 py-5 flex justify-center"><img src="/images/detailPsikolog.jpg" alt="" /></figure>
                 <div className="pl-6 sm:pl-8 md:pl-8 lg:pl-8 pb-4">
                     <h2 className="font-bold text-xl pb-0">Nathalia Chandra</h2>
                     <p className="text-disabled font-bold">Psikolog</p>

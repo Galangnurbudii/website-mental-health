@@ -42,6 +42,7 @@ module.exports = {
                 xs: "320px",
             },
 
+
         },
     },
 
@@ -49,5 +50,7 @@ module.exports = {
         themes: false,
     },
 
-    plugins: [require("@tailwindcss/forms"), require("daisyui")],
+    plugins: [
+        require("@tailwindcss/forms"), 
+        require("daisyui")],
 };

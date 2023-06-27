@@ -1,5 +1,7 @@
 import { FaStar, FaRegCalendarAlt } from "react-icons/fa";
 import BackUpButton from "@/Components/BackUpButton";
+import { Link } from "@inertiajs/react";
+import PrimaryButton from "./PrimaryButton";
 
 export default function CardsDetail({ className = "", disabled, ...props }) {
     return (
@@ -43,7 +45,12 @@ export default function CardsDetail({ className = "", disabled, ...props }) {
                 </div>
                 <div className="flex justify-between">
                     <h1 className="font-bold text-md lg:pt-0 md:pt-0 sm:pt-0 pt-1 sm:text-base md:text-base lg:text-base">{props.fee}</h1>
-                    <BackUpButton className="h-0 text-xs lg:text-xs md:text-md sm:text-md">Konsultasi</BackUpButton>
+                    <Link href={route("payment")}>
+                        <BackUpButton className="h-0 text-xs lg:text-xs md:text-md sm:text-md">
+                            Konsultasi
+                        </BackUpButton>
+                    </Link>
+                    
                 </div>
             </div>
         </div>
