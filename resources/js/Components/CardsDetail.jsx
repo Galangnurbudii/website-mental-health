@@ -3,9 +3,9 @@ import BackUpButton from "@/Components/BackUpButton";
 
 export default function CardsDetail({ className = "", disabled, ...props }) {
     return (
-        <div className="border border-gray-100 card lg:card-side bg-base-100 shadow-sm rounded-sm overflow-x-auto">
+        <div className="border border-gray-100 carousel flex-col lg:card-side bg-base-100 shadow-sm rounded-sm overflow-x-auto">
             {/* Picture */}
-            <div className="pt-9 xl:px-10 lg:px-4 pr-0">
+            <div className="pt-9 xl:px-10 lg:px-4 pr-0 flex justify-center">
                 <figure>
                     <img
                         className="w-40 h-40 lg:w-24 lg:h-24"

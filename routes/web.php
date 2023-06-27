@@ -54,7 +54,13 @@ Route::get('/detaillayanan', function () {
     return Inertia::render('DetailLayanan');
 })->name('detaillayanan');
 
+
+Route::get('/payment', function () {
+    return Inertia::render('Payment');
+})->name('payment');
+
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
 
 Route::get('/coba', function () {
     return Inertia::render('Coba');
