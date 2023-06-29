@@ -1,8 +1,16 @@
-import React from "react";
-import Badge from "./Badge";
-import SecondaryButton from "./SecondaryButton";
+import React from 'react'
+import Badge from './Badge'
+import SecondaryButton from './SecondaryButton'
+import dayjs from 'dayjs'
+import 'dayjs/locale/id'
 
-function BigCard() {
+dayjs.locale('id')
+
+function BigCard({ popular }) {
+    const tanggal = dayjs(popular.updated_at).format('D MMMM YYYY')
+
+    const { judul, tag, detail } = popular
+
     return (
         <div className="card w-full bg-putih shadow-xl grid md:grid-cols-2">
             <figure dir="ltr">
@@ -14,22 +22,18 @@ function BigCard() {
             </figure>
             <div className="card-body flex flex-col justify-center md:pl-8 md:gap-6">
                 <h2 className="text-xl md:text-3xl font-semibold text-hitam">
-                    Judul Berita
+                    {judul}
                 </h2>
                 <div className="flex gap-8 md:gap-16">
-                    <Badge titleBadge="Depresi" />
-                    <p className="text-hitam font-bold text-base">3 Mei 2023</p>
+                    <Badge titleBadge={tag} />
+                    <p className="text-hitam font-bold text-base">{tanggal}</p>
                 </div>
 
-                <p className="text-sm lg:text-base md:line-clamp-3">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Fusce non magna vel nulla dignissim tincidunt sit amet eget
-                    metus.
-                </p>
+                <p className="text-sm lg:text-base md:line-clamp-3">{detail}</p>
                 <SecondaryButton>Lanjut Baca</SecondaryButton>
             </div>
         </div>
-    );
+    )
 }
 
-export default BigCard;
+export default BigCard
