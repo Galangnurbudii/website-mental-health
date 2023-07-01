@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 const NavBarAdmin = () => {
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
     const Menus = [
         { title: "Dashboard", src: "bgloginfix" },
         { title: "Artikel", src: "bgregisterfix" },
@@ -10,9 +10,9 @@ const NavBarAdmin = () => {
     ]
     return (
         <>
-            <div className="flex">
+            <div className="absolute">
                 <div className={`${open ? "w-72" : "w-20"} p-5 duration-500 h-screen 
-                            bg-slate-400 relative`}>
+                            bg-slate-400 absolute left-0`}>
                     <img src="https://cdn.icon-icons.com/icons2/2311/PNG/512/previous_arrow_left_icon_141950.png" 
                         alt="" 
                         className={`absolute cursor-pointer rounded-full 
@@ -46,9 +46,7 @@ const NavBarAdmin = () => {
                     </ul>
                 </div>
                 <div className={`${open ? "ml-72" : "ml-20"} duration-500`}>
-                    <div className="p-5">
-                        Home Page
-                    </div>
+                    Home Page
                 </div>
             </div>
         </>
