@@ -152,7 +152,7 @@ export default function AdminLogin({ status1, canResetPassword1 }) {
                                                 )
                                             }
                                         />
- MHW-74-Design-Login-Page-Interface-for-Psychologists-and-Administrators
+
                                         <span className="font-semibold text-sm text-gray-600 ml-2">
                                             Remember Me
                                         </span>
