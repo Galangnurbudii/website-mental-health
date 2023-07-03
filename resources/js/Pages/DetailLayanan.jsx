@@ -90,11 +90,11 @@ export default function DetailLayanan() {
                                         <div className="pt-5 grid md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-1 px-3 pb-5 gap-4">
                                             <CardsDetail 
                                                 imageSrc="../images/doctorImage.png"
-                                                names="{nama}"
+                                                names="Putu Agus Parimartha"
                                                 jobs="Psikolog"
                                                 text="Kesehatan Mental"
                                                 badge1="5 Tahun"
-                                                badge2="{rating}"
+                                                badge2="4.9"
                                                 fee="Rp 800.000"
                                             />
                                             <CardsDetail

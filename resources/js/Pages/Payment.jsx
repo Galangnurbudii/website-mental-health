@@ -93,7 +93,7 @@ export default function Layanan() {
                                                                              
 
                             </div>
-                            <Popup/>                          
+                            <Popup desc = "Silakan lakukan konsultasi sesuai dengan jadwal yang Anda buat."/>                          
                         </div>
                     </div>
                 </div>

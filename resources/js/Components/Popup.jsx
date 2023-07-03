@@ -2,7 +2,7 @@ import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import PrimaryButton from './PrimaryButton'
 
-export default function Popup() {
+export default function Popup({ desc }) {
   let [isOpen, setIsOpen] = useState(false)
 
   function closeModal() {
@@ -43,17 +43,21 @@ export default function Popup() {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-lg bg-white p-6 text-left align-middle shadow-xl transition-all">
+                
+                <Dialog.Panel className="text-center w-full max-w-md transform overflow-hidden rounded-lg bg-white p-6 align-middle shadow-xl transition-all">
+                <div className='flex justify-center py-10'>
+                  <img src="images/approved.png"/>
+                </div>
+                
                   <Dialog.Title
                     as="h3"
-                    className="text-lg font-medium leading-6 text-gray-900"
+                    className="text-lg font-bold leading-6 text-gray-900"
                   >
-                    Payment successful
+                    Pembayaran Anda Berhasil
                   </Dialog.Title>
                   <div className="mt-2">
-                    <p className="text-sm text-gray-500">
-                      Your payment has been successfully submitted. We’ve sent
-                      you an email with all of the details of your order.
+                    <p className="text-sm text-gray-700 font-medium">
+                      {desc}
                     </p>
                   </div>
 
