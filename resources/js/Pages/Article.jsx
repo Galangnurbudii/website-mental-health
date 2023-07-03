@@ -19,7 +19,6 @@ export default function Article({ popular, articles, topik_terkini }) {
     const startIndex = currentPage * itemsPerPage
     const endIndex = startIndex + itemsPerPage
     const currentArticles = articles.slice(startIndex, endIndex)
-
     return (
         <>
             <NavBar />
