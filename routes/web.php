@@ -37,7 +37,7 @@ Route::get('/article', [ArtikelController::class, 'index'])->name('article');
 
 Route::get('/articleDetail/{id}', [ArtikelController::class, 'detail'])->name('articleDetail');
 
-Route::get('/forumHome', [ForumController::class,'index'])->name('forumHome');
+Route::get('/forumHome', [ForumController::class, 'index'])->name('forumHome');
 
 Route::get('/forum', function () {
     return Inertia::render('Forum');
@@ -84,12 +84,7 @@ Route::get('/dashboardadmin', function () {
     return Inertia::render('DashboardAdmin');
 })->name('dashboardadmin');
 
-Route::get('/psikolog', function () {
-    return Inertia::render('test');
-});
-
 Route::resource('psikologs', PsikologController::class);
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
