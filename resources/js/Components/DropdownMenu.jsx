@@ -649,16 +649,17 @@ const kabupatenKota = {
 export default function App() {
   const [selectedProvince, setSelectedProvince] = useState(null);
   const [selectedKabupaten, setSelectedKabupaten] = useState(null);
-  const [provinceError, setProvinceError] = useState('');
-  const [kabupatenError, setKabupatenError] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleProvinceChange = (selectedOption) => {
     setSelectedProvince(selectedOption);
     setSelectedKabupaten(null); // Reset the selected kabupaten when the province changes
+    setErrorMessage("");
   };
 
   const handleKabupatenChange = (selectedOption) => {
     setSelectedKabupaten(selectedOption);
+    setErrorMessage("");
   };
 
   // Filter the options for the kabupaten dropdown based on the selected province
@@ -676,8 +677,6 @@ export default function App() {
         options={provinces}
       />     
 
-        {provinceError && <p className="text-red-500">{provinceError}</p>}
-
       <div className="py-4">
         <Select
           placeholder="Pilih Kabupaten"
@@ -685,8 +684,6 @@ export default function App() {
           onChange={handleKabupatenChange}
           options={filteredKabupatenOptions}
         />
-
-        {kabupatenError && <p className="text-red-500">{kabupatenError}</p>}
 
       </div>
     </div>

@@ -1,7 +1,7 @@
 import Footer from "@/Components/Footer";
 import NavBar from "@/Components/NavBar";
 import BackUpButton from "@/Components/BackUpButton";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import DatePickers from "@/Components/DatePickers";
 import DropdownMenu from "@/Components/DropdownMenu";
@@ -9,24 +9,41 @@ import CardsDetail from "@/Components/CardsDetail";
 import LeftSideLayanan from "@/Components/LeftSideLayanan";
 import Header from "@/Components/Header";
 
-export default function DetailLayanan({ psikolog }) {
+export default function DetailLayanan() {
     
-    const {nama, rating} = psikolog;
+    // const [nama, rating] = psikolog;
 
     // Empty Validation
-    const [provinceError, setProvinceError] = useState('');
-    const [kabupatenError, setKabupatenError] = useState('');    
-
-    const handleKabupatenChange = (selectedOption) => {
-        setSelectedKabupaten(selectedOption);
-        setKabupatenError(''); // Reset kabupaten error when kabupaten changes
+    const [validationErrors, setValidationErrors] = useState({});
+    const handleValidation = (e) => {
+        e.preventDefault();
+    
+        if (!selectedProvince) {
+          setErrorMessage("Please select a province.");
+          return;
+        }
+    
+        if (!selectedKabupaten) {
+          setErrorMessage("Please select a kabupaten.");
+          return;
+        }
+    
+        // Perform the desired action if the dropdowns are valid
+        setValidationErrors(errors);
+        return Object.keys(errors).length === 0;
+        // setShowContent(!showContent);
       };
+
+    const handleClick2 = () => {    
+        setShowContent(!showContent);        
+        
+    };
 
     // Detail Page
     const [showContent, setShowContent] = useState(false);
-    const handleClick2 = () => {        
-        setShowContent(!showContent);
-    };
+    // const handleClick2 = () => {        
+    //     setShowContent(!showContent);
+    // };
 
     // Waktu
     const [activeIndex, setActiveIndex] = useState(null);
@@ -71,13 +88,13 @@ export default function DetailLayanan({ psikolog }) {
                                     {showContent ? (
                                         // Section 2
                                         <div className="pt-5 grid md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-1 px-3 pb-5 gap-4">
-                                            <CardsDetail
+                                            <CardsDetail 
                                                 imageSrc="../images/doctorImage.png"
-                                                names={nama}
+                                                names="{nama}"
                                                 jobs="Psikolog"
                                                 text="Kesehatan Mental"
                                                 badge1="5 Tahun"
-                                                badge2={rating}
+                                                badge2="{rating}"
                                                 fee="Rp 800.000"
                                             />
                                             <CardsDetail
@@ -142,7 +159,7 @@ export default function DetailLayanan({ psikolog }) {
                                             <div>
                                                 <h3 className="pb-4 font-semibold text-xl">Lokasi</h3>
                                             </div>
-                                            <DropdownMenu />
+                                            <DropdownMenu/>
                                             
 
                                             <BackUpButton
