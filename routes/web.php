@@ -4,6 +4,7 @@ use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PsikologController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -83,6 +84,11 @@ Route::get('/dashboardadmin', function () {
     return Inertia::render('DashboardAdmin');
 })->name('dashboardadmin');
 
+Route::get('/psikolog', function () {
+    return Inertia::render('test');
+});
+
+Route::resource('psikologs', PsikologController::class);
 
 
 Route::middleware('auth')->group(function () {
