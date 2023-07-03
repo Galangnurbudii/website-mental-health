@@ -19,14 +19,14 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+// Route::get('/', function () {
+//     return Inertia::render('Welcome', [
+//         'canLogin' => Route::has('login'),
+//         'canRegister' => Route::has('register'),
+//         'laravelVersion' => Application::VERSION,
+//         'phpVersion' => PHP_VERSION,
+//     ]);
+// });
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
@@ -36,7 +36,7 @@ Route::get('/article', [ArtikelController::class, 'index'])->name('article');
 
 Route::get('/articleDetail/{id}', [ArtikelController::class, 'detail'])->name('articleDetail');
 
-Route::get('/forumHome', [ForumController::class,'index'])->name('forumHome');
+Route::get('/forumHome', [ForumController::class, 'index'])->name('forumHome');
 
 Route::get('/forum', function () {
     return Inertia::render('Forum');
@@ -59,7 +59,7 @@ Route::get('/payment', function () {
     return Inertia::render('Payment');
 })->name('payment');
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
 Route::get('/coba', function () {
@@ -83,6 +83,13 @@ Route::get('/dashboardadmin', function () {
     return Inertia::render('DashboardAdmin');
 })->name('dashboardadmin');
 
+Route::get('/profil', function () {
+    return Inertia::render('EditProfile');
+})->name('profil');
+
+Route::get('/error', function () {
+    return Inertia::render('NotFound');
+})->name('notFound');
 
 
 Route::middleware('auth')->group(function () {
