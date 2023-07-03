@@ -8,6 +8,7 @@ export default function Layanan() {
     return (
         <div className="overflow-x-hidden">
             <NavBar/>
+
             <Header 
                 pages = "Konsultasi"            
                 currpages = "Layanan"                
