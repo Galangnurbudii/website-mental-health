@@ -1,9 +1,7 @@
 import { FaStar, FaRegCalendarAlt } from "react-icons/fa";
 import BackUpButton from "@/Components/BackUpButton";
-import { Link } from "@inertiajs/react";
-import PrimaryButton from "./PrimaryButton";
 
-export default function CardsDetail({ imageSrc, names, jobs, text, badge1, badge2, fee }) {
+export default function CardsDetail({ className = "", disabled, ...props }) {
     return (
         <div className="border border-gray-100 carousel flex-col lg:card-side bg-base-100 shadow-sm rounded-sm overflow-x-auto">
             {/* Picture */}
@@ -11,15 +9,15 @@ export default function CardsDetail({ imageSrc, names, jobs, text, badge1, badge
                 <figure>
                     <img
                         className="w-40 h-40 lg:w-24 lg:h-24"
-                        src={imageSrc}
+                        src={props.imageSrc}
                     />
                 </figure>
             </div>
             {/* Information */}
             <div className="card-body pl-4">
-                <h2 className="card-title text-lg">{names}</h2>
-                <p className="font-semibold text-md text-disabled">{jobs}</p>
-                <p className="text-sm">{text}</p>
+                <h2 className="card-title text-lg">{props.names}</h2>
+                <p className="font-semibold text-md text-disabled">{props.jobs}</p>
+                <p className="text-sm">{props.text}</p>
                 {/* Badge */}
                 <div className="pt-0 pb-4 flex flex-row gap-2">
                     <div className="badge badge-outline py-3 rounded-md border border-primary">
@@ -30,7 +28,7 @@ export default function CardsDetail({ imageSrc, names, jobs, text, badge1, badge
                             />
                         </div>
                         <p className="text-primary font-semibold text-xs">
-                            {badge1}
+                            {props.badge1}
                         </p>
                     </div>
                     <div className="badge badge-outline py-3 rounded-md border border-primary">
@@ -39,18 +37,13 @@ export default function CardsDetail({ imageSrc, names, jobs, text, badge1, badge
                             style={{ color: "orange" }} />
                         </div>
                         <p className="text-primary font-semibold text-xs">
-                            {badge2}
+                            {props.badge2}
                         </p>
                     </div>
                 </div>
                 <div className="flex justify-between">
-                    <h1 className="font-bold text-md lg:pt-0 md:pt-0 sm:pt-0 pt-1 sm:text-base md:text-base lg:text-base">{fee}</h1>
-                    <Link href={route("payment")}>
-                        <BackUpButton className="h-0 text-xs lg:text-xs md:text-md sm:text-md">
-                            Konsultasi
-                        </BackUpButton>
-                    </Link>
-                    
+                    <h1 className="font-bold text-md lg:pt-0 md:pt-0 sm:pt-0 pt-1 sm:text-base md:text-base lg:text-base">{props.fee}</h1>
+                    <BackUpButton className="h-0 text-xs lg:text-xs md:text-md sm:text-md">Konsultasi</BackUpButton>
                 </div>
             </div>
         </div>

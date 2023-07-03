@@ -1,54 +1,33 @@
-import React from 'react'
-import Badge from './Badge'
-import dayjs from 'dayjs'
-import 'dayjs/locale/id'
-import { Link } from '@inertiajs/react'
+import React from "react";
+import Badge from "./Badge";
 
-dayjs.locale('id')
-const gambar = ['Gambar1.png', 'Gambar2.png', 'Gambar3.png']
-
-function getRandomImage() {
-    const randomIndex = Math.floor(Math.random() * gambar.length)
-    return gambar[randomIndex]
-}
-
-function ArticleCard({ article }) {
-    const { id, judul, tag, updated_at, detail } = article
-
-    const tanggal = dayjs(updated_at).format('D MMMM YYYY')
-
-    const randomImage = getRandomImage()
-
+function ArticleCard() {
     return (
         <div className="card w-full md:w-96 bg-putih shadow-xl">
             <figure className="md:h-2/4">
-                <Link href={`/articleDetail/${id}`}>
-                    <img
-                        src={`images/${randomImage}`}
-                        alt="Foto Berita"
-                        className="w-full h-full"
-                    />
-                </Link>
+                <img
+                    src="images/Gambar1.png"
+                    alt="Foto Berita"
+                    className="w-full h-full"
+                />
             </figure>
             <div className="card-body">
                 <h2 className="text-xl font-semibold text-hitam">
-                    <Link
-                        href={`/articleDetail/${id}`}
-                        className="text-xl font-semibold text-hitam"
-                    >
-                        {judul}
-                    </Link>
+                    Judul Berita
                 </h2>
                 <div className="flex gap-8 md:gap-16">
-                    <Badge titleBadge={tag} />
-                    <p className="text-hitam font-bold text-base">{tanggal}</p>
+                    <Badge titleBadge="Depresi" />
+                    <p className="text-hitam font-bold text-base">3 Mei 2023</p>
                 </div>
+
                 <p className="text-sm md:text-base">
-                    {detail.split('.').slice(0, 2).join('. ')}
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Fusce non magna vel nulla dignissim tincidunt sit amet eget
+                    metus.
                 </p>
             </div>
         </div>
-    )
+    );
 }
 
-export default ArticleCard
+export default ArticleCard;
