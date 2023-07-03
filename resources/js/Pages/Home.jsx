@@ -1,13 +1,13 @@
-import Footer from '@/Components/Footer'
-import ForumHero from '@/Components/ForumHero'
-import Hero from '@/Components/Hero'
-import NavBar from '@/Components/NavBar'
-import Quote from '@/Components/Quote'
-import React from 'react'
-import CardsCarousel from '@/Components/CardsCarousel'
-import ArticleCard from '@/Components/ArticleCard'
+import Footer from "@/Components/Footer";
+import ForumHero from "@/Components/ForumHero";
+import Hero from "@/Components/Hero";
+import NavBar from "@/Components/NavBar";
+import Quote from "@/Components/Quote";
+import React from "react";
+import CardsCarousel from "@/Components/CardsCarousel";
+import ArticleCard from "@/Components/ArticleCard";
 
-export default function Home({ articles, quote }) {
+export default function Home() {
     return (
         <div>
             <NavBar />
@@ -19,14 +19,14 @@ export default function Home({ articles, quote }) {
                         Artikel Lainnya
                     </h1>
                     <div className="flex justify-center flex-col md:flex-row md:flex-wrap md:items-stretch items-center gap-6">
-                        {articles.map((article) => (
-                            <ArticleCard key={article.id} article={article} />
-                        ))}
+                        <ArticleCard />
+                        <ArticleCard />
+                        <ArticleCard />
                     </div>
                 </div>
 
                 <ForumHero />
-                <Quote quote={quote} />
+                <Quote />
                 <div className="p-6 md:px-16 lg:px-32 bg-hoverBackground">
                     <h1 className="font-bold text-2xl md:text-4xl text-hitam py-6 md:py-10">
                         Cerita Mereka
@@ -40,5 +40,5 @@ export default function Home({ articles, quote }) {
             </div>
             <Footer />
         </div>
-    )
+    );
 }
