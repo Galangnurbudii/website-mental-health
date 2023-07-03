@@ -7,9 +7,6 @@ import DetailPsikolog from "@/Components/DetailPsikolog";
 import DetailPayment from "@/Components/DetailPayment";
 import Header from "@/Components/Header";
 import CouponButton from "@/Components/CouponButton";
-import PrimaryButton from "@/Components/PrimaryButton";
-import Popup from "@/Components/Popup";
-import SelectBox from "@/Components/SelectBox";
 
 export default function Layanan() {
     
@@ -46,8 +43,8 @@ export default function Layanan() {
                                             xs:p-5
                                             sm:p-5
                                             md:p-5
-                                            lg:p-10 lg:py-20"> 
-                                            {/* lg:p-10 */}
+                                            lg:p-10">
+
                                
                                 <DetailPayment
                                                 imageSrc="../images/doctorImage.png"
@@ -71,29 +68,23 @@ export default function Layanan() {
                                 </div>
                             </div>
 
-                            <div className="pt-5">
+                            <div className="py-5">
                                 <div className="border border-gray-100 card lg:card-side bg-base-100 shadow-sm rounded-sm overflow-x-auto">
                                     <div className="card-body flex flex-row xl:px-10 lg:px-4 md:px-10 sm:px-10 xs:px-4">
                                         {/* "Pakai" Button */}
-                                        <input type="text" placeholder="Promo" className="input input-bordered w-full max-w-lg h-[34px] focus:outline-none" />                                        
+                                        <input type="text" placeholder="Promo" className="input input-bordered w-full max-w-lg h-[34px]" />                                        
                                         <CouponButton
                                             className="h-0"
                                             onClick={handleClick2}>
                                             Pakai
                                         </CouponButton>     
                                     </div>     
+                      
                                 </div>
-                            </div>    
-                            
-                            <div className="py-5">
-                                <div className="border border-gray-100 card lg:card-side bg-base-100 shadow-sm rounded-sm overflow-x-auto">
-                                     <SelectBox />
-                                </div>
-                            </div>     
-                                                                             
+                            </div>
+                                
 
                             </div>
-                            <Popup desc = "Silakan lakukan konsultasi sesuai dengan jadwal yang Anda buat."/>                          
                         </div>
                     </div>
                 </div>
