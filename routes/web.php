@@ -83,6 +83,13 @@ Route::get('/dashboardadmin', function () {
     return Inertia::render('DashboardAdmin');
 })->name('dashboardadmin');
 
+Route::get('/profil', function () {
+    return Inertia::render('EditProfile');
+})->name('profil');
+
+Route::get('/error', function () {
+    return Inertia::render('NotFound');
+})->name('notFound');
 
 
 Route::middleware('auth')->group(function () {
