@@ -26,8 +26,10 @@ class PsikologFactory extends Factory
             'rating' => $faker->randomFloat(2, 1, 5),
             'bidang_keahlian' => $faker->text(20),
             'tahun_pengalaman' => $faker->numberBetween(1, 15),
-            'nomor_str' => $faker-> numberBetween(1000000, 9999999),
-            'lokasi_praktik' => $faker->address,
+            'nomor_str' => $faker->numberBetween(1000000, 9999999),
+            'negara' => $faker->country,
+            'provinsi' => $faker->city,
+            'kota' => $faker->city,
             'lulusan' => $faker->sentence
         ];
     }
