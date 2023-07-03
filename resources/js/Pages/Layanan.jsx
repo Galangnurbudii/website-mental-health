@@ -7,7 +7,7 @@ import CardsLayanan from '@/Components/CardsLayanan'
 export default function Layanan() {
     return (
         <div className="overflow-x-hidden">
-            <NavBar />
+            <NavBarUser />
             <Header 
                 pages = "Konsultasi"            
                 currpages = "Layanan"                
