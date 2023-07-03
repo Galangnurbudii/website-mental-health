@@ -10,15 +10,15 @@ export default function SelectBox() {
     setSelectedOption(event.target.value);
   }
 
-  // let imageSrc = '';
+  let imageSrc = '';
 
-  // if (selectedOption === 'Option 1') {
-  //   imageSrc = 'BNI.jpg';
-  // } else if (selectedOption === 'Option 2') {
-  //   imageSrc = 'BRI.jpg';
-  // }else{
-  //   imageSrc = 'BCA.png'
-  // }
+  if (selectedOption === 'Bank BCA') {
+    imageSrc = 'images/BNI.jpg';
+  } else if (selectedOption === 'Bank BRI') {
+    imageSrc = 'images/BRI.png';
+  }else if (selectedOption === 'Bank BNI'){
+    imageSrc = 'images/BCA.png'
+  }
 
   return (
     <div className="w-full xl:px-10 lg:px-4 md:px-10 sm:px-10 xs:px-4">
@@ -26,14 +26,20 @@ export default function SelectBox() {
         <Disclosure>
           {({ open }) => (
             <>
-              <Disclosure.Button className="flex w-full justify-between rounded-lg  py-2 text-left text-sm font-bold text-disabled">
-                {/* judulnya */}
-                <span>{selectedOption}</span>
+              <Disclosure.Button className="flex w-full justify-between rounded-lg py-4 text-left text-sm font-bold text-disabled">
+                {/* title & image*/}
+                <div className='flex items-center'>
+                  <div className="pr-5">
+                    {imageSrc && <img src={imageSrc} alt="Selected Bank" />}
+                  </div>
+                  <span>{selectedOption}</span>
+                </div> 
                 <ChevronDownIcon
-                  className={`${
-                    open ? 'rotate-180 transform' : ''
-                  } h-5 w-5 text-disabled`}
-                />
+                    className= {` mt-2 ${
+                      open ? 'rotate-180 transform' : ''
+                    } h-5 w-5 text-disabled`}
+                  />
+                
               </Disclosure.Button>
               <Disclosure.Panel className="pt-4 pb-2 text-sm text-disabled">                
                 {/* <RadioGroupButton /> */}
@@ -105,6 +111,7 @@ export default function SelectBox() {
                       className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
                     />        
                   </div>   
+                  
                 </div>
                 </>                
               </Disclosure.Panel>

@@ -9,7 +9,24 @@ import CardsDetail from "@/Components/CardsDetail";
 import LeftSideLayanan from "@/Components/LeftSideLayanan";
 import Header from "@/Components/Header";
 
-export default function Layanan() {
+export default function DetailLayanan({ psikolog }) {
+    
+    const {nama, rating} = psikolog;
+
+    // Empty Validation
+    const [provinceError, setProvinceError] = useState('');
+    const [kabupatenError, setKabupatenError] = useState('');    
+
+    const handleKabupatenChange = (selectedOption) => {
+        setSelectedKabupaten(selectedOption);
+        setKabupatenError(''); // Reset kabupaten error when kabupaten changes
+      };
+
+    // Detail Page
+    const [showContent, setShowContent] = useState(false);
+    const handleClick2 = () => {        
+        setShowContent(!showContent);
+    };
 
     // Waktu
     const [activeIndex, setActiveIndex] = useState(null);
@@ -22,12 +39,7 @@ export default function Layanan() {
 
     // Date Picker
     const [startDate, setStartDate] = useState(new Date());
-    
-    // Detail Page
-    const [showContent, setShowContent] = useState(false);
-    const handleClick2 = () => {
-        setShowContent(!showContent);
-    };
+
 
     return (
         <div className="overflow-x-hidden">
@@ -55,16 +67,17 @@ export default function Layanan() {
 
                                 {/* Dividing Section */}
                                 <div>
+                                    {/* Detail List Psikolog */}
                                     {showContent ? (
                                         // Section 2
-                                        <div className="pt-5 grid md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-1 px-3 pb-5 gap-2">
+                                        <div className="pt-5 grid md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-1 px-3 pb-5 gap-4">
                                             <CardsDetail
                                                 imageSrc="../images/doctorImage.png"
-                                                names="Putu Agus Parimartha"
+                                                names={nama}
                                                 jobs="Psikolog"
                                                 text="Kesehatan Mental"
                                                 badge1="5 Tahun"
-                                                badge2="4.9"
+                                                badge2={rating}
                                                 fee="Rp 800.000"
                                             />
                                             <CardsDetail
@@ -107,68 +120,30 @@ export default function Layanan() {
                                             <div>
                                                 <h3 className="pt-4 font-semibold text-xl">Waktu</h3>
                                                 {/* Badge */}
-                                                <div className="py-4 flex flex-row gap-2 shrink overflow-x-auto">
-                                                    <div
-                                                        className={`cursor-pointer badge badge-outline py-4 px-4 rounded-md border border-[#d8dbe1] bg-white hover:bg-gray-300 ${
-                                                            activeIndex === 1
-                                                                ? "bg-gray-300"
-                                                                : ""
-                                                        }`}
-                                                        onClick={() => handleClick(1)}
-                                                        onDoubleClick={() => handleDoubleClick(1)}
-                                                    >
-                                                        <p className="text-disabled font-semibold">12:00</p>
-                                                    </div>
-                                                    <div
-                                                        className={`cursor-pointer badge badge-outline py-4 px-4 rounded-md border border-[#d8dbe1] bg-white hover:bg-gray-300 ${
-                                                            activeIndex === 2
-                                                                ? "bg-gray-300"
-                                                                : ""
-                                                        }`}
-                                                        onClick={() => handleClick(2)}
-                                                        onDoubleClick={() => handleDoubleClick(2)}
-                                                    >
-                                                        <p className="text-disabled font-semibold">14:00</p>
-                                                    </div>
-                                                    <div
-                                                        className={`cursor-pointer badge badge-outline py-4 px-4 rounded-md border border-[#d8dbe1] bg-white hover:bg-gray-300 ${
-                                                            activeIndex === 3
-                                                                ? "bg-gray-300"
-                                                                : ""
-                                                        }`}
-                                                        onClick={() =>handleClick(3)}
-                                                        onDoubleClick={() => handleDoubleClick(3)}
-                                                    >
-                                                        <p className="text-disabled font-semibold">16:00</p>
-                                                    </div>
-                                                    <div
-                                                        className={`cursor-pointer badge badge-outline py-4 px-4 rounded-md border border-[#d8dbe1] bg-white hover:bg-gray-300 focus:outline-none ${
-                                                            activeIndex === 4
-                                                                ? "bg-gray-300"
-                                                                : ""
-                                                        }`}
-                                                        onClick={() => handleClick(4)}
-                                                        onDoubleClick={() => handleDoubleClick(4)}
-                                                    >
-                                                        <p className="text-disabled font-semibold">18:00</p>
-                                                    </div>
-                                                    <div
-                                                        className={`cursor-pointer badge badge-outline py-4 px-4 rounded-md border border-[#d8dbe1] bg-white hover:bg-gray-300 ${
-                                                            activeIndex === 5
-                                                                ? "bg-gray-300"
-                                                                : ""
-                                                        }`}
-                                                        onClick={() =>handleClick(5)}
-                                                        onDoubleClick={() => handleDoubleClick(5)}
-                                                    >
-                                                        <p className="text-disabled font-semibold">20:00</p>
-                                                    </div>
+                                                <div className="py-4 pl-1 flex flex-row gap-2 shrink overflow-x-auto">
+                                                    <button 
+                                                    type="button" class="inline-flex items-center px-4 py-1 border border-[#d8dbe1] text-sm text-center text-disabled font-semibold bg-white rounded-lg hover:bg-gray-300 focus:ring-2 focus:outline-none focus:ring-blue-300">
+                                                        12:00
+                                                    </button>
+                                                    <button type="button" class="inline-flex items-center px-4 py-1 border border-[#d8dbe1] text-sm text-center text-disabled font-semibold bg-white rounded-lg hover:bg-gray-300 focus:ring-2 focus:outline-none focus:ring-blue-300">
+                                                        14:00
+                                                    </button>
+                                                    <button type="button" class="inline-flex items-center px-4 py-1 border border-[#d8dbe1] text-sm text-center text-disabled font-semibold bg-white rounded-lg hover:bg-gray-300 focus:ring-2 focus:outline-none focus:ring-blue-300">
+                                                        16:00
+                                                    </button>
+                                                    <button type="button" class="inline-flex items-center px-4 py-1 border border-[#d8dbe1] text-sm text-center text-disabled font-semibold bg-white rounded-lg hover:bg-gray-300 focus:ring-2 focus:outline-none focus:ring-blue-300">
+                                                        18:00
+                                                    </button>
+                                                    <button type="button" class="inline-flex items-center px-4 py-1 border border-[#d8dbe1] text-sm text-center text-disabled font-semibold bg-white rounded-lg hover:bg-gray-300 focus:ring-2 focus:outline-none focus:ring-blue-300">
+                                                        20:00
+                                                    </button>
                                                 </div>
                                             </div>
                                             <div>
                                                 <h3 className="pb-4 font-semibold text-xl">Lokasi</h3>
                                             </div>
                                             <DropdownMenu />
+                                            
 
                                             <BackUpButton
                                                 className="h-0"
