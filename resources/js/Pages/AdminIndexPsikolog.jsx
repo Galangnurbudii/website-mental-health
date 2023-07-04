@@ -12,8 +12,8 @@ export default function AdminIndexPsikolog(props) {
     return (
         <>
             <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-20">
-               <div className="flex items-center justify-between mb-6">
-                    <a href={route("psikologs.create")}>Create Psikolog</a>
+               <div className="flex items-center justify-between" style={{fontWeight: 'bold'}}>
+                    <a className='px-4 py-2 text-sm text-white bg-blue-500 rounded' href={route("psikologs.create")}>Create Psikolog</a>
                 </div>
 
                 <table className="table-fixed w-full">
@@ -46,7 +46,7 @@ export default function AdminIndexPsikolog(props) {
                                 <td className="border px-4 py-2">
                                     <Link
                                         tabIndex="1"
-                                        className="px-4 py-2 text-sm text-white bg-blue-500 rounded"
+                                        className="px-4 py-2 text-sm text-white bg-green-500 rounded"
                                         href={route("psikologs.edit", psikolog.id)}
                                     >
                                         Edit
