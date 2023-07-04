@@ -1,8 +1,11 @@
-import Badge from "@/Components/Badge";
-import Directory from "@/Components/Directory";
-import Footer from "@/Components/Footer1";
-import NavBar from "@/Components/NavBar";
-import React from "react";
+import Badge from '@/Components/Badge'
+import ConsultationBadge from '@/Components/ConsultationBadge'
+import Directory from '@/Components/Directory'
+import Footer from '@/Components/Footer'
+import NavBar from '@/Components/NavBar'
+import OtherArticle from '@/Components/OtherArticle'
+import PrimaryButton from '@/Components/PrimaryButton'
+import React from 'react'
 
 export default function ArticleDetail() {
     return (
@@ -10,8 +13,9 @@ export default function ArticleDetail() {
             <div className="bg-putih h-screen w-full">
                 <NavBar />
                 <Directory />
-                <div className="flex flex-row gap-10 px-44 pb-20">
-                    <div className="w-2/3 flex flex-col justify-between gap-10">
+
+                <div className="grid gridcols md:grid-cols-[4fr_2fr] gap-10 px-6 pt-20 pb-32 md:px-16 lg:px-20 bg-blue">
+                    <div className="w-full flex flex-col justify-between gap-10">
                         <h1 className="text-4xl text-hitam font-bold pt-10">
                             Pasangan Supportif Dapat Cegah Depresi
                         </h1>
@@ -100,14 +104,29 @@ export default function ArticleDetail() {
                             </p>
                         </div>
                     </div>
+                    <div>
+                        <div className="flex flex-col gap-6">
+                            <h3 className="text-hitam text-2xl font-bold">
+                                Rekomendasi Topik
+                            </h3>
+                            <div className="flex flex-row gap">
+                                <Badge titleBadge="Depresi" />
+                                <Badge titleBadge="Depresi" />
+                                <Badge titleBadge="Depresi" />
+                                <Badge titleBadge="Depresi" />
+                                <Badge titleBadge="Depresi" />
+                            </div>
 
-                    <div className="w-1/3">
-                        <Badge titleBadge="Depresi" />
+                            <OtherArticle />
+                            <OtherArticle />
+                            <OtherArticle />
+
+                            <ConsultationBadge />
+                        </div>
                     </div>
                 </div>
-
                 <Footer />
             </div>
         </>
-    );
+    )
 }

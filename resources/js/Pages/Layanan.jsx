@@ -7,12 +7,12 @@ import CardsLayanan from "@/Components/CardsLayanan";
 export default function Layanan() {
     return (
         <div className="overflow-x-hidden">
-            <NavBar/>
+            <NavBarUser />
             <Header 
                 pages = "Konsultasi"            
                 currpages = "Layanan"                
             />
-            <div className="w-full flex items-start sm:flex-col md:flex-row lg:flex-row">
+            <div className="w-full h-screen flex items-start sm:flex-col md:flex-row lg:flex-row">
                 {/* left side */}
                 <LeftSideLayanan />
                 {/* right side */}
@@ -21,7 +21,7 @@ export default function Layanan() {
                                 sm:w-full 
                                 md:w-[100%]                        
                                 lg:w-[60%]
-                                h-full bg-white p-10 lg:pr-32 md:pr-16 md:pl-16
+                                h-full bg-putih p-10 lg:pr-32 md:pr-16 md:pl-16
                                 flex flex-col"
                 >
                     <div className="w-full flex flex-col pt-4 md:pt-8 lg:pt-8 mt-2">
@@ -51,5 +51,5 @@ export default function Layanan() {
             </div>
             
         </div>
-    );
+    )
 }
