@@ -1,6 +1,6 @@
 import Post from "@/Components/Post";
 import ArticleRec from "@/Components/ArticleRec";
-import Footer from "@/Components/Footer1";
+import Footer from "@/Components/Footer";
 import NavBar from "@/Components/NavBar";
 import React from "react";
 import PrimaryButton from "@/Components/PrimaryButton";
