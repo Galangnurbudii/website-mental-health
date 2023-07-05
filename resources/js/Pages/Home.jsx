@@ -7,7 +7,9 @@ import React from 'react'
 import CardsCarousel from '@/Components/CardsCarousel'
 import ArticleCard from '@/Components/ArticleCard'
 
-export default function Home({ articles, quote }) {
+
+export default function Home({articles, quote }) {
+    console.log(quote);
     return (
         <div>
             <NavBar />
@@ -20,8 +22,9 @@ export default function Home({ articles, quote }) {
                     </h1>
                     <div className="flex justify-center flex-col md:flex-row md:flex-wrap md:items-stretch items-center gap-6">
                         {articles.map((article) => (
-                            <ArticleCard key={article.id} article={article} />
-                        ))}
+
+                        <ArticleCard key={article.id} article={article} />
+                    ))}
                     </div>
                 </div>
 

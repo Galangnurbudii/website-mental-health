@@ -7,6 +7,7 @@ import BigCard from '@/Components/BigCard'
 import React, { useState } from 'react'
 import ReactPaginate from 'react-paginate'
 
+
 export default function Article({ popular, articles, topik_terkini }) {
     const [currentPage, setCurrentPage] = useState(0)
     const itemsPerPage = 3
@@ -19,6 +20,7 @@ export default function Article({ popular, articles, topik_terkini }) {
     const startIndex = currentPage * itemsPerPage
     const endIndex = startIndex + itemsPerPage
     const currentArticles = articles.slice(startIndex, endIndex)
+
     return (
         <>
             <NavBar />

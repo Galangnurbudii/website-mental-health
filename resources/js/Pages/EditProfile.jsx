@@ -3,6 +3,7 @@ import React from 'react'
 import ProfilPlaceholders from './ProfilPlaceholders'
 import PrimaryButton from '@/Components/PrimaryButton'
 
+
 export default function EditProfile() {
     return (
         <>
@@ -57,6 +58,7 @@ export default function EditProfile() {
                     </div>
                 </div>
             </div>
+
         </>
     )
 }
