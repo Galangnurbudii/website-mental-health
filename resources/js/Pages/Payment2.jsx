@@ -1,46 +1,131 @@
-import { Dialog, Transition } from '@headlessui/react'
-import { Fragment, useState } from 'react'
-import PrimaryButton from './PrimaryButton'
+import Footer from "@/Components/Footer";
+import NavBar from "@/Components/NavBar";
+import { useState } from "react";
+import "react-datepicker/dist/react-datepicker.css";
+import DetailPsikolog from "@/Components/DetailPsikolog";
+import DetailPayment from "@/Components/DetailPayment";
+import CouponButton from "@/Components/CouponButton";
+import Popup from "@/Components/Popup";
+import SelectBox from "@/Components/SelectBox";
 import { Disclosure } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import { Dialog, Transition } from '@headlessui/react'
+import { Fragment } from 'react'
+import PrimaryButton from "@/Components/PrimaryButton";
 
-export default function Popup({ desc }) {
-  let [isOpen, setIsOpen] = useState(false)
+export default function Layanan() {
+    
+    let [isOpen, setIsOpen] = useState(false)
 
-  function closeModal() {
-    setIsOpen(false)
-  }
-
-  ///////////////////////////////////////////////
-
-  const [error, setError] = useState('');
-  const [selectedOption, setSelectedOption] = useState('Pilih Metode Pembayaran');
-  const handleChange = (event) => {
-    setSelectedOption(event.target.value);
-    setError('');
-  }
-
-  let imageSrc = '';
-
-  if (selectedOption === 'Bank BCA') {
-    imageSrc = 'images/BNI.jpg';
-  } else if (selectedOption === 'Bank BRI') {
-    imageSrc = 'images/BRI.png';
-  }else if (selectedOption === 'Bank BNI'){
-    imageSrc = 'images/BCA.png'
-  }
-
-  function openModal() {
-
-    if (!selectedOption || selectedOption === 'Pilih Metode Pembayaran') {
-      setError('Metode Pembayaran harus diisi');
-      return;
+    function closeModal() {
+      setIsOpen(false)
     }
-    setIsOpen(true)
-  }
+  
+    ///////////////////////////////////////////////
+  
+    const [error, setError] = useState('');
+    const [selectedOption, setSelectedOption] = useState('Pilih Metode Pembayaran');
+    const handleChange = (event) => {
+      setSelectedOption(event.target.value);
+      setError('');
+    }
+  
+    let imageSrc = '';
+  
+    if (selectedOption === 'Bank BCA') {
+      imageSrc = 'images/BNI.jpg';
+    } else if (selectedOption === 'Bank BRI') {
+      imageSrc = 'images/BRI.png';
+    }else if (selectedOption === 'Bank BNI'){
+      imageSrc = 'images/BCA.png'
+    }
+  
+    function openModal() {
+  
+      if (!selectedOption || selectedOption === 'Pilih Metode Pembayaran') {
+        setError('Metode Pembayaran harus diisi');
+        return;
+      }
+      setIsOpen(true)
+    }
 
-  return (
-    <>
+    // Detail Page
+    const [showContent, setShowContent] = useState(false);
+    const handleClick2 = () => {
+        setShowContent(!showContent);
+    };
+
+    return (
+        <div className="overflow-x-hidden">
+            <NavBar />            
+            <div className="w-full flex items-start flex-col sm:flex-col md:flex-row lg:flex-row">
+                <DetailPsikolog 
+                    badge1 = "5 Tahun"
+                    badge2 = "4.9"/>
+                {/* right side */} 
+                <div
+                    className="
+                            w-full
+                            sm:w-full 
+                            md:w-[60%]
+                            lg:w-[60%]
+                            h-full bg-white p-6 md:pl-16 lg:pr-28 md:pr-16
+                            flex flex-col"
+                >
+
+                    {/* Rincian Pembayaran*/}
+                    <div className="w-full flex flex-col pt-4 md:pt-8 lg:pt-12 mt-2">
+                        <h2 className="font-bold text-2xl pb-6">Rincian Pembayaran</h2>
+                        <div className="pb-10">
+                            <div className="w-full shadow-xl border rounded-lg bg-disabledBackground mx-auto my-auto 
+                                            md:pb-5 
+                                            xs:p-5
+                                            sm:p-5
+                                            md:p-5
+                                            lg:p-10 lg:py-20"> 
+                                            {/* lg:p-10 */}
+                               
+                                <DetailPayment
+                                                imageSrc="../images/doctorImage.png"
+                                                names="Nathalia Chandra"
+                                                jobs="Psikolog"
+                                />
+
+                            <div className="pt-5">
+                                <div className="border border-gray-100 card lg:card-side bg-base-100 shadow-sm rounded-sm overflow-x-auto">
+                                    <div className="card-body xl:px-10 lg:px-4 md:px-10 sm:px-10 xs:px-4">
+                                        <div className="flex flex-row justify-between">
+                                            <h2 className="card-title text-sm text-disabled">Biaya sesi untuk 1 jam</h2>
+                                            <h2 className="card-title text-sm text-disabled">Rp 200.000</h2>
+                                        </div>
+                                        <h2 className="border-t-2 border-disabled-300"></h2>
+                                        <div className="flex flex-row justify-between">
+                                            <h2 className="card-title text-sm">Total Biaya</h2>
+                                            <h2 className="card-title text-sm">Rp 200.000</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="pt-5">
+                                <div className="border border-gray-100 card lg:card-side bg-base-100 shadow-sm rounded-sm overflow-x-auto">
+                                    <div className="card-body flex flex-row xl:px-10 lg:px-4 md:px-10 sm:px-10 xs:px-4">
+                                        {/* "Pakai" Button */}
+                                        <input type="text" placeholder="Promo" className="input input-bordered w-full max-w-lg h-[34px] focus:outline-none" />                                        
+                                        <CouponButton
+                                            className="h-0"
+                                            onClick={handleClick2}>
+                                            Pakai
+                                        </CouponButton>     
+                                    </div>     
+                                </div>
+                            </div>    
+                            
+                            <div className="py-5">
+                                {/* <SelectBox /> */}
+                                {/* <Popup desc = "Silakan lakukan konsultasi sesuai dengan jadwal yang Anda buat."/>                           */}
+
+<>
 <div className="border border-gray-100 card lg:card-side bg-base-100 shadow-sm rounded-sm overflow-x-auto">
     <div className="w-full xl:px-10 lg:px-4 md:px-10 sm:px-10 xs:px-4">
       <div className="w-full rounded-2xl bg-white py-2">
@@ -183,7 +268,7 @@ export default function Popup({ desc }) {
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-gray-700 font-medium">
-                      {desc}
+                    Untuk konsultasi, akses link berikut:https://binus.zoom.us/j/97275854825#success
                     </p>
                   </div>
 
@@ -195,8 +280,21 @@ export default function Popup({ desc }) {
       </Transition>  
       </div>        
       
-      <PrimaryButton onClick={openModal} className='mt-7'>Konfirmasi Pembayaran</PrimaryButton>
+      
 
     </>
-  )
+
+                            </div>     
+                                                                             
+                            </div>
+                            <PrimaryButton onClick={openModal} className='mt-7'>Konfirmasi Pembayaran</PrimaryButton>
+                           
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <Footer />
+        </div>
+    );
 }

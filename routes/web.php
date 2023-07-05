@@ -54,10 +54,17 @@ Route::get('/detaillayanan', function () {
     return Inertia::render('DetailLayanan');
 })->name('detaillayanan');
 
+Route::get('/detaillayanan/videocall', function () {
+    return Inertia::render('DetailLayanan2');
+})->name('detaillayanan2');
 
 Route::get('/payment', function () {
     return Inertia::render('Payment');
 })->name('payment');
+
+Route::get('/payment/videocall', function () {
+    return Inertia::render('Payment2');
+})->name('payment2');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
