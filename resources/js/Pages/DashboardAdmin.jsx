@@ -11,8 +11,7 @@
 
 import React, { useState } from 'react'
 import { AiOutlineUser, AiOutlineLeftCircle } from 'react-icons/ai'
-import { HiOutlineShoppingCart } from 'react-icons/hi'
-import { BiTrashAlt, BiHomeAlt2 } from 'react-icons/bi'
+import { BiHomeAlt2 } from 'react-icons/bi'
 import { FiFileText, FiLogOut, FiSettings } from 'react-icons/fi'
 
 export default function DashboardAdmin() {
@@ -118,15 +117,17 @@ export default function DashboardAdmin() {
                                 Tambah Artikel
                             </span>
                         </button>
-                        <button className="border pl-6 flex text-center items-center
-                                            py-6 rounded-lg border-[#736D6D]
-                                            w-[323px]">
-                            <img src="images/doctorImage.png" alt="" 
-                                className="w-10 mr-6"/>
-                            <span className="mr-[50px]">
-                                Buat Akun Psikolog
-                            </span>
-                        </button>
+                        <a href={route("psikologs.create")}>
+                            <button className="border pl-6 flex text-center items-center
+                                                py-6 rounded-lg border-disabled
+                                                w-[323px]">
+                                <img src="images/doctorImage.png" alt="" 
+                                    className="w-10 mr-6"/>
+                                <span className="mr-[50px]">
+                                    Buat Akun Psikolog
+                                </span>
+                            </button>
+                        </a>
                         <button className="border pl-6 flex text-center items-center
                                             py-6 rounded-lg border-[#736D6D]
                                             w-[323px]">
