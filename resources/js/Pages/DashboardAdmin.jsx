@@ -56,7 +56,7 @@ export default function DashboardAdmin() {
                     /> */}
 
                     <div className="flex gap-x-4 items-center">
-                        <h1 className={`text-white origin-left font-medium text-2xl font-semibold duration-300 ${!open && 'scale-0'}`}>
+                        <h1 className={`text-white origin-left text-2xl font-semibold duration-300 ${!open && 'scale-0'}`}>
                             MENTAL HEALTH
                         </h1>
                     </div>
