@@ -13,16 +13,16 @@ import React, { useState } from 'react'
 import { AiOutlineUser, AiOutlineLeftCircle } from 'react-icons/ai'
 import { HiOutlineShoppingCart } from 'react-icons/hi'
 import { BiTrashAlt, BiHomeAlt2 } from 'react-icons/bi'
-import { FiLogOut } from 'react-icons/fi'
+import { FiFileText, FiLogOut, FiSettings } from 'react-icons/fi'
 
 export default function DashboardAdmin() {
     const [open, setOpen] = useState(true)
     const [hoveredIndex, setHoveredIndex] = useState(null)
     const Menus = [
         { title: 'Dashboard', icon: BiHomeAlt2 },
-        { title: 'Artikel', icon: AiOutlineUser },
-        { title: 'Psikolog', icon: HiOutlineShoppingCart },
-        { title: 'Pengaturan', icon: BiTrashAlt, gap: true },
+        { title: 'Artikel', icon: FiFileText },
+        { title: 'Psikolog', icon: AiOutlineUser },
+        { title: 'Pengaturan', icon: FiSettings, gap: true },
         { title: 'Keluar', icon: FiLogOut },
     ]
 
