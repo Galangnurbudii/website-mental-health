@@ -84,6 +84,7 @@ Route::get('/dashboardadmin', function () {
     return Inertia::render('DashboardAdmin');
 })->name('dashboardadmin');
 
+
 Route::resource('psikologs', PsikologController::class);
 
 Route::get('/profil', function () {

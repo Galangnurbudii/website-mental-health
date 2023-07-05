@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react'
+
 
 function Quote({quote}) {
     console.log(quote);
@@ -12,6 +13,7 @@ function Quote({quote}) {
                         </span>
                     </div>
                     <h1 className="text-hitam font-bold text-2xl md:text-4xl">
+
                         {quote.konten}
                     </h1>
                     <div className="self-end">
@@ -29,7 +31,7 @@ function Quote({quote}) {
                 />
             </div>
         </div>
-    );
+    )
 }
 
-export default Quote;
+export default Quote
