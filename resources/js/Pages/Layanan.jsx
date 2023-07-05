@@ -8,10 +8,8 @@ export default function Layanan() {
     return (
         <div className="overflow-x-hidden">
             <NavBar />
-            <Header 
-                pages = "Konsultasi"            
-                currpages = "Layanan"                
-            />
+
+            <Header pages="Konsultasi" currpages="Layanan" />
             <div className="w-full h-screen flex items-start sm:flex-col md:flex-row lg:flex-row">
                 {/* left side */}
                 <LeftSideLayanan />

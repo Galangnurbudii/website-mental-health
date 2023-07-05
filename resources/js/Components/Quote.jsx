@@ -1,6 +1,9 @@
 import React from 'react'
 
-function Quote({ quote }) {
+
+function Quote({quote}) {
+    console.log(quote);
+
     return (
         <div className="bg-putih w-fullx-auto flex flex-col md:flex-row items-center md:py-12 md:px-16 lg:px-32">
             <div className="flex flex-wrap flex-col max-full p-6 md:w-1/2 md:p-0">
@@ -11,7 +14,8 @@ function Quote({ quote }) {
                         </span>
                     </div>
                     <h1 className="text-hitam font-bold text-2xl md:text-4xl">
-                        {quote.konten}{' '}
+
+                        {quote.konten}
                     </h1>
                     <div className="self-end">
                         <span className="text-6xl md:text-8xl text-primary font-bold">

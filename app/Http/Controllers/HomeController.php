@@ -13,6 +13,7 @@ class HomeController extends Controller
     {
         $articles = Artikel::inRandomOrder()->limit(3)->get();
         $quote = Quote::inRandomOrder()->first();
+        // dd($quote);
         return Inertia::render('Home', ['articles' => $articles, 'quote' => $quote]);
     }
 }
