@@ -90,6 +90,10 @@ Route::get('/profil', function () {
     return Inertia::render('EditProfile');
 })->name('profil');
 
+Route::get('/hapusprofil', function () {
+    return Inertia::render('HapusProfil');
+})->name('hapusprofil');
+
 Route::get('/error', function () {
     return Inertia::render('NotFound');
 })->name('notFound');
