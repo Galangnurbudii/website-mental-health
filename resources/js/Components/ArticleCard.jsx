@@ -13,20 +13,18 @@ function getRandomImage() {
 }
 
 function ArticleCard({ article }) {
-    const { id, judul, tag, updated_at, detail } = article
+    const { id, judul, tag, updated_at, detail, thumbnail_url } = article
 
     const tanggal = dayjs(updated_at).format('D MMMM YYYY')
-
-    const randomImage = getRandomImage()
-
     return (
         <div className="card w-full md:w-96 bg-putih shadow-xl">
             <figure className="md:h-2/4">
                 <Link href={`/articleDetail/${id}`}>
                     <img
-                        src={`images/${randomImage}`}
+                        src={thumbnail_url}
                         alt="Foto Berita"
                         className="w-full h-full"
+                       
                     />
                 </Link>
             </figure>
