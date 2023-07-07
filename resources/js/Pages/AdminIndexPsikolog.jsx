@@ -15,9 +15,9 @@ export default function AdminIndexPsikolog(props) {
     }
 
     return (
-        <>
+        <div className='flex'>
             <NavBarAdmin />
-            <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-28">
+            <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-12">
                <div className="flex items-center justify-between" style={{fontWeight: 'bold'}}>
                     <a className='px-4 py-2 text-sm text-white bg-blue-500 rounded' href={route("psikologs.create")}>Create Psikolog</a>
                 </div>
@@ -75,6 +75,6 @@ export default function AdminIndexPsikolog(props) {
                     </tbody>
                 </table>
             </div>
-        </>
+        </div>
     );
 }
