@@ -80,23 +80,21 @@ const NavBarAdmin = () => {
                                     />
                                 )}
 
-                                <span
-                                    className={`${
-                                        !open && 'hidden'
-                                    } origin-left duration-400 ${
-                                        open &&
-                                        hoveredIndex === index &&
-                                        'text-primary'
-                                    }`}
-                                >
-                                    {menu.title}
-                                </span>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-        </>
+                        <span
+                            className={`${
+                                !open && 'hidden'
+                            } origin-left duration-400 ${
+                                open &&
+                                hoveredIndex === index &&
+                                'text-primary'
+                            }`}
+                        >
+                            {menu.title}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+        </div>
     )
 }
 
