@@ -18,16 +18,8 @@ class Artikel extends Model
         'tag',
         'detail',
         'id_user',
-        'id_psikolog',
         'thumbnail_url',
     ];
 
     // ...
-
-
-
-    public function psikolog()
-    {
-        return $this->belongsTo(Psikolog::class, 'id_psikolog');
-    }
 }
