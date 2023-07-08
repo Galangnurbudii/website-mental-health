@@ -1,9 +1,7 @@
 import Post from "@/Components/Post";
-import ArticleRec from "@/Components/ArticleRec";
 import Footer from "@/Components/Footer";
 import NavBar from "@/Components/NavBar";
 import React from "react";
-import PrimaryButton from "@/Components/PrimaryButton";
 
 export default function ForumHome() {
     return (
@@ -17,9 +15,11 @@ export default function ForumHome() {
                         <span />
                     </button>
                 </div>
-                <Post />
-                <Post />
-                <Post />
+                <div className="mb-[50px]">
+                    <Post />
+                    <Post />
+                    <Post />
+                </div>
             </div>
             <Footer/>
         </>
