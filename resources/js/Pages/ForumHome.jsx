@@ -20,13 +20,6 @@ export default function ForumHome() {
                 <Post />
                 <Post />
                 <Post />
-
-                <div className="flex items-center justify-center mt-[50px]">
-                    <div className="border-2 border-black rounded-sm w-[900px] h-[100px]">
-                        <input type="text" className="w-full" placeholder="Ketik di sini . . .">
-                        </input>
-                    </div>
-                </div>
             </div>
             <Footer/>
         </>

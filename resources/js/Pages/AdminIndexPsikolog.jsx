@@ -3,10 +3,6 @@ import { Head, Link, useForm } from "@inertiajs/react";
 import { Inertia } from "@inertiajs/inertia";
 import NavBarAdmin from '@/Components/NavBarAdmin';
 
-// import { AiOutlineUser, AiOutlineLeftCircle } from 'react-icons/ai'
-// import { BiHomeAlt2 } from 'react-icons/bi'
-// import { FiFileText, FiLogOut, FiSettings } from 'react-icons/fi'
-
 export default function AdminIndexPsikolog(props) {
     function destroy(e) {
         if (confirm("Are you sure you want to delete this user?")) {
