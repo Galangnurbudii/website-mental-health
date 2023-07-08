@@ -7,24 +7,32 @@ import React from 'react'
 import CardsCarousel from '@/Components/CardsCarousel'
 import ArticleCard from '@/Components/ArticleCard'
 
+export default function Home({ articles, quote }) {
+    const isLargeScreen = window.innerWidth > 1536
 
-export default function Home({articles, quote }) {
-    console.log(quote);
     return (
         <div>
             <NavBar />
             <div className="flex flex-col pb-20 md:pb-32 min-h-screen">
                 <Hero />
 
-                <div className="py-10 md:py-16 md:px-16 lg:px-20 p-6">
-                    <h1 className="font-bold text-xl md:text-2xl text-hitam md:px-16 lg:px-20 pb-12">
+                <div className="py-10 md:py-16 md:px-16 p-6">
+                    <h1 className="font-bold text-2xl md:text-4xl text-hitam md:px-16 lg:px-20 pb-12">
                         Artikel Lainnya
                     </h1>
-                    <div className="flex justify-center flex-col md:flex-row md:flex-wrap md:items-stretch items-center gap-6">
-                        {articles.map((article) => (
-
-                        <ArticleCard key={article.id} article={article} />
-                    ))}
+                    <div
+                        className={`flex justify-between flex-col md:flex-row md:items-stretch items-center md:px-16 lg:px-20 ${
+                            isLargeScreen ? 'gap-6' : 'gap-8 md:px-16 lg:px-20'
+                        }`}
+                    >
+                        {articles
+                            .slice(0, isLargeScreen ? 4 : 3)
+                            .map((article) => (
+                                <ArticleCard
+                                    key={article.id}
+                                    article={article}
+                                />
+                            ))}
                     </div>
                 </div>
 
