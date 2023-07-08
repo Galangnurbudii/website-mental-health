@@ -1,11 +1,26 @@
 import Footer from "@/Components/Footer";
 import NavBar from "@/Components/NavBar";
 import MyModal from "@/Components/MyModal";
+import EmptyTextModal from "@/Components/EmptyTextModal";
 import React, { useState } from "react";
 
 export default function Forum() {
     const [showMyModal, setShowMyModal] = useState(false)
     const handleOnClose = () => setShowMyModal(false)
+
+    const [showEmptyTextModal, setShowEmptyTextModal] = useState(false)
+    const handleOnCloseText = () => setShowEmptyTextModal(false)
+
+    const handlePosting = () => {
+        var textAreaValue = document.getElementById('myTextArea').value;
+        if (textAreaValue === '') {
+            setShowEmptyTextModal(true);
+        }
+        // else {
+        //     // Kirim ke database
+        // }
+    };
+
     return (
         <>
             <NavBar/>
@@ -16,12 +31,12 @@ export default function Forum() {
                         <label type="" className="ml-[5px]">Sembunyikan Nama</label>
                     </div>
                     <div className="flex justify-center items-center mt-[20px]">
-                        <textarea type="text" className="resize-none max-h-[750px] border border-black rounded-md p-2 w-[87%] h-[350px]" placeholder='Ketik di sini . . .'></textarea>
+                        <textarea id="myTextArea" type="text" className="resize-none max-h-[750px] border border-black rounded-md p-2 w-[87%] h-[350px]" placeholder='Ketik di sini . . .'></textarea>
                     </div>
                     <div>
                         <div className="mx-auto">
                             <div>
-                                <button onClick={() => setShowMyModal(true)} 
+                                <button onClick={handlePosting} 
                                         className="static bg-[#4C9BF5] text-[#FFFFFF] text-base rounded-lg mt-[25px] w-[100px] h-[45px] sm:w-[139px] sm:h-[51px] ml-[6.5%] mr-[2%]">
                                     Posting
                                 </button>
@@ -32,6 +47,7 @@ export default function Forum() {
                             </div>
                         </div>
                         <MyModal onClose={handleOnClose} visible={showMyModal}/>
+                        <EmptyTextModal onClose={handleOnCloseText} visible={showEmptyTextModal} />
                     </div>
                 </div>
             </div>
