@@ -94,6 +94,10 @@ Route::get('/error', function () {
     return Inertia::render('NotFound');
 })->name('notFound');
 
+Route::get('/jadwalPsikolog', function () {
+    return Inertia::render('SchedulePage');
+})->name('jadwalPsikolog');
+
 
 
 Route::middleware('auth')->group(function () {
