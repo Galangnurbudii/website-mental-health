@@ -9,7 +9,7 @@ dayjs.locale('id')
 function BigCard({ popular }) {
     const tanggal = dayjs(popular.updated_at).format('D MMMM YYYY')
 
-    const { judul, tag, detail,thumbnail_url } = popular
+    const { judul, tag, detail, thumbnail_url } = popular
 
     return (
         <div className="card w-full bg-putih shadow-xl grid md:grid-cols-2">
@@ -29,7 +29,7 @@ function BigCard({ popular }) {
                     <p className="text-hitam font-bold text-base">{tanggal}</p>
                 </div>
 
-                <p className="text-sm lg:text-base md:line-clamp-3">{detail}</p>
+                <p className="text-sm lg:text-base line-clamp-3">{detail}</p>
                 <SecondaryButton>Lanjut Baca</SecondaryButton>
             </div>
         </div>

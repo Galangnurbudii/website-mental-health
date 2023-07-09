@@ -22,7 +22,7 @@ export default function Home({ articles, quote }) {
                     </h1>
                     <div
                         className={`flex justify-between flex-col md:flex-row md:items-stretch items-center md:px-16 lg:px-20 ${
-                            isLargeScreen ? 'gap-6' : 'gap-8 md:px-16 lg:px-20'
+                            isLargeScreen ? 'gap-6' : 'md:px-16 lg:px-20'
                         }`}
                     >
                         {articles
