@@ -17,12 +17,10 @@ return new class extends Migration {
             $table->string('judul');
             $table->string('tag');
             $table->text('detail');
-            $table->unsignedBigInteger('id_admin');
-            $table->unsignedBigInteger('id_psikolog');
+            $table->text('thumbnail_url');
+            $table->unsignedBigInteger('id_user');
             $table->timestamps();
-
-            $table->foreign('id_admin')->references('id')->on('admin');
-            $table->foreign('id_psikolog')->references('id')->on('psikolog');
+            $table->foreign('id_user')->references('id')->on('users');
         });
     }
 

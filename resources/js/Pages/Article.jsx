@@ -45,7 +45,7 @@ export default function Article({ popular, articles, topik_terkini }) {
                         Topik Terkini
                     </h1>
                     <div className="md:px-16 lg:px-20">
-                        {topik_terkini.map((topik) => (
+                        {Object.values(topik_terkini).map((topik) => (
                             <Badge key={topik} titleBadge={topik} />
                         ))}
                     </div>
