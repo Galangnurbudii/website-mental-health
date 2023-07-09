@@ -3,6 +3,7 @@
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PsikologController;
 use Illuminate\Foundation\Application;
@@ -33,43 +34,14 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/article', [ArtikelController::class, 'index'])->name('article');
-
 Route::get('/articleDetail/{id}', [ArtikelController::class, 'detail'])->name('articleDetail');
 
-Route::get('/forumHome', [ForumController::class, 'index'])->name('forumHome');
-
-Route::get('/forum', function () {
-    return Inertia::render('Forum');
-})->name('forum');
-
-Route::get('/layanan', function () {
-    return Inertia::render('Layanan');
-})->name('layanan');
-
-Route::get('/konsultasi', function () {
-    return Inertia::render('Konsultasi');
-})->name('konsultasi');
-
-Route::get('/detaillayanan', function () {
-    return Inertia::render('DetailLayanan');
-})->name('detaillayanan');
 
 
-Route::get('/payment', function () {
-    return Inertia::render('Payment');
-})->name('payment');
-
-Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
-Route::get('/coba', function () {
-    return Inertia::render('Coba');
-})->name('coba');
-
-Route::get('/profil', function () {
-    return Inertia::render('Profil');
-})->name('profil');
 
 Route::get('/adminlogin', function () {
     return Inertia::render('AdminLogin');
@@ -86,9 +58,9 @@ Route::get('/dashboardadmin', function () {
 
 
 Route::resource('psikologs', PsikologController::class);
-Route::get('/profil', function () {
-    return Inertia::render('EditProfile');
-})->name('profil');
+// Route::get('/profil', function () {
+//     return Inertia::render('EditProfile');
+// })->name('profil');
 
 Route::get('/error', function () {
     return Inertia::render('NotFound');
@@ -96,6 +68,25 @@ Route::get('/error', function () {
 
 
 Route::middleware('auth')->group(function () {
+    Route::get('/konsultasi', [KonsultasiController::class, 'index'])->name('konsultasi');
+    Route::get('/layanan', [KonsultasiController::class, 'layanan'])->name('layanan');
+    Route::get('/detaillayanan', [KonsultasiController::class, 'detailLayanan'])->name('detailLayanan');
+    Route::get('/payment', [KonsultasiController::class, 'payment'])->name('payment');
+
+    Route::get('/forum', function () {
+        return Inertia::render('Forum');
+    })->name('forum');
+
+    Route::get('/forumHome', [ForumController::class, 'index'])->name('forumHome');
+
+
+    Route::get('/profil', function () {
+        return Inertia::render('Profil');
+    })->name('profil');
+
+
+
+    // Default Breeze
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
