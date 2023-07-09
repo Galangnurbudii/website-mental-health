@@ -98,6 +98,10 @@ Route::get('/jadwalPsikolog', function () {
     return Inertia::render('SchedulePage');
 })->name('jadwalPsikolog');
 
+Route::get('/avaibility', function () {
+    return Inertia::render('Avaibility');
+})->name('avaibility');
+
 
 
 Route::middleware('auth')->group(function () {
