@@ -6,6 +6,7 @@ import Badge from '@/Components/Badge'
 import BigCard from '@/Components/BigCard'
 import React, { useState } from 'react'
 import ReactPaginate from 'react-paginate'
+import { Head } from '@inertiajs/react'
 
 export default function Article({ popular, articles, topik_terkini }) {
     const [currentPage, setCurrentPage] = useState(0)
@@ -22,8 +23,8 @@ export default function Article({ popular, articles, topik_terkini }) {
 
     return (
         <>
+            <Head title="Artikel" />
             <NavBar />
-
             <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-20">
                 <SearchBar />
                 <div className="flex flex-col gap-8">

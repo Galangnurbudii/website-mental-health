@@ -5,6 +5,7 @@ use App\Http\Controllers\ForumController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PsikologController;
+use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -75,7 +76,6 @@ Route::get('/adminlogin', function () {
     return Inertia::render('AdminLogin');
 })->name('adminlogin');
 
-
 Route::get('/psikologlogin', function () {
     return Inertia::render('PsikologLogin');
 })->name('psikologlogin');
@@ -86,9 +86,12 @@ Route::get('/dashboardadmin', function () {
 
 Route::resource('psikologs', PsikologController::class);
 
-Route::get('/profil', function () {
-    return Inertia::render('EditProfile');
-})->name('profil');
+Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
+Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
+
+// Route::get('/profil', function () {
+//     return Inertia::render('EditProfile');
+// })->name('profil');
 
 Route::get('/error', function () {
     return Inertia::render('NotFound');

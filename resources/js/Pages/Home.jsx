@@ -1,16 +1,17 @@
-import Footer from "@/Components/Footer";
-import ForumHero from "@/Components/ForumHero";
-import Hero from "@/Components/Hero";
-import NavBar from "@/Components/NavBar";
-import Quote from "@/Components/Quote";
-import React from "react";
-import CardsCarousel from "@/Components/CardsCarousel";
-import ArticleCard from "@/Components/ArticleCard";
+import Footer from '@/Components/Footer'
+import ForumHero from '@/Components/ForumHero'
+import Hero from '@/Components/Hero'
+import NavBar from '@/Components/NavBar'
+import Quote from '@/Components/Quote'
+import React from 'react'
+import CardsCarousel from '@/Components/CardsCarousel'
+import ArticleCard from '@/Components/ArticleCard'
+import { Head } from '@inertiajs/react'
 
-export default function Home({articles, quote }) {
-    console.log(quote);
+export default function Home({ articles, quote }) {
     return (
         <div>
+            <Head title="Beranda" />
             <NavBar />
             <div className="flex flex-col pb-20 md:pb-32 min-h-screen">
                 <Hero />
@@ -21,8 +22,8 @@ export default function Home({articles, quote }) {
                     </h1>
                     <div className="flex justify-center flex-col md:flex-row md:flex-wrap md:items-stretch items-center gap-6">
                         {articles.map((article) => (
-                        <ArticleCard key={article.id} article={article} />
-                    ))}
+                            <ArticleCard key={article.id} article={article} />
+                        ))}
                     </div>
                 </div>
 
@@ -41,5 +42,5 @@ export default function Home({articles, quote }) {
             </div>
             <Footer />
         </div>
-    );
+    )
 }
