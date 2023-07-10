@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminArtikelController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\HomeController;
@@ -84,7 +85,7 @@ Route::get('/dashboardadmin', function () {
     return Inertia::render('DashboardAdmin');
 })->name('dashboardadmin');
 
-
+Route::resource('artikels', AdminArtikelController::class);
 Route::resource('psikologs', PsikologController::class);
 
 Route::get('/profil', function () {
