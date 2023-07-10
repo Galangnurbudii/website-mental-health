@@ -1,9 +1,9 @@
-import Post from "@/Components/Post";
-import ArticleRec from "@/Components/ArticleRec";
-import Footer from "@/Components/Footer";
-import NavBar from "@/Components/NavBar";
-import React from "react";
-import PrimaryButton from "@/Components/PrimaryButton";
+import Post from '@/Components/Post'
+import ArticleRec from '@/Components/ArticleRec'
+import Footer from '@/Components/Footer'
+import NavBar from '@/Components/NavBar'
+import React from 'react'
+import PrimaryButton from '@/Components/PrimaryButton'
 
 export default function ForumHome() {
     return (
@@ -17,18 +17,13 @@ export default function ForumHome() {
                         <span />
                     </button>
                 </div>
-                <Post />
-                <Post />
-                <Post />
-
-                <div className="flex items-center justify-center mt-[50px]">
-                    <div className="border-2 border-black rounded-sm w-[900px] h-[100px]">
-                        <input type="text" className="w-full" placeholder="Ketik di sini . . .">
-                        </input>
-                    </div>
+                <div className="mb-[50px]">
+                    <Post />
+                    <Post />
+                    <Post />
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </>
-    );
+    )
 }
