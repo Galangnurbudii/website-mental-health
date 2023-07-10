@@ -7,6 +7,7 @@ import BigCard from '@/Components/BigCard'
 import React, { useState, useEffect } from 'react'
 import ReactPaginate from 'react-paginate'
 
+
 export default function Article({ popular, articles, topik_terkini }) {
     const [currentPage, setCurrentPage] = useState(0)
     const itemsPerPage = window.innerWidth > 1536 ? 4 : 3
@@ -32,6 +33,7 @@ export default function Article({ popular, articles, topik_terkini }) {
             window.removeEventListener('resize', handleResize)
         }
     }, [itemsPerPage])
+
 
     return (
         <>

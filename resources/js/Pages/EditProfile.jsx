@@ -142,6 +142,7 @@ const EditProfile = () => {
                 <button onClick={handleEditClick}>Edit Profil</button>
             )}
         </div>
+
     )
 }
 

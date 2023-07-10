@@ -11,6 +11,7 @@ export default function Layanan() {
 
             <Header pages="Konsultasi" currpages="Layanan" />
             <div className="w-full flex items-start sm:flex-col md:flex-row lg:flex-row">
+
                 {/* left side */}
                 <LeftSideLayanan />
                 {/* right side */}

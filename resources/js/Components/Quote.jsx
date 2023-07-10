@@ -3,7 +3,6 @@ import React from 'react'
 
 function Quote({quote}) {
     console.log(quote);
-
     return (
         <div className="bg-putih w-fullx-auto flex flex-col md:flex-row items-center md:py-12 md:px-16 lg:px-32">
             <div className="flex flex-wrap flex-col max-full p-6 md:w-1/2 md:p-0">

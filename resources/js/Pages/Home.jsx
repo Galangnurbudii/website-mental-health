@@ -9,7 +9,6 @@ import ArticleCard from '@/Components/ArticleCard'
 
 export default function Home({ articles, quote }) {
     const isLargeScreen = window.innerWidth > 1536
-
     return (
         <div>
             <NavBar />
@@ -33,6 +32,7 @@ export default function Home({ articles, quote }) {
                                     article={article}
                                 />
                             ))}
+
                     </div>
                 </div>
 
