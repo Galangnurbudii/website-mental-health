@@ -2,10 +2,10 @@
 
 namespace Database\Factories;
 
-use App\Models\Admin;
-use App\Models\Psikolog;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Faker\Factory as Faker;
+use GuzzleHttp\Client;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Artikel>
@@ -20,12 +20,15 @@ class ArtikelFactory extends Factory
     public function definition()
     {
         $faker = Faker::create('id_ID');
+
+
         return [
-            'judul' => $faker->sentence,
+            'judul' => '',
             'tag' => $faker->text(10),
-            'detail' => $faker->paragraphs(5, true),
-            'id_admin' => Admin::inRandomOrder()->first()->id,
-            'id_psikolog' => Psikolog::inRandomOrder()->first()->id
+            'detail' => $faker->paragraphs(10, true),
+            'id_user' => User::where('role', 'admin')->inRandomOrder()->first()->id,
+            'thumbnail_url' => '',
+
         ];
     }
 }

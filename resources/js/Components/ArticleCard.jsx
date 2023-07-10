@@ -13,41 +13,36 @@ function getRandomImage() {
 }
 
 function ArticleCard({ article }) {
-    const { id, judul, tag, updated_at, detail } = article
+    const { id, judul, tag, updated_at, detail, thumbnail_url } = article
 
     const tanggal = dayjs(updated_at).format('D MMMM YYYY')
-
-    const randomImage = getRandomImage()
-
     return (
-        <div className="card w-full md:w-96 bg-putih shadow-xl">
-            <figure className="md:h-2/4">
-                <Link href={`/articleDetail/${id}`}>
+        <Link href={`/articleDetail/${id}`}>
+            <div className="card w-full md:w-96 bg-putih shadow-xl h-full hover:scale-105 hover:border-2 hover:border-hoverBackground hover:border-opacity-50">
+                <figure className="md:h-2/4">
                     <img
-                        src={`images/${randomImage}`}
+                        src={thumbnail_url}
                         alt="Foto Berita"
-                        className="w-full h-full"
+                        className="w-full h-full object-cover"
+
                     />
-                </Link>
-            </figure>
-            <div className="card-body">
-                <h2 className="text-xl font-semibold text-hitam">
-                    <Link
-                        href={`/articleDetail/${id}`}
-                        className="text-xl font-semibold text-hitam"
-                    >
+                </figure>
+                <div className="card-body">
+                    <h2 className="text-xl font-semibold text-hitam line-clamp-2">
                         {judul}
-                    </Link>
-                </h2>
-                <div className="flex gap-8 md:gap-16">
-                    <Badge titleBadge={tag} />
-                    <p className="text-hitam font-bold text-base">{tanggal}</p>
+                    </h2>
+                    <div className="flex gap-8 md:gap-16">
+                        <Badge titleBadge={tag} />
+                        <p className="text-hitam font-bold text-base">
+                            {tanggal}
+                        </p>
+                    </div>
+                    <p className="text-sm md:text-base line-clamp-3">
+                        {detail}
+                    </p>
                 </div>
-                <p className="text-sm md:text-base">
-                    {detail.split('.').slice(0, 2).join('. ')}
-                </p>
             </div>
-        </div>
+        </Link>
     )
 }
 
