@@ -38,7 +38,7 @@ class ArtikelSeeder extends Seeder
                     'judul' => $result->title,
                     'tag' => $topics[array_rand($topics)],
                     'detail' => $result->content,
-                    'id_user' => User::inRandomOrder()->first()->id,
+                    'id_user' => User::where('role', 'admin')->inRandomOrder()->first()->id,
                     'thumbnail_url' => $result->image_url ?? 'https://images.unsplash.com/photo-1564121211835-e88c852648ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
                 ];
                 array_push($datas, $data);
