@@ -1,6 +1,6 @@
-import React from "react";
-import PrimaryButton from "./PrimaryButton";
-import { Link } from "@inertiajs/react";
+import React from 'react'
+import PrimaryButton from './PrimaryButton'
+import { Link } from '@inertiajs/react'
 
 function Hero() {
     return (
@@ -15,7 +15,7 @@ function Hero() {
                         mencarikan solusi
                     </h2>
                 </div>
-                <Link href={route("konsultasi")}>
+                <Link href={route('konsultasi')}>
                     <PrimaryButton className="text-xs px-2 py-1 w-44 md:w-56 md:text-base">
                         Konsultasi Sekarang
                     </PrimaryButton>
@@ -29,7 +29,7 @@ function Hero() {
                 />
             </div>
         </div>
-    );
+    )
 }
 
-export default Hero;
+export default Hero

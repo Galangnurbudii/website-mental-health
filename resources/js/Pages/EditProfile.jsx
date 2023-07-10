@@ -1,64 +1,149 @@
-import NavProfil from '@/Components/NavProfil'
-import React from 'react'
-import ProfilPlaceholders from './ProfilPlaceholders'
-import PrimaryButton from '@/Components/PrimaryButton'
+import React, { useState } from 'react'
 
+const EditProfile = () => {
+    const [user, setUser] = useState({
+        name: 'John Doe',
+        email: 'johndoe@example.com',
+        phone: '1234567890',
+        address: '123 Main St',
+        city: 'Some City',
+        province: 'Some Province',
+        password: '********',
+        gender: 'Male',
+    })
+    const [editing, setEditing] = useState(false)
 
-export default function EditProfile() {
+    const handleInputChange = (e) => {
+        setUser({ ...user, [e.target.name]: e.target.value })
+    }
+
+    const handleEditClick = () => {
+        setEditing(true)
+    }
+
+    const handleSaveClick = () => {
+        setEditing(false)
+        // Lakukan permintaan ke server untuk menyimpan perubahan profil
+        console.log('Profil disimpan:', user)
+    }
+
     return (
-        <>
-            <NavProfil />
-            <div className={`${open ? 'pl-96 pt-12' : 'pl-20'} duration-500`}>
-                <div className="flex flex-col gap-4">
-                    <h3 className="text-hitam font-semibold text-2xl">
-                        Edit Profil
-                    </h3>
-                    <ProfilPlaceholders
-                        title={'Nama'}
-                        contain={'Putu Agus Parimartha'}
+        <div>
+            <h1>Edit Profil</h1>
+            <label>
+                Nama:
+                {editing ? (
+                    <input
+                        type="text"
+                        name="name"
+                        value={user.name}
+                        onChange={handleInputChange}
                     />
-                    <ProfilPlaceholders
-                        title={'Email'}
-                        contain={'paparimartha@gmail.com'}
+                ) : (
+                    <span>{user.name}</span>
+                )}
+            </label>
+            <label>
+                Email:
+                {editing ? (
+                    <input
+                        type="email"
+                        name="email"
+                        value={user.email}
+                        onChange={handleInputChange}
                     />
-                    <ProfilPlaceholders
-                        title={'No Telepon'}
-                        contain={'081529588980'}
+                ) : (
+                    <span>{user.email}</span>
+                )}
+            </label>
+            <label>
+                Nomor Telepon:
+                {editing ? (
+                    <input
+                        type="tel"
+                        name="phone"
+                        value={user.phone}
+                        onChange={handleInputChange}
                     />
-                    <ProfilPlaceholders
-                        title={'Alamat'}
-                        contain={
-                            'Br. Busana Kelod, Desa Baha, Kecamatan Mengwi'
-                        }
+                ) : (
+                    <span>{user.phone}</span>
+                )}
+            </label>
+            <label>
+                Alamat:
+                {editing ? (
+                    <input
+                        type="text"
+                        name="address"
+                        value={user.address}
+                        onChange={handleInputChange}
                     />
-                    <div className="flex flex-row gap-10">
-                        <ProfilPlaceholders
-                            title={'Kabupaten'}
-                            contain={'Badung'}
-                        />
-                        <ProfilPlaceholders
-                            title={'Provinsi'}
-                            contain={'Bali'}
-                        />
-                    </div>
+                ) : (
+                    <span>{user.address}</span>
+                )}
+            </label>
+            <label>
+                Kabupaten:
+                {editing ? (
+                    <input
+                        type="text"
+                        name="city"
+                        value={user.city}
+                        onChange={handleInputChange}
+                    />
+                ) : (
+                    <span>{user.city}</span>
+                )}
+            </label>
+            <label>
+                Provinsi:
+                {editing ? (
+                    <input
+                        type="text"
+                        name="province"
+                        value={user.province}
+                        onChange={handleInputChange}
+                    />
+                ) : (
+                    <span>{user.province}</span>
+                )}
+            </label>
+            <label>
+                Password:
+                {editing ? (
+                    <input
+                        type="password"
+                        name="password"
+                        value={user.password}
+                        onChange={handleInputChange}
+                    />
+                ) : (
+                    <span>{user.password}</span>
+                )}
+            </label>
+            <label>
+                Jenis Kelamin:
+                {editing ? (
+                    <select
+                        name="gender"
+                        value={user.gender}
+                        onChange={handleInputChange}
+                    >
+                        <option value="Male">Laki-laki</option>
+                        <option value="Female">Perempuan</option>
+                    </select>
+                ) : (
+                    <span>{user.gender}</span>
+                )}
+            </label>
+            {editing ? (
+                <button onClick={handleSaveClick}>Simpan</button>
+            ) : (
+                <button onClick={handleEditClick}>Edit Profil</button>
+            )}
+        </div>
 
-                    <div className="flex flex-row gap-10">
-                        <ProfilPlaceholders
-                            title={'Password'}
-                            contain={'********'}
-                        />
-                        <ProfilPlaceholders
-                            title={'Jenis Kelamin'}
-                            contain={'Laki-Laki'}
-                        />
-                    </div>
-
-                    <div className="flex flex-row">
-                        <PrimaryButton>Edit Profil</PrimaryButton>
-                    </div>
-                </div>
-            </div>
-
-        </>
     )
 }
+
+export default EditProfile

@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User;
 
 class Janji extends Model
 {
+    use HasFactory;
     protected $table = 'janji';
     protected $primaryKey = 'id';
     public $timestamps = true;
