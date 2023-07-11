@@ -128,9 +128,5 @@ export default function Konsultasi() {
             </div>
             <Footer />
         </div>
-<<<<<<< HEAD
-    </div>
-=======
->>>>>>> 054693371210fd3a1e13318977964a3713fd8dbf
     );
 }

@@ -1,10 +1,10 @@
-import NavProfil from '@/Components/NavProfil'
+import NavProfil2 from '@/Components/NavProfil2'
 
 export default function HapusProfil(){
 
     return(
         <div>
-            <NavProfil />
+            <NavProfil2 />
             <div className='lg:px-96 md:px-40 px-10 py-20'>
                 <h1 className="font-bold text-3xl pt-5 pb-10">
                     Jadwal Konsultasi Hari Ini

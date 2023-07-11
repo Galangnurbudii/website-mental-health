@@ -1,6 +1,6 @@
 export default function CardsCarousel({ className = "", disabled, ...props }) {
     return (        
-        <div className="carousel-container overflow-x-scroll ">
+        <div className="carousel-container">
             <div className="carousel gap-7 pb-10 overflow-x-auto">
                 <div id = "item1"
                     className="bg-whiteFABackground carousel-item shadow-xl rounded-lg border border-gray-300

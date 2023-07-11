@@ -8,6 +8,8 @@ body {
 
 /* For Date Picker */
 @import "node_modules/react-datepicker/src/stylesheets/datepicker.scss";
+@import 'react-date-range/dist/styles.css'; 
+@import 'react-date-range/dist/theme/default.css';
 
 .react-datepicker-wrapper,
 .react-datepicker__input-container,

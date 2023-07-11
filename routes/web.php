@@ -88,6 +88,14 @@ Route::get('/dashboardpsikolog', function () {
     return Inertia::render('DashboardPsikolog');
 })->name('dashboardpsikolog');
 
+Route::get('/jadwalkonsultasi', function () {
+    return Inertia::render('JadwalKonsultasi');
+})->name('jadwalkonsultasi');
+
+Route::get('/aturketersediaan', function () {
+    return Inertia::render('AturKetersediaan');
+})->name('aturketersediaan');
+
 Route::resource('psikologs', PsikologController::class);
 Route::get('/profil', function () {
     return Inertia::render('EditProfile');
