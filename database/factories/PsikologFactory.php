@@ -32,6 +32,7 @@ class PsikologFactory extends Factory
             'provinsi' => $faker->city,
             'kota' => $faker->city,
             'lulusan' => $faker->sentence,
+            'foto_profil' => '/images/detailPsikolog.jpg',
             'id_user' => User::inRandomOrder()->first()->id,
         ];
     }
