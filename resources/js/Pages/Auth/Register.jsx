@@ -48,7 +48,7 @@ export default function Register() {
                             className="lg:h-full lg:w-full 
                             md:h-full               
                             object-cover"
-                            src="images/bgloginfix.png"
+                            src="images/register.png"
                             alt=""
                         />
                     </div>
@@ -72,11 +72,11 @@ export default function Register() {
                                                 text-2xl 
                                                 sm:text-3xl 
                                                 md:text-3xl 
-                                                lg:text-[48px] font-bold mb-5"
+                                                lg:text-[42px] font-bold mb-5"
                                 >
                                     Join Our Community
                                 </h1>
-                                <p className="text-[#333333] text-[24px] font-semibold mb-7">
+                                <p className="text-[#333333] text-2xl font-semibold mb-7">
                                     Don’t feel alone. Love yourself more with us
                                 </p>
                             </div>
@@ -84,7 +84,7 @@ export default function Register() {
                             {/* login box -> w594 h60 */}
                             {/* RegisteredUserController */}
                             <div>
-                                <div className="w-full mt-4 mb-10">
+                                <div className="w-full mt-4 mb-7">
                                     <InputLabel htmlFor="name" />
 
                                     <TextInput
@@ -108,7 +108,7 @@ export default function Register() {
                                     />
                                 </div>
 
-                                <div className="mb-14">
+                                <div className="mb-7">
                                     <InputLabel htmlFor="email" />
 
                                     <TextInput
@@ -126,7 +126,7 @@ export default function Register() {
                                     />
                                 </div>
 
-                                <div className="mb-12">
+                                <div className="mb-7">
                                     <InputLabel htmlFor="password" />
 
                                     <TextInput
@@ -148,12 +148,12 @@ export default function Register() {
                                         className="mt-2"
                                     />
                                 </div>
-                                <div className="mb-12">
+                                <div className="mb-10">
                                     <InputLabel htmlFor="password_confirmation" />
 
                                     <TextInput
                                         id="password_confirmation"
-                                        placeholder="password confirmation"
+                                        placeholder="Password Confirmation"
                                         type="password"
                                         name="password_confirmation"
                                         value={data.password_confirmation}

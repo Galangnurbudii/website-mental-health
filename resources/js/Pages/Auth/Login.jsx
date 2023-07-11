@@ -52,7 +52,7 @@ export default function Login({ status, canResetPassword }) {
                             className="lg:h-full lg:w-full 
                             md:h-full               
                             object-cover"
-                            src="images/bgregisterfix.png"
+                            src="images/login.png"
 
                         />
                     </div>
@@ -60,7 +60,7 @@ export default function Login({ status, canResetPassword }) {
                     {/* right side */}
                     <div className="md:w-3/4
                                     lg:w-1/2 h-full
-                                    md:p-20 lg:p-20 
+                                    md:p-20 lg:p-10 
                                     flex flex-col justify-between items-center p-10 mt-5">
                         <div className="w-full flex flex-col max-w-[525px] pt-0 sm:pt-8">
                             {/* title */}
@@ -73,14 +73,14 @@ export default function Login({ status, canResetPassword }) {
                                                 text-2xl 
                                                 sm:text-3xl 
                                                 md:text-3xl 
-                                                lg:text-[48px] font-bold mb-5">
+                                                lg:text-[42px] font-bold mb-5">
                                     Welcome Back
                                 </h1>
                                 <p className="text-[#333333] 
                                                 text-lg 
                                                 sm:text-xl 
                                                 md:text-2xl 
-                                                lg:text-[24px] font-semibold mb-7 px-1">
+                                                lg:text-2xl font-semibold mb-7 px-1">
                                     Welcome to Mental Health. Please enter your
                                     details
                                 </p>
@@ -88,7 +88,7 @@ export default function Login({ status, canResetPassword }) {
 
                             {/* login box -> w594 h60 */}
                             <div className="w-full flex flex-col">
-                                <div className="w-full mt-4 pb-10">
+                                <div className="w-full mt-2 pb-10">
                                     <InputLabel htmlFor="email" />
 
                                     <TextInput
@@ -111,7 +111,7 @@ export default function Login({ status, canResetPassword }) {
                                     />
                                 </div>
 
-                                <div className="mb-12">
+                                <div className="mb-7">
                                     <InputLabel htmlFor="password" />
 
                                     <TextInput
