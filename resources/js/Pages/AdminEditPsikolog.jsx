@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import EditPsikologModal from "@/Components/EditPsikologModal";
 import { Head, useForm, usePage, Link } from '@inertiajs/react';
 
 export default function AdminEditPsikolog(props) {
@@ -21,6 +22,25 @@ export default function AdminEditPsikolog(props) {
         put(route("psikologs.update", psikologs.id));
     }
 
+    const [showEditPsikologModal, setShowEditPsikologModal] = useState(false)
+    // const handleOnCloseUpdate = () => setShowEditPsikologModal(false)
+    const [shouldRedirect, setShouldRedirect] = useState(false);
+
+    useEffect(() => {
+        if (shouldRedirect) {
+            const timer = setTimeout(() => {
+                window.location.href = route("psikologs.index");
+            }, 2000);
+
+            return () => clearTimeout(timer);
+        }
+    }, [shouldRedirect]);
+
+    const handleOnCloseUpdate = () => {
+        setShowEditPsikologModal(false);
+        setShouldRedirect(true);
+    };
+
     return (
         <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-20">
             <a href={route("psikologs.index")}>
@@ -39,7 +59,7 @@ export default function AdminEditPsikolog(props) {
                             id="nama"
                             placeholder="Nama"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="nama"
                             name="nama"
                             isFocused={true}
@@ -59,7 +79,7 @@ export default function AdminEditPsikolog(props) {
                             id="email"
                             placeholder="Email"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="email"
                             name="email"
                             isFocused={true}
@@ -79,7 +99,7 @@ export default function AdminEditPsikolog(props) {
                             id="password"
                             placeholder="Password"
                             type="password"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="password"
                             name="password"
                             isFocused={true}
@@ -100,7 +120,7 @@ export default function AdminEditPsikolog(props) {
                             placeholder="rating"
                             type="number"
                             step="0.01"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="rating"
                             name="rating"
                             isFocused={true}
@@ -120,7 +140,7 @@ export default function AdminEditPsikolog(props) {
                             id="bidang_keahlian"
                             placeholder="Bidang Keahlian"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="bidang_keahlian"
                             name="bidang_keahlian"
                             isFocused={true}
@@ -140,7 +160,7 @@ export default function AdminEditPsikolog(props) {
                             id="tahun_pengalaman"
                             placeholder="Tahun Pengalaman"
                             type="number"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="tahun_pengalaman"
                             name="tahun_pengalaman"
                             isFocused={true}
@@ -160,7 +180,7 @@ export default function AdminEditPsikolog(props) {
                             id="nomor_str"
                             placeholder="Nomor Str"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="nomor_str"
                             name="nomor_str"
                             isFocused={true}
@@ -180,7 +200,7 @@ export default function AdminEditPsikolog(props) {
                             id="lokasi_praktik"
                             placeholder="Lokasi Praktik"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="lokasi_praktik"
                             name="lokasi_praktik"
                             isFocused={true}
@@ -200,7 +220,7 @@ export default function AdminEditPsikolog(props) {
                             id="lulusan"
                             placeholder="Lulusan"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="lulusan"
                             name="lulusan"
                             isFocused={true}
@@ -217,13 +237,15 @@ export default function AdminEditPsikolog(props) {
                 </div>
                 <div className="mt-4">
                     <button
+                        onClick={() => setShowEditPsikologModal(true)}
                         type="submit"
                         className="px-6 py-2 font-bold text-white bg-primary rounded"
                     >
                         Update
                     </button>
                 </div>
-             </form>
+            </form>
+            <EditPsikologModal onClose={handleOnCloseUpdate} visible={showEditPsikologModal} />
         </div>
     );
 }

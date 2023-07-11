@@ -2,6 +2,8 @@ import React from 'react';
 import { Head, Link, useForm } from "@inertiajs/react";  
 import { Inertia } from "@inertiajs/inertia";
 import NavBarAdmin from '@/Components/NavBarAdmin';
+import { AiOutlineSearch } from 'react-icons/ai'
+import SearchBar from '@/Components/SearchBar';
 
 export default function AdminIndexPsikolog(props) {
     function destroy(e) {
@@ -14,9 +16,12 @@ export default function AdminIndexPsikolog(props) {
         <div className='flex'>
             <NavBarAdmin />
             <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-12">
-               <div className="flex items-center justify-between" style={{fontWeight: 'bold'}}>
-                    <a className='px-4 py-2 text-sm text-white bg-blue-500 rounded' href={route("psikologs.create")}>Create Psikolog</a>
-                </div>
+                <SearchBar />
+                <a href={route("psikologs.create")}>
+                    <button className='px-4 py-2 w-[133px] text-sm text-white bg-blue-500 rounded'>
+                        Create Psikolog
+                    </button>
+                </a>
 
                 <table className="table-auto w-full">
                     <thead>

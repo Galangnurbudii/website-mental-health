@@ -46,7 +46,7 @@ export default function Forum() {
                                 </button>
                             </div>
                         </div>
-                        <MyModal onClose={handleOnClose} visible={showMyModal}/>
+                        <MyModal onClose={handleOnClose} visible={showMyModal} />
                         <EmptyTextModal onClose={handleOnCloseText} visible={showEmptyTextModal} />
                     </div>
                 </div>
