@@ -111,7 +111,7 @@ export default function Layanan() {
                                 <div className="border border-gray-100 card lg:card-side bg-base-100 shadow-sm rounded-sm overflow-x-auto">
                                     <div className="card-body flex flex-row xl:px-10 lg:px-4 md:px-10 sm:px-10 xs:px-4">
                                         {/* "Pakai" Button */}
-                                        <input type="text" placeholder="Promo" className="input input-bordered w-full max-w-lg h-[34px] focus:outline-none" />                                        
+                                        <input type="text" placeholder="Promo" className="input input-bordered w-full h-[34px] focus:outline-none" />                                        
                                         <CouponButton
                                             className="h-0"
                                             onClick={handleClick2}>
