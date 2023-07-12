@@ -10,7 +10,8 @@ export default function Layanan() {
             <NavBar />
 
             <Header pages="Konsultasi" currpages="Layanan" />
-            <div className="w-full h-screen flex items-start sm:flex-col md:flex-row lg:flex-row">
+            <div className="w-full flex items-start sm:flex-col md:flex-row lg:flex-row">
+
                 {/* left side */}
                 <LeftSideLayanan />
                 {/* right side */}
