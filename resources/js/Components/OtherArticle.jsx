@@ -5,7 +5,7 @@ function OtherArticle() {
     return (
         <div className="flex items-center">
             <img
-                src="images/pasangan.jpg"
+                src="storage/images/pasangan.jpg"
                 alt="Pasangan Supportif Dapat Cegah Depresi"
                 style={{
                     maxWidth: '160px',

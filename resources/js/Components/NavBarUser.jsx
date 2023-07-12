@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
 function NavBarUser() {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
     const handleToggleDropdown = () => {
-        setIsDropdownOpen(!isDropdownOpen);
-    };
+        setIsDropdownOpen(!isDropdownOpen)
+    }
 
     return (
         <nav className="bg-putih">
@@ -14,7 +14,7 @@ function NavBarUser() {
                     <div className="flex items-center">
                         <div className="flex-shrink-0">
                             <a
-                                href={route("home")}
+                                href={route('home')}
                                 className="text-hitam font-bold text-xl"
                             >
                                 Mental Health
@@ -23,25 +23,25 @@ function NavBarUser() {
                         <div className="hidden sm:block sm:ml-">
                             <div className="flex space-x-4">
                                 <a
-                                    href={route("home")}
+                                    href={route('home')}
                                     className="text-hitam hover:text-hoverBackground hover:font-semibold px-3 py-2"
                                 >
                                     Beranda
                                 </a>
                                 <a
-                                    href={route("article")}
+                                    href={route('article')}
                                     className="text-hitam hover:text-hoverBackground hover:font-semibold px-3 py-2"
                                 >
                                     Artikel
                                 </a>
                                 <a
-                                    href={route("konsultasi")}
+                                    href={route('konsultasi')}
                                     className="text-hitam hover:text-hoverBackground hover:font-semibold px-3 py-2"
                                 >
                                     Konsultasi
                                 </a>
                                 <a
-                                    href={route("forumHome")}
+                                    href={route('forumHome')}
                                     className="text-hitam hover:text-hoverBackground hover:font-semibold px-3 py-2"
                                 >
                                     Forum
@@ -51,7 +51,7 @@ function NavBarUser() {
                                     className="btn btn-ghost btn-circle avatar flex flex-col gap-2"
                                 >
                                     <div className="rounded-full w-10 h-10">
-                                        <img src="images/fotoProfil.jpeg" />
+                                        <img src="storage/images/fotoProfil.jpeg" />
                                     </div>
                                     <p className="text-base">Parimartha</p>
                                 </label>
@@ -87,31 +87,31 @@ function NavBarUser() {
                         {/* Dropdown menu content */}
                         <div className="bg-white py-2 px-2 space-y-2 ">
                             <a
-                                href={route("home")}
+                                href={route('home')}
                                 className="text-hitam hover:bg-hoverBackground block"
                             >
                                 Beranda
                             </a>
                             <a
-                                href={route("article")}
+                                href={route('article')}
                                 className="text-hitam hover:bg-hoverBackground block"
                             >
                                 Artikel
                             </a>
                             <a
-                                href={route("konsultasi")}
+                                href={route('konsultasi')}
                                 className="text-hitam hover:bg-hoverBackground block"
                             >
                                 Konsultasi
                             </a>
                             <a
-                                href={route("forumHome")}
+                                href={route('forumHome')}
                                 className="text-hitam hover:bg-hoverBackground block"
                             >
                                 Forum
                             </a>
                             <a
-                                href={route("profil")}
+                                href={route('profil')}
                                 className="text-hitam hover:bg-hoverBackground block"
                             >
                                 Profil
@@ -121,7 +121,7 @@ function NavBarUser() {
                 )}
             </div>
         </nav>
-    );
+    )
 }
 
-export default NavBarUser;
+export default NavBarUser

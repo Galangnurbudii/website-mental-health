@@ -22,7 +22,7 @@ function ForumHero() {
             </div>
             <div className="max-full md:flex md:justify-center px-4 md:w-1/2 md:pr-10 md:self-end">
                 <img
-                    src="images/forum.png"
+                    src="storage/images/forum.png"
                     alt="forum"
                     className="max-h-80 md:max-h-96"
                 />

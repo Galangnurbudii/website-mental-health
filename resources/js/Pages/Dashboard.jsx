@@ -1,12 +1,12 @@
-import PrimaryButton from "@/Components/PrimaryButton";
-import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import { Head } from "@inertiajs/react";
-import BackUpButton from "@/Components/BackUpButton";
+import PrimaryButton from '@/Components/PrimaryButton'
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout'
+import { Head } from '@inertiajs/react'
+import BackUpButton from '@/Components/BackUpButton'
 
-import Footer from "@/Components/Footer";
-import NumberBox from "@/Components/NumberBox";
-import CardsCarousel from "@/Components/CardsCarousel";
-import Cards from "@/Components/Cards";
+import Footer from '@/Components/Footer'
+import NumberBox from '@/Components/NumberBox'
+import CardsCarousel from '@/Components/CardsCarousel'
+import Cards from '@/Components/Cards'
 
 export default function Dashboard({ auth }) {
     return (
@@ -22,11 +22,12 @@ export default function Dashboard({ auth }) {
                 <div
                     className="w-full h-[615px] md:h-[615px] lg:h-[615px] bg-center"
                     style={{
-                        backgroundImage: "url('images/konsultasiBanner.jpg')",
+                        backgroundImage:
+                            "url('storage/images/konsultasiBanner.jpg')",
                     }}
                 >
                     <div className="">
-                        {/* <img src='images/konsultasiBanner.jpg' alt=''/>    */}
+                        {/* <img src='storage/images/konsultasiBanner.jpg' alt=''/>    */}
                         <div className="flex flex-col">
                             <h1
                                 className="font-semibold   
@@ -44,7 +45,7 @@ export default function Dashboard({ auth }) {
                             md:text-3xl md:px-20
                             lg:text-3xl lg:px-40"
                             >
-                                Ceritakan isi hatimu, temukan akar masalah{" "}
+                                Ceritakan isi hatimu, temukan akar masalah{' '}
                                 <br />
                                 dan jadi pribadi lebih baik
                             </p>
@@ -112,7 +113,7 @@ export default function Dashboard({ auth }) {
                         {/* Carousel Cerita Mereka */}
                         <div className="px-10 md:px-20 lg:px-40">
                             <CardsCarousel
-                                imageSrc="images/petik.png"
+                                imageSrc="storage/images/petik.png"
                                 text="Berkat konsultasi di sini rasanya jadi lebih plong. Tenang dan bahagia banget"
                                 names="Tatang Munajir - Mahasiswa"
                             />
@@ -121,5 +122,5 @@ export default function Dashboard({ auth }) {
                 </div>
             </div>
         </AuthenticatedLayout>
-    );
+    )
 }

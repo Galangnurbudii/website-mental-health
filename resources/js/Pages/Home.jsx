@@ -32,7 +32,6 @@ export default function Home({ articles, quote }) {
                                     article={article}
                                 />
                             ))}
-
                     </div>
                 </div>
 
@@ -43,7 +42,7 @@ export default function Home({ articles, quote }) {
                         Cerita Mereka
                     </h1>
                     <CardsCarousel
-                        imageSrc="images/petik.png"
+                        imageSrc="storage/images/petik.png"
                         text="Berkat konsultasi di sini rasanya jadi lebih plong. Tenang dan bahagia banget"
                         names="Tatang Munajir - Mahasiswa"
                     />

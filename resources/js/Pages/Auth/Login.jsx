@@ -1,31 +1,31 @@
-import { useEffect } from "react";
-import Checkbox from "@/Components/Checkbox";
-import GuestLayout from "@/Layouts/GuestLayout";
-import InputError from "@/Components/InputError";
-import InputLabel from "@/Components/InputLabel";
-import PrimaryButton from "@/Components/PrimaryButton";
-import TextInput from "@/Components/TextInput";
-import { Head, Link, useForm } from "@inertiajs/react";
+import { useEffect } from 'react'
+import Checkbox from '@/Components/Checkbox'
+import GuestLayout from '@/Layouts/GuestLayout'
+import InputError from '@/Components/InputError'
+import InputLabel from '@/Components/InputLabel'
+import PrimaryButton from '@/Components/PrimaryButton'
+import TextInput from '@/Components/TextInput'
+import { Head, Link, useForm } from '@inertiajs/react'
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
-        name: "",
-        email: "",
-        password: "",
+        name: '',
+        email: '',
+        password: '',
         remember: false,
-    });
+    })
 
     useEffect(() => {
         return () => {
-            reset("password");
-        };
-    }, []);
+            reset('password')
+        }
+    }, [])
 
     const submit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
 
-        post(route("login"));
-    };
+        post(route('login'))
+    }
 
     return (
         <GuestLayout>
@@ -40,47 +40,56 @@ export default function Login({ status, canResetPassword }) {
             <form onSubmit={submit}>
                 <div className="w-full h-screen lg:flex md:flex md:justify-center lg:overflow-hidden">
                     {/* left side */}
-                    <div className="relative                    
+                    <div
+                        className="relative                    
                                     md:w-1/2
                                     md:flex
                                     md:justify-center
                                     md:items-center
                                     lg:h-full
-                                    lg:w-1/2 lg:flex lg:flex-col">
+                                    lg:w-1/2 lg:flex lg:flex-col"
+                    >
                         {/* put left side image here */}
                         <img
                             className="lg:h-full lg:w-full 
                             md:h-full               
                             object-cover"
-                            src="images/bgregisterfix.png"
-
+                            src="storage/images/bgregisterfix.png"
                         />
                     </div>
 
                     {/* right side */}
-                    <div className="md:w-3/4
+                    <div
+                        className="md:w-3/4
                                     lg:w-1/2 h-full
                                     md:p-20 lg:p-20 
-                                    flex flex-col justify-between items-center p-10 mt-5">
+                                    flex flex-col justify-between items-center p-10 mt-5"
+                    >
                         <div className="w-full flex flex-col max-w-[525px] pt-0 sm:pt-8">
                             {/* title */}
 
-                            <div className="w-full flex flex-col 
-                                            max-w-[500px] sm:pt-10">
+                            <div
+                                className="w-full flex flex-col 
+                                            max-w-[500px] sm:pt-10"
+                            >
                                 {/* text-lg sm:text-xl md:text-2xl lg:text-3xl */}
                                 {/*  className='w-full flex flex-col' */}
-                                <h1 className="text-primary 
+                                <h1
+                                    className="text-primary 
                                                 text-2xl 
                                                 sm:text-3xl 
                                                 md:text-3xl 
-                                                lg:text-[48px] font-bold mb-5">
+                                                lg:text-[48px] font-bold mb-5"
+                                >
                                     Welcome Back
                                 </h1>
-                                <p className="text-[#333333] 
+                                <p
+                                    className="text-[#333333] 
                                                 text-lg 
                                                 sm:text-xl 
                                                 md:text-2xl 
-                                                lg:text-[24px] font-semibold mb-7 px-1">
+                                                lg:text-[24px] font-semibold mb-7 px-1"
+                                >
                                     Welcome to Mental Health. Please enter your
                                     details
                                 </p>
@@ -101,7 +110,7 @@ export default function Login({ status, canResetPassword }) {
                                         autoComplete="username"
                                         isFocused={true}
                                         onChange={(e) =>
-                                            setData("email", e.target.value)
+                                            setData('email', e.target.value)
                                         }
                                     />
 
@@ -123,7 +132,7 @@ export default function Login({ status, canResetPassword }) {
                                         className="mt-1 block w-full"
                                         autoComplete="current-password"
                                         onChange={(e) =>
-                                            setData("password", e.target.value)
+                                            setData('password', e.target.value)
                                         }
                                     />
 
@@ -140,7 +149,7 @@ export default function Login({ status, canResetPassword }) {
                                             checked={data.remember}
                                             onChange={(e) =>
                                                 setData(
-                                                    "remember",
+                                                    'remember',
                                                     e.target.checked
                                                 )
                                             }
@@ -152,7 +161,7 @@ export default function Login({ status, canResetPassword }) {
 
                                     {canResetPassword && (
                                         <Link
-                                            href={route("password.request")}
+                                            href={route('password.request')}
                                             className="font-semibold text-sm text-primary hover:text-[#2d8efd] rounded-md"
                                         >
                                             Forgot Password?
@@ -172,10 +181,10 @@ export default function Login({ status, canResetPassword }) {
                                 <div className="flex justify-center mt-4">
                                     {canResetPassword && (
                                         <Link
-                                            href={route("register")}
+                                            href={route('register')}
                                             className="font-semibold text-sm text-gray-600 hover:text-gray-900 rounded-md"
                                         >
-                                            Don’t have an account?{" "}
+                                            Don’t have an account?{' '}
                                             <span className="text-primary">
                                                 Sign up for free
                                             </span>
@@ -188,5 +197,5 @@ export default function Login({ status, canResetPassword }) {
                 </div>
             </form>
         </GuestLayout>
-    );
+    )
 }

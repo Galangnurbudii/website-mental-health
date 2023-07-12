@@ -1,31 +1,31 @@
-import { useEffect } from "react";
-import Checkbox from "@/Components/Checkbox";
-import GuestLayout from "@/Layouts/GuestLayout";
-import InputError from "@/Components/InputError";
-import InputLabel from "@/Components/InputLabel";
-import PrimaryButton from "@/Components/PrimaryButton";
-import TextInput from "@/Components/TextInput";
-import { Head, Link, useForm } from "@inertiajs/react";
+import { useEffect } from 'react'
+import Checkbox from '@/Components/Checkbox'
+import GuestLayout from '@/Layouts/GuestLayout'
+import InputError from '@/Components/InputError'
+import InputLabel from '@/Components/InputLabel'
+import PrimaryButton from '@/Components/PrimaryButton'
+import TextInput from '@/Components/TextInput'
+import { Head, Link, useForm } from '@inertiajs/react'
 
 export default function PsikologLogin({ status2, canResetPassword2 }) {
     const { data, setData, post, processing, errors, reset } = useForm({
-        name: "",
-        email: "",
-        password: "",
+        name: '',
+        email: '',
+        password: '',
         remember: false,
-    });
+    })
 
     useEffect(() => {
         return () => {
-            reset("password");
-        };
-    }, []);
+            reset('password')
+        }
+    }, [])
 
     const submit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
 
-        post(route("login"));
-    };
+        post(route('login'))
+    }
 
     return (
         <GuestLayout>
@@ -40,51 +40,64 @@ export default function PsikologLogin({ status2, canResetPassword2 }) {
             <form onSubmit={submit}>
                 <div className="w-full h-screen lg:flex md:flex md:justify-center lg:overflow-hidden bg-[#B2D4FB]">
                     {/* left side */}
-                    <div className="relative                    
+                    <div
+                        className="relative                    
                                     md:w-1/2
                                     md:flex
                                     md:justify-center
                                     md:items-center
                                     lg:h-full
-                                    lg:w-1/2 lg:flex lg:flex-col">
+                                    lg:w-1/2 lg:flex lg:flex-col"
+                    >
                         {/* put left side image here */}
                         <img
                             className="lg:h-full lg:w-full 
                             md:h-full
                             object-cover"
-                            src="images/Psikolog Login.png"
+                            src="storage/images/Psikolog Login.png"
                         />
                     </div>
 
                     {/* right side */}
-                    <div className="md:w-3/4
+                    <div
+                        className="md:w-3/4
                                     lg:w-1/2 h-full
                                     p-10 md:p-26 lg:p-6 xl:p-10 2xl:p-32
-                                    flex flex-col justify-between items-center">
-                        <div className="w-full flex flex-col 
+                                    flex flex-col justify-between items-center"
+                    >
+                        <div
+                            className="w-full flex flex-col 
                                         max-w-[715px] 
                                         pt-0 sm:pt-8 sm:px-14 sm:pb-16
-                                        bg-white rounded-2xl">
+                                        bg-white rounded-2xl"
+                        >
                             {/* title */}
 
-                            <div className="w-full flex flex-col 
+                            <div
+                                className="w-full flex flex-col 
                                             max-w-[500px] 
-                                            sm:pt-10 md:pt-5 lg:pt-10">
+                                            sm:pt-10 md:pt-5 lg:pt-10"
+                            >
                                 {/* text-lg sm:text-xl md:text-2xl lg:text-3xl */}
                                 {/*  className='w-full flex flex-col' */}
-                                <h1 className="text-primary 
+                                <h1
+                                    className="text-primary 
                                                 text-2xl
                                                 lg:text-[48px] font-bold 
-                                                sm:mb-2 lg:mb-5">
+                                                sm:mb-2 lg:mb-5"
+                                >
                                     Welcome Psikolog
                                 </h1>
-                                <p className="text-[#333333] 
+                                <p
+                                    className="text-[#333333] 
                                                 text-lg 
                                                 sm:text-base 
                                                 md:text-xl
                                                 font-semibold 
-                                                lg:mb-7 pl-1 sm:pb-10">
-                                    Ready to help the customer to find the solution
+                                                lg:mb-7 pl-1 sm:pb-10"
+                                >
+                                    Ready to help the customer to find the
+                                    solution
                                 </p>
                             </div>
 
@@ -103,7 +116,7 @@ export default function PsikologLogin({ status2, canResetPassword2 }) {
                                         autoComplete="username"
                                         isFocused={true}
                                         onChange={(e) =>
-                                            setData("email", e.target.value)
+                                            setData('email', e.target.value)
                                         }
                                     />
 
@@ -125,7 +138,7 @@ export default function PsikologLogin({ status2, canResetPassword2 }) {
                                         className="mt-1 block w-full"
                                         autoComplete="current-password"
                                         onChange={(e) =>
-                                            setData("password", e.target.value)
+                                            setData('password', e.target.value)
                                         }
                                     />
 
@@ -142,7 +155,7 @@ export default function PsikologLogin({ status2, canResetPassword2 }) {
                                             checked={data.remember}
                                             onChange={(e) =>
                                                 setData(
-                                                    "remember",
+                                                    'remember',
                                                     e.target.checked
                                                 )
                                             }
@@ -151,10 +164,10 @@ export default function PsikologLogin({ status2, canResetPassword2 }) {
                                             Remember Me
                                         </span>
                                     </label>
-                                    
+
                                     {canResetPassword2 || (
                                         <Link
-                                            href={route("password.request")}
+                                            href={route('password.request')}
                                             className="font-semibold text-sm text-primary hover:text-[#2d8efd] rounded-md"
                                         >
                                             Forgot Password?
@@ -174,10 +187,10 @@ export default function PsikologLogin({ status2, canResetPassword2 }) {
                                 <div className="flex justify-center mt-4">
                                     {canResetPassword2 && (
                                         <Link
-                                            href={route("register")}
+                                            href={route('register')}
                                             className="font-semibold text-sm text-gray-600 hover:text-gray-900 rounded-md"
                                         >
-                                            Don’t have an account?{" "}
+                                            Don’t have an account?{' '}
                                             <span className="text-primary">
                                                 Sign up for free
                                             </span>
@@ -190,5 +203,5 @@ export default function PsikologLogin({ status2, canResetPassword2 }) {
                 </div>
             </form>
         </GuestLayout>
-    );
+    )
 }

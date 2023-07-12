@@ -1,31 +1,31 @@
-import { useEffect } from "react";
-import Checkbox from "@/Components/Checkbox";
-import GuestLayout from "@/Layouts/GuestLayout";
-import InputError from "@/Components/InputError";
-import InputLabel from "@/Components/InputLabel";
-import PrimaryButton from "@/Components/PrimaryButton";
-import TextInput from "@/Components/TextInput";
-import { Head, Link, useForm } from "@inertiajs/react";
+import { useEffect } from 'react'
+import Checkbox from '@/Components/Checkbox'
+import GuestLayout from '@/Layouts/GuestLayout'
+import InputError from '@/Components/InputError'
+import InputLabel from '@/Components/InputLabel'
+import PrimaryButton from '@/Components/PrimaryButton'
+import TextInput from '@/Components/TextInput'
+import { Head, Link, useForm } from '@inertiajs/react'
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
-        name: "",
-        email: "",
-        password: "",
-        password_confirmation: "",
-    });
+        name: '',
+        email: '',
+        password: '',
+        password_confirmation: '',
+    })
 
     useEffect(() => {
         return () => {
-            reset("password", "password_confirmation");
-        };
-    }, []);
+            reset('password', 'password_confirmation')
+        }
+    }, [])
 
     const submit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
 
-        post(route("register"));
-    };
+        post(route('register'))
+    }
 
     return (
         <GuestLayout>
@@ -48,7 +48,7 @@ export default function Register() {
                             className="lg:h-full lg:w-full 
                             md:h-full               
                             object-cover"
-                            src="images/bgloginfix.png"
+                            src="storage/images/bgloginfix.png"
                             alt=""
                         />
                     </div>
@@ -59,8 +59,8 @@ export default function Register() {
                                     lg:w-1/2 h-full
 
                                     md:p-20 lg:p-10 
-                                    flex flex-col justify-between items-center p-10">
-
+                                    flex flex-col justify-between items-center p-10"
+                    >
                         <div className="w-full flex flex-col max-w-[525px] sm:pt-8">
                             {/* title */}
                             <div
@@ -97,7 +97,7 @@ export default function Register() {
                                         autoComplete="name"
                                         isFocused={true}
                                         onChange={(e) =>
-                                            setData("name", e.target.value)
+                                            setData('name', e.target.value)
                                         }
                                         required
                                     />
@@ -120,7 +120,7 @@ export default function Register() {
                                         className="mt-1 block w-full"
                                         autoComplete="username"
                                         onChange={(e) =>
-                                            setData("email", e.target.value)
+                                            setData('email', e.target.value)
                                         }
                                         required
                                     />
@@ -138,7 +138,7 @@ export default function Register() {
                                         className="mt-1 block w-full"
                                         autoComplete="new-password"
                                         onChange={(e) =>
-                                            setData("password", e.target.value)
+                                            setData('password', e.target.value)
                                         }
                                         required
                                     />
@@ -161,7 +161,7 @@ export default function Register() {
                                         autoComplete="new-password"
                                         onChange={(e) =>
                                             setData(
-                                                "password_confirmation",
+                                                'password_confirmation',
                                                 e.target.value
                                             )
                                         }
@@ -181,14 +181,14 @@ export default function Register() {
                                             checked={data.remember}
                                             onChange={(e) =>
                                                 setData(
-                                                    "remember",
+                                                    'remember',
                                                     e.target.checked
                                                 )
                                             }
                                             required
                                         />
                                         <span className="font-semibold ml-2 text-sm text-gray-600">
-                                            I Agree to{" "}
+                                            I Agree to{' '}
                                             <span className="text-primary">
                                                 terms & conditions
                                             </span>
@@ -205,10 +205,10 @@ export default function Register() {
 
                                 <div className="flex justify-center mt-4">
                                     <Link
-                                        href={route("login")}
+                                        href={route('login')}
                                         className="font-semibold text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none"
                                     >
-                                        Already have an account?{" "}
+                                        Already have an account?{' '}
                                         <span className="text-primary">
                                             Log In here
                                         </span>
@@ -217,8 +217,8 @@ export default function Register() {
                             </div>
                         </div>
                     </div>
-                </div>            
+                </div>
             </form>
         </GuestLayout>
-    );
+    )
 }

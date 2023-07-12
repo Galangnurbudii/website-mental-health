@@ -14,7 +14,7 @@ function ConsultationBadge() {
             <div className="border border-disabled rounded-md shadow-md">
                 <div className="flex items-center">
                     <img
-                        src="images/pasangan.jpg"
+                        src="storage/images/pasangan.jpg"
                         alt="Pasangan Supportif Dapat Cegah Depresi"
                         style={{
                             wdth: '80px',

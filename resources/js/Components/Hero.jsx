@@ -23,7 +23,7 @@ function Hero() {
             </div>
             <div className="max-full md:flex md:justify-center px-4 md:w-1/2 sm:flex md:self-end">
                 <img
-                    src="images/landingPage.png"
+                    src="storage/images/landingPage.png"
                     alt="landingPage"
                     className="max-h-fit md:pt-32"
                 />

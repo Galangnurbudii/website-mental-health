@@ -10,7 +10,7 @@ export default function NotFound() {
             <Navbar />
             <div className="flex flex-col justify-between items-center py-20 px-4 md:px-16 lg:px-20 gap-8">
                 <img
-                    src="images/ErrorPage.png"
+                    src="storage/images/ErrorPage.png"
                     alt="ErrorPage"
                     className="max-w max-h md:max-w-lg md:max-h-lg"
                 />

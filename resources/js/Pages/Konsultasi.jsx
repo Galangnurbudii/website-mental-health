@@ -18,7 +18,8 @@ export default function Konsultasi() {
                                 lg:h-[615px] 
                                 bg-center"
                 style={{
-                    backgroundImage: "url('images/konsultasiBanner.jpg')",
+                    backgroundImage:
+                        "url('storage/images/konsultasiBanner.jpg')",
                 }}
             >
                 <div className="">
@@ -109,7 +110,7 @@ export default function Konsultasi() {
 
                     <div className="overflow-x-auto px-6 md:px-16 lg:px-32">
                         <CardsCarousel
-                            imageSrc="images/petik.png"
+                            imageSrc="storage/images/petik.png"
                             text="Berkat konsultasi di sini rasanya jadi lebih plong. Tenang dan bahagia banget"
                             names="Tatang Munajir - Mahasiswa"
                         />
