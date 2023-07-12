@@ -74,10 +74,10 @@ export default function Register() {
                                                 md:text-3xl 
                                                 lg:text-[42px] font-bold mb-5"
                                 >
-                                    Join Our Community
+                                    Bergabung ke Komunitas
                                 </h1>
                                 <p className="text-[#333333] text-2xl font-semibold mb-7">
-                                    Don’t feel alone. Love yourself more with us
+                                    Jangan merasa sendiri. Cintai dirimu bersama kami
                                 </p>
                             </div>
 
@@ -188,9 +188,9 @@ export default function Register() {
                                             required
                                         />
                                         <span className="font-semibold ml-2 text-sm text-gray-600">
-                                            I Agree to{" "}
+                                            Saya setuju dengan{" "}
                                             <span className="text-primary">
-                                                terms & conditions
+                                                ketentuan dan persyaratan
                                             </span>
                                         </span>
                                     </label>
@@ -200,7 +200,7 @@ export default function Register() {
                                     className="bg-primary mb-5"
                                     disabled={processing}
                                 >
-                                    Create Account
+                                    Buat Akun
                                 </PrimaryButton>
 
                                 <div className="flex justify-center mt-4">
@@ -208,9 +208,9 @@ export default function Register() {
                                         href={route("login")}
                                         className="font-semibold text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none"
                                     >
-                                        Already have an account?{" "}
+                                        Sudah punya akun?{" "}
                                         <span className="text-primary">
-                                            Log In here
+                                            Masuk
                                         </span>
                                     </Link>
                                 </div>

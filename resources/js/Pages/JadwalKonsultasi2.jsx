@@ -1,5 +1,4 @@
-import NavProfil2 from '@/Components/NavProfil2'
-import DateRangePickers from '@/Components/DateRangePickers'
+import NavProfil from '@/Components/NavProfil'
 import { useState } from 'react';
 
 export default function HapusProfil() {
@@ -11,21 +10,13 @@ export default function HapusProfil() {
 
   return (
     <div>
-      <NavProfil2 />
-      <div className='lg:pl-96 md:px-40 px-10 py-16'>
-        <h1 className="font-bold text-[26px] pt-5 pb-8">
-          Jadwal Konsultasi Hari Ini
+      <NavProfil />
+      <div className='lg:pl-96 md:px-36 px-10 py-16'>
+        <h1 className="font-bold text-[26px] pt-5 pb-4">
+          Jadwal Konsultasi
         </h1>
-        <h2 className='pb-5 text-xl font-semibold'>
-          Periode Konsultasi
-        </h2>
         <div className='pb-10'>
-          <div className='flex gap-44'>
-            <h3 className="pb-4 font-semibold text-lg">Dari Tanggal:</h3>
-            <h3 className="pb-4 font-semibold text-lg">Sampai Tanggal:</h3>
-          </div>
-          <div className='flex justify-between pr-10'>
-            <DateRangePickers />
+          <div className='flex justify-end pr-10'>
             <div>
               <select
                 className="select select-bordered w-[150px] focus:outline-none"
@@ -52,7 +43,29 @@ export default function HapusProfil() {
                 Tipe Konsultasi: Online
               </h3>
               <h3 className='font-medium'>
-                Status: Confirmed
+                Link zoom: https://binus.zoom.us/j/97275854825#success
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        <h1 className="font-bold text-[26px] pt-5 pb-8">
+          Riwayat Konsultasi
+        </h1>
+        <div className={`border-l-4 px-10 border-gray-600`}>
+          <div className='w-full shadow-xl rounded-lg border border-gray-300 bg-white mx-auto mb-8'>
+            <div className='p-10'>
+              <h2 className='font-semibold pb-4 text-lg'>
+                Senin, 18 Juli 2023 - 09.00 AM
+              </h2>
+              <h3 className='font-semibold pb-2'>
+                Nama Pasien: Galang Nurbudi Utomo
+              </h3>
+              <h3 className='font-medium pb-2'>
+                Tipe Konsultasi: Online
+              </h3>
+              <h3 className='font-medium'>
+                Link zoom: https://binus.zoom.us/j/97275854825#success
               </h3>
             </div>
           </div>

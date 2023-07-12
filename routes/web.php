@@ -92,6 +92,14 @@ Route::get('/jadwalkonsultasi', function () {
     return Inertia::render('JadwalKonsultasi');
 })->name('jadwalkonsultasi');
 
+Route::get('/jadwalkonsultasi2', function () {
+    return Inertia::render('JadwalKonsultasi2');
+})->name('jadwalkonsultasi2');
+
+Route::get('/detailkonsultasi', function () {
+    return Inertia::render('DetailKonsultasi');
+})->name('detailkonsultasi');
+
 Route::get('/aturketersediaan', function () {
     return Inertia::render('AturKetersediaan');
 })->name('aturketersediaan');
