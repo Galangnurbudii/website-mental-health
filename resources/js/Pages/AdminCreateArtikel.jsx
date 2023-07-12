@@ -23,11 +23,10 @@ export default function AdminCreatePsikolog() {
                 className="flex items-center justify-between"
                 style={{ fontWeight: 'bold' }}
             >
-                <a
-                    className="px-4 py-2 text-sm text-white bg-blue-500 rounded"
-                    href={route('artikels.index')}
-                >
-                    Back
+                <a href={route("artikels.index")}>
+                    <button className='bg-white border-black border-2 rounded-lg py-1 px-4'>
+                        Back
+                    </button>
                 </a>
             </div>
 
@@ -43,7 +42,7 @@ export default function AdminCreatePsikolog() {
                             id="judul"
                             placeholder="Judul"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="judul"
                             name="judul"
                             isFocused={true}
@@ -59,7 +58,7 @@ export default function AdminCreatePsikolog() {
                             id="tag"
                             placeholder="Tag"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="tag"
                             name="tag"
                             isFocused={true}
@@ -69,7 +68,7 @@ export default function AdminCreatePsikolog() {
                         />
                         <span className="text-red-600">{errors.tag}</span>
                     </div>
-                    <div className="mb-4">
+                    <div className="mb-4 rounded-lg">
                         <label className="">Detail</label>
                         <Editor
                             apiKey="fpssdfawcim7qf7tajsnz09q8rvkn6rabb4rohearbc71ea2"
@@ -143,7 +142,7 @@ export default function AdminCreatePsikolog() {
                 <div className="mt-4">
                     <button
                         type="submit"
-                        className="px-6 py-2 font-bold text-white bg-green-500 rounded"
+                        className="px-6 py-2 font-bold text-white bg-primary rounded"
                     >
                         Save
                     </button>
