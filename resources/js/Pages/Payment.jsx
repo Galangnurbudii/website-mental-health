@@ -35,11 +35,11 @@ export default function Layanan() {
     let imageSrc = '';
   
     if (selectedOption === 'Bank BCA') {
-      imageSrc = 'images/BNI.jpg';
+      imageSrc = '../images/BNI.jpg';
     } else if (selectedOption === 'Bank BRI') {
-      imageSrc = 'images/BRI.png';
+      imageSrc = '../images/BRI.png';
     }else if (selectedOption === 'Bank BNI'){
-      imageSrc = 'images/BCA.png'
+      imageSrc = '../images/BCA.png'
     }
   
     function openModal() {
@@ -157,7 +157,7 @@ export default function Layanan() {
                   <div className='flex items-center'>
                     <img
                         className="w-8"
-                        src="images/BNI.jpg"
+                        src="../images/BNI.jpg"
                       />                
                       <label
                         htmlFor="default-radio-1"
@@ -179,7 +179,7 @@ export default function Layanan() {
                   <div className='flex items-center'>
                     <img
                         className="w-8"
-                        src="images/BRI.png"
+                        src="../images/BRI.png"
                       />                
                       <label
                         htmlFor="default-radio-1"
@@ -201,7 +201,7 @@ export default function Layanan() {
                   <div className='flex items-center'>
                     <img
                         className="w-8"
-                        src="images/BCA.png"
+                        src="../images/BCA.png"
                       />                
                       <label
                         htmlFor="default-radio-1"
@@ -258,7 +258,7 @@ export default function Layanan() {
                 
                 <Dialog.Panel className="text-center w-full max-w-md transform overflow-hidden rounded-lg bg-white p-6 align-middle shadow-xl transition-all">
                 <div className='flex justify-center py-10'>
-                  <img src="images/approved.png"/>
+                  <img src="../images/approved.png"/>
                 </div>
                 
                   <Dialog.Title
