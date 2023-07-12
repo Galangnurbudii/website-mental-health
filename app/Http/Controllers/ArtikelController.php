@@ -12,10 +12,11 @@ class ArtikelController extends Controller
     public function index()
     {
         $articles = Artikel::inRandomOrder()->get();
-        $popular = $articles->random(1);
+        $popular = $articles->random(1)->first();
         $topik_terkini = $articles->flatMap(function ($article) {
             return explode(',', $article->tag);
         })->unique()->take(5);
+        // dd($popular);
         return Inertia::render('Article', [
             'popular' => $popular,
             'articles' => $articles,

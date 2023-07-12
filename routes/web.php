@@ -4,6 +4,7 @@ use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PsikologController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -90,6 +91,19 @@ Route::get('/dashboardadmin', function () {
     return Inertia::render('DashboardAdmin');
 })->name('dashboardadmin');
 
+
+Route::resource('psikologs', PsikologController::class);
+Route::get('/profil', function () {
+    return Inertia::render('EditProfile');
+})->name('profil');
+
+Route::get('/hapusprofil', function () {
+    return Inertia::render('HapusProfil');
+})->name('hapusprofil');
+
+Route::get('/error', function () {
+    return Inertia::render('NotFound');
+})->name('notFound');
 
 
 Route::middleware('auth')->group(function () {
