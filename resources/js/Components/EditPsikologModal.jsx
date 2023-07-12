@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function MyModal({visible, onClose}) {
+export default function EditPsikologModal({visible, onClose}) {
     const handleOnClose = (e) => {
         if (e.target.id == "container") onClose();
     };

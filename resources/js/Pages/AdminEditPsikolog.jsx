@@ -19,18 +19,20 @@ export default function AdminEditPsikolog(props) {
   
     function handleSubmit(e) {
         e.preventDefault();
-        put(route("psikologs.update", psikologs.id));
+        put(route("psikologs.update", psikologs.id), {
+            onSuccess: () => setShowEditPsikologModal(true)
+        });
     }
 
     const [showEditPsikologModal, setShowEditPsikologModal] = useState(false)
     // const handleOnCloseUpdate = () => setShowEditPsikologModal(false)
-    const [shouldRedirect, setShouldRedirect] = useState(false);
+    const [shouldRedirect, setShouldRedirect] = useState(false)
 
     useEffect(() => {
         if (shouldRedirect) {
             const timer = setTimeout(() => {
                 window.location.href = route("psikologs.index");
-            }, 2000);
+            }, 1000);
 
             return () => clearTimeout(timer);
         }
@@ -237,7 +239,6 @@ export default function AdminEditPsikolog(props) {
                 </div>
                 <div className="mt-4">
                     <button
-                        onClick={() => setShowEditPsikologModal(true)}
                         type="submit"
                         className="px-6 py-2 font-bold text-white bg-primary rounded"
                     >
