@@ -19,6 +19,14 @@ class AdminArtikelController extends Controller
         return Inertia::render('AdminCreateArtikel');
     }
 
+    public function uploadImage(Request $request)
+    {
+        $fileName = $request->file('file')->getClientOriginalName();
+        // error_log($fileName);
+        $path = $request->file('file')->storeAs('uploads', $fileName, 'public');
+        return response()->json(['location' => "/storage/$path"]);
+    }
+
     public function destroy($id)
     {
         $artikel = Artikel::find($id);

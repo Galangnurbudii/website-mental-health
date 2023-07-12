@@ -85,6 +85,7 @@ Route::get('/dashboardadmin', function () {
     return Inertia::render('DashboardAdmin');
 })->name('dashboardadmin');
 
+Route::post('/upload', [AdminArtikelController::class, 'uploadImage']);
 Route::resource('artikels', AdminArtikelController::class);
 Route::resource('psikologs', PsikologController::class);
 
