@@ -1,6 +1,9 @@
 import React from 'react';
 import { Head, Link, useForm } from "@inertiajs/react";  
 import { Inertia } from "@inertiajs/inertia";
+import NavBarAdmin from '@/Components/NavBarAdmin';
+import { AiOutlineSearch } from 'react-icons/ai'
+import SearchBar from '@/Components/SearchBar';
 
 export default function AdminIndexPsikolog(props) {
     function destroy(e) {
@@ -10,13 +13,17 @@ export default function AdminIndexPsikolog(props) {
     }
 
     return (
-        <>
-            <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-20">
-               <div className="flex items-center justify-between" style={{fontWeight: 'bold'}}>
-                    <a className='px-4 py-2 text-sm text-white bg-blue-500 rounded' href={route("psikologs.create")}>Create Psikolog</a>
-                </div>
+        <div className='flex'>
+            <NavBarAdmin />
+            <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-12">
+                <SearchBar />
+                <a href={route("psikologs.create")}>
+                    <button className='px-4 py-2 w-[133px] text-sm text-white bg-blue-500 rounded'>
+                        Create Psikolog
+                    </button>
+                </a>
 
-                <table className="table-fixed w-full">
+                <table className="table-auto w-full">
                     <thead>
                         <tr className="bg-gray-100">
                             <th className="px-4 py-2 w-20">No.</th>
@@ -44,22 +51,24 @@ export default function AdminIndexPsikolog(props) {
                                 <td className="border px-4 py-2">{psikolog.lokasi_praktik}</td>
                                 <td className="border px-4 py-2">{psikolog.lulusan}</td>
                                 <td className="border px-4 py-2">
-                                    <Link
-                                        tabIndex="1"
-                                        className="px-4 py-2 text-sm text-white bg-green-500 rounded"
-                                        href={route("psikologs.edit", psikolog.id)}
-                                    >
-                                        Edit
-                                    </Link>
-                                    <button
-                                        onClick={destroy}
-                                        id={psikolog.id}
-                                        tabIndex="-1"
-                                        type="button"
-                                        className="mx-1 px-4 py-2 text-sm text-white bg-red-500 rounded"
-                                    >
-                                        Delete
-                                    </button>
+                                    <div className='flex'>
+                                        <Link
+                                            tabIndex="1"
+                                            className="px-4 py-2 text-sm text-white bg-primary rounded"
+                                            href={route("psikologs.edit", psikolog.id)}
+                                        >
+                                            Edit
+                                        </Link>
+                                        <button
+                                            onClick={destroy}
+                                            id={psikolog.id}
+                                            tabIndex="-1"
+                                            type="button"
+                                            className="mx-1 px-4 py-2 text-sm text-white bg-red-500 rounded"
+                                        >
+                                            Delete
+                                        </button>
+                                    </div>
                                 </td>
 
                             </tr>
@@ -67,6 +76,6 @@ export default function AdminIndexPsikolog(props) {
                     </tbody>
                 </table>
             </div>
-        </>
+        </div>
     );
 }
