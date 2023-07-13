@@ -23,11 +23,6 @@ export default function AdminEditPsikolog(props) {
             onSuccess: () => setShowEditPsikologModal(true)
         });
     }
-
-    const [showEditPsikologModal, setShowEditPsikologModal] = useState(false)
-    // const handleOnCloseUpdate = () => setShowEditPsikologModal(false)
-    const [shouldRedirect, setShouldRedirect] = useState(false)
-
     useEffect(() => {
         if (shouldRedirect) {
             const timer = setTimeout(() => {
