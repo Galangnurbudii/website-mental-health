@@ -17,8 +17,8 @@ export default function AdminIndexPsikolog(props) {
             <NavBarAdmin />
             <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-12">
                 <SearchBar />
-                <a href={route("psikologs.create")}>
-                    <button className='px-4 py-2 w-[133px] text-sm text-white bg-blue-500 rounded'>
+                <a className='w-[134px]' href={route("psikologs.create")}>
+                    <button className='px-4 py-2 text-sm text-white bg-blue-500 rounded font-bold'>
                         Create Psikolog
                     </button>
                 </a>
@@ -33,7 +33,9 @@ export default function AdminIndexPsikolog(props) {
                             <th className="px-4 py-2">Bidang Keahlian</th>
                             <th className="px-4 py-2">Tahun Pengalaman</th>
                             <th className="px-4 py-2">No Str</th>
-                            <th className="px-4 py-2">Lokasi Praktik</th>
+                            <th className="px-4 py-2">Negara</th>
+                            <th className="px-4 py-2">Provinsi</th>
+                            <th className="px-4 py-2">Kota</th>
                             <th className="px-4 py-2">Lulusan</th> 
                             <th className="px-4 py-2">Action</th> 
                         </tr>
@@ -48,7 +50,9 @@ export default function AdminIndexPsikolog(props) {
                                 <td className="border px-4 py-2">{psikolog.bidang_keahlian}</td>
                                 <td className="border px-4 py-2">{psikolog.tahun_pengalaman}</td>
                                 <td className="border px-4 py-2">{psikolog.nomor_str}</td>
-                                <td className="border px-4 py-2">{psikolog.lokasi_praktik}</td>
+                                <td className="border px-4 py-2">{psikolog.negara}</td>
+                                <td className="border px-4 py-2">{psikolog.provinsi}</td>
+                                <td className="border px-4 py-2">{psikolog.kota}</td>
                                 <td className="border px-4 py-2">{psikolog.lulusan}</td>
                                 <td className="border px-4 py-2">
                                     <div className='flex'>

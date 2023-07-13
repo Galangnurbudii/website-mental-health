@@ -11,7 +11,9 @@ export default function AdminCreatePsikolog() {
         bidang_keahlian: "",
         tahun_pengalaman: "",
         nomor_str: "",
-        lokasi_praktik: "",
+        negara: "",
+        provinsi: "",
+        kota: "",
         lulusan: "",
     });
 
@@ -96,7 +98,7 @@ export default function AdminCreatePsikolog() {
                         <label className="">Rating</label>
                         <input
                             id="rating"
-                            placeholder="rating"
+                            placeholder="Rating"
                             type="number"
                             step="0.01"
                             className="w-full px-4 py-2"
@@ -174,23 +176,63 @@ export default function AdminCreatePsikolog() {
                         </span>
                     </div>
                     <div className="mb-4">
-                        <label className="">Lokasi Praktik</label>
-                        <textarea
-                            id="lokasi_praktik"
-                            placeholder="Lokasi Praktik"
+                        <label className="">Negara</label>
+                        <input
+                            id="negara"
+                            placeholder="Negara"
                             type="text"
                             className="w-full px-4 py-2"
-                            label="lokasi_praktik"
-                            name="lokasi_praktik"
+                            label="negara"
+                            name="negara"
                             isFocused={true}
-                            value={data.lokasi_praktik}
+                            value={data.negara}
                             onChange={(e) =>
-                                setData("lokasi_praktik", e.target.value)
+                                setData("negara", e.target.value)
                             }
                             required
                         />
                         <span className="text-red-600">
-                            {errors.lokasi_praktik}
+                            {errors.negara}
+                        </span>
+                    </div>
+                    <div className="mb-4">
+                        <label className="">Provinsi</label>
+                        <input
+                            id="provinsi"
+                            placeholder="Provinsi"
+                            type="text"
+                            className="w-full px-4 py-2"
+                            label="provinsi"
+                            name="provinsi"
+                            isFocused={true}
+                            value={data.provinsi}
+                            onChange={(e) =>
+                                setData("provinsi", e.target.value)
+                            }
+                            required
+                        />
+                        <span className="text-red-600">
+                            {errors.provinsi}
+                        </span>
+                    </div>
+                    <div className="mb-4">
+                        <label className="">Kota</label>
+                        <input
+                            id="kota"
+                            placeholder="Kota"
+                            type="text"
+                            className="w-full px-4 py-2"
+                            label="kota"
+                            name="kota"
+                            isFocused={true}
+                            value={data.kota}
+                            onChange={(e) =>
+                                setData("kota", e.target.value)
+                            }
+                            required
+                        />
+                        <span className="text-red-600">
+                            {errors.kota}
                         </span>
                     </div>
                     <div className="mb-4">

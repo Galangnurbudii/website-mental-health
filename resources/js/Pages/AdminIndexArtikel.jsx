@@ -13,10 +13,12 @@ export default function AdminIndexArtikel(props) {
     return (
         <div className='flex'>
             <NavBarAdmin />
-            <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-20">
-               <div className="flex items-center justify-between" style={{fontWeight: 'bold'}}>
-                    <a className='px-4 py-2 text-sm text-white bg-blue-500 rounded' href={route("artikels.create")}>Create Article</a>
-                </div>
+            <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-12">
+                <a className='w-[134px]' href={route("artikels.create")}>
+                    <button className='px-4 py-2 text-sm text-white bg-blue-500 rounded font-bold'>
+                        Create Article
+                    </button>
+                </a>
 
                 <table className="table-auto w-full">
                     <thead>

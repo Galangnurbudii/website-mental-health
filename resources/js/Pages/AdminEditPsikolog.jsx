@@ -13,30 +13,30 @@ export default function AdminEditPsikolog(props) {
         bidang_keahlian: psikologs.bidang_keahlian || "",
         tahun_pengalaman: psikologs.tahun_pengalaman || "",
         nomor_str: psikologs.nomor_str || "",
-        lokasi_praktik: psikologs.lokasi_praktik || "",
+        negara: psikologs.negara || "",
+        provinsi: psikologs.provinsi || "",
+        kota: psikologs.kota || "",
         lulusan: psikologs.lulusan || "",
     });
-  
+    
+    const [showEditPsikologModal, setShowEditPsikologModal] = useState(false)
+    
     function handleSubmit(e) {
         e.preventDefault();
         put(route("psikologs.update", psikologs.id), {
             onSuccess: () => setShowEditPsikologModal(true)
         });
     }
+
     useEffect(() => {
-        if (shouldRedirect) {
+        if (showEditPsikologModal) {
             const timer = setTimeout(() => {
                 window.location.href = route("psikologs.index");
-            }, 1000);
+            }, 1500);
 
             return () => clearTimeout(timer);
         }
-    }, [shouldRedirect]);
-
-    const handleOnCloseUpdate = () => {
-        setShowEditPsikologModal(false);
-        setShouldRedirect(true);
-    };
+    }, [showEditPsikologModal]);
 
     return (
         <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-20">
@@ -192,23 +192,63 @@ export default function AdminEditPsikolog(props) {
                         </span>
                     </div>
                     <div className="mb-4">
-                        <label className="">Lokasi Praktik</label>
-                        <textarea
-                            id="lokasi_praktik"
-                            placeholder="Lokasi Praktik"
+                        <label className="">Negara</label>
+                        <input
+                            id="negara"
+                            placeholder="Negara"
                             type="text"
-                            className="w-full px-4 py-2 rounded-lg"
-                            label="lokasi_praktik"
-                            name="lokasi_praktik"
+                            className="w-full px-4 py-2"
+                            label="negara"
+                            name="negara"
                             isFocused={true}
-                            value={data.lokasi_praktik}
+                            value={data.negara}
                             onChange={(e) =>
-                                setData("lokasi_praktik", e.target.value)
+                                setData("negara", e.target.value)
                             }
                             required
                         />
                         <span className="text-red-600">
-                            {errors.lokasi_praktik}
+                            {errors.negara}
+                        </span>
+                    </div>
+                    <div className="mb-4">
+                        <label className="">Provinsi</label>
+                        <input
+                            id="provinsi"
+                            placeholder="Provinsi"
+                            type="text"
+                            className="w-full px-4 py-2"
+                            label="provinsi"
+                            name="provinsi"
+                            isFocused={true}
+                            value={data.provinsi}
+                            onChange={(e) =>
+                                setData("provinsi", e.target.value)
+                            }
+                            required
+                        />
+                        <span className="text-red-600">
+                            {errors.provinsi}
+                        </span>
+                    </div>
+                    <div className="mb-4">
+                        <label className="">Kota</label>
+                        <input
+                            id="kota"
+                            placeholder="Kota"
+                            type="text"
+                            className="w-full px-4 py-2"
+                            label="kota"
+                            name="kota"
+                            isFocused={true}
+                            value={data.kota}
+                            onChange={(e) =>
+                                setData("kota", e.target.value)
+                            }
+                            required
+                        />
+                        <span className="text-red-600">
+                            {errors.kota}
                         </span>
                     </div>
                     <div className="mb-4">
@@ -241,7 +281,7 @@ export default function AdminEditPsikolog(props) {
                     </button>
                 </div>
             </form>
-            <EditPsikologModal onClose={handleOnCloseUpdate} visible={showEditPsikologModal} />
+            <EditPsikologModal visible={showEditPsikologModal} />
         </div>
     );
 }
