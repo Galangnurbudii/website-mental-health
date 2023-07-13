@@ -21,10 +21,9 @@ export default function AdminCreatePsikolog() {
         <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-20">
             <div
                 className="flex items-center justify-between"
-                style={{ fontWeight: 'bold' }}
             >
                 <a href={route("artikels.index")}>
-                    <button className='bg-white border-black border-2 rounded-lg py-1 px-4'>
+                    <button className='bg-white border-primary border-2 rounded-lg py-1 px-4'>
                         Back
                     </button>
                 </a>

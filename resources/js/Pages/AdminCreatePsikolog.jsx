@@ -25,7 +25,7 @@ export default function AdminCreatePsikolog() {
     return (
         <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-20">
             <a href={route("psikologs.index")}>
-                <button className='bg-white border-black border-2 rounded-lg py-1 px-4'>
+                <button className='bg-white border-primary border-2 rounded-lg py-1 px-4'>
                     Back
                 </button>
             </a>
@@ -40,7 +40,7 @@ export default function AdminCreatePsikolog() {
                             id="nama"
                             placeholder="Nama"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="nama"
                             name="nama"
                             isFocused={true}
@@ -60,7 +60,7 @@ export default function AdminCreatePsikolog() {
                             id="email"
                             placeholder="Email"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="email"
                             name="email"
                             isFocused={true}
@@ -80,7 +80,7 @@ export default function AdminCreatePsikolog() {
                             id="password"
                             placeholder="Password"
                             type="password"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="password"
                             name="password"
                             isFocused={true}
@@ -101,7 +101,7 @@ export default function AdminCreatePsikolog() {
                             placeholder="Rating"
                             type="number"
                             step="0.01"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="rating"
                             name="rating"
                             isFocused={true}
@@ -121,7 +121,7 @@ export default function AdminCreatePsikolog() {
                             id="bidang_keahlian"
                             placeholder="Bidang Keahlian"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="bidang_keahlian"
                             name="bidang_keahlian"
                             isFocused={true}
@@ -141,7 +141,7 @@ export default function AdminCreatePsikolog() {
                             id="tahun_pengalaman"
                             placeholder="Tahun Pengalaman"
                             type="number"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="tahun_pengalaman"
                             name="tahun_pengalaman"
                             isFocused={true}
@@ -161,7 +161,7 @@ export default function AdminCreatePsikolog() {
                             id="nomor_str"
                             placeholder="Nomor Str"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="nomor_str"
                             name="nomor_str"
                             isFocused={true}
@@ -181,7 +181,7 @@ export default function AdminCreatePsikolog() {
                             id="negara"
                             placeholder="Negara"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="negara"
                             name="negara"
                             isFocused={true}
@@ -201,7 +201,7 @@ export default function AdminCreatePsikolog() {
                             id="provinsi"
                             placeholder="Provinsi"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="provinsi"
                             name="provinsi"
                             isFocused={true}
@@ -221,7 +221,7 @@ export default function AdminCreatePsikolog() {
                             id="kota"
                             placeholder="Kota"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="kota"
                             name="kota"
                             isFocused={true}
@@ -241,7 +241,7 @@ export default function AdminCreatePsikolog() {
                             id="lulusan"
                             placeholder="Lulusan"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="lulusan"
                             name="lulusan"
                             isFocused={true}

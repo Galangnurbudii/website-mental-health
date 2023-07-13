@@ -15,13 +15,6 @@ export default function EditPsikologModal({visible, onClose}) {
                 <div className="absolute border rounded-xl border-black bg-[#FFFFFF] 
                                 w-[50%] h-[35%] 
                                 md: pt-[10px]">
-                    {/* 
-                     sm 640
-                     md 768
-                     lg 1024
-                     xl 1280
-                    2xl 1536
-                     */}
                     <div className="text-center text-md 
                                     sm:text-xl md:text-2xl
                                     px-10 py-10
