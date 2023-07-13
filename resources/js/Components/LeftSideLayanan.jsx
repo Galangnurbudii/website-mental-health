@@ -22,7 +22,7 @@ export default function LeftSideLayanan({ className = "", disabled, ...props }){
                         <img
                             className="md:w-80 md:h-30 
                                     w-[423px] py-4"
-                            src="images/layananImage.png"
+                            src="../images/layananImage.png"
                         />
                     </div>
 

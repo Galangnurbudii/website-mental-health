@@ -13,7 +13,7 @@ import Select from "react-select";
 export default function DetailLayanan() {
 
 // const [nama, rating] = psikolog;    
-
+  
     // Dropdown Menu
 
     const provinces = [
@@ -51,109 +51,6 @@ export default function DetailLayanan() {
         { value: "Sumatera Selatan", label: "Sumatera Selatan" },
         { value: "Sumatera Utara", label: "Sumatera Utara" },
         { value: "Yogyakarta", label: "Yogyakarta" },
-    ];
-    
-    const kabupatenKota2 = [
-        { value: "Aceh Barat", label: "Aceh Barat" },
-        { value: "Aceh Barat Daya", label: "Aceh Barat Daya" },
-        { value: "Aceh Besar", label: "Aceh Besar" },
-        { value: "Aceh Jaya", label: "Aceh Jaya" },
-        { value: "Aceh Selatan", label: "Aceh Selatan" },
-        { value: "Aceh Singkil", label: "Aceh Singkil" },
-        { value: "Aceh Tamiang", label: "Aceh Tamiang" },
-        { value: "Aceh Tengah", label: "Aceh Tengah" },
-        { value: "Aceh Tenggara", label: "Aceh Tenggara" },
-        { value: "Aceh Timur", label: "Aceh Timur" },
-        { value: "Aceh Utara", label: "Aceh Utara" },
-        { value: "Agam", label: "Agam" },
-        { value: "Alor", label: "Alor" },
-        { value: "Ambon", label: "Ambon" },
-        { value: "Asahan", label: "Asahan" },
-        { value: "Asmat", label: "Asmat" },
-        { value: "Badung", label: "Badung" },
-        { value: "Balangan", label: "Balangan" },
-        { value: "Balikpapan", label: "Balikpapan" },
-        { value: "Banda Aceh", label: "Banda Aceh" },
-        { value: "Bandar Lampung", label: "Bandar Lampung" },
-        { value: "Bandung", label: "Bandung" },
-        { value: "Bandung Barat", label: "Bandung Barat" },
-        { value: "Banggai", label: "Banggai" },
-        { value: "Banggai Kepulauan", label: "Banggai Kepulauan" },
-        { value: "Bangka", label: "Bangka" },
-        { value: "Bangka Barat", label: "Bangka Barat" },
-        { value: "Bangka Selatan", label: "Bangka Selatan" },
-        { value: "Bangka Tengah", label: "Bangka Tengah" },
-        { value: "Bangkalan", label: "Bangkalan" },
-        { value: "Bangli", label: "Bangli" },
-        { value: "Banjar", label: "Banjar" },
-        { value: "Banjar Baru", label: "Banjar Baru" },
-        { value: "Banjarmasin", label: "Banjarmasin" },
-        { value: "Banjarnegara", label: "Banjarnegara" },
-        { value: "Bantaeng", label: "Bantaeng" },
-        { value: "Bantul", label: "Bantul" },
-        { value: "Banyuasin", label: "Banyuasin" },
-        { value: "Banyumas", label: "Banyumas" },
-        { value: "Banyuwangi", label: "Banyuwangi" },
-        { value: "Barito Kuala", label: "Barito Kuala" },
-        { value: "Barito Selatan", label: "Barito Selatan" },
-        { value: "Barito Timur", label: "Barito Timur" },
-        { value: "Barito Utara", label: "Barito Utara" },
-        { value: "Barru", label: "Barru" },
-        { value: "Batam", label: "Batam" },
-        { value: "Batang", label: "Batang" },
-        { value: "Batang Hari", label: "Batang Hari" },
-        { value: "Batu", label: "Batu" },
-        { value: "Baturaja", label: "Baturaja" },
-        { value: "Bekasi", label: "Bekasi" },
-        { value: "Belitung", label: "Belitung" },
-        { value: "Belitung Timur", label: "Belitung Timur" },
-        { value: "Belu", label: "Belu" },
-        { value: "Bener Meriah", label: "Bener Meriah" },
-        { value: "Bengkalis", label: "Bengkalis" },
-        { value: "Bengkayang", label: "Bengkayang" },
-        { value: "Bengkulu", label: "Bengkulu" },
-        { value: "Bengkulu Selatan", label: "Bengkulu Selatan" },
-        { value: "Bengkulu Tengah", label: "Bengkulu Tengah" },
-        { value: "Bengkulu Utara", label: "Bengkulu Utara" },
-        { value: "Berau", label: "Berau" },
-        { value: "Biak Numfor", label: "Biak Numfor" },
-        { value: "Bima", label: "Bima" },
-        { value: "Bintan", label: "Bintan" },
-        { value: "Bireuen", label: "Bireuen" },
-        { value: "Bitung", label: "Bitung" },
-        { value: "Blitar", label: "Blitar" },
-        { value: "Blora", label: "Blora" },
-        { value: "Boalemo", label: "Boalemo" },
-        { value: "Bogor", label: "Bogor" },
-        { value: "Bojonegoro", label: "Bojonegoro" },
-        { value: "Bolaang Mongondow", label: "Bolaang Mongondow" },
-        { value: "Bolaang Mongondow Selatan", label: "Bolaang Mongondow Selatan" },
-        { value: "Bolaang Mongondow Timur", label: "Bolaang Mongondow Timur" },
-        { value: "Bolaang Mongondow Utara", label: "Bolaang Mongondow Utara" },
-        { value: "Bombana", label: "Bombana" },
-        { value: "Bondowoso", label: "Bondowoso" },
-        { value: "Bone", label: "Bone" },
-        { value: "Bone Bolango", label: "Bone Bolango" },
-        { value: "Bontang", label: "Bontang" },
-        { value: "Boven Digoel", label: "Boven Digoel" },
-        { value: "Boyolali", label: "Boyolali" },
-        { value: "Brebes", label: "Brebes" },
-        { value: "Bulukumba", label: "Bulukumba" },
-        { value: "Bulungan", label: "Bulungan" },
-        { value: "Bungo", label: "Bungo" },
-        { value: "Buol", label: "Buol" },
-        { value: "Buru", label: "Buru" },
-        { value: "Buru Selatan", label: "Buru Selatan" },
-        { value: "Buton", label: "Buton" },
-        { value: "Buton Selatan", label: "Buton Selatan" },
-        { value: "Buton Tengah", label: "Buton Tengah" },
-        { value: "Buton Utara", label: "Buton Utara" },
-        { value: "Ciamis", label: "Ciamis" },
-        { value: "Cianjur", label: "Cianjur" },
-        { value: "Cilacap", label: "Cilacap" },
-        { value: "Cilegon", label: "Cilegon" },
-        { value: "Cimahi", label: "Cimahi" },
-        { value: "Cirebon", label: "Cirebon" },
     ];
     
     const kabupatenKota = {
@@ -233,7 +130,7 @@ export default function DetailLayanan() {
             { value: "Tanjung Jabung Timur", label: "Tanjung Jabung Timur" },
             { value: "Tebo", label: "Tebo" },
         ],
-        "Bandung": [
+        "Jawa Barat": [
             { "value": "Bandung", "label": "Bandung" },
             { "value": "Bandung Barat", "label": "Bandung Barat" },
             { "value": "Bekasi", "label": "Bekasi" },
@@ -666,13 +563,12 @@ export default function DetailLayanan() {
     const [selectedProvince, setSelectedProvince] = useState(null);
     const [selectedKabupaten, setSelectedKabupaten] = useState(null);
     const [errorMessage, setErrorMessage] = useState("");
-    const [waktuErrorMessage, setWaktuErrorMessage] = useState("");
 
     const handleProvinceChange = (selectedOption) => {
         setSelectedProvince(selectedOption);
-        setSelectedKabupaten(null); // Reset the selected kabupaten when the province changes
+        setSelectedKabupaten(null); 
         setErrorMessage("");
-      };
+    };
     
       const handleKabupatenChange = (selectedOption) => {
         setSelectedKabupaten(selectedOption);
@@ -680,34 +576,35 @@ export default function DetailLayanan() {
       };
     
       // Filter the options for the kabupaten dropdown based on the selected province
-      const filteredKabupatenOptions =
-        selectedProvince && kabupatenKota[selectedProvince.value]
-          ? kabupatenKota[selectedProvince.value]
-          : [];
+    const filteredKabupatenOptions =
+    selectedProvince && kabupatenKota[selectedProvince.value]
+    ? kabupatenKota[selectedProvince.value]
+    : [];
 
-        ////////////////////////////////////////////////////////////    
+    ////////////////////////////////////////////////////////////    
 
-    const [showContent, setShowContent] = useState(false);
-    const handleClick2 = () => {    
+        const [showContent, setShowContent] = useState(false);
+        const handleClick2 = () => {    
 
-        if (!activeIndex) {
-            setWaktuErrorMessage("Waktu harus diisi.");
-            return;
-        }
+            if (!activeIndex) {
+                setErrorMessage("Waktu harus diisi.");
+                return;
+            }
 
-        if (!selectedProvince || !selectedKabupaten) {
-            // Validation failed, handle the error
-            setErrorMessage("Lokasi harus diisi.");
-            return;
-        }
+            if (!selectedProvince || !selectedKabupaten) {
+                // Validation failed, handle the error
+                setErrorMessage("Lokasi harus diisi.");
+                return;
+            }
 
         setShowContent(!showContent);                
     };
 
     // Waktu
-    const [activeIndex, setActiveIndex] = useState(null);
+    const [activeIndex, setActiveIndex] = useState();    
     const handleClick = (index) => {
-        setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
+        setActiveIndex((prevIndex) => 
+        (prevIndex === index ? null : index));
     };
     const handleDoubleClick = () => {
         setActiveIndex(null);
@@ -715,7 +612,6 @@ export default function DetailLayanan() {
 
     // Date Picker
     const [startDate, setStartDate] = useState(new Date());
-
 
     return (
         <div className="overflow-x-hidden">
@@ -796,24 +692,67 @@ export default function DetailLayanan() {
                                             <div>
                                                 <h3 className="pt-4 font-semibold text-xl">Waktu</h3>
                                                 {/* Badge */}
+
+                                                
+
+                                                <div className="join">                                                                                                    
+
                                                 <div className="py-4 pl-1 flex flex-row gap-2 shrink overflow-x-auto">
-                                                    <button 
-                                                    type="button" 
-                                                    class={"inline-flex items-center px-4 py-1 border border-[#d8dbe1] text-sm text-center text-disabled font-semibold bg-white rounded-lg hover:bg-gray-300 focus:ring-2 focus:outline-none focus:ring-blue-300 ${activeIndex === 1}"}>
-                                                        12:00
+                                                    <button
+                                                        className={`inline-flex items-center px-4 py-1 bg-white border border-[#d8dbe1] text-sm text-center text-disabled font-semibold  rounded-md hover:bg-gray-300 focus:ring-1 focus:outline-none focus:ring-blue-300 ${
+                                                            activeIndex == 1
+                                                                ? "ring-2 outline-none ring-blue-300"
+                                                                : ""
+                                                        }`}
+                                                        onClick={() => handleClick(1)}
+                                                    >
+                                                        <p className="text-disabled font-semibold">12:00</p>
                                                     </button>
-                                                    <button type="button" class={"inline-flex items-center px-4 py-1 border border-[#d8dbe1] text-sm text-center text-disabled font-semibold bg-white rounded-lg hover:bg-gray-300 focus:ring-2 focus:outline-none focus:ring-blue-300 ${activeIndex === 2}"}>
-                                                        14:00
+                                                    <button
+                                                        className={`inline-flex items-center px-4 py-1 border border-[#d8dbe1] text-sm text-center text-disabled font-semibold bg-white rounded-md hover:bg-gray-300 focus:ring-1 focus:outline-none focus:ring-blue-300 ${
+                                                            activeIndex === 2
+                                                                ? "ring-2 outline-none ring-blue-300"
+                                                                : ""
+                                                        }`}
+                                                        onClick={() => handleClick(2)}
+                                                        onDoubleClick={() => handleDoubleClick(2)}
+                                                    >
+                                                        <p className="text-disabled font-semibold">14:00</p>
                                                     </button>
-                                                    <button type="button" class={"inline-flex items-center px-4 py-1 border border-[#d8dbe1] text-sm text-center text-disabled font-semibold bg-white rounded-lg hover:bg-gray-300 focus:ring-2 focus:outline-none focus:ring-blue-300 ${activeIndex === 3}"}>
-                                                        16:00
+                                                    <button
+                                                        className={`inline-flex items-center px-4 py-1 border border-[#d8dbe1] text-sm text-center text-disabled font-semibold bg-white rounded-md hover:bg-gray-300 focus:ring-1 focus:outline-none focus:ring-blue-300 ${
+                                                            activeIndex === 3
+                                                                ? "ring-2 outline-none ring-blue-300"
+                                                                : ""
+                                                        }`}
+                                                        onClick={() =>handleClick(3)}
+                                                        onDoubleClick={() => handleDoubleClick(3)}
+                                                    >
+                                                        <p className="text-disabled font-semibold">16:00</p>
                                                     </button>
-                                                    <button type="button" class={"inline-flex items-center px-4 py-1 border border-[#d8dbe1] text-sm text-center text-disabled font-semibold bg-white rounded-lg hover:bg-gray-300 focus:ring-2 focus:outline-none focus:ring-blue-300 ${activeIndex === 4}"}>
-                                                        18:00
+                                                    <button
+                                                        className={`inline-flex items-center px-4 py-1 border border-[#d8dbe1] text-sm text-center text-disabled font-semibold bg-white rounded-md hover:bg-gray-300 focus:ring-1 focus:outline-none focus:ring-blue-300 ${
+                                                            activeIndex === 4
+                                                                ? "ring-2 outline-none ring-blue-300"
+                                                                : ""
+                                                        }`}
+                                                        onClick={() => handleClick(4)}
+                                                        onDoubleClick={() => handleDoubleClick(4)}
+                                                    >
+                                                        <p className="text-disabled font-semibold">18:00</p>
                                                     </button>
-                                                    <button type="button" class={"inline-flex items-center px-4 py-1 border border-[#d8dbe1] text-sm text-center text-disabled font-semibold bg-white rounded-lg hover:bg-gray-300 focus:ring-2 focus:outline-none focus:ring-blue-300 ${activeIndex === 5}"}>
-                                                        20:00
+                                                    <button
+                                                        className={`inline-flex items-center px-4 py-1 border border-[#d8dbe1] text-sm text-center text-disabled font-semibold bg-white rounded-md hover:bg-gray-300 focus:ring-1 focus:outline-none focus:ring-blue-300 ${
+                                                            activeIndex === 5
+                                                                ? "ring-2 outline-none ring-blue-300"
+                                                                : ""
+                                                        }`}
+                                                        onClick={() =>handleClick(5)}
+                                                        onDoubleClick={() => handleDoubleClick(5)}
+                                                    >
+                                                        <p className="text-disabled font-semibold">20:00</p>
                                                     </button>
+                                                </div>
                                                 </div>
                                             </div>
                                             <div>
@@ -838,9 +777,6 @@ export default function DetailLayanan() {
                                                     />
                                                 </div>
                                             </div>
-                                            {waktuErrorMessage && (
-                                                <p className="text-sm text-red-500 mt-2">{waktuErrorMessage}</p>
-                                            )}
                                             <p className="text-sm text-red-500 pb-4">{errorMessage}</p>
                                             <BackUpButton
                                                 className="h-0"
