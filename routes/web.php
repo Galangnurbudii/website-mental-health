@@ -93,6 +93,7 @@ Route::get('/dashboardadmin', function () {
 
 
 Route::resource('psikologs', PsikologController::class);
+
 Route::get('/profil', function () {
     return Inertia::render('EditProfile');
 })->name('profil');
@@ -104,6 +105,7 @@ Route::get('/hapusprofil', function () {
 Route::get('/error', function () {
     return Inertia::render('NotFound');
 })->name('notFound');
+
 
 
 Route::middleware('auth')->group(function () {

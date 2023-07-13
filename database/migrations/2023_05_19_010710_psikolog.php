@@ -21,9 +21,14 @@ return new class extends Migration {
             $table->string('bidang_keahlian');
             $table->integer('tahun_pengalaman');
             $table->string('nomor_str');
-            $table->string('lokasi_praktik');
+            $table->string('negara')->nullable();
+            $table->string('provinsi')->nullable();
+            $table->string('kota')->nullable();
             $table->string('lulusan');
+            $table->string('foto_profil');
             $table->timestamps();
+            $table->unsignedBigInteger('id_user')->nullable();
+            $table->foreign('id_user')->references('id')->on('users');
         });
     }
 

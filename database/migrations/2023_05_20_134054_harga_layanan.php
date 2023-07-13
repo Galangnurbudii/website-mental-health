@@ -18,7 +18,6 @@ return new class extends Migration {
             $table->enum('jenis_layanan', ['offline', 'online']);
             $table->decimal('harga', 8, 2);
             $table->timestamps();
-
             $table->foreign('id_psikolog')->references('id')->on('psikolog');
         });
 

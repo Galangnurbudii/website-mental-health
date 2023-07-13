@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Faker\Factory as Faker;
 
@@ -30,7 +31,9 @@ class PsikologFactory extends Factory
             'negara' => $faker->country,
             'provinsi' => $faker->city,
             'kota' => $faker->city,
-            'lulusan' => $faker->sentence
+            'lulusan' => $faker->sentence,
+            'foto_profil' => '/images/detailPsikolog.jpg',
+            'id_user' => User::inRandomOrder()->first()->id,
         ];
     }
 }

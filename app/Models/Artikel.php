@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Artikel extends Model
 {
     use HasFactory;
-    
+
     protected $table = 'artikel';
     protected $primaryKey = 'id';
     public $timestamps = true;
@@ -17,19 +17,9 @@ class Artikel extends Model
         'judul',
         'tag',
         'detail',
-        'id_admin',
-        'id_psikolog',
+        'id_user',
+        'thumbnail_url',
     ];
 
     // ...
-
-    public function admin()
-    {
-        return $this->belongsTo(Admin::class, 'id_admin');
-    }
-
-    public function psikolog()
-    {
-        return $this->belongsTo(Psikolog::class, 'id_psikolog');
-    }
 }

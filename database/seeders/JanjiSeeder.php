@@ -2,12 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Admin;
+use App\Models\Janji;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
-class AdminSeeder extends Seeder
+class JanjiSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,6 +15,7 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
-        Admin::factory()->count(30)->create();
+        //
+        Janji::factory()->count(5)->create();
     }
 }

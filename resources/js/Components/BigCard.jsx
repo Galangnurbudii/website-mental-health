@@ -9,13 +9,13 @@ dayjs.locale('id')
 function BigCard({ popular }) {
     const tanggal = dayjs(popular.updated_at).format('D MMMM YYYY')
 
-    const { judul, tag, detail } = popular
+    const { judul, tag, detail,thumbnail_url } = popular
 
     return (
         <div className="card w-full bg-putih shadow-xl grid md:grid-cols-2">
             <figure dir="ltr">
                 <img
-                    src="images/Gambar2.png"
+                    src={thumbnail_url}
                     alt="Foto Berita"
                     className="w-full h-full object-cover"
                 />
