@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PsikologController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LayananController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -52,14 +53,16 @@ Route::get('/konsultasi', function () {
     return Inertia::render('Konsultasi');
 })->name('konsultasi');
 
-Route::get('/detaillayanan', function () {
-    return Inertia::render('DetailLayanan');
-})->name('detaillayanan');
+
+Route::get('/detaillayanan', [LayananController::class, 'index'])->name('detaillayanan');
 
 
-Route::get('/payment', function () {
-    return Inertia::render('Payment');
-})->name('payment');
+
+// Route::get('/payment', function () {
+//     return Inertia::render('Payment');
+// })->name('payment');
+
+Route::get('/payment/{id?}', [LayananController::class, 'layanan'])->name('payment');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
