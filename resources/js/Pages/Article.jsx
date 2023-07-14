@@ -1,12 +1,12 @@
+import React, { useState } from 'react'
+import ReactPaginate from 'react-paginate'
+import { Head } from '@inertiajs/react'
 import Footer from '@/Components/Footer'
 import NavBar from '@/Components/NavBar'
 import ArticleCard from '@/Components/ArticleCard'
 import SearchBar from '@/Components/SearchBar'
 import Badge from '@/Components/Badge'
 import BigCard from '@/Components/BigCard'
-import React, { useState } from 'react'
-import ReactPaginate from 'react-paginate'
-import { Head } from '@inertiajs/react'
 
 export default function Article({ popular, articles, topik_terkini }) {
     const [currentPage, setCurrentPage] = useState(0)
@@ -21,12 +21,28 @@ export default function Article({ popular, articles, topik_terkini }) {
     const endIndex = startIndex + itemsPerPage
     const currentArticles = articles.slice(startIndex, endIndex)
 
+    // Tambahkan state untuk hasil pencarian dan fungsi untuk mengubahnya
+    const [searchResults, setSearchResults] = useState([])
+
+    // Fungsi untuk menangani pencarian
+    const handleSearch = (searchTerm) => {
+        // Logika pencarian di sini (misalnya menggunakan filter pada articles)
+        const results = articles.filter((article) => {
+            // Ganti condition berikut dengan logika pencarian yang sesuai
+            return article.title
+                .toLowerCase()
+                .includes(searchTerm.toLowerCase())
+        })
+
+        setSearchResults(results)
+    }
+
     return (
         <>
             <Head title="Artikel" />
             <NavBar />
             <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-20">
-                <SearchBar />
+                <SearchBar onSearch={handleSearch} />
                 <div className="flex flex-col gap-8">
                     <h1 className="font-bold text-xl md:text-2xl text-hitam md:px-16 lg:px-20">
                         Topik Terkini
@@ -46,12 +62,29 @@ export default function Article({ popular, articles, topik_terkini }) {
                 </div>
 
                 <h1 className="font-bold text-xl md:text-2xl text-hitam md:px-16 lg:px-20">
-                    Artikel Lainnya
+                    {searchResults.length > 0
+                        ? 'Hasil Pencarian'
+                        : 'Artikel Lainnya'}
                 </h1>
                 <div className="flex justify-center flex-col md:flex-row md:flex-wrap md:items-stretch items-center gap-6">
-                    {currentArticles.map((article) => (
-                        <ArticleCard key={article.id} article={article} />
-                    ))}
+                    {searchResults.length > 0
+                        ? searchResults.map((article) => (
+                              <ArticleCard key={article.id} article={article} />
+                          ))
+                        : currentArticles.map((article) => (
+                              <ArticleCard key={article.id} article={article} />
+                          ))}
+                    {/* Tampilkan gambar jika pencarian tidak menghasilkan artikel */}
+                    {searchResults.length === 0 &&
+                        currentArticles.length === 0 && (
+                            <div className="flex items-center justify-center w-full h-96">
+                                <img
+                                    src="/noArticle.png"
+                                    alt="No Results"
+                                    className="w-64 h-64"
+                                />
+                            </div>
+                        )}
                 </div>
                 <div className="flex flex-row justify-center">
                     <ReactPaginate
