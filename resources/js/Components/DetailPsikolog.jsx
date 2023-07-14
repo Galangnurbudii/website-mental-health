@@ -66,7 +66,7 @@ export default function DetailPsikolog({ className = "", disabled, ...props }){
 
                 {/* Other Information */}
                 <div className="px-6 sm:px-8 md:px-8 lg:px-8  flex items-start">
-                    <img className="pt-2" src="images/nstk.jpg" width={24}/>
+                    <img className="pt-2" src="../images/nstk.jpg" width={24}/>
                     <div>
                         <h1 className="pl-3 font-bold">Nomor Surat Tanda Registrasi</h1>
                         <p className="pl-3 pb-3 text-xs">3321601321068534</p>
@@ -74,7 +74,7 @@ export default function DetailPsikolog({ className = "", disabled, ...props }){
                 </div>
 
                 <div className="px-6 sm:px-8 md:px-8 lg:px-8  flex items-start">
-                    <img className="pt-2" src="images/nstk.jpg" width={24}/>
+                    <img className="pt-2" src="../images/lokasi.png" width={24}/>
                     <div>
                         <h1 className="pl-3 font-bold">Lokasi Praktik</h1>
                         <p className="pl-3 pb-3 text-xs">Banjarmasin, Kalimantan Selatan</p>
@@ -82,7 +82,7 @@ export default function DetailPsikolog({ className = "", disabled, ...props }){
                 </div>
 
                 <div className="px-6 sm:px-8 md:px-8 lg:px-8  flex items-start">
-                    <img className="pt-2" src="images/nstk.jpg" width={24}/>
+                    <img className="pt-2" src="../images/alumnus.png" width={24}/>
                     <div>
                         <h1 className="pl-3 font-bold">Alumnus</h1>
                         <p className="pl-3 pb-7 text-xs">Universitas Bina Nusantara</p>

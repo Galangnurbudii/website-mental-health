@@ -684,7 +684,6 @@ export default function App() {
           onChange={handleKabupatenChange}
           options={filteredKabupatenOptions}
         />
-
       </div>
     </div>
   );

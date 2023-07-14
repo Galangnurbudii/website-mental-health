@@ -2,6 +2,9 @@ import Post from "@/Components/Post";
 import Footer from "@/Components/Footer";
 import NavBar from "@/Components/NavBar";
 import React from "react";
+import ArticleRec from '@/Components/ArticleRec'
+import PrimaryButton from '@/Components/PrimaryButton'
+
 
 export default function ForumHome({posts}) {
     console.log(posts)
@@ -51,7 +54,7 @@ export default function ForumHome({posts}) {
                     <Post />
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </>
-    );
+    )
 }
