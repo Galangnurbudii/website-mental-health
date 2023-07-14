@@ -21,7 +21,9 @@ class Psikolog extends Model
         'bidang_keahlian',
         'tahun_pengalaman',
         'nomor_str',
-        'lokasi_praktik',
+        'negara',
+        'provinsi',
+        'kota',
         'lulusan',
         'foto_profil',
     ];

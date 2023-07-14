@@ -32,7 +32,9 @@ class PsikologController extends Controller
             'bidang_keahlian' => 'required',
             'tahun_pengalaman' => 'required',
             'nomor_str' => 'required',
-            'lokasi_praktik' => 'required',
+            'negara' => 'required',
+            'provinsi' => 'required',
+            'kota' => 'required',
             'lulusan' => 'required'
         ])->validate();
 
@@ -59,12 +61,14 @@ class PsikologController extends Controller
             'bidang_keahlian' => 'required',
             'tahun_pengalaman' => 'required',
             'nomor_str' => 'required',
-            'lokasi_praktik' => 'required',
+            'negara' => 'required',
+            'provinsi' => 'required',
+            'kota' => 'required',
             'lulusan' => 'required'
         ])->validate();
 
         Psikolog::find($id)->update($request->all());
-        return redirect()->route('psikologs.index');
+        return redirect()->back();
     }
 
     public function destroy($id)

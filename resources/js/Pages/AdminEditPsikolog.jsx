@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import EditPsikologModal from "@/Components/EditPsikologModal";
 import { Head, useForm, usePage, Link } from '@inertiajs/react';
 
 export default function AdminEditPsikolog(props) {
@@ -12,18 +13,38 @@ export default function AdminEditPsikolog(props) {
         bidang_keahlian: psikologs.bidang_keahlian || "",
         tahun_pengalaman: psikologs.tahun_pengalaman || "",
         nomor_str: psikologs.nomor_str || "",
-        lokasi_praktik: psikologs.lokasi_praktik || "",
+        negara: psikologs.negara || "",
+        provinsi: psikologs.provinsi || "",
+        kota: psikologs.kota || "",
         lulusan: psikologs.lulusan || "",
     });
-  
+    
+    const [showEditPsikologModal, setShowEditPsikologModal] = useState(false)
+    
     function handleSubmit(e) {
         e.preventDefault();
-        put(route("psikologs.update", psikologs.id));
+        put(route("psikologs.update", psikologs.id), {
+            onSuccess: () => setShowEditPsikologModal(true)
+        });
     }
+
+    useEffect(() => {
+        if (showEditPsikologModal) {
+            const timer = setTimeout(() => {
+                window.location.href = route("psikologs.index");
+            }, 1500);
+
+            return () => clearTimeout(timer);
+        }
+    }, [showEditPsikologModal]);
 
     return (
         <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-20">
-            <a href={route("psikologs.index")}>back</a>
+            <a href={route("psikologs.index")}>
+                <button className='bg-white border-primary border-2 rounded-lg py-1 px-4'>
+                    Back
+                </button>
+            </a>
 
              <Head title="Psikologs" />
 
@@ -35,7 +56,7 @@ export default function AdminEditPsikolog(props) {
                             id="nama"
                             placeholder="Nama"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="nama"
                             name="nama"
                             isFocused={true}
@@ -55,7 +76,7 @@ export default function AdminEditPsikolog(props) {
                             id="email"
                             placeholder="Email"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="email"
                             name="email"
                             isFocused={true}
@@ -75,7 +96,7 @@ export default function AdminEditPsikolog(props) {
                             id="password"
                             placeholder="Password"
                             type="password"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="password"
                             name="password"
                             isFocused={true}
@@ -96,7 +117,7 @@ export default function AdminEditPsikolog(props) {
                             placeholder="rating"
                             type="number"
                             step="0.01"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="rating"
                             name="rating"
                             isFocused={true}
@@ -116,7 +137,7 @@ export default function AdminEditPsikolog(props) {
                             id="bidang_keahlian"
                             placeholder="Bidang Keahlian"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="bidang_keahlian"
                             name="bidang_keahlian"
                             isFocused={true}
@@ -136,7 +157,7 @@ export default function AdminEditPsikolog(props) {
                             id="tahun_pengalaman"
                             placeholder="Tahun Pengalaman"
                             type="number"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="tahun_pengalaman"
                             name="tahun_pengalaman"
                             isFocused={true}
@@ -156,7 +177,7 @@ export default function AdminEditPsikolog(props) {
                             id="nomor_str"
                             placeholder="Nomor Str"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="nomor_str"
                             name="nomor_str"
                             isFocused={true}
@@ -171,23 +192,63 @@ export default function AdminEditPsikolog(props) {
                         </span>
                     </div>
                     <div className="mb-4">
-                        <label className="">Lokasi Praktik</label>
-                        <textarea
-                            id="lokasi_praktik"
-                            placeholder="Lokasi Praktik"
+                        <label className="">Negara</label>
+                        <input
+                            id="negara"
+                            placeholder="Negara"
                             type="text"
                             className="w-full px-4 py-2"
-                            label="lokasi_praktik"
-                            name="lokasi_praktik"
+                            label="negara"
+                            name="negara"
                             isFocused={true}
-                            value={data.lokasi_praktik}
+                            value={data.negara}
                             onChange={(e) =>
-                                setData("lokasi_praktik", e.target.value)
+                                setData("negara", e.target.value)
                             }
                             required
                         />
                         <span className="text-red-600">
-                            {errors.lokasi_praktik}
+                            {errors.negara}
+                        </span>
+                    </div>
+                    <div className="mb-4">
+                        <label className="">Provinsi</label>
+                        <input
+                            id="provinsi"
+                            placeholder="Provinsi"
+                            type="text"
+                            className="w-full px-4 py-2"
+                            label="provinsi"
+                            name="provinsi"
+                            isFocused={true}
+                            value={data.provinsi}
+                            onChange={(e) =>
+                                setData("provinsi", e.target.value)
+                            }
+                            required
+                        />
+                        <span className="text-red-600">
+                            {errors.provinsi}
+                        </span>
+                    </div>
+                    <div className="mb-4">
+                        <label className="">Kota</label>
+                        <input
+                            id="kota"
+                            placeholder="Kota"
+                            type="text"
+                            className="w-full px-4 py-2"
+                            label="kota"
+                            name="kota"
+                            isFocused={true}
+                            value={data.kota}
+                            onChange={(e) =>
+                                setData("kota", e.target.value)
+                            }
+                            required
+                        />
+                        <span className="text-red-600">
+                            {errors.kota}
                         </span>
                     </div>
                     <div className="mb-4">
@@ -196,7 +257,7 @@ export default function AdminEditPsikolog(props) {
                             id="lulusan"
                             placeholder="Lulusan"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="lulusan"
                             name="lulusan"
                             isFocused={true}
@@ -214,12 +275,13 @@ export default function AdminEditPsikolog(props) {
                 <div className="mt-4">
                     <button
                         type="submit"
-                        className="px-6 py-2 font-bold text-white bg-green-500 rounded"
+                        className="px-6 py-2 font-bold text-white bg-primary rounded"
                     >
                         Update
                     </button>
                 </div>
-             </form>
+            </form>
+            <EditPsikologModal visible={showEditPsikologModal} />
         </div>
     );
 }

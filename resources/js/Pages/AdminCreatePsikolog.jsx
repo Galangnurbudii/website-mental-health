@@ -11,7 +11,9 @@ export default function AdminCreatePsikolog() {
         bidang_keahlian: "",
         tahun_pengalaman: "",
         nomor_str: "",
-        lokasi_praktik: "",
+        negara: "",
+        provinsi: "",
+        kota: "",
         lulusan: "",
     });
 
@@ -22,7 +24,11 @@ export default function AdminCreatePsikolog() {
 
     return (
         <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-20">
-            <a href={route("psikologs.index")}>back</a>
+            <a href={route("psikologs.index")}>
+                <button className='bg-white border-primary border-2 rounded-lg py-1 px-4'>
+                    Back
+                </button>
+            </a>
 
              <Head title="Psikologs" />
 
@@ -34,7 +40,7 @@ export default function AdminCreatePsikolog() {
                             id="nama"
                             placeholder="Nama"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="nama"
                             name="nama"
                             isFocused={true}
@@ -54,7 +60,7 @@ export default function AdminCreatePsikolog() {
                             id="email"
                             placeholder="Email"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="email"
                             name="email"
                             isFocused={true}
@@ -74,7 +80,7 @@ export default function AdminCreatePsikolog() {
                             id="password"
                             placeholder="Password"
                             type="password"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="password"
                             name="password"
                             isFocused={true}
@@ -92,10 +98,10 @@ export default function AdminCreatePsikolog() {
                         <label className="">Rating</label>
                         <input
                             id="rating"
-                            placeholder="rating"
+                            placeholder="Rating"
                             type="number"
                             step="0.01"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="rating"
                             name="rating"
                             isFocused={true}
@@ -115,7 +121,7 @@ export default function AdminCreatePsikolog() {
                             id="bidang_keahlian"
                             placeholder="Bidang Keahlian"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="bidang_keahlian"
                             name="bidang_keahlian"
                             isFocused={true}
@@ -135,7 +141,7 @@ export default function AdminCreatePsikolog() {
                             id="tahun_pengalaman"
                             placeholder="Tahun Pengalaman"
                             type="number"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="tahun_pengalaman"
                             name="tahun_pengalaman"
                             isFocused={true}
@@ -155,7 +161,7 @@ export default function AdminCreatePsikolog() {
                             id="nomor_str"
                             placeholder="Nomor Str"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="nomor_str"
                             name="nomor_str"
                             isFocused={true}
@@ -170,23 +176,63 @@ export default function AdminCreatePsikolog() {
                         </span>
                     </div>
                     <div className="mb-4">
-                        <label className="">Lokasi Praktik</label>
-                        <textarea
-                            id="lokasi_praktik"
-                            placeholder="Lokasi Praktik"
+                        <label className="">Negara</label>
+                        <input
+                            id="negara"
+                            placeholder="Negara"
                             type="text"
-                            className="w-full px-4 py-2"
-                            label="lokasi_praktik"
-                            name="lokasi_praktik"
+                            className="w-full px-4 py-2 rounded-lg"
+                            label="negara"
+                            name="negara"
                             isFocused={true}
-                            value={data.lokasi_praktik}
+                            value={data.negara}
                             onChange={(e) =>
-                                setData("lokasi_praktik", e.target.value)
+                                setData("negara", e.target.value)
                             }
                             required
                         />
                         <span className="text-red-600">
-                            {errors.lokasi_praktik}
+                            {errors.negara}
+                        </span>
+                    </div>
+                    <div className="mb-4">
+                        <label className="">Provinsi</label>
+                        <input
+                            id="provinsi"
+                            placeholder="Provinsi"
+                            type="text"
+                            className="w-full px-4 py-2 rounded-lg"
+                            label="provinsi"
+                            name="provinsi"
+                            isFocused={true}
+                            value={data.provinsi}
+                            onChange={(e) =>
+                                setData("provinsi", e.target.value)
+                            }
+                            required
+                        />
+                        <span className="text-red-600">
+                            {errors.provinsi}
+                        </span>
+                    </div>
+                    <div className="mb-4">
+                        <label className="">Kota</label>
+                        <input
+                            id="kota"
+                            placeholder="Kota"
+                            type="text"
+                            className="w-full px-4 py-2 rounded-lg"
+                            label="kota"
+                            name="kota"
+                            isFocused={true}
+                            value={data.kota}
+                            onChange={(e) =>
+                                setData("kota", e.target.value)
+                            }
+                            required
+                        />
+                        <span className="text-red-600">
+                            {errors.kota}
                         </span>
                     </div>
                     <div className="mb-4">
@@ -195,7 +241,7 @@ export default function AdminCreatePsikolog() {
                             id="lulusan"
                             placeholder="Lulusan"
                             type="text"
-                            className="w-full px-4 py-2"
+                            className="w-full px-4 py-2 rounded-lg"
                             label="lulusan"
                             name="lulusan"
                             isFocused={true}
@@ -213,7 +259,7 @@ export default function AdminCreatePsikolog() {
                 <div className="mt-4">
                     <button
                         type="submit"
-                        className="px-6 py-2 font-bold text-white bg-green-500 rounded"
+                        className="px-6 py-2 font-bold text-white bg-primary rounded"
                     >
                         Save
                     </button>
