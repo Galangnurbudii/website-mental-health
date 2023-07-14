@@ -25,6 +25,7 @@ return new class extends Migration {
             $table->string('provinsi')->nullable();
             $table->string('kota')->nullable();
             $table->string('lulusan');
+            $table->string('foto_profil');
             $table->timestamps();
             $table->unsignedBigInteger('id_user')->nullable();
             $table->foreign('id_user')->references('id')->on('users');

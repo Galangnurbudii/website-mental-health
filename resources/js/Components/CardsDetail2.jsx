@@ -3,7 +3,7 @@ import BackUpButton from "@/Components/BackUpButton";
 import { Link } from "@inertiajs/react";
 import PrimaryButton from "./PrimaryButton";
 
-export default function CardsDetail({ imageSrc, names, jobs, text, badge1, badge2, fee }) {
+export default function CardsDetail2({ imageSrc, names, jobs, text, badge1, badge2, fee }) {
     
     const isDetailLayanan2 = window.location.pathname.includes("detailLayanan2");
 
@@ -48,7 +48,7 @@ export default function CardsDetail({ imageSrc, names, jobs, text, badge1, badge
                 </div>
                 <div className="flex justify-between">
                     <h1 className="font-bold text-md lg:pt-0 md:pt-0 sm:pt-0 pt-1 sm:text-base md:text-base lg:text-base">{fee}</h1>
-                    <Link href={route("payment")}>
+                    <Link href={route("payment2")}>
                         <BackUpButton className="h-0 text-xs lg:text-xs md:text-md sm:text-md">
                             Konsultasi
                         </BackUpButton>

@@ -24,7 +24,6 @@ function ArticleCard({ article }) {
                         src={thumbnail_url}
                         alt="Foto Berita"
                         className="w-full h-full object-cover"
-
                     />
                 </figure>
                 <div className="card-body">

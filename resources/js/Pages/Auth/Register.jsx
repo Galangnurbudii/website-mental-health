@@ -48,7 +48,7 @@ export default function Register() {
                             className="lg:h-full lg:w-full 
                             md:h-full               
                             object-cover"
-                            src="images/bgloginfix.png"
+                            src="images/register.png"
                             alt=""
                         />
                     </div>
@@ -153,7 +153,7 @@ export default function Register() {
 
                                     <TextInput
                                         id="password_confirmation"
-                                        placeholder="password confirmation"
+                                        placeholder="Password Confirmation"
                                         type="password"
                                         name="password_confirmation"
                                         value={data.password_confirmation}

@@ -52,14 +52,22 @@ Route::get('/konsultasi', function () {
     return Inertia::render('Konsultasi');
 })->name('konsultasi');
 
+Route::get('/detaillayanan/videocall', function () {
+    return Inertia::render('DetailLayanan2');
+})->name('detaillayanan2');
+
 Route::get('/detaillayanan', function () {
     return Inertia::render('DetailLayanan');
 })->name('detaillayanan');
 
+Route::get('/payment/videocall', function () {
+    return Inertia::render('Payment2');
+})->name('payment2');
 
 Route::get('/payment', function () {
     return Inertia::render('Payment');
 })->name('payment');
+
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -92,6 +100,10 @@ Route::resource('psikologs', PsikologController::class);
 Route::get('/profil', function () {
     return Inertia::render('EditProfile');
 })->name('profil');
+
+Route::get('/hapusprofil', function () {
+    return Inertia::render('HapusProfil');
+})->name('hapusprofil');
 
 Route::get('/error', function () {
     return Inertia::render('NotFound');

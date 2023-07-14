@@ -19,6 +19,9 @@ return new class extends Migration {
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->enum('role', ['user', 'admin', 'psikolog']);
+            $table->string('nomor_telfon')->default('');
+            $table->text('alamat');
+            $table->string('profile_picture_url')->default('');
             $table->rememberToken();
             $table->timestamps();
         });

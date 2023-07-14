@@ -7,10 +7,9 @@ import BigCard from '@/Components/BigCard'
 import React, { useState, useEffect } from 'react'
 import ReactPaginate from 'react-paginate'
 
-
 export default function Article({ popular, articles, topik_terkini }) {
     const [currentPage, setCurrentPage] = useState(0)
-    const itemsPerPage = window.innerWidth > 1536 ? 4 : 3
+    const itemsPerPage = 3
     const pageCount = Math.ceil(articles.length / itemsPerPage)
 
     const handlePageChange = (selectedPage) => {
@@ -21,49 +20,48 @@ export default function Article({ popular, articles, topik_terkini }) {
     const endIndex = startIndex + itemsPerPage
     const currentArticles = articles.slice(startIndex, endIndex)
 
-    useEffect(() => {
-        const handleResize = () => {
-            const newItemsPerPage = window.innerWidth > 1536 ? 4 : 3
-            if (newItemsPerPage !== itemsPerPage) {
-                setCurrentPage(0)
-            }
-        }
-        window.addEventListener('resize', handleResize)
-        return () => {
-            window.removeEventListener('resize', handleResize)
-        }
-    }, [itemsPerPage])
-
+    // useEffect(() => {
+    //     const handleResize = () => {
+    //         const newItemsPerPage = window.innerWidth > 1536 ? 4 : 3
+    //         if (newItemsPerPage !== itemsPerPage) {
+    //             setCurrentPage(0)
+    //         }
+    //     }
+    //     window.addEventListener('resize', handleResize)
+    //     return () => {
+    //         window.removeEventListener('resize', handleResize)
+    //     }
+    // }, [itemsPerPage])
 
     return (
         <>
             <NavBar />
 
-            <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-20">
+            <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-32">
                 <SearchBar />
 
                 <div className="flex flex-col gap-8">
-                    <h1 className="font-bold text-xl md:text-2xl text-hitam md:px-16 lg:px-20">
+                    <h1 className="font-bold text-xl md:text-2xl text-hitam ">
                         Topik Terkini
                     </h1>
-                    <div className="md:px-16 lg:px-20">
+                    <div className="">
                         {Object.values(topik_terkini).map((topik) => (
                             <Badge key={topik} titleBadge={topik} />
                         ))}
                     </div>
                 </div>
 
-                <h1 className="font-bold text-xl md:text-2xl text-hitam md:px-16 lg:px-20">
+                <h1 className="font-bold text-xl md:text-2xl text-hitam ">
                     Artikel Terpopuler
                 </h1>
-                <div className="md:px-16 lg:px-20">
+                <div className="">
                     <BigCard popular={popular} />
                 </div>
 
-                <h1 className="font-bold text-xl md:text-2xl text-hitam md:px-16 lg:px-20">
+                <h1 className="font-bold text-xl md:text-2xl text-hitam ">
                     Artikel Lainnya
                 </h1>
-                <div className="flex justify-between flex-col md:flex-row md:items-stretch items-center gap-6 md:px-16 lg:px-20">
+                <div className="flex justify-center flex-col lg:flex-row lg:flex-wrap lg:items-stretch items-center gap-6 pb-20">
                     {currentArticles.map((article) => (
                         <ArticleCard key={article.id} article={article} />
                     ))}
