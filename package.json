@@ -21,11 +21,8 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
-
         "@heroicons/react": "^2.0.18",
-
         "@inertiajs/inertia": "^0.11.1",
-
         "@inertiajs/inertia-react": "^0.8.1",
         "@tinymce/tinymce-react": "^4.3.0",
         "daisyui": "^2.51.6",
@@ -34,15 +31,14 @@
         "flowbite-datepicker": "^1.2.2",
         "flowbite-react": "^0.4.9",
         "indonesia": "^0.0.0",
+        "lodash.debounce": "^4.0.8",
         "react-awesome-slider": "^4.1.0",
         "react-custom-scrollbars": "^4.2.1",
         "react-datepicker": "^4.11.0",
-
         "react-icons": "^4.8.0",
         "react-paginate": "^8.2.0",
         "react-radio-buttons": "^1.2.2",
         "react-radio-group": "^3.0.3",
-
         "react-scrollbars-custom": "^4.1.1",
         "react-select": "^5.7.3",
         "sassy-datepicker": "^0.10.2",

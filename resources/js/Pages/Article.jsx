@@ -38,7 +38,7 @@ export default function Article({ popular, articles, topik_terkini }) {
             <NavBar />
 
             <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-32">
-                <SearchBar />
+                <SearchBar data={articles}/>
 
                 <div className="flex flex-col gap-8">
                     <h1 className="font-bold text-xl md:text-2xl text-hitam ">
