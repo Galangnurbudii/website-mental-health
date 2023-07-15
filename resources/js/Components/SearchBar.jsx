@@ -73,7 +73,7 @@ function SearchBar({ data }) {
 
     return (
         <>
-            <div className="flex flex-row justify-center items-center gap-4 md:px-16 lg:px-20">
+            <div className="flex flex-row justify-center items-center gap-4 ">
                 <div className="relative text-gray-600 w-full">
                     <div className="relative flex items-center h-full">
                         <div className="absolute flex pl-4">

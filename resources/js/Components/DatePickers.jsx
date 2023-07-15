@@ -1,9 +1,10 @@
-import React, { useState } from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import React, { useState } from 'react'
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
 
 export default function DatePickers() {
-    const [startDate, setStartDate] = useState(new Date());
+    const today = new Date()
+    const [startDate, setStartDate] = useState(today)
 
     return (
         <div className="relative">
@@ -11,7 +12,8 @@ export default function DatePickers() {
                 className="react-datepicker"
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}
+                minDate={today}
             />
         </div>
-    );
+    )
 }
