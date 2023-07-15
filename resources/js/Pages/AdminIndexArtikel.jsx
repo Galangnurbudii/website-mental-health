@@ -13,17 +13,11 @@ export default function AdminIndexArtikel(props) {
     return (
         <>
             <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-20">
-                <div
-                    className="flex items-center justify-between"
-                    style={{ fontWeight: 'bold' }}
-                >
-                    <a
-                        className="px-4 py-2 text-sm text-white bg-blue-500 rounded"
-                        href={route('artikels.create')}
-                    >
+                <a href={route('artikels.create')}>
+                    <button className="px-4 py-2 w-[133px] text-sm text-white bg-blue-500 rounded">
                         Create Article
-                    </a>
-                </div>
+                    </button>
+                </a>
 
                 <table className="table-fixed w-full">
                     <thead>
@@ -31,6 +25,7 @@ export default function AdminIndexArtikel(props) {
                             <th className="px-4 py-2 w-20">No.</th>
                             <th className="px-4 py-2">Judul</th>
                             <th className="px-4 py-2">Tag</th>
+                            <th className="px-4 py-2">Thumbnail</th>
                             <th className="px-4 py-2" colSpan="3">
                                 Detail
                             </th>
@@ -50,6 +45,12 @@ export default function AdminIndexArtikel(props) {
                                 <td className="border px-4 py-2">
                                     {artikel.tag}
                                 </td>
+                                <td className="border px-4 py-2">
+                                    <img
+                                        src={`/storage/${artikel.thumbnail_url}`}
+                                        alt=""
+                                    />
+                                </td>
                                 <td className="border px-4 py-2" colSpan="3">
                                     {ReactHtmlParser(artikel.detail)}
                                 </td>
@@ -57,25 +58,27 @@ export default function AdminIndexArtikel(props) {
                                     {artikel.id_user}
                                 </td>
                                 <td className="border px-4 py-2">
-                                    <Link
-                                        tabIndex="1"
-                                        className="px-4 py-2 text-sm text-white bg-green-500 rounded"
-                                        href={route(
-                                            'artikels.edit',
-                                            artikel.id
-                                        )}
-                                    >
-                                        Edit
-                                    </Link>
-                                    <button
-                                        onClick={destroy}
-                                        id={artikel.id}
-                                        tabIndex="-1"
-                                        type="button"
-                                        className="mx-1 px-4 py-2 text-sm text-white bg-red-500 rounded"
-                                    >
-                                        Delete
-                                    </button>
+                                    <div className="flex">
+                                        <Link
+                                            tabIndex="1"
+                                            className="px-4 py-2 text-sm text-white bg-green-500 rounded"
+                                            href={route(
+                                                'artikels.edit',
+                                                artikel.id
+                                            )}
+                                        >
+                                            Edit
+                                        </Link>
+                                        <button
+                                            onClick={destroy}
+                                            id={artikel.id}
+                                            tabIndex="-1"
+                                            type="button"
+                                            className="mx-1 px-4 py-2 text-sm text-white bg-red-500 rounded"
+                                        >
+                                            Delete
+                                        </button>
+                                    </div>
                                 </td>
                             </tr>
                         ))}
