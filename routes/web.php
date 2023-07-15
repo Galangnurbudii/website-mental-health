@@ -98,6 +98,7 @@ Route::get('/dashboard-admin', function () {
 })->name('dashboardadmin');
 
 Route::post('/upload', [AdminArtikelController::class, 'uploadImage']);
+Route::post('artikels/{id}', [AdminArtikelController::class, 'update'])->name('updateArtikel');
 Route::resource('artikels', AdminArtikelController::class);
 Route::resource('psikologs', PsikologController::class);
 

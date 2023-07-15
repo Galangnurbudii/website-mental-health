@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -18,7 +19,7 @@ class Artikel extends Model
         'tag',
         'detail',
         'id_user',
-        'thumbnail_url',
+        'thumbnail_url'
     ];
 
     // ...
