@@ -1,10 +1,9 @@
-import NavProfil from '@/Components/ProfileNavbarAdmin'
 import Checkbox from '@/Components/Checkbox'
 import PrimaryButton from '@/Components/PrimaryButton'
 import { useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
-import Popup2 from '@/Components/Popup2'
+import ProfileNavbar from '@/Components/ProfileNavbar'
 
 export default function HapusProfil({ desc }) {
     let [isOpen, setIsOpen] = useState(false)
@@ -41,7 +40,7 @@ export default function HapusProfil({ desc }) {
     return (
         <form onSubmit={handleSubmit}>
             <div>
-                <NavProfil />
+                <ProfileNavbar />
                 <div className="lg:px-96 md:px-40 px-10 pt-12 pb-16">
                     <h1 className="font-bold text-3xl py-5">Hapus Akun</h1>
                     <div className="flex items-center pb-10">
