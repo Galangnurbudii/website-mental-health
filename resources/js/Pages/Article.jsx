@@ -1,11 +1,12 @@
+import React, { useState } from 'react'
+import ReactPaginate from 'react-paginate'
+import { Head } from '@inertiajs/react'
 import Footer from '@/Components/Footer'
 import NavBar from '@/Components/NavBar'
 import ArticleCard from '@/Components/ArticleCard'
 import SearchBar from '@/Components/SearchBar'
 import Badge from '@/Components/Badge'
 import BigCard from '@/Components/BigCard'
-import React, { useState, useEffect } from 'react'
-import ReactPaginate from 'react-paginate'
 
 export default function Article({ popular, articles, topik_terkini }) {
     const [currentPage, setCurrentPage] = useState(0)
@@ -20,6 +21,7 @@ export default function Article({ popular, articles, topik_terkini }) {
     const endIndex = startIndex + itemsPerPage
     const currentArticles = articles.slice(startIndex, endIndex)
 
+
     // useEffect(() => {
     //     const handleResize = () => {
     //         const newItemsPerPage = window.innerWidth > 1536 ? 4 : 3
@@ -33,9 +35,12 @@ export default function Article({ popular, articles, topik_terkini }) {
     //     }
     // }, [itemsPerPage])
 
+
     return (
         <>
+            <Head title="Artikel" />
             <NavBar />
+
 
             <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-32">
                 <SearchBar data={articles}/>
@@ -44,8 +49,10 @@ export default function Article({ popular, articles, topik_terkini }) {
                     <h1 className="font-bold text-xl md:text-2xl text-hitam ">
                         Topik Terkini
                     </h1>
+
                     <div className="">
                         {Object.values(topik_terkini).map((topik) => (
+
                             <Badge key={topik} titleBadge={topik} />
                         ))}
                     </div>
@@ -65,8 +72,8 @@ export default function Article({ popular, articles, topik_terkini }) {
                     {currentArticles.map((article) => (
                         <ArticleCard key={article.id} article={article} />
                     ))}
-                </div>
 
+                </div>
                 <div className="flex flex-row justify-center">
                     <ReactPaginate
                         previousLabel={<span>&lt;</span>}
@@ -87,7 +94,6 @@ export default function Article({ popular, articles, topik_terkini }) {
                     />
                 </div>
             </div>
-
             <Footer />
         </>
     )

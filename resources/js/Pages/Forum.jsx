@@ -2,6 +2,7 @@ import Footer from "@/Components/Footer";
 import NavBar from "@/Components/NavBar";
 import MyModal from "@/Components/MyModal";
 import EmptyTextModal from "@/Components/EmptyTextModal";
+import ValidateTextModal from "@/Components/ValidateTextModal";
 import React, { useState } from "react";
 
 export default function Forum() {
@@ -11,14 +12,18 @@ export default function Forum() {
     const [showEmptyTextModal, setShowEmptyTextModal] = useState(false)
     const handleOnCloseText = () => setShowEmptyTextModal(false)
 
+    const [showValidateTextModal, setShowValidateTextModal] = useState(false)
+    const handleOnCloseTextValidate = () => setShowValidateTextModal(false)
+
     const handlePosting = () => {
         var textAreaValue = document.getElementById('myTextArea').value;
         if (textAreaValue === '') {
             setShowEmptyTextModal(true);
         }
-        // else {
-        //     // Kirim ke database
-        // }
+        else {
+            // Kirim ke database
+            setShowValidateTextModal(true);
+        }
     };
 
     return (
@@ -48,6 +53,7 @@ export default function Forum() {
                         </div>
                         <MyModal onClose={handleOnClose} visible={showMyModal} />
                         <EmptyTextModal onClose={handleOnCloseText} visible={showEmptyTextModal} />
+                        <ValidateTextModal onClose={handleOnCloseTextValidate} visible={showValidateTextModal} />
                     </div>
                 </div>
             </div>
