@@ -11,9 +11,10 @@
 
 import React, { useState } from 'react'
 import { AiOutlineUser, AiOutlineLeftCircle } from 'react-icons/ai'
-import { HiOutlineShoppingCart } from 'react-icons/hi'
-import { BiTrashAlt, BiHomeAlt2 } from 'react-icons/bi'
+import { BiHomeAlt2 } from 'react-icons/bi'
+import { HiOutlineChatAlt2 } from 'react-icons/hi'
 import { FiFileText, FiLogOut, FiSettings } from 'react-icons/fi'
+import { Link } from '@inertiajs/react'
 
 export default function DashboardAdmin() {
     const [open, setOpen] = useState(true)
@@ -21,7 +22,7 @@ export default function DashboardAdmin() {
     const Menus = [
         { title: 'Dashboard', icon: BiHomeAlt2 },
         { title: 'Artikel', icon: FiFileText },
-        { title: 'Psikolog', icon: AiOutlineUser },
+        { title: 'Psikolog', icon: AiOutlineUser, link: route("psikologs.create")},
         { title: 'Pengaturan', icon: FiSettings, gap: true },
         { title: 'Keluar', icon: FiLogOut },
     ]
@@ -87,8 +88,8 @@ export default function DashboardAdmin() {
                                         }}
                                     />
                                 )}
-
-                                <span
+                                <Link 
+                                    to={menu.link}
                                     className={`${
                                         !open && 'hidden'
                                     } origin-left duration-400 ${
@@ -98,7 +99,18 @@ export default function DashboardAdmin() {
                                     }`}
                                 >
                                     {menu.title}
-                                </span>
+                                </Link>
+                                {/* <span
+                                    className={`${
+                                        !open && 'hidden'
+                                    } origin-left duration-400 ${
+                                        open &&
+                                        hoveredIndex === index &&
+                                        'text-primary'
+                                    }`}
+                                >
+                                    {menu.title}
+                                </span> */}
                             </li>
                         ))}
                     </ul>
@@ -112,26 +124,25 @@ export default function DashboardAdmin() {
                         <button className="border pl-6 flex text-center items-center
                                             py-6 rounded-lg border-[#736D6D]
                                             w-[323px]">
-                            <img src="images/doctorImage.png" alt="" 
-                                className="w-10 mr-6"/>
+                            <FiFileText className='w-10 h-10 mr-6 text-primary'/>
                             <span className="mr-[50px]">
                                 Tambah Artikel
                             </span>
                         </button>
+                        <a href={route("psikologs.create")}>
+                            <button className="border pl-6 flex text-center items-center
+                                                py-6 rounded-lg border-disabled
+                                                w-[323px]">
+                                <AiOutlineUser className='w-10 h-10 mr-6 text-primary'/>
+                                <span className="mr-[50px]">
+                                    Buat Akun Psikolog
+                                </span>
+                            </button>
+                        </a>
                         <button className="border pl-6 flex text-center items-center
                                             py-6 rounded-lg border-[#736D6D]
                                             w-[323px]">
-                            <img src="images/doctorImage.png" alt="" 
-                                className="w-10 mr-6"/>
-                            <span className="mr-[50px]">
-                                Buat Akun Psikolog
-                            </span>
-                        </button>
-                        <button className="border pl-6 flex text-center items-center
-                                            py-6 rounded-lg border-[#736D6D]
-                                            w-[323px]">
-                            <img src="images/doctorImage.png" alt="" 
-                                className="w-10 mr-6"/>
+                            <HiOutlineChatAlt2 className='w-10 h-10 mr-6 text-primary'/>
                             <span className="mr-[50px]">
                                 Sunting Forum
                             </span>

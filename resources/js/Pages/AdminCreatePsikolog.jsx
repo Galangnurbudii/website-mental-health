@@ -22,7 +22,11 @@ export default function AdminCreatePsikolog() {
 
     return (
         <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-20">
-            <a href={route("psikologs.index")}>back</a>
+            <a href={route("psikologs.index")}>
+                <button className='bg-white border-black border-2 rounded-lg py-1 px-4'>
+                    Back
+                </button>
+            </a>
 
              <Head title="Psikologs" />
 
@@ -213,7 +217,7 @@ export default function AdminCreatePsikolog() {
                 <div className="mt-4">
                     <button
                         type="submit"
-                        className="px-6 py-2 font-bold text-white bg-green-500 rounded"
+                        className="px-6 py-2 font-bold text-white bg-primary rounded"
                     >
                         Save
                     </button>
