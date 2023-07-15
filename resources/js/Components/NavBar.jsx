@@ -29,7 +29,7 @@ const Navbar = ({ user }) => {
                 </li>
                 <li className="p-4 text-hitam font-medium hover:text-primary hover:font-semibold">
                     {user ? (
-                        <Link href={route('users.edit',user.id)}>Profil</Link>
+                        <Link href={route('users.edit', user.id)}>Profil</Link>
                     ) : (
                         <Link href={route('login')}>
                             <PrimaryButton>Masuk</PrimaryButton>
@@ -68,9 +68,11 @@ const Navbar = ({ user }) => {
                 </li>
                 <li className="p-4 text-hitam font-base hover:text-primary hover:font-medium border-b border-hoverBackground">
                     {user ? (
-                        <Link href={route('users.edit',user.id)}>Profil</Link>
+                        <Link href={route('users.edit', user.id)}>Profil</Link>
                     ) : (
-                        <Link href={route('login')}>Masuk</Link>
+                        <Link href={route('login')}>
+                            <PrimaryButton>Masuk</PrimaryButton>
+                        </Link>
                     )}
                 </li>
             </ul>

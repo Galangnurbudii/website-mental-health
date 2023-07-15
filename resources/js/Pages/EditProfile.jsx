@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { Inertia } from '@inertiajs/inertia'
 import Popup from '@/Components/Popup'
-import NavBarAdmin from '@/Components/NavBarAdmin'
 import ProfileNavbar from '@/Components/ProfileNavbar'
 
 const EditProfile = ({ user }) => {
     const [formData, setFormData] = useState({
         name: user.name,
         email: user.email,
+        no_telepon: '081529518xxx',
+        alamat: 'Ponorogo, Jawa Timur',
         profile_photo: null,
     })
 
@@ -36,20 +37,20 @@ const EditProfile = ({ user }) => {
     return (
         <>
             <ProfileNavbar />
-            <div className="flex flex-col gap-6 md:px-16 lg:px-20">
+            <div className="flex flex-col gap-6 px-6 md:px-16 lg:pl-96 lg:pr-60 pb-32">
                 <h1 className="font-bold text-xl md:text-2xl text-hitam pt-12">
                     Edit Profile
                 </h1>
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-2 items-center md:py-6">
                         <label
                             htmlFor="profile_photo"
                             className="cursor-pointer"
                         >
-                            <div className="rounded-full overflow-hidden w-12 h-12">
+                            <div className="rounded-full overflow-hidden w-48 h-48 md:w-56 md:h-56">
                                 <img
-                                    src="images/fotoProfil.jpeg"
+                                    src="../../images/fotoProfil.jpeg"
                                     alt="Profile Photo"
                                     className="w-full h-full object-cover"
                                 />
@@ -66,7 +67,9 @@ const EditProfile = ({ user }) => {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <label htmlFor="name">Name</label>
+                        <label htmlFor="name" className="font-semibold text-lg">
+                            Name
+                        </label>
                         <input
                             id="name"
                             type="text"
@@ -80,13 +83,54 @@ const EditProfile = ({ user }) => {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <label htmlFor="email">Email</label>
+                        <label
+                            htmlFor="email"
+                            className="font-semibold text-lg"
+                        >
+                            Email
+                        </label>
                         <input
                             id="email"
                             type="email"
                             name="email"
                             className="rounded-md"
                             value={formData.email}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+
+                    <div className="flex flex-col gap-2">
+                        <label
+                            htmlFor="email"
+                            className="font-semibold text-lg"
+                        >
+                            No Telepon
+                        </label>
+                        <input
+                            id="no_telepon"
+                            type="text"
+                            name="no_telepon"
+                            className="rounded-md"
+                            value={formData.no_telepon}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+
+                    <div className="flex flex-col gap-2">
+                        <label
+                            htmlFor="email"
+                            className="font-semibold text-lg"
+                        >
+                            Alamat
+                        </label>
+                        <input
+                            id="alamat"
+                            type="text"
+                            name="alamat"
+                            className="rounded-md"
+                            value={formData.alamat}
                             onChange={handleChange}
                             required
                         />
