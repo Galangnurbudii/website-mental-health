@@ -5,6 +5,11 @@ import { BiTrashAlt, BiHomeAlt2, BiExpandHorizontal } from 'react-icons/bi'
 import { FiLogOut } from 'react-icons/fi'
 
 function ProfileNavbar() {
+    const [modalOpen, setModalOpen] = useState(false)
+
+    const handleModalOpen = () => {
+        setModalOpen(true)
+    }
     return (
         <div className=" flex items-end justify-end px-4 pb-6">
             <button className="fixed bottom-8 right-6 z-30 lg:hidden peer h-14 w-14 rounded-full bg-primary hover:bg-clickedBackground focus:bg-clickedBackground active:bg-clickedBackground transition items-end">
