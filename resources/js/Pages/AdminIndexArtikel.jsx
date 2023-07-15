@@ -13,6 +13,14 @@ export default function AdminIndexArtikel(props) {
         }
     }
 
+    function truncateText(text) {
+        console.log(text)
+        if (text.length > 350) {
+            return text.substring(0, 350) + '...'
+        }
+        return text
+    }
+
     return (
         <>
             <div className="flex">
@@ -61,7 +69,7 @@ export default function AdminIndexArtikel(props) {
                                         className="border px-4 py-2"
                                         colSpan="3"
                                     >
-                                        {ReactHtmlParser(artikel.detail)}
+                                        {truncateText(artikel.detail)}
                                     </td>
                                     <td className="border px-4 py-2">
                                         {artikel.id_user}
