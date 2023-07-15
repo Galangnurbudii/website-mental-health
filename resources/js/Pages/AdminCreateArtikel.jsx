@@ -30,7 +30,7 @@ export default function AdminCreatePsikolog() {
     return (
         <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-20">
             <a href={route('artikels.index')}>
-                <button className="bg-white border-black border-2 rounded-lg py-1 px-4">
+                <button className="bg-primary rounded-lg py-1 px-4">
                     Back
                 </button>
             </a>

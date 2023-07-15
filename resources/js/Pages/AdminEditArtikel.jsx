@@ -29,17 +29,11 @@ export default function AdminEditArtikel() {
 
     return (
         <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-20">
-            <div
-                className="flex items-center justify-between"
-                style={{ fontWeight: 'bold' }}
-            >
-                <a
-                    className="px-4 py-2 text-sm text-white bg-blue-500 rounded"
-                    href={route('artikels.index')}
-                >
+            <a href={route('artikels.index')}>
+                <button className="bg-primary text-white rounded py-1 px-4">
                     Back
-                </a>
-            </div>
+                </button>   
+            </a>
 
             <form
                 name="createForm"
