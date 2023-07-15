@@ -40,11 +40,10 @@ export default function Home({ articles, quote }) {
                     <h1 className="font-bold text-2xl md:text-4xl text-hitam pb-12 ">
                         Artikel Lainnya
                     </h1>
-                    <div className="flex justify-center flex-col lg:flex-row lg:flex-wrap lg:items-stretch items-center gap-6 pb-20">
+                    <div className="grid grid-cols-3 gap-4 justify-between">
                         {articles.map((article) => (
                             <ArticleCard key={article.id} article={article} />
                         ))}
-
                     </div>
                 </div>
 

@@ -4,9 +4,10 @@ import { FaSearch } from 'react-icons/fa'
 import debouce from 'lodash.debounce'
 import Fuse from 'fuse.js'
 
-function SearchBar({ data }) {
+function SearchBar({ data, changeFilteredArticles }) {
     const [searchTerm, setSearchTerm] = useState('')
-    // console.log(data[1])
+    const [isInputFocused, setInputFocused] = useState(false)
+
     let listToDisplay = []
 
     const fuse = new Fuse(data, {
@@ -36,8 +37,13 @@ function SearchBar({ data }) {
         }
     })
 
+    const clickHandler = () => {
+        setInputFocused(false)
+        changeFilteredArticles(listToDisplay)
+    }
+
     const renderResultList = () => {
-        const mappedData = listToDisplay.map((data, id) => (
+        const mappedData = listToDisplay.slice(0, 5).map((data, id) => (
             <a
                 key={id}
                 href={route('articleDetail', data.id)}
@@ -48,15 +54,17 @@ function SearchBar({ data }) {
         ))
 
         const additionalTag = (
-            <a key="searchMore" className="my-3 block result-list">
-                Cari {searchTerm} ?
-            </a>
+            <button
+                key="searchMore"
+                onClick={clickHandler}
+                className="my-3 block result-list"
+            >
+                Selengkapnya...
+            </button>
         )
 
         return mappedData.concat(additionalTag)
     }
-
-    const [isInputFocused, setInputFocused] = useState(false)
 
     const handleInputFocus = () => {
         setInputFocused(true)
@@ -90,12 +98,12 @@ function SearchBar({ data }) {
                         />
                     </div>
                     {isInputFocused && searchTerm !== '' && (
-                        <div className="absolute w-full mt-5 border-2 border-gray-300 bg-putih px-4 md:px-8 rounded-lg text-sm focus:outline-none">
+                        <div className="absolute z-[100] w-full mt-5 border-2 border-gray-300 bg-putih px-4 md:px-8 rounded-lg text-sm focus:outline-none">
                             {renderResultList()}
                         </div>
                     )}
                 </div>
-                <PrimaryButton>Cari</PrimaryButton>
+                <PrimaryButton onClick={clickHandler}>Cari</PrimaryButton>
             </div>
         </>
     )

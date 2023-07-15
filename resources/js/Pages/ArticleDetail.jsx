@@ -5,8 +5,13 @@ import Directory from '@/Components/Directory'
 import Footer from '@/Components/Footer'
 import NavBar from '@/Components/NavBar'
 import OtherArticle from '@/Components/OtherArticle'
+import { Link } from '@inertiajs/react'
 
-export default function ArticleDetail({ article }) {
+export default function ArticleDetail({
+    article,
+    topik_terkini,
+    other_article,
+}) {
     const { judul, detail } = article
 
     return (
@@ -29,18 +34,22 @@ export default function ArticleDetail({ article }) {
                         <h3 className="text-hitam text-2xl font-bold">
                             Rekomendasi Topik
                         </h3>
-                        <div className="flex flex-row gap">
-                            <Badge titleBadge="Depresi" />
-                            <Badge titleBadge="Depresi" />
-                            <Badge titleBadge="Depresi" />
-                            <Badge titleBadge="Depresi" />
-                            <Badge titleBadge="Depresi" />
+                        <div className="flex flex-row">
+                            {Object.values(topik_terkini).map((topik) => (
+                                <button
+                                    onClick={() => handleClick(topik)}
+                                    className="border border-gray-200 text-gray-700 rounded-md px-3 py-1 text-sm font-semibold  mr-2 mb-2 w-auto max-w-xs hover:border-hoverBackground hover:text-hoverBackground"
+                                >
+                                    {topik}
+                                </button>
+                            ))}
                         </div>
 
-                        <OtherArticle />
-                        <OtherArticle />
-                        <OtherArticle />
-
+                        {other_article.map((article) => (
+                            <Link href={route('articleDetail', article.id)}>
+                                <OtherArticle article={article} />
+                            </Link>
+                        ))}
                         <ConsultationBadge />
                     </div>
                 </div>

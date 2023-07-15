@@ -32,7 +32,14 @@ class ArtikelController extends Controller
     public function detail($id)
     {
         $article = Artikel::find($id);
+        $topik_terkini = Artikel::all()->flatMap(function ($article) {
+            return explode(',', $article->tag);
+        })->unique()->take(5);
 
-        return Inertia::render('ArticleDetail', ['article' => $article]);
+        $other_article = Artikel::inRandomOrder()
+            ->limit(3)
+            ->get();
+
+        return Inertia::render('ArticleDetail', ['article' => $article, 'topik_terkini' => $topik_terkini, 'other_article' => $other_article]);
     }
 }

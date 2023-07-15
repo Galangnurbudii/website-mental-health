@@ -1,22 +1,20 @@
 import React from 'react'
 import Badge from './Badge'
 
-function OtherArticle() {
+function OtherArticle({ article }) {
     return (
         <div className="flex items-center">
             <img
-                src="images/pasangan.jpg"
+                src={article.thumbnail_url}
                 alt="Pasangan Supportif Dapat Cegah Depresi"
                 style={{
                     maxWidth: '160px',
                     maxHeight: '160px',
                 }}
             />
-            <div className="pl-6">
-                <h3 className="text-hitam text-lg font-semibold">
-                    Pacar Selingkuh?
-                </h3>
-                <Badge titleBadge="Depresi" />
+            <div className="pl-6 ">
+                <p className="text-hitam line-clamp-2 mb-2">{article.judul}</p>
+                <Badge titleBadge={article.tag} />
             </div>
         </div>
     )

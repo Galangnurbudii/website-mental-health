@@ -8,8 +8,14 @@ use Inertia\Inertia;
 
 class LayananController extends Controller
 {
-    public function layanan($id){
-        $psikolog = Psikolog::find($id);
-        return Inertia::render('DetailLayanan', ['psikolog' => $psikolog]);
+    public function layanan()
+    {
+        $psikologs = Psikolog::all();
+        return Inertia::render('DetailLayanan');
+    }
+
+    public function search()
+    {
+
     }
 }

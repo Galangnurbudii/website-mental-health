@@ -14,11 +14,11 @@ function ConsultationBadge() {
             <div className="border border-disabled rounded-md shadow-md">
                 <div className="flex items-center">
                     <img
-                        src="images/pasangan.jpg"
+                        src="../images/pasangan.jpg"
                         alt="Pasangan Supportif Dapat Cegah Depresi"
                         style={{
-                            wdth: '80px',
-                            height: '80px',
+                            maxWidth: '160px',
+                            maxHeight: '160px',
                         }}
                     />
                     <div className="pl-6">
@@ -29,7 +29,9 @@ function ConsultationBadge() {
                             Kami siap dengarkan cerita Anda
                         </p>
                         <div className="py-4">
-                            <PrimaryButton>Konsultasi</PrimaryButton>
+                            <a href={route('konsultasi')}>
+                                <PrimaryButton>Konsultasi</PrimaryButton>
+                            </a>
                         </div>
                     </div>
                 </div>
