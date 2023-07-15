@@ -8,45 +8,62 @@ import CardsCarousel from '@/Components/CardsCarousel'
 import ArticleCard from '@/Components/ArticleCard'
 
 export default function Home({ articles, quote }) {
-    const isLargeScreen = window.innerWidth > 1536
+    const Testimonial = [
+        {
+            gambar: 'images/petik.png',
+            text: 'Berkat konsultasi di sini rasanya jadi lebih plong. Tenang dan bahagia banget',
+            nama: 'Tatang Munajir - Mahasiswa',
+        },
+        {
+            gambar: 'images/petik.png',
+            text: 'Konsultasi dengan tenaga ahli membuat saya menemukan solusi atas permasalahan saya',
+            nama: 'Sri Astuti - Ibu Rumah Tangga',
+        },
+        {
+            gambar: 'images/petik.png',
+            text: 'Psikolog yang handal membuat saya nyaman untuk bercerita dan merasa tenang',
+            nama: 'Galang Subekti - Pegawai Swasta',
+        },
+        // {
+        //     gambar: 'images/petik.png',
+        //     text: 'Beban pikiran terasa mulai menghilang berkat bercerita dengan psikolog',
+        //     nama: 'Beatrice Yusril - Pengusaha',
+        // },
+    ]
 
     return (
         <div>
             <NavBar />
-            <div className="flex flex-col pb-20 md:pb-32 min-h-screen">
+            <div className="flex flex-col pb-20 md:pb-40 min-h-screen">
                 <Hero />
-
-                <div className="py-10 md:py-16 md:px-16 p-6">
-                    <h1 className="font-bold text-2xl md:text-4xl text-hitam md:px-16 lg:px-20 pb-12">
+                <div className="py-10 md:py-16 p-6 md:px-16 lg:px-32">
+                    <h1 className="font-bold text-2xl md:text-4xl text-hitam pb-12 ">
                         Artikel Lainnya
                     </h1>
-                    <div
-                        className={`flex justify-between flex-col md:flex-row md:items-stretch items-center md:px-16 lg:px-20 ${
-                            isLargeScreen ? 'gap-6' : 'md:px-16 lg:px-20'
-                        }`}
-                    >
-                        {articles
-                            .slice(0, isLargeScreen ? 4 : 3)
-                            .map((article) => (
-                                <ArticleCard
-                                    key={article.id}
-                                    article={article}
-                                />
-                            ))}
+                    <div className="flex justify-center flex-col lg:flex-row lg:flex-wrap lg:items-stretch items-center gap-6 pb-20">
+                        {articles.map((article) => (
+                            <ArticleCard key={article.id} article={article} />
+                        ))}
+
                     </div>
                 </div>
 
                 <ForumHero />
                 <Quote quote={quote} />
-                <div className="p-6 md:px-16 lg:px-32 bg-hoverBackground">
-                    <h1 className="font-bold text-2xl md:text-4xl text-hitam py-6 md:py-10">
+                <div className="py-20 md:px-16 lg:px-32 bg-cardBlue">
+                    <h1 className="font-bold text-2xl md:text-4xl text-hitam pb-10">
                         Cerita Mereka
                     </h1>
-                    <CardsCarousel
-                        imageSrc="images/petik.png"
-                        text="Berkat konsultasi di sini rasanya jadi lebih plong. Tenang dan bahagia banget"
-                        names="Tatang Munajir - Mahasiswa"
-                    />
+                    <div className="carousel-container flex flex-wrap gap-6 ">
+                        {Testimonial.map((testimoni, index) => (
+                            <CardsCarousel
+                                key={index}
+                                imageSrc={testimoni.gambar}
+                                text={testimoni.text}
+                                names={testimoni.nama}
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
             <Footer />

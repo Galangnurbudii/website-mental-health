@@ -20,7 +20,7 @@ class JanjiFactory extends Factory
     {
         return [
             'id_psikolog' => Psikolog::inRandomOrder()->first()->id,
-            'id_user' => User::inRandomOrder()->first()->id,
+            'id_user' => User::where('role', 'user')->inRandomOrder()->first()->id,
             'tanggal' => $this->faker->date(),
             'jam' => $this->faker->randomElement(['10:00', '12:00', '14:00', '16:00']),
         ];

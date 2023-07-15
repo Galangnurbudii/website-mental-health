@@ -21,7 +21,7 @@ export default function CardsLayanan({ className = "", disabled, ...props }){
                                         </Link>                                        
                                     </div>
                                     <div className="carousel flex-col rounded-box w-90 bg-base-100 shadow-xl border border-gray-100 cursor-pointer transition duration-300 ease-in-out hover:shadow-2xl">
-                                        <Link href={route("detaillayanan")}>
+                                        <Link href={route("detaillayanan2")}>
                                             <div className="card-body">
                                                 <h2 className="card-title">
                                                     Video Call

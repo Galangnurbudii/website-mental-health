@@ -21,70 +21,58 @@ export default function Article({ popular, articles, topik_terkini }) {
     const endIndex = startIndex + itemsPerPage
     const currentArticles = articles.slice(startIndex, endIndex)
 
-    // Tambahkan state untuk hasil pencarian dan fungsi untuk mengubahnya
-    const [searchResults, setSearchResults] = useState([])
 
-    // Fungsi untuk menangani pencarian
-    const handleSearch = (searchTerm) => {
-        // Logika pencarian di sini (misalnya menggunakan filter pada articles)
-        const results = articles.filter((article) => {
-            // Ganti condition berikut dengan logika pencarian yang sesuai
-            return article.title
-                .toLowerCase()
-                .includes(searchTerm.toLowerCase())
-        })
+    // useEffect(() => {
+    //     const handleResize = () => {
+    //         const newItemsPerPage = window.innerWidth > 1536 ? 4 : 3
+    //         if (newItemsPerPage !== itemsPerPage) {
+    //             setCurrentPage(0)
+    //         }
+    //     }
+    //     window.addEventListener('resize', handleResize)
+    //     return () => {
+    //         window.removeEventListener('resize', handleResize)
+    //     }
+    // }, [itemsPerPage])
 
-        setSearchResults(results)
-    }
 
     return (
         <>
             <Head title="Artikel" />
             <NavBar />
-            <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-20">
-                <SearchBar onSearch={handleSearch} />
+
+
+            <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-32">
+                <SearchBar />
+
                 <div className="flex flex-col gap-8">
-                    <h1 className="font-bold text-xl md:text-2xl text-hitam md:px-16 lg:px-20">
+                    <h1 className="font-bold text-xl md:text-2xl text-hitam ">
                         Topik Terkini
                     </h1>
-                    <div className="md:px-16 lg:px-20">
-                        {topik_terkini.map((topik) => (
+
+                    <div className="">
+                        {Object.values(topik_terkini).map((topik) => (
+
                             <Badge key={topik} titleBadge={topik} />
                         ))}
                     </div>
                 </div>
 
-                <h1 className="font-bold text-xl md:text-2xl text-hitam md:px-16 lg:px-20">
+                <h1 className="font-bold text-xl md:text-2xl text-hitam ">
                     Artikel Terpopuler
                 </h1>
-                <div className="md:px-16 lg:px-20">
+                <div className="">
                     <BigCard popular={popular} />
                 </div>
 
-                <h1 className="font-bold text-xl md:text-2xl text-hitam md:px-16 lg:px-20">
-                    {searchResults.length > 0
-                        ? 'Hasil Pencarian'
-                        : 'Artikel Lainnya'}
+                <h1 className="font-bold text-xl md:text-2xl text-hitam ">
+                    Artikel Lainnya
                 </h1>
-                <div className="flex justify-center flex-col md:flex-row md:flex-wrap md:items-stretch items-center gap-6">
-                    {searchResults.length > 0
-                        ? searchResults.map((article) => (
-                              <ArticleCard key={article.id} article={article} />
-                          ))
-                        : currentArticles.map((article) => (
-                              <ArticleCard key={article.id} article={article} />
-                          ))}
-                    {/* Tampilkan gambar jika pencarian tidak menghasilkan artikel */}
-                    {searchResults.length === 0 &&
-                        currentArticles.length === 0 && (
-                            <div className="flex items-center justify-center w-full h-96">
-                                <img
-                                    src="/noArticle.png"
-                                    alt="No Results"
-                                    className="w-64 h-64"
-                                />
-                            </div>
-                        )}
+                <div className="flex justify-center flex-col lg:flex-row lg:flex-wrap lg:items-stretch items-center gap-6 pb-20">
+                    {currentArticles.map((article) => (
+                        <ArticleCard key={article.id} article={article} />
+                    ))}
+
                 </div>
                 <div className="flex flex-row justify-center">
                     <ReactPaginate

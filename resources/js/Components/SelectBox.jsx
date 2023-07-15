@@ -2,8 +2,23 @@ import { Disclosure } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import RadioGroupButton from './RadioGroupButton';
 import { useState } from 'react';
+import { Dialog, Transition } from '@headlessui/react'
+import { Fragment} from 'react'
+import PrimaryButton from './PrimaryButton'
 
 export default function SelectBox() {
+
+  let [isOpen, setIsOpen] = useState(false)
+
+  function closeModal() {
+    setIsOpen(false)
+  }
+
+  function openModal() {
+    setIsOpen(true)
+  }
+
+  ///////////////////////////////////////////////
 
   const [selectedOption, setSelectedOption] = useState('Pilih Metode Pembayaran');
   const handleChange = (event) => {
@@ -120,31 +135,6 @@ export default function SelectBox() {
         </Disclosure>        
       </div>
     </div>
+    
   )
 }
-
-
-    // <div>
-    //     <div className="collapse collapse-arrow bg-base-200">
-    //     <input type="radio" name="my-accordion-2" checked="checked" /> 
-    //     <div className="collapse-title text-xl font-medium">
-    //         Click to open this one and close others
-    //     </div>
-    //     <div className="collapse-content"> 
-    //         <p>hello</p>
-    //     </div>
-    //     </div>                
-    // </div>
-    
-    // <div className='xl:px-10 lg:px-4 md:px-10 sm:px-10 xs:px-4 bg-white'>    
-    //     <Accordion className='bg-white hover-none border-0 card lg:card-side shadow-sm rounded-sm overflow-x-auto'>
-    //     <Accordion.Panel className='bg-white'>
-    //         <Accordion.Title>
-    //             Pilih Metode Pembayaran
-    //         </Accordion.Title>
-    //         <Accordion.Content>
-
-    //         </Accordion.Content>
-    //     </Accordion.Panel>
-    //     </Accordion>
-    // </div>

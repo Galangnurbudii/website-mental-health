@@ -7,6 +7,28 @@ import { Scrollbar } from 'react-scrollbars-custom'
 import { Link } from '@inertiajs/react'
 
 export default function Konsultasi() {
+    const Testimonial = [
+        {
+            gambar: 'images/petik.png',
+            text: 'Berkat konsultasi di sini rasanya jadi lebih plong. Tenang dan bahagia banget',
+            nama: 'Tatang Munajir - Mahasiswa',
+        },
+        {
+            gambar: 'images/petik.png',
+            text: 'Konsultasi dengan tenaga ahli membuat saya menemukan solusi atas permasalahan saya',
+            nama: 'Sri Astuti - Ibu Rumah Tangga',
+        },
+        {
+            gambar: 'images/petik.png',
+            text: 'Psikolog yang handal membuat saya nyaman untuk bercerita dan merasa tenang',
+            nama: 'Galang Subekti - Pegawai Swasta',
+        },
+        // {
+        //     gambar: 'images/petik.png',
+        //     text: 'Beban pikiran terasa mulai menghilang berkat bercerita dengan psikolog',
+        //     nama: 'Beatrice Yusril - Pengusaha',
+        // },
+    ]
     return (
         <div className="pt-15 overflow-x-hidden">
             <NavBar />
@@ -25,7 +47,7 @@ export default function Konsultasi() {
                     <div className="flex flex-col">
                         <h1
                             className="font-semibold   
-                            xs:text-3xl pt-40 pb-5 px-10
+                            text-3xl pt-40 pb-5 px-10
                             sm:text-5xl sm:pt-40 sm:pb-5 sm:px-16                                    
                             md:text-5xl md:pt-40 md:pb-5 md:px-16                                    
                             lg:text-5xl lg:pt-40 lg:pb-5 lg:px-32"
@@ -62,7 +84,7 @@ export default function Konsultasi() {
 
             {/* 3 Langkah Melakukan Konseling */}
 
-            <div className="w-full pt-24">
+            <div className="w-full py-10 md:py-20">
                 {/* w-full py-[6rem] px-4 */}
                 <div className="w-full py-[1rem] pl-4 pr-5">
                     <h1
@@ -70,8 +92,7 @@ export default function Konsultasi() {
                         px-10
                         md:px-16
                         lg:px-32
-                        text-lg
-                        sm:text-xl
+                        text-2xl
                         md:text-4xl
                         lg:text-5xl"
                     >
@@ -90,33 +111,23 @@ export default function Konsultasi() {
                 />
 
                 {/* Cerita Mereka */}
-                <div className="bg-cardBlue  w-full pt-20 pb-10">
-                    <div className="w-full py-[1rem] ">
-                        <h1
-                            className="font-semibold pb-5
-
-                        px-6
-                        md:px-16
-                        lg:px-32
-                        text-3xl
-                        md:text-4xl
-                        lg:text-5xl"
-                        >
-                            Cerita Mereka
-                        </h1>
-                    </div>
-                    {/* Carousel Cerita Mereka */}
-
-                    <div className="overflow-x-auto px-6 md:px-16 lg:px-32">
-                        <CardsCarousel
-                            imageSrc="images/petik.png"
-                            text="Berkat konsultasi di sini rasanya jadi lebih plong. Tenang dan bahagia banget"
-                            names="Tatang Munajir - Mahasiswa"
-                        />
+                <div className="py-10 md:py-20 md:px-16 lg:px-32 bg-cardBlue p-6">
+                    <h1 className="font-bold text-2xl md:text-4xl text-hitam pb-10">
+                        Cerita Mereka
+                    </h1>
+                    <div className="carousel-container flex flex-wrap gap-6 ">
+                        {Testimonial.map((testimoni, index) => (
+                            <CardsCarousel
+                                key={index}
+                                imageSrc={testimoni.gambar}
+                                text={testimoni.text}
+                                names={testimoni.nama}
+                            />
+                        ))}
                     </div>
                 </div>
 
-                <div className="bg-white pt-20"></div>
+                <div className="bg-white p-20 md:p-32"></div>
             </div>
             <Footer />
         </div>

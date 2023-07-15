@@ -46,7 +46,7 @@ const NavProfil = () => {
 
                     <div className="flex gap-x-4 items-center">
                         <h1
-                            className={`text-white origin-left font-medium text-2xl font-semibold duration-300 ${
+                            className={`text-white origin-left  text-2xl font-semibold duration-300 ${
                                 !open && 'scale-0'
                             }`}
                         >
@@ -56,13 +56,14 @@ const NavProfil = () => {
                     <ul className="pt-6">
                         {Menus.map((menu, index) => (
                             <li
-                                key={index}
-                                className={`text-putih text-md font-medium flex items-center gap-x-4 cursor-pointer p-2 hover:bg-putih hover:text-primary hover:bg-opacity-90 hover:font-semibold rounded-sm ${
-                                    menu.gap ? 'mt-72' : 'mt-2'
-                                }`}
-                                onMouseEnter={() => handleMouseEnter(index)}
-                                onMouseLeave={handleMouseLeave}
-                            >
+                            key={index}
+                            className={`text-putih text-md font-medium flex items-center gap-x-4 cursor-pointer p-2 hover:bg-putih hover:text-primary hover:bg-opacity-90 hover:font-semibold rounded-sm ${
+                              menu.gap ? 'mt-72' : 'mt-2'
+                            } ${menu.title === 'Hapus Akun' ? 'border-t-4 border-white' : ''}`}
+                            
+                            onMouseEnter={() => handleMouseEnter(index)}
+                            onMouseLeave={handleMouseLeave}
+                          >
                                 {menu.icon && (
                                     <menu.icon
                                         className={`w-6 ${
@@ -90,6 +91,7 @@ const NavProfil = () => {
                                     }`}
                                 >
                                     {menu.title}
+                                    
                                 </span>
                             </li>
                         ))}

@@ -12,7 +12,6 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 import PrimaryButton from "@/Components/PrimaryButton";
-import { Link } from "@inertiajs/react";
 
 export default function Layanan() {
     
@@ -20,7 +19,6 @@ export default function Layanan() {
 
     function closeModal() {
       setIsOpen(false)
-      window.location.href = "/";
     }
   
     ///////////////////////////////////////////////
@@ -134,7 +132,7 @@ export default function Layanan() {
         <Disclosure>
           {({ open }) => (
             <>
-              <Disclosure.Button className="flex w-full justify-between rounded-lg pt-4 text-left text-sm font-bold text-disabled">
+              <Disclosure.Button className="flex w-full justify-between rounded-lg py-4 text-left text-sm font-bold text-disabled">
                 {/* title & image*/}
                 <div className='flex items-center'>
                   <div className="pr-5">
@@ -223,10 +221,11 @@ export default function Layanan() {
                 </div>
                 </>                
               </Disclosure.Panel>
-              <p className="text-sm text-red-500 pt-2 pb-4 pl-5">{error}</p>
+              <p className="text-sm text-red-500 pb-4 pl-5">{error}</p>
             </>
           )}
-        </Disclosure>                
+        </Disclosure>        
+        
       </div>
     </div>        
     
@@ -269,7 +268,7 @@ export default function Layanan() {
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-gray-700 font-medium">
-                    Silakan lakukan konsultasi sesuai dengan jadwal yang Anda buat.
+                    Untuk konsultasi, akses link berikut:https://binus.zoom.us/j/97275854825#success
                     </p>
                   </div>
 
@@ -279,15 +278,18 @@ export default function Layanan() {
           </div>
         </Dialog>
       </Transition>  
-      </div>                    
+      </div>        
+      
+      
+
     </>
-                            </div>                                                                                  
+
+                            </div>     
+                                                                             
                             </div>
-                                <PrimaryButton 
-                                    onClick={openModal} 
-                                    className='mt-7'>
-                                    Konfirmasi Pembayaran
-                                </PrimaryButton>     
+                            <PrimaryButton onClick={openModal} className='mt-7'>Konfirmasi Pembayaran</PrimaryButton>
+                           
+                            
                         </div>
                     </div>
                 </div>

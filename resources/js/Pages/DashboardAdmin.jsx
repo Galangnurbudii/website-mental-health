@@ -11,9 +11,10 @@
 
 import React, { useState } from 'react'
 import { AiOutlineUser, AiOutlineLeftCircle } from 'react-icons/ai'
-import { HiOutlineShoppingCart } from 'react-icons/hi'
-import { BiTrashAlt, BiHomeAlt2 } from 'react-icons/bi'
+import { BiHomeAlt2 } from 'react-icons/bi'
+import { HiOutlineChatAlt2 } from 'react-icons/hi'
 import { FiFileText, FiLogOut, FiSettings } from 'react-icons/fi'
+import { Link } from '@inertiajs/react'
 
 export default function DashboardAdmin() {
     const [open, setOpen] = useState(true)
@@ -21,7 +22,7 @@ export default function DashboardAdmin() {
     const Menus = [
         { title: 'Dashboard', icon: BiHomeAlt2 },
         { title: 'Artikel', icon: FiFileText },
-        { title: 'Psikolog', icon: AiOutlineUser },
+        { title: 'Psikolog', icon: AiOutlineUser, link: route("psikologs.create")},
         { title: 'Pengaturan', icon: FiSettings, gap: true },
         { title: 'Keluar', icon: FiLogOut },
     ]
@@ -46,15 +47,6 @@ export default function DashboardAdmin() {
                         open ? 'w-72' : 'w-20'
                     } p-5 duration-500 h-screen bg-primary absolute left-0`}
                 >
-                    {/* <AiOutlineLeftCircle
-                        className={`absolute cursor-pointer -right-3 top-9 w-7 ${
-                            !open && 'rotate-180'
-                        }`}
-                        onClick={() => setOpen(!open)}
-                        size={40}
-                        color="#333333"
-                    /> */}
-
                     <div className="flex gap-x-4 items-center">
                         <h1 className={`text-white origin-left text-2xl font-semibold duration-300 ${!open && 'scale-0'}`}>
                             MENTAL HEALTH
@@ -87,8 +79,8 @@ export default function DashboardAdmin() {
                                         }}
                                     />
                                 )}
-
-                                <span
+                                <Link 
+                                    to={menu.link}
                                     className={`${
                                         !open && 'hidden'
                                     } origin-left duration-400 ${
@@ -98,7 +90,18 @@ export default function DashboardAdmin() {
                                     }`}
                                 >
                                     {menu.title}
-                                </span>
+                                </Link>
+                                {/* <span
+                                    className={`${
+                                        !open && 'hidden'
+                                    } origin-left duration-400 ${
+                                        open &&
+                                        hoveredIndex === index &&
+                                        'text-primary'
+                                    }`}
+                                >
+                                    {menu.title}
+                                </span> */}
                             </li>
                         ))}
                     </ul>
@@ -112,26 +115,25 @@ export default function DashboardAdmin() {
                         <button className="border pl-6 flex text-center items-center
                                             py-6 rounded-lg border-[#736D6D]
                                             w-[323px]">
-                            <img src="images/doctorImage.png" alt="" 
-                                className="w-10 mr-6"/>
+                            <FiFileText className='w-10 h-10 mr-6 text-primary'/>
                             <span className="mr-[50px]">
                                 Tambah Artikel
                             </span>
                         </button>
+                        <a href={route("psikologs.create")}>
+                            <button className="border pl-6 flex text-center items-center
+                                                py-6 rounded-lg border-disabled
+                                                w-[323px]">
+                                <AiOutlineUser className='w-10 h-10 mr-6 text-primary'/>
+                                <span className="mr-[50px]">
+                                    Buat Akun Psikolog
+                                </span>
+                            </button>
+                        </a>
                         <button className="border pl-6 flex text-center items-center
                                             py-6 rounded-lg border-[#736D6D]
                                             w-[323px]">
-                            <img src="images/doctorImage.png" alt="" 
-                                className="w-10 mr-6"/>
-                            <span className="mr-[50px]">
-                                Buat Akun Psikolog
-                            </span>
-                        </button>
-                        <button className="border pl-6 flex text-center items-center
-                                            py-6 rounded-lg border-[#736D6D]
-                                            w-[323px]">
-                            <img src="images/doctorImage.png" alt="" 
-                                className="w-10 mr-6"/>
+                            <HiOutlineChatAlt2 className='w-10 h-10 mr-6 text-primary'/>
                             <span className="mr-[50px]">
                                 Sunting Forum
                             </span>
@@ -143,50 +145,26 @@ export default function DashboardAdmin() {
                     <div class="container mt-[32px]">
                         <div class="overflow-x-auto">
                             <table class="min-w-full border-collapse border border-gray-300">
-                            <thead className=''>
-                                <tr>
-                                    <th class="py-2 px-4 bg-gray-200 border-b text-lg text-left">ID</th>
-                                    <th class="py-2 px-4 bg-gray-200 border-b text-lg text-left">Nama Customer</th>
-                                    <th class="py-2 px-4 bg-gray-200 border-b text-lg text-left">Tanggal Pemesanan</th>
-                                    <th class="py-2 px-4 bg-gray-200 border-b text-lg text-left">Nama Psikolog</th>
-                                    <th class="py-2 px-4 bg-gray-200 border-b text-lg text-left">Jenis Layanan</th>
-                                    <th class="py-2 px-4 bg-gray-200 border-b text-lg text-left">Pembayaran</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="py-2 px-4 border-b font-normal text-lg">001</td>
-                                    <td class="py-2 px-4 border-b font-normal text-lg">Data 2</td>
-                                    <td class="py-2 px-4 border-b font-normal text-lg">Data 3</td>
-                                    <td class="py-2 px-4 border-b font-normal text-lg">Data 4</td>
-                                    <td class="py-2 px-4 border-b font-normal text-lg">Data 5</td>
-                                    <td class="py-2 px-4 border-b font-normal text-lg">Lunas</td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b font-normal text-lg">002</td>
-                                    <td class="py-2 px-4 border-b font-normal text-lg">Data 8</td>
-                                    <td class="py-2 px-4 border-b font-normal text-lg">Data 9</td>
-                                    <td class="py-2 px-4 border-b font-normal text-lg">Data 10</td>
-                                    <td class="py-2 px-4 border-b font-normal text-lg">Data 11</td>
-                                    <td class="py-2 px-4 border-b font-normal text-lg">Lunas</td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b font-normal text-lg">003</td>
-                                    <td class="py-2 px-4 border-b font-normal text-lg">Data 14</td>
-                                    <td class="py-2 px-4 border-b font-normal text-lg">Data 15</td>
-                                    <td class="py-2 px-4 border-b font-normal text-lg">Data 16</td>
-                                    <td class="py-2 px-4 border-b font-normal text-lg">Data 17</td>
-                                    <td class="py-2 px-4 border-b font-normal text-lg">Lunas</td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b font-normal text-lg">004</td>
-                                    <td class="py-2 px-4 border-b font-normal text-lg">Data 20</td>
-                                    <td class="py-2 px-4 border-b font-normal text-lg">Data 21</td>
-                                    <td class="py-2 px-4 border-b font-normal text-lg">Data 22</td>
-                                    <td class="py-2 px-4 border-b font-normal text-lg">Data 23</td>
-                                    <td class="py-2 px-4 border-b font-normal text-lg">Lunas</td>
-                                </tr>
-                            </tbody>
+                                <thead className=''>
+                                    <tr>
+                                        <th class="py-2 px-4 bg-gray-200 border-b text-lg text-left">ID</th>
+                                        <th class="py-2 px-4 bg-gray-200 border-b text-lg text-left">Nama Customer</th>
+                                        <th class="py-2 px-4 bg-gray-200 border-b text-lg text-left">Tanggal Pemesanan</th>
+                                        <th class="py-2 px-4 bg-gray-200 border-b text-lg text-left">Nama Psikolog</th>
+                                        <th class="py-2 px-4 bg-gray-200 border-b text-lg text-left">Jenis Layanan</th>
+                                        <th class="py-2 px-4 bg-gray-200 border-b text-lg text-left">Pembayaran</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b font-normal text-lg">001</td>
+                                        <td class="py-2 px-4 border-b font-normal text-lg">Data 2</td>
+                                        <td class="py-2 px-4 border-b font-normal text-lg">Data 3</td>
+                                        <td class="py-2 px-4 border-b font-normal text-lg">Data 4</td>
+                                        <td class="py-2 px-4 border-b font-normal text-lg">Data 5</td>
+                                        <td class="py-2 px-4 border-b font-normal text-lg">Lunas</td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
                     </div>

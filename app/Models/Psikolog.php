@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Psikolog extends Model
 {
     use HasFactory;
-    
+
     protected $table = 'psikolog';
     protected $primaryKey = 'id';
     public $timestamps = true;
@@ -21,8 +21,11 @@ class Psikolog extends Model
         'bidang_keahlian',
         'tahun_pengalaman',
         'nomor_str',
-        'lokasi_praktik',
+        'negara',
+        'provinsi',
+        'kota',
         'lulusan',
+        'foto_profil',
     ];
 
     // ...
