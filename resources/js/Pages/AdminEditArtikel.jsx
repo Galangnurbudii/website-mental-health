@@ -2,21 +2,21 @@ import { React, useRef } from 'react'
 import { Head, Link, useForm, usePage } from '@inertiajs/react'
 import { Editor } from '@tinymce/tinymce-react'
 
-export default function AdminCreatePsikolog() {
+export default function AdminEditArtikel() {
     const editorRef = useRef()
     const { artikels } = usePage().props
 
     const { data, setData, post, processing, errors, reset } = useForm({
-        judul: '',
-        tag: '',
-        id_user: '',
-        detail: '',
+        judul: artikels.judul ||  '',
+        tag: artikels.tag || '',
+        detail: artikels.detail || '',
+        id_user: artikels.id_user || '',
         thumbnail: null,
     })
 
     const _handleEditorChange = (e) => {
         console.log('Content was updated')
-        setData({ ...data, detail: e.target.getContent() })
+        setData({ ...data, detail: editorRef.current.getContent() })
     }
 
     const handleSubmit = (e) => {
@@ -24,7 +24,7 @@ export default function AdminCreatePsikolog() {
         // const detail = editorRef.current.getContent()
         // setData('detail', detail)
         console.log(data)
-        post(route('artikels.store'))
+        post(route('updateArtikel', artikels.id))
     }
 
     return (
@@ -172,10 +172,11 @@ export default function AdminCreatePsikolog() {
                                     input.click()
                                 },
                             }}
+                            value={data.detail}
+                            onEditorChange={_handleEditorChange}
                             onInit={(evt, editor) =>
                                 (editorRef.current = editor)
                             }
-                            onChange={_handleEditorChange}
                         />
                         <span className="text-red-600">{errors.tag}</span>
                     </div>
