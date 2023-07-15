@@ -1,20 +1,10 @@
-// import NavBarAdmin from "@/Components/NavBarAdmin";
-// import React from "react";
-
-// export default function DashboardAdmin() {
-//     return (
-//         <>
-//             <NavBarAdmin />
-//         </>
-//     );
-// }
-
 import React, { useState } from 'react'
 import { AiOutlineUser, AiOutlineLeftCircle } from 'react-icons/ai'
 import { BiHomeAlt2 } from 'react-icons/bi'
 import { HiOutlineChatAlt2 } from 'react-icons/hi'
 import { FiFileText, FiLogOut, FiSettings } from 'react-icons/fi'
 import { Link } from '@inertiajs/react'
+import NavProfil from '@/Components/ProfileNavbarAdmin'
 
 export default function DashboardAdmin() {
     const [open, setOpen] = useState(true)
@@ -42,10 +32,12 @@ export default function DashboardAdmin() {
     return (
         <>
             <div className="absolute">
+                <NavProfil />
                 <div
                     className={`${
-                        open ? 'w-72' : 'w-20'
-                    } p-5 duration-500 h-screen bg-primary absolute left-0`}
+                        open ? 'ml-[395px]' : 'ml-[141px]'
+                    } duration-500 mt-[75px]
+                                text-3xl font-bold`}
                 >
                     <div className="flex gap-x-4 items-center">
                         <h1 className={`text-white origin-left text-2xl font-semibold duration-300 ${!open && 'scale-0'}`}>
@@ -112,7 +104,8 @@ export default function DashboardAdmin() {
                         Halo, Admin
                     </h1>
                     <div className="flex text-lg gap-7 mr-6 flex-wrap mt-[48px]">
-                        <button className="border pl-6 flex text-center items-center
+                        <button
+                            className="border pl-6 flex text-center items-center
                                             py-6 rounded-lg border-[#736D6D]
                                             w-[323px]">
                             <FiFileText className='w-10 h-10 mr-6 text-primary'/>
@@ -139,9 +132,7 @@ export default function DashboardAdmin() {
                             </span>
                         </button>
                     </div>
-                    <h1 className='mt-[101px]'>
-                        Riwayat Pemesanan
-                    </h1>
+                    <h1 className="mt-[101px]">Riwayat Pemesanan</h1>
                     <div class="container mt-[32px]">
                         <div class="overflow-x-auto">
                             <table class="min-w-full border-collapse border border-gray-300">

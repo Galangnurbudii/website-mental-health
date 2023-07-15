@@ -107,9 +107,9 @@ Route::get('/jadwalkonsultasi', function () {
     return Inertia::render('JadwalKonsultasi');
 })->name('jadwalkonsultasi');
 
-Route::get('/jadwalkonsultasi2', function () {
-    return Inertia::render('JadwalKonsultasi2');
-})->name('jadwalkonsultasi2');
+Route::get('/jadwalkonsultasiuser', function () {
+    return Inertia::render('JadwalKonsultasiUser');
+})->name('jadwalkonsultasiuser');
 
 Route::get('/detailkonsultasi', function () {
     return Inertia::render('DetailKonsultasi');
