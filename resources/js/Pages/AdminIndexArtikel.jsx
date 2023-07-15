@@ -25,7 +25,7 @@ export default function AdminIndexArtikel(props) {
             <div className="flex">
                 <NavBarAdmin />
                 <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-20">
-                    <SearchBar />
+                    {/* <SearchBar /> */}
                     <a href={route('artikels.create')}>
                         <button className="px-4 py-2 w-[133px] text-sm text-white bg-blue-500 rounded">
                             Create Article
@@ -60,7 +60,7 @@ export default function AdminIndexArtikel(props) {
                                     </td>
                                     <td className="border px-4 py-2">
                                         <img
-                                            src={`/storage/${artikel.thumbnail_url}`}
+                                            src={artikel.thumbnail_url}
                                             alt=""
                                         />
                                     </td>

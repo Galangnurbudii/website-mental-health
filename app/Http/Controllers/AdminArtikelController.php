@@ -61,7 +61,7 @@ class AdminArtikelController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         } else {
-            $thumbnailPath = $request->file('thumbnail')->store('thumbnails', 'public');
+            $thumbnailPath = '/storage/' . $request->file('thumbnail')->store('thumbnails', 'public');
 
             //eloquent insert create
             $mahasiswa = Artikel::create([
@@ -116,7 +116,7 @@ class AdminArtikelController extends Controller
                 Storage::disk('public')->delete($artikel->thumbnail_url);
 
                 // Upload dan simpan file thumbnail yang baru
-                $thumbnailPath = $request->file('thumbnail')->store('thumbnails', 'public');
+                $thumbnailPath = '/storage/' . $request->file('thumbnail')->store('thumbnails', 'public');
                 $artikel->update([
                     'thumbnail_url' => $thumbnailPath
                 ]);
