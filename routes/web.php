@@ -44,6 +44,10 @@ Route::get('/forum', function () {
     return Inertia::render('Forum');
 })->name('forum');
 
+Route::get('/forumDetail', function () {
+    return Inertia::render('ForumDetail');
+})->name('forumDetail');
+
 Route::get('/layanan', function () {
     return Inertia::render('Layanan');
 })->name('layanan');
