@@ -38,14 +38,10 @@ export default function AturKetersediaan(){
                     Periode Konsultasi
                 </h2>
                 <div className='pb-10'>
-                    <div className='flex gap-44'>
-                        <h3 className="pb-4 font-semibold text-lg">Dari Tanggal:</h3>                                                                        
-                        <h3 className="pb-4 font-semibold text-lg">Sampai Tanggal:</h3>                                                
-                    </div>     
-                    <div className='flex justify-between pr-10'>
+                    <div className='flex justify-between'>
                         <DateRangePickers />                        
                     </div>                                                   
-                </div>       
+                </div>   
                 <PopupEdit 
                     name={"Edit Status"}
                     titledesc={"Status sudah berhasil diubah"}

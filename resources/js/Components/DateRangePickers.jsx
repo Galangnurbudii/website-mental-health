@@ -21,8 +21,9 @@ function DateRangePickers() {
   };
 
   return (
-    <div className="flex items-center">
-      <div style={{ width: '240px' }} className="relative">        
+    <div className="lg:flex md:flex sm:grid items-center">
+      <div style={{ width: '240px' }} className="relative">    
+        <h3 className="pb-4 font-semibold text-lg">Dari Tanggal:</h3>                                                                            
         <DatePicker
           name="start"
           selected={startDate}
@@ -34,8 +35,9 @@ function DateRangePickers() {
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5"          
         />
       </div>
-      <span className="mx-4 text-gray-500">-</span>
+      <span className="mx-4 mt-10 text-gray-500 hidden md:block lg:block">-</span>
       <div style={{ width: '240px' }} className="relative">
+        <h3 className="pb-4 font-semibold text-lg pt-5 lg:pt-0 md:pt-0">Sampai Tanggal:</h3>  
         <DatePicker
           name="end"
           selected={endDate}
