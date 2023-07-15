@@ -29,6 +29,7 @@ function BigCard({ popular }) {
                     <p className="text-hitam font-bold text-base">{tanggal}</p>
                 </div>
 
+
                 <p className="text-sm lg:text-base md:line-clamp-3">{detail}</p>
             </div>
         </div>

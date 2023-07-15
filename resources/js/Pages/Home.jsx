@@ -44,6 +44,7 @@ export default function Home({ articles, quote }) {
                         {articles.map((article) => (
                             <ArticleCard key={article.id} article={article} />
                         ))}
+
                     </div>
                 </div>
 
