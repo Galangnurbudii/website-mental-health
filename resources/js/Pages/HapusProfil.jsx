@@ -22,7 +22,7 @@ export default function HapusProfil({ desc }) {
 
     function handleCheckboxChange() {
         setIsChecked(!isChecked)
-        setIsValid(!isValid)
+        setIsValid(true) // Reset isValid state when checkbox is checked
     }
 
     function handleSubmit(e) {
@@ -84,8 +84,8 @@ export default function HapusProfil({ desc }) {
                     </div>
 
                     {!isValid && (
-                        <p className="text-red-500 text-sm mt-5">
-                            Checkbox harus di isi.
+                        <p className="text-red-500 text-sm mt-2">
+                            Checkbox harus diisi.
                         </p>
                     )}
 
