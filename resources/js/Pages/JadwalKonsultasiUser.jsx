@@ -1,8 +1,7 @@
-import NavProfil2 from '@/Components/ProfileNavbarPsikolog'
-import DateRangePickers from '@/Components/DateRangePickers'
+import ProfileNavbar from '@/Components/ProfileNavbar'
 import { useState } from 'react'
 
-export default function JadwalKonsultasi() {
+export default function JadwalKonsultasiUser() {
     const [selectedFilter, setSelectedFilter] = useState('')
 
     const handleFilterChange = (event) => {
@@ -11,21 +10,14 @@ export default function JadwalKonsultasi() {
 
     return (
         <div>
-            <NavProfil2 />
-            <div className="lg:pl-96 md:pl-10 lg:px-10 md:px-10 pl-10 pt-12 pb-16">
-                <h1 className="font-bold text-[26px] pt-5 pb-8 pr-10">
-                    Jadwal Konsultasi Hari Ini
+            <ProfileNavbar />
+            <div className="lg:pl-96 md:px-36 px-10 pt-12 pb-16">
+                <h1 className="font-bold text-[26px] pt-5 pb-4">
+                    Jadwal Konsultasi
                 </h1>
-                <h2 className="pb-5 text-xl font-semibold">
-                    Periode Konsultasi
-                </h2>
                 <div className="pb-10">
-                    <div className="lg:flex lg:justify-between pr-10">
-                        <DateRangePickers />
-                        <div className="sm:pt-5 xs:pt-5 md:pt-5 lg:pt-0">
-                            <h3 className="pb-4 font-semibold text-lg">
-                                Filter By:
-                            </h3>
+                    <div className="flex justify-end pr-10">
+                        <div>
                             <select
                                 className="select select-bordered w-[150px] focus:outline-none"
                                 value={selectedFilter}
@@ -45,7 +37,7 @@ export default function JadwalKonsultasi() {
                             : selectedFilter === 'Selesai'
                             ? 'border-gray-400'
                             : 'border-primary'
-                    } pr-10 pl-2 md:px-10 lg:px-10`}
+                    } px-10`}
                 >
                     <div className="w-full shadow-xl rounded-lg border border-gray-300 bg-white mx-auto mb-8">
                         <div className="p-10">
@@ -58,7 +50,33 @@ export default function JadwalKonsultasi() {
                             <h3 className="font-medium pb-2">
                                 Tipe Konsultasi: Online
                             </h3>
-                            <h3 className="font-medium">Status: Confirmed</h3>
+                            <h3 className="font-medium">
+                                Link zoom:
+                                https://binus.zoom.us/j/97275854825#success
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+
+                <h1 className="font-bold text-[26px] pt-5 pb-8">
+                    Riwayat Konsultasi
+                </h1>
+                <div className={`border-l-4 px-10 border-gray-600`}>
+                    <div className="w-full shadow-xl rounded-lg border border-gray-300 bg-white mx-auto mb-8">
+                        <div className="p-10">
+                            <h2 className="font-semibold pb-4 text-lg">
+                                Senin, 18 Juli 2023 - 09.00 AM
+                            </h2>
+                            <h3 className="font-semibold pb-2">
+                                Nama Pasien: Galang Nurbudi Utomo
+                            </h3>
+                            <h3 className="font-medium pb-2">
+                                Tipe Konsultasi: Online
+                            </h3>
+                            <h3 className="font-medium">
+                                Link zoom:
+                                https://binus.zoom.us/j/97275854825#success
+                            </h3>
                         </div>
                     </div>
                 </div>

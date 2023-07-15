@@ -1,32 +1,31 @@
-import { useEffect } from "react";
-import Checkbox from "@/Components/Checkbox";
-import GuestLayout from "@/Layouts/GuestLayout";
-import InputError from "@/Components/InputError";
-import InputLabel from "@/Components/InputLabel";
-import PrimaryButton from "@/Components/PrimaryButton";
-import TextInput from "@/Components/TextInput";
-import { Head, Link, useForm } from "@inertiajs/react";
-import PopupFP from "@/Components/PopupFP";
+import { useEffect } from 'react'
+import GuestLayout from '@/Layouts/GuestLayout'
+import InputError from '@/Components/InputError'
+import InputLabel from '@/Components/InputLabel'
+import PrimaryButton from '@/Components/PrimaryButton'
+import TextInput from '@/Components/TextInput'
+import { Head, Link, useForm } from '@inertiajs/react'
+import PopupFP from '@/Components/PopupFP'
 
 export default function ForgotPassword() {
     const { data, setData, post, processing, errors, reset } = useForm({
-        name: "",
-        email: "",
-        password: "",
-        password_confirmation: "",
-    });
+        name: '',
+        email: '',
+        password: '',
+        password_confirmation: '',
+    })
 
     useEffect(() => {
         return () => {
-            reset("password", "password_confirmation");
-        };
-    }, []);
+            reset('password', 'password_confirmation')
+        }
+    }, [])
 
     const submit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
 
-        post(route("register"));
-    };
+        post(route('register'))
+    }
 
     return (
         <GuestLayout>
@@ -60,8 +59,8 @@ export default function ForgotPassword() {
                                     lg:w-1/2 h-full
 
                                     md:p-20 lg:p-10 
-                                    flex flex-col justify-between items-center p-10 mt-5">
-
+                                    flex flex-col justify-between items-center p-10 mt-5"
+                    >
                         <div className="w-full flex flex-col max-w-[525px] sm:pt-8">
                             {/* title */}
                             <div
@@ -78,14 +77,14 @@ export default function ForgotPassword() {
                                     Lupa Password
                                 </h1>
                                 <p className="text-[#333333] text-2xl font-semibold mb-7">
-                                    Tidak perlu khawatir, buat password baru Anda
+                                    Tidak perlu khawatir, buat password baru
+                                    Anda
                                 </p>
                             </div>
 
                             {/* login box -> w594 h60 */}
                             {/* RegisteredUserController */}
                             <div>
-
                                 <div className="mb-7">
                                     <InputLabel htmlFor="email" />
 
@@ -98,9 +97,13 @@ export default function ForgotPassword() {
                                         className="mt-1 block w-full"
                                         autoComplete="username"
                                         onChange={(e) =>
-                                            setData("email", e.target.value)
+                                            setData('email', e.target.value)
                                         }
-                                        required
+                                    />
+
+                                    <InputError
+                                        message={errors.email}
+                                        className="mt-2"
                                     />
                                 </div>
 
@@ -116,9 +119,8 @@ export default function ForgotPassword() {
                                         className="mt-1 block w-full"
                                         autoComplete="new-password"
                                         onChange={(e) =>
-                                            setData("password", e.target.value)
+                                            setData('password', e.target.value)
                                         }
-                                        required
                                     />
 
                                     <InputError
@@ -139,28 +141,26 @@ export default function ForgotPassword() {
                                         autoComplete="new-password"
                                         onChange={(e) =>
                                             setData(
-                                                "password_confirmation",
+                                                'password_confirmation',
                                                 e.target.value
                                             )
                                         }
                                         required
                                     />
-
-                                    <InputError
-                                        message={errors.name}
-                                        className="mt-2"
-                                    />
                                 </div>
 
-                                <PopupFP 
-                                name="Reset Password"
-                                titledesc={"Password Anda Berhasil Diubah"}
-                                desc={"Ingat dan catat password Anda agar dapat masuk ke dalam website"}/>
+                                <PopupFP
+                                    name="Reset Password"
+                                    titledesc={'Password Anda Berhasil Diubah'}
+                                    desc={
+                                        'Ingat dan catat password Anda agar dapat masuk ke dalam website'
+                                    }
+                                />
                             </div>
                         </div>
                     </div>
-                </div>            
+                </div>
             </form>
         </GuestLayout>
-    );
+    )
 }
