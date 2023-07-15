@@ -36,9 +36,9 @@ Route::get('/dashboard', function () {
 
 Route::get('/article', [ArtikelController::class, 'index'])->name('article');
 
-Route::get('/articleDetail/{id}', [ArtikelController::class, 'detail'])->name('articleDetail');
+Route::get('/article-detail/{id}', [ArtikelController::class, 'detail'])->name('articleDetail');
 
-Route::get('/forumHome', [ForumController::class, 'index'])->name('forumHome');
+Route::get('/forum-home', [ForumController::class, 'index'])->name('forumHome');
 
 Route::get('/forum', function () {
     return Inertia::render('Forum');
@@ -52,11 +52,11 @@ Route::get('/konsultasi', function () {
     return Inertia::render('Konsultasi');
 })->name('konsultasi');
 
-Route::get('/detaillayanan/videocall', function () {
+Route::get('/detail-layanan/videocall', function () {
     return Inertia::render('DetailLayanan2');
 })->name('detaillayanan2');
 
-Route::get('/detaillayanan', function () {
+Route::get('/detail-layanan', function () {
     return Inertia::render('DetailLayanan');
 })->name('detaillayanan');
 
@@ -80,16 +80,16 @@ Route::get('/profil', function () {
     return Inertia::render('Profil');
 })->name('profil');
 
-Route::get('/adminlogin', function () {
+Route::get('/admin-login', function () {
     return Inertia::render('AdminLogin');
 })->name('adminlogin');
 
 
-Route::get('/psikologlogin', function () {
+Route::get('/psikolog-login', function () {
     return Inertia::render('PsikologLogin');
 })->name('psikologlogin');
 
-Route::get('/dashboardadmin', function () {
+Route::get('/dashboard-admin', function () {
     return Inertia::render('DashboardAdmin');
 })->name('dashboardadmin');
 
