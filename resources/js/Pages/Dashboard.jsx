@@ -1,12 +1,12 @@
-import PrimaryButton from "@/Components/PrimaryButton";
-import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import { Head } from "@inertiajs/react";
-import BackUpButton from "@/Components/BackUpButton";
+import PrimaryButton from '@/Components/PrimaryButton'
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout'
+import { Head } from '@inertiajs/react'
+import BackUpButton from '@/Components/BackUpButton'
 
-import Footer from "@/Components/Footer";
-import NumberBox from "@/Components/NumberBox";
-import CardsCarousel from "@/Components/CardsCarousel";
-import Cards from "@/Components/Cards";
+import Footer from '@/Components/Footer'
+import NumberBox from '@/Components/NumberBox'
+import CardsCarousel from '@/Components/CardsCarousel'
+import Cards from '@/Components/Cards'
 
 export default function Dashboard({ auth }) {
     return (
@@ -44,7 +44,7 @@ export default function Dashboard({ auth }) {
                             md:text-3xl md:px-20
                             lg:text-3xl lg:px-40"
                             >
-                                Ceritakan isi hatimu, temukan akar masalah{" "}
+                                Ceritakan isi hatimu, temukan akar masalah{' '}
                                 <br />
                                 dan jadi pribadi lebih baik
                             </p>
@@ -121,5 +121,5 @@ export default function Dashboard({ auth }) {
                 </div>
             </div>
         </AuthenticatedLayout>
-    );
+    )
 }

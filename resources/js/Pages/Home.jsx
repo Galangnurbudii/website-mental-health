@@ -8,11 +8,12 @@ import CardsCarousel from '@/Components/CardsCarousel'
 import ArticleCard from '@/Components/ArticleCard'
 import { Head } from '@inertiajs/react'
 
-export default function Home({ articles, quote }) {
+export default function Home({ articles, quote, auth }) {
+    console.log(articles)
     return (
         <div>
             <Head title="Beranda" />
-            <NavBar />
+            <NavBar user={auth.user} />
             <div className="flex flex-col pb-20 md:pb-32 min-h-screen">
                 <Hero />
 

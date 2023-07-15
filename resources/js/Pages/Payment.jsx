@@ -11,8 +11,9 @@ import PrimaryButton from '@/Components/PrimaryButton'
 import Popup from '@/Components/Popup'
 import SelectBox from '@/Components/SelectBox'
 
-export default function Layanan() {
-    // Detail Page
+export default function Layanan({ psikolog }) {
+    console.log(psikolog)
+
     const [showContent, setShowContent] = useState(false)
     const handleClick2 = () => {
         setShowContent(!showContent)

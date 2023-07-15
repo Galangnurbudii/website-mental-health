@@ -32,7 +32,7 @@ use Inertia\Inertia;
 // });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    return Inertia::render('Home');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/article', [ArtikelController::class, 'index'])->name('article');
@@ -56,8 +56,6 @@ Route::get('/konsultasi', function () {
 
 Route::get('/detaillayanan', [LayananController::class, 'index'])->name('detaillayanan');
 
-
-
 // Route::get('/payment', function () {
 //     return Inertia::render('Payment');
 // })->name('payment');
@@ -66,14 +64,10 @@ Route::get('/payment/{id?}', [LayananController::class, 'layanan'])->name('payme
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-
 Route::get('/coba', function () {
     return Inertia::render('Coba');
 })->name('coba');
 
-Route::get('/profil', function () {
-    return Inertia::render('Profil');
-})->name('profil');
 
 Route::get('/adminlogin', function () {
     return Inertia::render('AdminLogin');
@@ -107,8 +101,6 @@ Route::get('/jadwalPsikolog', function () {
 Route::get('/avaibility', function () {
     return Inertia::render('Avaibility');
 })->name('avaibility');
-
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
