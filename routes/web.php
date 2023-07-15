@@ -99,7 +99,26 @@ Route::get('/dashboard-admin', function () {
 
 Route::post('/upload', [AdminArtikelController::class, 'uploadImage']);
 Route::post('artikels/{id}', [AdminArtikelController::class, 'update'])->name('updateArtikel');
-Route::resource('artikels', AdminArtikelController::class);
+Route::resource('artikels', AdminArtikelController::class);Route::get('/dashboardpsikolog', function () {
+    return Inertia::render('DashboardPsikolog');
+})->name('dashboardpsikolog');
+
+Route::get('/jadwalkonsultasi', function () {
+    return Inertia::render('JadwalKonsultasi');
+})->name('jadwalkonsultasi');
+
+Route::get('/jadwalkonsultasi2', function () {
+    return Inertia::render('JadwalKonsultasi2');
+})->name('jadwalkonsultasi2');
+
+Route::get('/detailkonsultasi', function () {
+    return Inertia::render('DetailKonsultasi');
+})->name('detailkonsultasi');
+
+Route::get('/aturketersediaan', function () {
+    return Inertia::render('AturKetersediaan');
+})->name('aturketersediaan');
+
 Route::resource('psikologs', PsikologController::class);
 
 Route::get('/profil', function () {

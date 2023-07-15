@@ -1,31 +1,42 @@
-import { useEffect } from "react";
-import Checkbox from "@/Components/Checkbox";
-import GuestLayout from "@/Layouts/GuestLayout";
-import InputError from "@/Components/InputError";
-import InputLabel from "@/Components/InputLabel";
-import PrimaryButton from "@/Components/PrimaryButton";
-import TextInput from "@/Components/TextInput";
-import { Head, Link, useForm } from "@inertiajs/react";
+import { useEffect, useState } from 'react'
+import Checkbox from '@/Components/Checkbox'
+import GuestLayout from '@/Layouts/GuestLayout'
+import InputError from '@/Components/InputError'
+import InputLabel from '@/Components/InputLabel'
+import PrimaryButton from '@/Components/PrimaryButton'
+import TextInput from '@/Components/TextInput'
+import { Head, Link, useForm } from '@inertiajs/react'
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
-        name: "",
-        email: "",
-        password: "",
-        password_confirmation: "",
-    });
+        name: '',
+        email: '',
+        password: '',
+        password_confirmation: '',
+    })
 
     useEffect(() => {
         return () => {
-            reset("password", "password_confirmation");
-        };
-    }, []);
+            reset('password', 'password_confirmation')
+        }
+    }, [])
 
     const submit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
 
-        post(route("register"));
-    };
+        post(route('register'))
+    }
+
+    const [showPassword, setShowPassword] = useState(false)
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword)
+    }
+
+    const [showPassword2, setShowPassword2] = useState(false)
+    const togglePasswordVisibility2 = () => {
+        setShowPassword2(!showPassword2)
+    }
 
     return (
         <GuestLayout>
@@ -59,8 +70,8 @@ export default function Register() {
                                     lg:w-1/2 h-full
 
                                     md:p-20 lg:p-10 
-                                    flex flex-col justify-between items-center p-10">
-
+                                    flex flex-col justify-between items-center p-10"
+                    >
                         <div className="w-full flex flex-col max-w-[525px] sm:pt-8">
                             {/* title */}
                             <div
@@ -72,19 +83,20 @@ export default function Register() {
                                                 text-2xl 
                                                 sm:text-3xl 
                                                 md:text-3xl 
-                                                lg:text-[48px] font-bold mb-5"
+                                                lg:text-[42px] font-bold mb-5"
                                 >
-                                    Join Our Community
+                                    Bergabung ke Komunitas
                                 </h1>
-                                <p className="text-[#333333] text-[24px] font-semibold mb-7">
-                                    Don’t feel alone. Love yourself more with us
+                                <p className="text-[#333333] text-2xl font-semibold mb-7">
+                                    Jangan merasa sendiri. Cintai dirimu bersama
+                                    kami
                                 </p>
                             </div>
 
                             {/* login box -> w594 h60 */}
                             {/* RegisteredUserController */}
                             <div>
-                                <div className="w-full mt-4 mb-10">
+                                <div className="w-full mt-4 mb-7">
                                     <InputLabel htmlFor="name" />
 
                                     <TextInput
@@ -97,7 +109,7 @@ export default function Register() {
                                         autoComplete="name"
                                         isFocused={true}
                                         onChange={(e) =>
-                                            setData("name", e.target.value)
+                                            setData('name', e.target.value)
                                         }
                                         required
                                     />
@@ -108,7 +120,7 @@ export default function Register() {
                                     />
                                 </div>
 
-                                <div className="mb-14">
+                                <div className="mb-7">
                                     <InputLabel htmlFor="email" />
 
                                     <TextInput
@@ -120,40 +132,61 @@ export default function Register() {
                                         className="mt-1 block w-full"
                                         autoComplete="username"
                                         onChange={(e) =>
-                                            setData("email", e.target.value)
+                                            setData('email', e.target.value)
                                         }
                                         required
                                     />
                                 </div>
 
-                                <div className="mb-12">
+                                <div className="mb-7">
                                     <InputLabel htmlFor="password" />
 
-                                    <TextInput
-                                        id="password"
-                                        placeholder="Password"
-                                        type="password"
-                                        name="password"
-                                        value={data.password}
-                                        className="mt-1 block w-full"
-                                        autoComplete="new-password"
-                                        onChange={(e) =>
-                                            setData("password", e.target.value)
-                                        }
-                                        required
-                                    />
+                                    <div className="relative flex flex-row items-center">
+                                        <TextInput
+                                            id="password"
+                                            placeholder="Password"
+                                            type={
+                                                showPassword
+                                                    ? 'text'
+                                                    : 'password'
+                                            }
+                                            name="password"
+                                            value={data.password}
+                                            className="mt-1 block w-full"
+                                            autoComplete="new-password"
+                                            onChange={(e) =>
+                                                setData(
+                                                    'password',
+                                                    e.target.value
+                                                )
+                                            }
+                                            required
+                                        />
+
+                                        <button
+                                            type="button"
+                                            onClick={togglePasswordVisibility}
+                                            className="absolute right-5"
+                                        >
+                                            {showPassword ? (
+                                                <FaEye />
+                                            ) : (
+                                                <FaEyeSlash />
+                                            )}
+                                        </button>
+                                    </div>
 
                                     <InputError
                                         message={errors.password}
                                         className="mt-2"
                                     />
                                 </div>
-                                <div className="mb-12">
+                                <div className="mb-10">
                                     <InputLabel htmlFor="password_confirmation" />
 
                                     <TextInput
                                         id="password_confirmation"
-                                        placeholder="Password Confirmation"
+                                        placeholder="password confirmation"
                                         type="password"
                                         name="password_confirmation"
                                         value={data.password_confirmation}
@@ -161,7 +194,7 @@ export default function Register() {
                                         autoComplete="new-password"
                                         onChange={(e) =>
                                             setData(
-                                                "password_confirmation",
+                                                'password_confirmation',
                                                 e.target.value
                                             )
                                         }
@@ -181,16 +214,16 @@ export default function Register() {
                                             checked={data.remember}
                                             onChange={(e) =>
                                                 setData(
-                                                    "remember",
+                                                    'remember',
                                                     e.target.checked
                                                 )
                                             }
                                             required
                                         />
                                         <span className="font-semibold ml-2 text-sm text-gray-600">
-                                            I Agree to{" "}
+                                            Saya setuju dengan{' '}
                                             <span className="text-primary">
-                                                terms & conditions
+                                                ketentuan dan persyaratan
                                             </span>
                                         </span>
                                     </label>
@@ -200,25 +233,25 @@ export default function Register() {
                                     className="bg-primary mb-5"
                                     disabled={processing}
                                 >
-                                    Create Account
+                                    Buat Akun
                                 </PrimaryButton>
 
                                 <div className="flex justify-center mt-4">
                                     <Link
-                                        href={route("login")}
+                                        href={route('login')}
                                         className="font-semibold text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none"
                                     >
-                                        Already have an account?{" "}
+                                        Sudah punya akun?{' '}
                                         <span className="text-primary">
-                                            Log In here
+                                            Masuk
                                         </span>
                                     </Link>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>            
+                </div>
             </form>
         </GuestLayout>
-    );
+    )
 }
