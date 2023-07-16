@@ -68,13 +68,13 @@ export default function AdminLogin({ status1, canResetPassword1 }) {
                     <div
                         className="md:w-3/4
                                     lg:w-1/2 h-full
-                                    p-10 md:p-26 lg:p-6 xl:p-10 2xl:p-32
+                                    p-10 md:p-26 lg:p-6 xl:p-20 2xl:p-32
                                     flex flex-col justify-between items-center"
                     >
                         <div
                             className="w-full flex flex-col 
                                         max-w-[715px] 
-                                        pt-0 sm:pt-8 sm:px-14 sm:pb-16
+                                        p-10 sm:pt-8 sm:px-14 sm:pb-16
                                         bg-white rounded-2xl"
                         >
                             {/* title */}
