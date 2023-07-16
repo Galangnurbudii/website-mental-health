@@ -39,6 +39,7 @@ use App\Http\Controllers\AdminArtikelController;
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/article', [ArtikelController::class, 'index'])->name('article');
 
@@ -74,7 +75,6 @@ Route::get('/payment/videocall', function () {
 Route::post('/validasi-layanan', [LayananController::class, 'validasiLayanan'])->name('validasilayanan');
 Route::get('/payment/{id}/{tanggal}/{jam}', [LayananController::class, 'detailPayment'])->name('payment');
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
 Route::get('/coba', function () {
@@ -137,6 +137,17 @@ Route::middleware('admin')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
+    Route::get('/forum-home', [ForumController::class, 'index'])->name('forumHome');
+
+    Route::get('/forum', function () {
+        return Inertia::render('Forum');
+    })->name('forum');
+
+    Route::get('/layanan', function () {
+        return Inertia::render('Layanan');
+    })->name('layanan');
+
+
     Route::get('/profil', function () {
         return Inertia::render('EditProfile', ['user' => Auth::user()]);
     })->name('profil');
