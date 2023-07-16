@@ -39,7 +39,11 @@ function SearchBar({ data, changeFilteredArticles }) {
 
     const clickHandler = () => {
         setInputFocused(false)
-        changeFilteredArticles(listToDisplay)
+        if (listToDisplay.length) {
+            changeFilteredArticles(listToDisplay)
+        } else {
+            changeFilteredArticles(['kosong'])
+        }
     }
 
     const renderResultList = () => {

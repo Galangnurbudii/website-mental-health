@@ -28,7 +28,7 @@ function ProfileNavbarPsikolog() {
                         <ul className="space-y-8 mb-12 px-4 mt-8">
                             <li>
                                 <a
-                                    href={route('home')}
+                                    href={route('dashboardpsikolog')}
                                     className="flex gap-4 p-2 text-putih hover:text-primary transition font-medium text-lg hover:bg-putih hover:p-2 hover:rounded-md"
                                 >
                                     <BiHomeAlt2 size={25} />

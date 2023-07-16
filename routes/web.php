@@ -93,21 +93,10 @@ Route::get('/psikolog-login', function () {
     return Inertia::render('PsikologLogin');
 })->name('psikologlogin');
 
-Route::get('/dashboard-admin', function () {
-    return Inertia::render('DashboardAdmin');
-})->name('dashboardadmin');
 
-Route::post('/upload', [AdminArtikelController::class, 'uploadImage']);
-Route::post('artikels/{id}', [AdminArtikelController::class, 'update'])->name('updateArtikel');
-Route::resource('artikels', AdminArtikelController::class);
 
-Route::get('/dashboardpsikolog', function () {
-    return Inertia::render('DashboardPsikolog');
-})->name('dashboardpsikolog');
 
-Route::get('/jadwalkonsultasi', function () {
-    return Inertia::render('JadwalKonsultasi');
-})->name('jadwalkonsultasi');
+
 
 
 
@@ -119,15 +108,8 @@ Route::get('/detailkonsultasi', function () {
     return Inertia::render('DetailKonsultasi');
 })->name('detailkonsultasi');
 
-Route::get('/aturketersediaan', function () {
-    return Inertia::render('AturKetersediaan');
-})->name('aturketersediaan');
 
-Route::resource('psikologs', PsikologController::class);
 
-Route::get('/profil', function () {
-    return Inertia::render('EditProfile', ['user' => Auth::user()]);
-})->name('profil');
 
 Route::get('/hapusprofil', function () {
     return Inertia::render('HapusProfil');
@@ -137,11 +119,36 @@ Route::get('/error', function () {
     return Inertia::render('NotFound');
 })->name('notFound');
 
+Route::middleware('psikolog')->group(function () {
+    Route::get('/dashboardpsikolog', function () {
+        return Inertia::render('DashboardPsikolog');
+    })->name('dashboardpsikolog');
 
+    Route::get('/jadwalkonsultasi', function () {
+        return Inertia::render('JadwalKonsultasi');
+    })->name('jadwalkonsultasi');
+    Route::get('/aturketersediaan', function () {
+        return Inertia::render('AturKetersediaan');
+    })->name('aturketersediaan');
 
+    Route::resource('psikologs', PsikologController::class);
 
+});
+
+Route::middleware('admin')->group(function () {
+    Route::get('/dashboard-admin', function () {
+        return Inertia::render('DashboardAdmin');
+    })->name('dashboardadmin');
+    Route::post('/upload', [AdminArtikelController::class, 'uploadImage']);
+    Route::post('artikels/{id}', [AdminArtikelController::class, 'update'])->name('updateArtikel');
+    Route::resource('artikels', AdminArtikelController::class);
+
+});
 
 Route::middleware('auth')->group(function () {
+    Route::get('/profil', function () {
+        return Inertia::render('EditProfile', ['user' => Auth::user()]);
+    })->name('profil');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

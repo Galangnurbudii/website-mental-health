@@ -183,30 +183,46 @@ export default function Register() {
                                 </div>
                                 <div className="mb-10">
                                     <InputLabel htmlFor="password_confirmation" />
+                                    <div className="relative flex flex-row items-center">
+                                        <TextInput
+                                            id="password_confirmation"
+                                            placeholder="Password Confirmation"
+                                            type={
+                                                showPassword2
+                                                    ? 'text'
+                                                    : 'password'
+                                            }
+                                            name="password_confirmation"
+                                            value={data.password_confirmation}
+                                            className="mt-1 block w-full"
+                                            autoComplete="new-password"
+                                            onChange={(e) =>
+                                                setData(
+                                                    'password_confirmation',
+                                                    e.target.value
+                                                )
+                                            }
+                                            required
+                                        />
 
-                                    <TextInput
-                                        id="password_confirmation"
-                                        placeholder="password confirmation"
-                                        type="password"
-                                        name="password_confirmation"
-                                        value={data.password_confirmation}
-                                        className="mt-1 block w-full"
-                                        autoComplete="new-password"
-                                        onChange={(e) =>
-                                            setData(
-                                                'password_confirmation',
-                                                e.target.value
-                                            )
-                                        }
-                                        required
-                                    />
-
+                                        <button
+                                            type="button"
+                                            onClick={togglePasswordVisibility2}
+                                            className="absolute right-5"
+                                        >
+                                            {showPassword2 ? (
+                                                <FaEye />
+                                            ) : (
+                                                <FaEyeSlash />
+                                            )}
+                                        </button>
+                                    </div>
                                     <InputError
                                         message={errors.name}
                                         className="mt-2"
                                     />
+                                              
                                 </div>
-
                                 <div className="block mb-10">
                                     <label className="flex items-center">
                                         <Checkbox

@@ -17,9 +17,11 @@ function ProfileNavbar() {
             <div className="pt-8 z-20 fixed top-0 -left-96 lg:left-0 h-screen w-9/12 lg:w-72 bg-primary shadow-2xl peer-focus:left-0 peer:transition ease-out delay-150 duration-200">
                 <nav role="navigation" className="p-6">
                     <div className="flex items-center gap-4 pb-4">
-                        <h1 className="text-putih font-bold text-3xl">
-                            Berani Bicara
-                        </h1>
+                        <a href={route('home')}>
+                            <h1 className="text-putih font-bold text-3xl">
+                                Berani Bicara
+                            </h1>
+                        </a>
                     </div>
                     <div className="bg-putih h-[0.5vh]"></div>
 
@@ -36,7 +38,7 @@ function ProfileNavbar() {
                             </li>
                             <li>
                                 <a
-                                    href={route('home')}
+                                    href={route('profil')}
                                     className="flex gap-4 p-2 text-putih hover:text-primary transition font-medium text-lg hover:bg-putih hover:p-2 hover:rounded-sm"
                                 >
                                     <AiOutlineUser size={25} />
@@ -45,7 +47,7 @@ function ProfileNavbar() {
                             </li>
                             <li>
                                 <a
-                                    href=""
+                                    href={route('jadwalkonsultasiuser')}
                                     className="flex gap-4 p-2 text-putih hover:text-primary transition font-medium text-lg hover:bg-putih hover:p-2 hover:rounded-sm"
                                 >
                                     <HiOutlineShoppingCart size={25} />
@@ -58,7 +60,7 @@ function ProfileNavbar() {
                         <ul className="pt-2 space-y-8 mb-12 px-4 mt-8">
                             <li>
                                 <a
-                                    href={route('home')}
+                                    href={route('hapusprofil')}
                                     className="flex gap-4 p-2 text-putih hover:text-primary transition font-medium text-lg hover:bg-putih hover:p-2 hover:rounded-sm"
                                 >
                                     <BiTrashAlt size={25} />

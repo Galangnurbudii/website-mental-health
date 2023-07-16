@@ -18,18 +18,23 @@ export default function DashboardAdmin() {
                     </h1>
 
                     <div className="flex flex-col md:flex-row gap-6">
-                        <button className="w-full flex flex-row gap-4 border border-hitam rounded-md py-5 px-4 text-hitam text-md md:text-lg font-medium hover:font-semibold  hover:text-primary hover:border-primary hover:border-2 ">
-                            <span>
-                                <FiFileText size={25} />
-                            </span>
-                            Tambah Article
-                        </button>
-                        <button className="w-full flex flex-row gap-4 border border-hitam rounded-md py-5 px-4 text-hitam text-md md:text-lg font-medium hover:font-semibold  hover:text-primary hover:border-primary hover:border-2 ">
-                            <span>
-                                <AiOutlineUser size={25} />
-                            </span>
-                            Psikolog
-                        </button>
+                        <Link href={route('artikels.index')}>
+                            <button className="w-full flex flex-row gap-4 border border-hitam rounded-md py-5 px-4 text-hitam text-md md:text-lg font-medium hover:font-semibold  hover:text-primary hover:border-primary hover:border-2 ">
+                                <span>
+                                    <FiFileText size={25} />
+                                </span>
+                                Tambah Article
+                            </button>
+                        </Link>
+
+                        <Link href={route('psikologs.index')}>
+                            <button className="w-full flex flex-row gap-4 border border-hitam rounded-md py-5 px-4 text-hitam text-md md:text-lg font-medium hover:font-semibold  hover:text-primary hover:border-primary hover:border-2 ">
+                                <span>
+                                    <AiOutlineUser size={25} />
+                                </span>
+                                Psikolog
+                            </button>
+                        </Link>
                     </div>
                     <div className="">
                         <table className="table-auto">

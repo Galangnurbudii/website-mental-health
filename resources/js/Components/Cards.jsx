@@ -2,9 +2,9 @@ import NumberBox from './NumberBox'
 
 export default function Cards({ className = '', disabled, ...props }) {
     return (
-        <div className="overflow-x-auto">
-            <div className="grid mx-auto gap-6 pb-20 md:pb-32 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-8 md:px-16 lg:px-32">
-                <div className="carousel flex-col rounded-box w-100 h-[480px] bg-base-100 shadow-xl border border-gray-300">
+        <div className="overflow-x-auto px-6 md:px-16 lg:px-32">
+            <div className=" flex xl:justify-center gap-6 pb-20 md:pb-32 carousel">
+                <div className="carousel-item flex-col rounded-lg w-full md:w-[300px] lg:w-[380px] h-[480px] bg-base-100 shadow-xl border border-gray-300">
                     <figure className="bg-counselingBackground">
                         <img src="images/CaraKonseling1.jpg" />
                     </figure>
@@ -18,7 +18,7 @@ export default function Cards({ className = '', disabled, ...props }) {
                         <p className="pb-6">{props.desc1}</p>
                     </div>
                 </div>
-                <div className="carousel flex-col rounded-box g w-100 h-[480px] bg-base-100 shadow-xl border border-gray-300">
+                <div className="carousel-item flex-col rounded-lg g w-full md:w-[300px] lg:w-[380px] h-[480px] bg-base-100 shadow-xl border border-gray-300">
                     <figure className="bg-counselingBackground">
                         <img src="images/CaraKonseling2.jpg" />
                     </figure>
@@ -32,7 +32,7 @@ export default function Cards({ className = '', disabled, ...props }) {
                         <p className="pb-6">{props.desc2}</p>
                     </div>
                 </div>
-                <div className="carousel flex-col rounded-box w-100 h-[480px] bg-base-100 shadow-xl border border-gray-300">
+                <div className="carousel-item flex-col rounded-lg w-full md:w-[300px] lg:w-[380px] h-[480px] bg-base-100 shadow-xl border border-gray-300">
                     <figure className="bg-counselingBackground">
                         <img src="images/CaraKonseling3.png" />
                     </figure>

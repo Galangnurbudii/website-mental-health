@@ -1,5 +1,7 @@
 import Checkbox from '@/Components/Checkbox'
 import PrimaryButton from '@/Components/PrimaryButton'
+import DeleteUserForm from './profile/Partials/DeleteUserForm'
+
 import { useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
@@ -10,7 +12,6 @@ export default function HapusProfil({ desc }) {
 
     function closeModal() {
         setIsOpen(false)
-        window.location.href = '/'
     }
 
     function openModal() {
@@ -53,8 +54,8 @@ export default function HapusProfil({ desc }) {
                             Nathalia Chandra
                         </h2>
                     </div>
-                    <div className="w-full shadow-xl rounded-lg border border-gray-300 bg-white mx-auto md:my-auto pb-5 md:pb-10 lg:pb-10">
-                        <div className="p-10">
+                    <div className="w-full p-5 shadow-xl rounded-lg border border-gray-300 bg-white mx-auto md:my-auto pb-5 md:pb-10 lg:pb-10">
+                        {/* <div className="p-10">
                             <h2 className="border-b-2 pb-5">Hapus Profil</h2>
                             <p className="pt-4">
                                 Sebelum menghapus profil Anda, ada beberapa hal
@@ -80,72 +81,9 @@ export default function HapusProfil({ desc }) {
                                     penghapusan akun
                                 </span>
                             </label>
-                        </div>
+                        </div> */}
+                        <DeleteUserForm className="max-w-xl" />
                     </div>
-
-                    {!isValid && (
-                        <p className="text-red-500 text-sm mt-2">
-                            Checkbox harus diisi.
-                        </p>
-                    )}
-
-                    <PrimaryButton onClick={openModal} className="mt-7">
-                        Hapus Akun
-                    </PrimaryButton>
-
-                    <Transition appear show={isOpen} as={Fragment}>
-                        <Dialog
-                            as="div"
-                            className="relative z-10"
-                            onClose={closeModal}
-                        >
-                            <Transition.Child
-                                as={Fragment}
-                                enter="ease-out duration-300"
-                                enterFrom="opacity-0"
-                                enterTo="opacity-100"
-                                leave="ease-in duration-200"
-                                leaveFrom="opacity-100"
-                                leaveTo="opacity-0"
-                            >
-                                <div className="fixed inset-0 bg-black bg-opacity-25" />
-                            </Transition.Child>
-
-                            <div className="fixed inset-0 overflow-y-auto">
-                                <div className="flex min-h-full items-center justify-center p-4 text-center">
-                                    <Transition.Child
-                                        as={Fragment}
-                                        enter="ease-out duration-300"
-                                        enterFrom="opacity-0 scale-95"
-                                        enterTo="opacity-100 scale-100"
-                                        leave="ease-in duration-200"
-                                        leaveFrom="opacity-100 scale-100"
-                                        leaveTo="opacity-0 scale-95"
-                                    >
-                                        <Dialog.Panel className="text-center w-full max-w-md transform overflow-hidden rounded-lg bg-white p-6 align-middle shadow-xl transition-all">
-                                            <div className="flex justify-center py-10">
-                                                <img src="images/approved.png" />
-                                            </div>
-
-                                            <Dialog.Title
-                                                as="h3"
-                                                className="text-lg font-bold leading-6 text-gray-900"
-                                            >
-                                                Akun Berhasil Dihapus
-                                            </Dialog.Title>
-                                            <div className="mt-2">
-                                                <p className="text-sm text-gray-700 font-medium">
-                                                    Jangan khawatir Anda dapat
-                                                    membuat akun lagi dengan
-                                                    melakukan registrasi.
-                                                </p>
-                                            </div>
-                                        </Dialog.Panel>
-                                    </Transition.Child>
-                                </div>
-                            </div>
-                        </Dialog>
-                    </Transition>
                 </div>
             </div>
         </form>
