@@ -31,4 +31,18 @@ class Psikolog extends Model
     // ...
 
     // Jika Anda membutuhkan metode khusus atau relasi, tambahkan di sini
+    public function hargaLayanan()
+    {
+        return $this->hasOne('App\Models\HargaLayanan', 'id_psikolog', 'id');
+    }
+
+    public function janji()
+    {
+        return $this->hasMany('App\Models\Janji', 'id_psikolog', 'id');
+    }
+
+    public function tanggalTidakTersedia()
+    {
+        return $this->hasMany('App\Models\TanggalTidakTersedia', 'id_psikolog', 'id');
+    }
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 
-export default function DatePickers() {
+export default function DatePickers({ changeDate }) {
     const today = new Date()
     const [startDate, setStartDate] = useState(today)
 
@@ -11,7 +11,7 @@ export default function DatePickers() {
             <DatePicker
                 className="react-datepicker"
                 selected={startDate}
-                onChange={(date) => setStartDate(date)}
+                onChange={(date) => changeDate(date)}
                 minDate={today}
             />
         </div>

@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminArtikelController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LayananController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PsikologController;
 use Illuminate\Foundation\Application;
@@ -56,19 +57,19 @@ Route::get('/konsultasi', function () {
     return Inertia::render('Konsultasi');
 })->name('konsultasi');
 
+Route::post('/filter-psikolog', [LayananController::class, 'filter'])->name('filter');
+
 Route::get('/detail-layanan/videocall', function () {
     return Inertia::render('DetailLayanan2');
 })->name('detaillayanan2');
 
-Route::get('/detail-layanan', function () {
-    return Inertia::render('DetailLayanan');
-})->name('detaillayanan');
+Route::get('/detail-layanan', [LayananController::class, 'layanan'])->name('detaillayanan');
 
 Route::get('/payment/videocall', function () {
     return Inertia::render('Payment2');
 })->name('payment2');
 
-Route::get('/payment', function () {
+Route::get('/payment', function () {    
     return Inertia::render('Payment');
 })->name('payment');
 
@@ -99,7 +100,8 @@ Route::get('/dashboard-admin', function () {
 
 Route::post('/upload', [AdminArtikelController::class, 'uploadImage']);
 Route::post('artikels/{id}', [AdminArtikelController::class, 'update'])->name('updateArtikel');
-Route::resource('artikels', AdminArtikelController::class);Route::get('/dashboardpsikolog', function () {
+Route::resource('artikels', AdminArtikelController::class);
+Route::get('/dashboardpsikolog', function () {
     return Inertia::render('DashboardPsikolog');
 })->name('dashboardpsikolog');
 
