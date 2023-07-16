@@ -4,7 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
     /**
      * Run the migrations.
      *
@@ -16,7 +17,7 @@ return new class extends Migration {
             $table->id();
             $table->string('judul');
             $table->string('tag');
-            $table->text('detail');
+            $table->mediumText('detail');
             $table->text('thumbnail_url');
             $table->unsignedBigInteger('id_user');
             $table->timestamps();

@@ -1,8 +1,7 @@
 import { FaStar, FaRegCalendarAlt } from "react-icons/fa";
 import BadgeDetailPsikolog from "./BadgeDetailPsikolog";
 
-export default function DetailPsikolog({ className = "", disabled, ...props }){
-
+export default function DetailPsikolog({ psikolog, className = "", disabled, ...props }){
     return(
         
         <div className=" h-full flex-col
@@ -19,9 +18,9 @@ export default function DetailPsikolog({ className = "", disabled, ...props }){
             <div className="flex sm:items-center pb-10">
             
             <div className="w-full shadow-xl border bg-white mx-auto my-auto rounded-lg">
-                <figure className="px-6 sm:px-8 md:px-8 lg:px-8 py-5 flex justify-center"><img src="/images/detailPsikolog.jpg" alt="" /></figure>
+                <figure className="px-6 sm:px-8 md:px-8 lg:px-8 py-5 flex justify-center"><img src={psikolog.foto_profil} alt="" /></figure>
                 <div className="pl-6 sm:pl-8 md:pl-8 lg:pl-8 pb-4">
-                    <h2 className="font-bold text-xl pb-0">Nathalia Chandra</h2>
+                    <h2 className="font-bold text-xl pb-0">{psikolog.nama}</h2>
                     <p className="text-disabled font-bold">Psikolog</p>
                 </div>
 
@@ -37,7 +36,7 @@ export default function DetailPsikolog({ className = "", disabled, ...props }){
                                 />
                             </div>
                             <p className="text-primary font-semibold text-xs">
-                                {props.badge1}
+                                {psikolog.tahun_pengalaman} tahun
                             </p>
                         </div>
                         <div className="badge badge-outline py-3 rounded-md border border-primary">
@@ -46,22 +45,20 @@ export default function DetailPsikolog({ className = "", disabled, ...props }){
                                 style={{ color: "orange" }} />
                             </div>
                             <p className="text-primary font-semibold text-xs">
-                                {props.badge2}
+                                {psikolog.rating}
                             </p>
                         </div>
                     </div>
                 </div>
 
                 {/* Price */}
-                <h1 className="pl-6 sm:pl-8 md:pl-8 lg:pl-8 py-2 card-title text-md font-bold bg-disabledBackground">Rp 200.000</h1>
+                <h1 className="pl-6 sm:pl-8 md:pl-8 lg:pl-8 py-2 card-title text-md font-bold bg-disabledBackground">Rp {psikolog.harga}</h1>
 
                 {/* Bidang Keahlian */}
                 <p className="text-disabled font-bold pl-8 pt-4 pb-2">Bidang Keahlian</p>
                 <div className="pl-6 sm:pl-8 md:pl-8 lg:pl-8 flex gap-0 pb-4 shrink overflow-x-auto flex-wrap">
                                                   
-                    <BadgeDetailPsikolog titleBadge="Gangguan Mood" />
-                    <BadgeDetailPsikolog titleBadge="Depresi" />
-                    <BadgeDetailPsikolog titleBadge="Cemas" />
+                    <BadgeDetailPsikolog titleBadge={psikolog.bidang_keahlian} />
                 </div>
 
                 {/* Other Information */}
@@ -69,7 +66,7 @@ export default function DetailPsikolog({ className = "", disabled, ...props }){
                     <img className="pt-2" src="../images/nstk.jpg" width={24}/>
                     <div>
                         <h1 className="pl-3 font-bold">Nomor Surat Tanda Registrasi</h1>
-                        <p className="pl-3 pb-3 text-xs">3321601321068534</p>
+                        <p className="pl-3 pb-3 text-xs">{psikolog.nomor_str}</p>
                     </div>                     
                 </div>
 
@@ -77,7 +74,7 @@ export default function DetailPsikolog({ className = "", disabled, ...props }){
                     <img className="pt-2" src="../images/lokasi.png" width={24}/>
                     <div>
                         <h1 className="pl-3 font-bold">Lokasi Praktik</h1>
-                        <p className="pl-3 pb-3 text-xs">Banjarmasin, Kalimantan Selatan</p>
+                        <p className="pl-3 pb-3 text-xs">{psikolog.kota}, {psikolog.provinsi}</p>
                     </div>                     
                 </div>
 
@@ -85,7 +82,7 @@ export default function DetailPsikolog({ className = "", disabled, ...props }){
                     <img className="pt-2" src="../images/alumnus.png" width={24}/>
                     <div>
                         <h1 className="pl-3 font-bold">Alumnus</h1>
-                        <p className="pl-3 pb-7 text-xs">Universitas Bina Nusantara</p>
+                        <p className="pl-3 pb-7 text-xs">{psikolog.lulusan}</p>
                     </div>                     
                 </div>
 
