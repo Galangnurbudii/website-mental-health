@@ -600,7 +600,7 @@ export default function DetailLayanan() {
 
     ////////////////////////////////////////////////////////////
 
-    const jam = ['12.00', '14.00', '16.00', '18.00', '20.00']
+    const jam = ['12:00', '14:00', '16:00', '18:00', '20:00']
 
     const [showContent, setShowContent] = useState(false)
     const [availablePsikolog, setAvailablePsikolog] = useState([])

@@ -13,9 +13,10 @@ import { Dialog, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 import PrimaryButton from '@/Components/PrimaryButton'
 import { Link } from '@inertiajs/react'
+import axios from 'axios'
 
-export default function Layanan({ psikolog }) {
-    
+export default function Layanan({ psikolog, tanggal, jam }) {
+    console.log(psikolog)
     let [isOpen, setIsOpen] = useState(false)
 
     function closeModal() {
@@ -59,18 +60,42 @@ export default function Layanan({ psikolog }) {
     }
 
     const handleClick = (e) => {
-        e.prevent
-        const jsonData = {
+        e.preventDefault();
 
+        if (!selectedOption || selectedOption === 'Pilih Metode Pembayaran') {
+            setError('Metode Pembayaran harus diisi')
+            return
         }
-    }
 
+        const jsonData = {
+            id_psikolog: psikolog.id_psikolog,
+            id_user: psikolog.id_user,
+            jam: jam,
+            tanggal: tanggal,
+        }
+        axios
+            .post(route('validasilayanan'), jsonData)
+            .then((response) => {
+                console.log(response.data)
+            })
+            .catch((error) => {
+                // console.log(error.response.data)
+                console.log("halo")
+            })
+
+        // openModal()
+        setIsOpen(true)
+    }
 
     return (
         <div className="overflow-x-hidden">
             <NavBar />
             <div className="w-full flex items-start flex-col sm:flex-col md:flex-row lg:flex-row">
-                <DetailPsikolog badge1="5 Tahun" badge2="4.9" psikolog={psikolog} />
+                <DetailPsikolog
+                    badge1="5 Tahun"
+                    badge2="4.9"
+                    psikolog={psikolog}
+                />
                 {/* right side */}
                 <div
                     className="
@@ -356,7 +381,10 @@ export default function Layanan({ psikolog }) {
                                     </>
                                 </div>
                             </div>
-                            <PrimaryButton onClick={openModal} className="mt-7">
+                            <PrimaryButton
+                                onClick={handleClick}
+                                className="mt-7"
+                            >
                                 Konfirmasi Pembayaran
                             </PrimaryButton>
                         </div>

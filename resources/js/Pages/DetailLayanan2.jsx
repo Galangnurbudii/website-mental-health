@@ -21,7 +21,7 @@ export default function DetailLayanan() {
 
     // Empty Validation
 
-    const jam = ['12.00', '14.00', '16.00', '18.00', '20.00']
+    const jam = ['12:00', '14:00', '16:00', '18:00', '20:00']
 
     const [showContent, setShowContent] = useState(false)
     const [availablePsikolog, setAvailablePsikolog] = useState([])
@@ -111,6 +111,8 @@ export default function DetailLayanan() {
                                                         badge1={`${psikolog.tahun_pengalaman} tahun`}
                                                         badge2={psikolog.rating}
                                                         fee={`Rp${psikolog.harga}0`}
+                                                        jam= {jam[activeIndex - 1]}
+                                                        tanggal={startDate.toISOString().split('T')[0]}
                                                     />
                                                 )
                                             )}

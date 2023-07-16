@@ -5,8 +5,8 @@ import PrimaryButton from './PrimaryButton'
 
 export default function CardsDetail({
     psikolog,
-    jam,
     tanggal,
+    jam,
     imageSrc,
     names,
     jobs,
@@ -55,7 +55,7 @@ export default function CardsDetail({
                     <h1 className="font-bold text-md lg:pt-0 md:pt-0 sm:pt-0 pt-1 sm:text-base md:text-base lg:text-base">
                         {fee}
                     </h1>
-                    <Link href={`/payment/${psikolog.id}/${jam}/${tanggal}`}>
+                    <Link href={`/payment/${psikolog.id}/${tanggal}/${jam}`}>
                         <BackUpButton className="h-0 text-xs lg:text-xs md:text-md sm:text-md">
                             Konsultasi
                         </BackUpButton>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Janji;
 use Illuminate\Http\Request;
 use App\Models\Psikolog;
 use Illuminate\Support\Facades\Validator;
@@ -86,7 +87,7 @@ class LayananController extends Controller
         }
     }
 
-    public function detailPayment($id, $jam, $tanggal)
+    public function detailPayment($id, $tanggal, $jam)
     {
         // dd($id, $jam, $tanggal);
         $detailPsikolog = Psikolog::join('harga_layanan as h', 'psikolog.id', '=', 'h.id_psikolog')
@@ -95,6 +96,21 @@ class LayananController extends Controller
 
         return Inertia::render('Payment', [
             'psikolog' => $detailPsikolog,
+            'tanggal' => $tanggal,
+            'jam' => $jam,
         ]);
+    }
+
+    public function validasiLayanan(Request $request)
+    {
+        $janji = Janji::create([
+            'id_psikolog' => $request->id_psikolog,
+            'id_user' =>  $request->id_user,
+            'jam' => $request->jam,
+            'tanggal' => $request->tanggal
+        ]);
+
+        return response()->json($request->all());
+
     }
 }

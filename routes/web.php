@@ -11,7 +11,7 @@ use App\Http\Controllers\LayananController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PsikologController;
 use App\Http\Controllers\AdminArtikelController;
- 
+
 
 // Auth::routes(['verify' => true]);
 
@@ -70,7 +70,8 @@ Route::get('/payment/videocall', function () {
     return Inertia::render('Payment2');
 })->name('payment2');
 
-Route::get('/payment/{id}/{jam}/{tanggal}', [LayananController::class, 'detailPayment'])->name('payment');
+Route::post('/validasi-layanan', [LayananController::class, 'validasiLayanan'])->name('validasilayanan');
+Route::get('/payment/{id}/{tanggal}/{jam}', [LayananController::class, 'detailPayment'])->name('payment');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
