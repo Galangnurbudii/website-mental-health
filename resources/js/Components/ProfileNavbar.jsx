@@ -58,7 +58,7 @@ function ProfileNavbar() {
                         <ul className="pt-2 space-y-8 mb-12 px-4 mt-8">
                             <li>
                                 <a
-                                    href={route('home')}
+                                    href={route('hapusprofil')}
                                     className="flex gap-4 p-2 text-putih hover:text-primary transition font-medium text-lg hover:bg-putih hover:p-2 hover:rounded-sm"
                                 >
                                     <BiTrashAlt size={25} />

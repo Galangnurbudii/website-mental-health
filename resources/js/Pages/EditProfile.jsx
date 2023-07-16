@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { Inertia } from '@inertiajs/inertia'
 import Popup from '@/Components/Popup'
+import { Link, useForm, usePage } from '@inertiajs/react'
+
 import ProfileNavbar from '@/Components/ProfileNavbar'
 import PrimaryButton from '@/Components/PrimaryButton'
 
-const EditProfile = ({ user }) => {
-    console.log(user)
+const EditProfile = () => {
+    const user = usePage().props.auth.user
     const [formData, setFormData] = useState({
         name: user.name,
         email: user.email,
@@ -30,10 +32,16 @@ const EditProfile = ({ user }) => {
         }
     }
 
+    const { data, setData, patch, errors, processing, recentlySuccessful } =
+        useForm({
+            name: user.name,
+            email: user.email,
+        })
+
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        Inertia.put(`/users/${user.id}`, formData)
+        patch(route('profile.update'))
     }
 
     return (
@@ -77,8 +85,8 @@ const EditProfile = ({ user }) => {
                             type="text"
                             name="name"
                             className="rounded-md"
-                            value={formData.name}
-                            onChange={handleChange}
+                            value={data.name}
+                            onChange={(e) => setData('name', e.target.value)}
                             required
                             autoFocus
                         />
@@ -96,8 +104,8 @@ const EditProfile = ({ user }) => {
                             type="email"
                             name="email"
                             className="rounded-md"
-                            value={formData.email}
-                            onChange={handleChange}
+                            value={data.email}
+                            onChange={(e) => setData('email', e.target.value)}
                             required
                         />
                     </div>
