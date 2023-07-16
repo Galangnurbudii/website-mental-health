@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import { Link } from '@inertiajs/react'
 import PrimaryButton from './PrimaryButton'
+import BackUpButton from './BackUpButton'
 
 const Navbar = ({ user }) => {
     const [nav, setNav] = useState(false)
@@ -12,7 +13,7 @@ const Navbar = ({ user }) => {
     return (
         <div className="relative z-10 flex justify-between items-center h-20 max-w-screen mx-auto px-6 md:px-16">
             <h1 className="w-1/2 text-2xl font-bold text-hitam">
-                <Link href={route('home')}>Mental Health</Link>
+                <Link href={route('home')}>Berani Bicara</Link>
             </h1>
             <ul className="hidden md:flex md:flex-row md:items-center">
                 <li className="p-4 text-hitam font-medium text-lg hover:text-primary hover:font-semibold">
@@ -32,7 +33,7 @@ const Navbar = ({ user }) => {
                         <Link href={route('profil', user.id)}>Profil</Link>
                     ) : (
                         <Link href={route('login')}>
-                            <PrimaryButton>Masuk</PrimaryButton>
+                            <BackUpButton>Masuk</BackUpButton>
                         </Link>
                     )}
                 </li>
