@@ -7,7 +7,7 @@ export default function AdminEditArtikel() {
     const { artikels } = usePage().props
 
     const { data, setData, post, processing, errors, reset } = useForm({
-        judul: artikels.judul ||  '',
+        judul: artikels.judul || '',
         tag: artikels.tag || '',
         detail: artikels.detail || '',
         id_user: artikels.id_user || '',
@@ -29,10 +29,11 @@ export default function AdminEditArtikel() {
 
     return (
         <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-20">
+            <Head title="Edit Artikel" />
             <a href={route('artikels.index')}>
                 <button className="bg-primary text-white rounded py-1 px-4">
                     Back
-                </button>   
+                </button>
             </a>
 
             <form

@@ -1,6 +1,6 @@
-import NavProfil2 from '@/Components/ProfileNavbarPsikolog'
 import DateRangePickers from '@/Components/DateRangePickers'
 import { useState } from 'react'
+import SidebarPsikolog from '@/Components/SidebarPsikolog'
 
 export default function JadwalKonsultasi() {
     const [selectedFilter, setSelectedFilter] = useState('')
@@ -11,7 +11,7 @@ export default function JadwalKonsultasi() {
 
     return (
         <div>
-            <NavProfil2 />
+            <SidebarPsikolog />
             <div className="lg:pl-96 md:pl-10 lg:px-10 md:px-10 pl-10 pt-12 pb-16">
                 <h1 className="font-bold text-[26px] pt-5 pb-8 pr-10">
                     Jadwal Konsultasi Hari Ini

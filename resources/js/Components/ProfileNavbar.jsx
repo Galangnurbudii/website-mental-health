@@ -14,7 +14,7 @@ function ProfileNavbar() {
                 </span>
             </button>
 
-            <div className="pt-8 z-20 fixed top-0 -left-96 lg:left-0 h-screen w-9/12 lg:w-72 bg-primary shadow-2xl peer-focus:left-0 peer:transition ease-out delay-150 duration-200">
+            <div className="pt-8 z-20 fixed top-0 -left-96 lg:left-0 h-screen w-7/12 sm:w-4/12 lg:w-72 bg-primary shadow-2xl peer-focus:left-0 peer:transition ease-out delay-150 duration-200">
                 <nav role="navigation" className="p-6">
                     <div className="flex items-center gap-4 pb-4">
                         <a href={route('home')}>
@@ -72,7 +72,7 @@ function ProfileNavbar() {
                                     href={route('logout')}
                                     method="POST"
                                     as="button"
-                                    className="flex gap-4 p-2 text-putih hover:text-primary transition font-medium text-lg hover:bg-putih hover:p-2 hover:rounded-sm"
+                                    className="flex gap-4 p-2 text-putih hover:text-primary transition font-medium text-lg hover:bg-putih hover:p-2 hover:w-full hover:rounded-sm"
                                 >
                                     <FiLogOut size={25} />
                                     Keluar

@@ -6,7 +6,7 @@ import { FiLogOut } from 'react-icons/fi'
 import { LuCalendarClock } from 'react-icons/lu'
 import { BsCalendar3Week } from 'react-icons/bs'
 
-function ProfileNavbarPsikolog() {
+function SidebarPsikolog() {
     return (
         <div className=" flex items-end justify-end px-4 pb-6">
             <button className="fixed bottom-8 right-6 z-30 lg:hidden peer h-14 w-14 rounded-full bg-primary hover:bg-clickedBackground focus:bg-clickedBackground active:bg-clickedBackground transition items-end">
@@ -76,4 +76,4 @@ function ProfileNavbarPsikolog() {
     )
 }
 
-export default ProfileNavbarPsikolog
+export default SidebarPsikolog

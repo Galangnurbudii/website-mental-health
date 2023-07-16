@@ -35,7 +35,7 @@ export default function AdminLogin({ status1, canResetPassword1 }) {
 
     return (
         <GuestLayout>
-            <Head title="Log in" />
+            <Head title="Masuk Admin" />
 
             {status1 && (
                 <div className="mb-4 font-medium text-sm text-green-600">

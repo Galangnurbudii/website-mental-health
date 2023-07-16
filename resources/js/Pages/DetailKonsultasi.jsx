@@ -9,86 +9,53 @@ export default function DetailKonsultasi() {
     }
 
     return (
-        <div>
+        <div className="pt-12">
             <ProfileNavbar />
-            <div className="lg:pl-96 md:px-40 px-10 py-16">
-                <h1 className="font-bold text-[26px] pt-5 pb-8">
-                    Detail Konsultasi
+            <div className="flex flex-col gap-6 px-6 md:px-16 lg:pl-96 lg:pr-60 pb-32">
+                <h1 className="text-hitam font-bold text-2xl md:text-4xl">
+                    Jadwal Konsultasi
                 </h1>
-                <img
-                    className="w-[150px] pb-10"
-                    src="../images/doctorImage.png"
-                />
-                <div className="grid grid-cols-0">
-                    <div className="grid grid-cols-2 pb-5">
-                        <h3 className="font-semibold">Nama Psikolog</h3>
-                        <div className="flex">
-                            <h3 className="font-semibold pr-1">:</h3>
-                            <h3 className="pr-20 font-medium">
-                                Putu Agus Parimartha
-                            </h3>
-                        </div>
-                    </div>
-                    <div className="grid grid-cols-2 pb-5">
-                        <h3 className="font-semibold">Bidang Keahlian</h3>
-                        <div className="flex">
-                            <h3 className="font-semibold pr-1">:</h3>
-                            <h3 className="pr-20 font-medium">
-                                {' '}
-                                Gangguan mood, Depresi, Cemas
-                            </h3>
-                        </div>
-                    </div>
-                    <div className="grid grid-cols-2 pb-5">
-                        <h3 className="font-semibold">
-                            Nomor Surat Tanda Registrasi
-                        </h3>
-                        <div className="flex">
-                            <h3 className="font-semibold pr-1">:</h3>
-                            <h3 className="pr-20 font-medium">091842184182</h3>
-                        </div>
-                    </div>
-                    <div className="grid grid-cols-2 pb-5">
-                        <h3 className="font-semibold">Lokasi Praktik</h3>
-                        <div className="flex">
-                            <h3 className="font-semibold pr-1">:</h3>
-                            <h3 className="pr-20 font-medium">
-                                Klinik Sehat Medika, Denpasar Bali
-                            </h3>
-                        </div>
-                    </div>
-                    <div className="grid grid-cols-2 pb-5">
-                        <h3 className="font-semibold">
-                            Hari/Tanggal Konsultasi
-                        </h3>
-                        <div className="flex">
-                            <h3 className="font-semibold pr-1">:</h3>
-                            <h3 className="pr-20 font-medium">
-                                Senin, 18 Juli 2023
-                            </h3>
-                        </div>
-                    </div>
-                    <div className="grid grid-cols-2 pb-5">
-                        <h3 className="font-semibold">Waktu Konsultasi</h3>
-                        <div className="flex">
-                            <h3 className="font-semibold pr-1">:</h3>
-                            <h3 className="pr-20 font-medium"> 11.00 AM</h3>
-                        </div>
-                    </div>
-                    <div className="grid grid-cols-2 pb-5">
-                        <h3 className="font-semibold">Biaya Konsultasi</h3>
-                        <div className="flex">
-                            <h3 className="font-semibold pr-1">:</h3>
-                            <h3 className="pr-20 font-medium">Rp 200.000</h3>
-                        </div>
-                    </div>
-                    <div className="grid grid-cols-2 pb-5">
-                        <h3 className="font-semibold">Metode Pembayaran</h3>
-                        <div className="flex">
-                            <h3 className="font-semibold pr-1">:</h3>
-                            <h3 className="pr-20 font-medium">Bank BCA</h3>
-                        </div>
-                    </div>
+                <img className="w-40 py-5" src="../images/doctorImage.png" />
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
+                    <p className="text-hitam text-lg font-semibold">Nama</p>
+                    <p className="text-hitam text-lg font-medium">
+                        : Putu Agus Parimartha
+                    </p>
+                    <p className="text-hitam text-lg font-semibold">
+                        Bidang Keahlian
+                    </p>
+                    <p className="text-hitam text-lg font-medium">
+                        : Gangguan mood, Depresi, Cemas
+                    </p>
+                    <p className="text-hitam text-lg font-semibold">
+                        Nomor Surat Tanda Registrasi
+                    </p>
+                    <p className="text-hitam text-lg font-medium">
+                        : 3321601321068534
+                    </p>
+                    <p className="text-hitam text-lg font-semibold">
+                        Lokasi Praktik
+                    </p>
+                    <p className="text-hitam text-lg font-medium">
+                        : Klinik Sehat Medika, Denpasar Bali
+                    </p>
+                    <p className="text-hitam text-lg font-semibold">
+                        Hari/Tanggal Konsultasi
+                    </p>
+                    <p className="text-hitam text-lg font-medium">
+                        : Senin, 18 Juli 2023
+                    </p>
+                    <p className="text-hitam text-lg font-semibold">
+                        Waktu Konsultasi
+                    </p>
+                    <p className="text-hitam text-lg font-medium">: 11.00 AM</p>
+                    <p className="text-hitam text-lg font-semibold">
+                        Biaya Konsultasi
+                    </p>
+                    <p className="text-hitam text-lg font-medium">
+                        : Rp. 200.000
+                    </p>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import NavProfil2 from '@/Components/ProfileNavbarPsikolog'
+import NavProfil2 from '@/Components/SidebarPsikolog'
 import DateRangePickers from '@/Components/DateRangePickers'
 import PrimaryButton from '@/Components/PrimaryButton'
 import PopupEdit from '@/Components/PopupEdit'

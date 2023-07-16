@@ -2,7 +2,7 @@ import React from 'react'
 import { Head, Link, useForm } from '@inertiajs/react'
 import { Inertia } from '@inertiajs/inertia'
 import ReactHtmlParser from 'react-html-parser'
-import ProfileNavbarAdmin from '@/Components/ProfileNavbarAdmin'
+import SidebarAdmin from '@/Components/SidebarAdmin'
 
 export default function AdminIndexArtikel(props) {
     function destroy(e) {
@@ -21,7 +21,8 @@ export default function AdminIndexArtikel(props) {
 
     return (
         <>
-            <ProfileNavbarAdmin />
+            <SidebarAdmin />
+            <Head title="Buat Artikel" />
             <div className="flex flex-col gap-6 px-6 md:px-16 lg:pl-64 lg:px-0 pb-32">
                 <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-20">
                     <a href={route('artikels.create')}>

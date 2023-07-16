@@ -4,8 +4,8 @@ import { BiHomeAlt2 } from 'react-icons/bi'
 import { HiOutlineChatAlt2 } from 'react-icons/hi'
 import { FiFileText, FiLogOut, FiSettings } from 'react-icons/fi'
 import { Link } from '@inertiajs/react'
-import NavProfil from '@/Components/ProfileNavbarAdmin'
-import ProfileNavbarAdmin from '@/Components/ProfileNavbarAdmin'
+import NavProfil from '@/Components/SidebarAdmin'
+import ProfileNavbarAdmin from '@/Components/SidebarAdmin'
 
 export default function DashboardAdmin() {
     return (

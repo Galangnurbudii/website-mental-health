@@ -3,7 +3,7 @@ import { Head, Link, useForm } from '@inertiajs/react'
 import { Inertia } from '@inertiajs/inertia'
 // import { AiOutlineSearch } from 'react-icons/ai'
 import SearchBar from '@/Components/SearchBar'
-import ProfileNavbarPsikolog from '@/Components/ProfileNavbarPsikolog'
+import SidebarPsikolog from '@/Components/SidebarPsikolog'
 
 export default function AdminIndexPsikolog(props) {
     function destroy(e) {
@@ -14,7 +14,8 @@ export default function AdminIndexPsikolog(props) {
 
     return (
         <div className="flex">
-            <ProfileNavbarPsikolog />
+            <Head title="Buat Akun Psikolog" />
+            <SidebarPsikolog />
             <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-12">
                 <SearchBar />
                 <a className="w-[134px]" href={route('psikologs.create')}>
