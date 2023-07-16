@@ -15,19 +15,19 @@ const Navbar = ({ user }) => {
                 <Link href={route('home')}>Mental Health</Link>
             </h1>
             <ul className="hidden md:flex md:flex-row md:items-center">
-                <li className="p-4 text-hitam font-medium hover:text-primary hover:font-semibold">
+                <li className="p-4 text-hitam font-medium text-lg hover:text-primary hover:font-semibold">
                     <Link href={route('home')}>Beranda</Link>
                 </li>
-                <li className="p-4 text-hitam font-medium hover:text-primary hover:font-semibold">
+                <li className="p-4 text-hitam font-medium text-lg hover:text-primary hover:font-semibold">
                     <Link href={route('konsultasi')}>Konsultasi</Link>
                 </li>
-                <li className="p-4 text-hitam font-medium hover:text-primary hover:font-semibold">
+                <li className="p-4 text-hitam font-medium text-lg hover:text-primary hover:font-semibold">
                     <Link href={route('article')}>Artikel</Link>
                 </li>
-                <li className="p-4 text-hitam font-medium hover:text-primary hover:font-semibold">
+                <li className="p-4 text-hitam font-medium text-lg hover:text-primary hover:font-semibold">
                     <Link href={route('forumHome')}>Forum</Link>
                 </li>
-                <li className="p-4 text-hitam font-medium hover:text-primary hover:font-semibold">
+                <li className="p-4 text-hitam font-medium text-lg hover:text-primary hover:font-semibold">
                     {user ? (
                         <Link href={route('profil', user.id)}>Profil</Link>
                     ) : (

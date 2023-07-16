@@ -15,7 +15,7 @@ class AdminArtikelController extends Controller
     public function index()
     {
         $artikel = Artikel::all();
-        return Inertia::render('AdminIndexArtikel', ['artikels' => $artikel]);
+    return Inertia::render('AdminIndexArtikel', ['artikels' => $artikel]);
     }
 
     public function create()

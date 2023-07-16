@@ -2,7 +2,7 @@ import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import { FiLogOut } from 'react-icons/fi'
 import { FaQuestion } from 'react-icons/fa'
-import PrimaryButton from './PrimaryButton'
+import BackUpButton from './BackUpButton'
 import { Link } from '@inertiajs/inertia-react'
 
 export default function ProfileNavbarKeluar({ desc }) {
@@ -79,9 +79,9 @@ export default function ProfileNavbarKeluar({ desc }) {
 
                                     <div className="flex gap-3 items-end justify-center pt-5">
                                         <Link href={route('login')}>
-                                            <PrimaryButton className="w-20">
-                                                Ya
-                                            </PrimaryButton>
+                                            <BackUpButton className="w-20 h-9 text-sm flex items-center justify-center">
+                                                Ya  
+                                            </BackUpButton>
                                         </Link>
                                         <div className="mt-4">
                                             <button

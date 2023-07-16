@@ -1,10 +1,10 @@
 import React from 'react'
 import { Head, Link, useForm } from '@inertiajs/react'
 import { Inertia } from '@inertiajs/inertia'
-import NavBarAdmin from '@/Components/NavBarAdmin'
-import { AiOutlineSearch } from 'react-icons/ai'
 import SearchBar from '@/Components/SearchBar'
 import ReactHtmlParser from 'react-html-parser'
+import ProfileNavbarAdmin from '@/Components/ProfileNavbarAdmin'
+
 export default function AdminIndexArtikel(props) {
     function destroy(e) {
         if (confirm('Are you sure you want to delete this article?')) {
@@ -22,10 +22,9 @@ export default function AdminIndexArtikel(props) {
 
     return (
         <>
-            <div className="flex">
-                <NavBarAdmin />
+            <ProfileNavbarAdmin />
+            <div className="flex flex-col gap-6 px-6 md:px-16 lg:pl-64 lg:px-0 pb-32">
                 <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-20">
-                    {/* <SearchBar /> */}
                     <a href={route('artikels.create')}>
                         <button className="px-4 py-2 w-[133px] text-sm text-white bg-blue-500 rounded">
                             Create Article
@@ -35,15 +34,15 @@ export default function AdminIndexArtikel(props) {
                     <table className="table-fixed w-full">
                         <thead>
                             <tr className="bg-gray-100">
-                                <th className="px-4 py-2 w-20">No.</th>
-                                <th className="px-4 py-2">Judul</th>
+                                <th className="py-2">No.</th>
+                                <th className="w-2/12 py-2">Judul</th>
                                 <th className="px-4 py-2">Tag</th>
                                 <th className="px-4 py-2">Thumbnail</th>
                                 <th className="px-4 py-2" colSpan="3">
                                     Detail
                                 </th>
                                 <th className="px-4 py-2">ID Admin</th>
-                                <th className="px-4 py-2">Action</th>
+                                <th className="w-2/12 py-2">Action</th>
                             </tr>
                         </thead>
                         <tbody>

@@ -6,7 +6,7 @@ import Footer from '@/Components/Footer'
 import { Scrollbar } from 'react-scrollbars-custom'
 import { Link } from '@inertiajs/react'
 
-export default function Konsultasi() {
+export default function Konsultasi({ auth }) {
     const Testimonial = [
         {
             gambar: 'images/petik.png',
@@ -31,7 +31,7 @@ export default function Konsultasi() {
     ]
     return (
         <div className="pt-15">
-            <NavBar />
+            <NavBar user={auth.user} />
             <div className="bg-cardBlue w-full md:h-[80vh] mx-auto flex flex-col md:flex-row items-center md:px-16 lg:pl-32">
                 <div className="flex flex-wrap flex-col max-full p-6 md:p-0 md:w-1/2 ">
                     <div className="flex flex-col justify-center gap-2 pb-4 ">
@@ -44,9 +44,7 @@ export default function Konsultasi() {
                         </h2>
                     </div>
                     <Link href={route('layanan')}>
-                        <PrimaryButton className="text-xs px-2 py-1 w-44 md:w-56 md:text-base">
-                            Konsultasi Sekarang
-                        </PrimaryButton>
+                        <PrimaryButton>Konsultasi Sekarang</PrimaryButton>
                     </Link>
                 </div>
                 <div className="max-full md:flex md:justify-center px-4 md:w-1/2 sm:flex md:self-end">
@@ -61,7 +59,7 @@ export default function Konsultasi() {
             {/* 3 Langkah Melakukan Konseling */}
 
             <div className="w-full py-10 md:py-20">
-                <div className="w-full py-[1rem] pl-4 pr-5">
+                <div className="w-full py-[1rem]">
                     <h1 className="font-semibold pb-5 px-10 md:px-16 lg:px-32 text-2xl md:text-4xl">
                         3 Langkah Melakukan Konseling
                     </h1>
