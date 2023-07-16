@@ -699,6 +699,8 @@ export default function DetailLayanan() {
                                                         badge1={`${psikolog.tahun_pengalaman} tahun`}
                                                         badge2={psikolog.rating}
                                                         fee={`Rp${psikolog.harga}0`}
+                                                        jam= {jam[activeIndex - 1]}
+                                                        tanggal={startDate.toISOString().split('T')[0]}
                                                     />
                                                 )
                                             )}
