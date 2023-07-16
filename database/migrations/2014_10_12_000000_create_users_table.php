@@ -20,7 +20,7 @@ return new class extends Migration {
             $table->string('password');
             $table->enum('role', ['user', 'admin', 'psikolog']);
             $table->string('nomor_telfon')->default('');
-            $table->text('alamat');
+            $table->text('alamat')->default('');
             $table->string('profile_picture_url')->default('');
             $table->rememberToken();
             $table->timestamps();

@@ -11,7 +11,7 @@ use App\Http\Controllers\LayananController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PsikologController;
 use App\Http\Controllers\AdminArtikelController;
-
+ 
 
 // Auth::routes(['verify' => true]);
 
