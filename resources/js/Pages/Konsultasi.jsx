@@ -49,9 +49,9 @@ export default function Konsultasi({ auth }) {
                 </div>
                 <div className="max-full md:flex md:justify-center px-4 md:w-1/2 sm:flex md:self-end">
                     <img
-                        src="images/consultationBanner.png"
+                        src="images/konsultasiGambarIbu.png"
                         alt="landingPage"
-                        className="max-h-full w-full md:pt-32"
+                        className="max-h-fit lg:max-w-fit md:pt-32"
                     />
                 </div>
             </div>

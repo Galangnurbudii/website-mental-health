@@ -3,7 +3,7 @@ import Checkbox from '@/Components/Checkbox'
 import GuestLayout from '@/Layouts/GuestLayout'
 import InputError from '@/Components/InputError'
 import InputLabel from '@/Components/InputLabel'
-import PrimaryButton from '@/Components/PrimaryButton'
+import BackUpButton from '@/Components/BackUpButton'
 import TextInput from '@/Components/TextInput'
 import { Head, Link, useForm } from '@inertiajs/react'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
@@ -61,7 +61,6 @@ export default function Login({ status, canResetPassword }) {
                             md:h-full               
                             object-cover"
                             src="images/login.png"
-
                         />
                     </div>
 
@@ -198,12 +197,9 @@ export default function Login({ status, canResetPassword }) {
                                 </div>
 
                                 <div>
-                                    <PrimaryButton
-                                        className="bg-primary mb-5"
-                                        disabled={processing}
-                                    >
+                                    <BackUpButton disabled={processing}>
                                         Masuk
-                                    </PrimaryButton>
+                                    </BackUpButton>
                                 </div>
 
                                 <div className="flex justify-center mt-4">

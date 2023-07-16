@@ -3,7 +3,6 @@ import { Fragment, useState } from 'react'
 import { FiLogOut } from 'react-icons/fi'
 import { FaQuestion } from 'react-icons/fa'
 import BackUpButton from './BackUpButton'
-import { Link } from '@inertiajs/inertia-react'
 
 export default function ProfileNavbarKeluar({ desc }) {
     let [isOpen, setIsOpen] = useState(false)
@@ -14,6 +13,10 @@ export default function ProfileNavbarKeluar({ desc }) {
 
     function openModal() {
         setIsOpen(true)
+    }
+
+    function Link() {
+        window.location.href = '/login'
     }
 
     return (
@@ -78,11 +81,14 @@ export default function ProfileNavbarKeluar({ desc }) {
                                     </div>
 
                                     <div className="flex gap-3 items-end justify-center pt-5">
-                                        <Link href={route('login')}>
-                                            <BackUpButton className="w-20 h-9 text-sm flex items-center justify-center">
-                                                Ya  
-                                            </BackUpButton>
-                                        </Link>
+                                        {/* <Link href={route('/layanan')}> */}
+                                        <BackUpButton
+                                            onClick={Link}
+                                            className="w-20 h-9 text-sm flex items-center justify-center"
+                                        >
+                                            Ya  
+                                        </BackUpButton>
+                                        {/* </Link> */}
                                         <div className="mt-4">
                                             <button
                                                 type="button"
