@@ -17,8 +17,8 @@ function ArticleCard({ article }) {
 
     const tanggal = dayjs(updated_at).format('D MMMM YYYY')
     return (
-        <Link href={`/articleDetail/${id}`}>
-            <div className="card w-full bg-putih shadow-xl h-full hover:scale-105 hover:border-2 hover:border-hoverBackground hover:border-opacity-50">
+        <Link href={`/article-detail/${id}`}>
+            <div className="card w-full bg-putih shadow-xl h-full hover:border-2 hover:border-hoverBackground hover:border-opacity-50">
                 <figure className="md:h-2/4">
                     <img
                         src={thumbnail_url}

@@ -23,11 +23,11 @@ export default function Konsultasi() {
             text: 'Psikolog yang handal membuat saya nyaman untuk bercerita dan merasa tenang',
             nama: 'Galang Subekti - Pegawai Swasta',
         },
-        // {
-        //     gambar: 'images/petik.png',
-        //     text: 'Beban pikiran terasa mulai menghilang berkat bercerita dengan psikolog',
-        //     nama: 'Beatrice Yusril - Pengusaha',
-        // },
+        {
+            gambar: 'images/petik.png',
+            text: 'Beban pikiran terasa mulai menghilang berkat bercerita dengan psikolog',
+            nama: 'Beatrice Yusril - Pengusaha',
+        },
     ]
     return (
         <div className="pt-15">
@@ -38,15 +38,13 @@ export default function Konsultasi() {
                         <h1 className="text-hitam font-bold text-2xl md:text-4xl">
                             Konseling dengan Psikolog Terbaik
                         </h1>
-                        <h2 className="text-hitam font-medium text-md md:text-2xl">
+                        <h2 className="text-hitam font-medium text-md md:text-2xl md:pb-4">
                             Ceritakan isi hatimu, temukan akar masalah dan jadi
                             pribadi lebih baik
                         </h2>
                     </div>
                     <Link href={route('konsultasi')}>
-                        <PrimaryButton className="text-xs px-2 py-1 w-44 md:w-56 md:text-base">
-                            Konsultasi Sekarang
-                        </PrimaryButton>
+                        <PrimaryButton>Konsultasi Sekarang</PrimaryButton>
                     </Link>
                 </div>
                 <div className="max-full md:flex md:justify-center px-4 md:w-1/2 sm:flex md:self-end">
@@ -61,17 +59,8 @@ export default function Konsultasi() {
             {/* 3 Langkah Melakukan Konseling */}
 
             <div className="w-full py-10 md:py-20">
-                {/* w-full py-[6rem] px-4 */}
                 <div className="w-full py-[1rem] pl-4 pr-5">
-                    <h1
-                        className="font-semibold pb-5
-                        px-10
-                        md:px-16
-                        lg:px-32
-                        text-2xl
-                        md:text-4xl
-                        lg:text-5xl"
-                    >
+                    <h1 className="font-semibold pb-5 px-10 md:px-16 lg:px-32 text-2xl md:text-4xl">
                         3 Langkah Melakukan Konseling
                     </h1>
                 </div>
@@ -87,11 +76,11 @@ export default function Konsultasi() {
                 />
 
                 {/* Cerita Mereka */}
-                <div className="py-10 md:py-20 md:px-16 lg:px-32 bg-cardBlue p-6">
+                <div className="py-10 md:py-20 md:px-16 lg:px-32 bg-cardBlue px-6">
                     <h1 className="font-bold text-2xl md:text-4xl text-hitam pb-10">
                         Cerita Mereka
                     </h1>
-                    <div className="carousel-container flex flex-wrap gap-6 ">
+                    <div className="carousel overscroll-none flex flex-row gap-4 justify-between">
                         {Testimonial.map((testimoni, index) => (
                             <CardsCarousel
                                 key={index}

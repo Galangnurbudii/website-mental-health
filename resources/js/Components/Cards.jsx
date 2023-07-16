@@ -3,17 +3,7 @@ import NumberBox from './NumberBox'
 export default function Cards({ className = '', disabled, ...props }) {
     return (
         <div className="overflow-x-auto">
-            <div
-                className="
-            grid mx-auto gap-6 pb-20
-            md:pb-32 
-                    md:grid-cols-2 
-                    sm:grid-cols-1 
-                    lg:grid-cols-3
-                    px-8                                        
-                    md:px-16
-                    lg:px-32"
-            >
+            <div className="grid mx-auto gap-6 pb-20 md:pb-32 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-8 md:px-16 lg:px-32">
                 <div className="carousel flex-col rounded-box w-100 h-[480px] bg-base-100 shadow-xl border border-gray-300">
                     <figure className="bg-counselingBackground">
                         <img src="images/CaraKonseling1.jpg" />

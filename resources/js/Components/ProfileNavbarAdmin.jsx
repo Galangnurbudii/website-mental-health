@@ -1,7 +1,7 @@
 import React from 'react'
 import { AiOutlineUser } from 'react-icons/ai'
 import { BiHomeAlt2, BiExpandHorizontal } from 'react-icons/bi'
-import { FiLogOut } from 'react-icons/fi'
+import { FiLogOut, FiFileText } from 'react-icons/fi'
 import { MdOutlineArticle } from 'react-icons/md'
 import ProfileNavbarKeluar from './ProfileNavbarKeluar'
 
@@ -14,7 +14,7 @@ function ProfileNavbarAdmin() {
                 </span>
             </button>
 
-            <div className="z-20 fixed top-0 -left-96 lg:left-0 h-screen w-7/12 md:w-64 lg:w-72 bg-primary shadow-2xl peer-focus:left-0 peer:transition ease-out delay-150 duration-200">
+            <div className="z-20 fixed top-0 -left-96 lg:left-0 h-screen w-7/12 md:w-64 lg:w-72 bg-primary shadow-2xl peer-focus:left-0 peer:transition ease-out delay-150 duration-200 pt-8">
                 <nav role="navigation" className="p-6">
                     <div className="flex items-center gap-4 pb-4">
                         <h1 className="text-putih font-bold text-3xl">
@@ -39,7 +39,7 @@ function ProfileNavbarAdmin() {
                                     href={route('jadwalkonsultasi')}
                                     className="flex gap-4 p-2 text-putih hover:text-primary transition font-medium text-lg hover:bg-putih hover:p-2 hover:rounded-md"
                                 >
-                                    <MdOutlineArticle size={25} />
+                                    <FiFileText size={25} />
                                     Artikel
                                 </a>
                             </li>

@@ -10,7 +10,7 @@ function Hero() {
                     <h1 className="text-hitam font-bold text-2xl md:text-4xl">
                         Konsultasikan Masalahmu dengan Psikolog
                     </h1>
-                    <h2 className="text-hitam font-medium text-md md:text-2xl">
+                    <h2 className="text-hitam font-medium text-lg md:text-2xl md:pb-4">
                         Psikolog dapat membantumu temukan akar masalah dan
                         mencarikan solusi
                     </h2>
@@ -23,7 +23,7 @@ function Hero() {
                 <img
                     src="images/landingPage.png"
                     alt="landingPage"
-                    className="max-h-fit md:pt-32"
+                    className="max-h-fit lg:max-w-fit md:pt-32"
                 />
             </div>
         </div>

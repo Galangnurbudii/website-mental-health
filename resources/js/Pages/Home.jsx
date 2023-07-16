@@ -24,15 +24,15 @@ export default function Home({ articles, quote }) {
             text: 'Psikolog yang handal membuat saya nyaman untuk bercerita dan merasa tenang',
             nama: 'Galang Subekti - Pegawai Swasta',
         },
-        // {
-        //     gambar: 'images/petik.png',
-        //     text: 'Beban pikiran terasa mulai menghilang berkat bercerita dengan psikolog',
-        //     nama: 'Beatrice Yusril - Pengusaha',
-        // },
+        {
+            gambar: 'images/petik.png',
+            text: 'Beban pikiran terasa mulai menghilang berkat bercerita dengan psikolog',
+            nama: 'Beatrice Yusril - Pengusaha',
+        },
     ]
 
     return (
-        <div>
+        <>
             <NavBar />
             <div className="flex flex-col pb-20 md:pb-40 min-h-screen">
                 <Hero />
@@ -40,7 +40,7 @@ export default function Home({ articles, quote }) {
                     <h1 className="font-bold text-2xl md:text-4xl text-hitam pb-12 ">
                         Artikel Lainnya
                     </h1>
-                    <div className="grid grid-cols-3 gap-4 justify-between">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-between">
                         {articles.map((article) => (
                             <ArticleCard key={article.id} article={article} />
                         ))}
@@ -49,11 +49,11 @@ export default function Home({ articles, quote }) {
 
                 <ForumHero />
                 <Quote quote={quote} />
-                <div className="py-20 md:px-16 lg:px-32 bg-cardBlue">
+                <div className="py-20 px-6 md:px-16 lg:px-32 bg-cardBlue">
                     <h1 className="font-bold text-2xl md:text-4xl text-hitam pb-10">
                         Cerita Mereka
                     </h1>
-                    <div className="carousel-container flex flex-wrap gap-6 ">
+                    <div className="carousel flex flex-row gap-4 justify-between">
                         {Testimonial.map((testimoni, index) => (
                             <CardsCarousel
                                 key={index}
@@ -66,6 +66,6 @@ export default function Home({ articles, quote }) {
                 </div>
             </div>
             <Footer />
-        </div>
+        </>
     )
 }
