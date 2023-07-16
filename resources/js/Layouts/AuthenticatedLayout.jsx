@@ -1,14 +1,14 @@
-import { useState } from "react";
-import ApplicationLogo from "@/Components/ApplicationLogo";
-import Dropdown from "@/Components/Dropdown";
-import NavLink from "@/Components/NavLink";
-import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
-import { Link } from "@inertiajs/react";
-import Footer from "@/Components/Footer";
+import { useState } from 'react'
+import ApplicationLogo from '@/Components/ApplicationLogo'
+import Dropdown from '@/Components/Dropdown'
+import NavLink from '@/Components/NavLink'
+import ResponsiveNavLink from '@/Components/ResponsiveNavLink'
+import { Link } from '@inertiajs/react'
+import Footer from '@/Components/Footer'
 
 export default function Authenticated({ user, header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
-        useState(false);
+        useState(false)
 
     return (
         <div className="top-0 min-h-screen ">
@@ -24,8 +24,8 @@ export default function Authenticated({ user, header, children }) {
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink
-                                    href={route("dashboard")}
-                                    active={route().current("dashboard")}
+                                    href={route('dashboard')}
+                                    active={route().current('dashboard')}
                                 >
                                     Dashboard
                                 </NavLink>
@@ -61,12 +61,12 @@ export default function Authenticated({ user, header, children }) {
 
                                     <Dropdown.Content>
                                         <Dropdown.Link
-                                            href={route("profile.edit")}
+                                            href={route('profile.edit')}
                                         >
                                             Profile
                                         </Dropdown.Link>
                                         <Dropdown.Link
-                                            href={route("logout")}
+                                            href={route('logout')}
                                             method="post"
                                             as="button"
                                         >
@@ -95,8 +95,8 @@ export default function Authenticated({ user, header, children }) {
                                     <path
                                         className={
                                             !showingNavigationDropdown
-                                                ? "inline-flex"
-                                                : "hidden"
+                                                ? 'inline-flex'
+                                                : 'hidden'
                                         }
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
@@ -106,8 +106,8 @@ export default function Authenticated({ user, header, children }) {
                                     <path
                                         className={
                                             showingNavigationDropdown
-                                                ? "inline-flex"
-                                                : "hidden"
+                                                ? 'inline-flex'
+                                                : 'hidden'
                                         }
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
@@ -122,14 +122,14 @@ export default function Authenticated({ user, header, children }) {
 
                 <div
                     className={
-                        (showingNavigationDropdown ? "block" : "hidden") +
-                        " sm:hidden"
+                        (showingNavigationDropdown ? 'block' : 'hidden') +
+                        ' sm:hidden'
                     }
                 >
                     <div className="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink
-                            href={route("dashboard")}
-                            active={route().current("dashboard")}
+                            href={route('dashboard')}
+                            active={route().current('dashboard')}
                         >
                             Dashboard
                         </ResponsiveNavLink>
@@ -146,12 +146,12 @@ export default function Authenticated({ user, header, children }) {
                         </div>
 
                         <div className="mt-3 space-y-1">
-                            <ResponsiveNavLink href={route("profile.edit")}>
+                            <ResponsiveNavLink href={route('profile.edit')}>
                                 Profile
                             </ResponsiveNavLink>
                             <ResponsiveNavLink
                                 method="post"
-                                href={route("logout")}
+                                href={route('logout')}
                                 as="button"
                             >
                                 Log Out
@@ -173,5 +173,5 @@ export default function Authenticated({ user, header, children }) {
 
             {/* <Footer /> */}
         </div>
-    );
+    )
 }

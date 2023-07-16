@@ -3,6 +3,7 @@ import { AiOutlineUser, AiOutlineLeftCircle } from 'react-icons/ai'
 import { HiOutlineShoppingCart } from 'react-icons/hi'
 import { BiTrashAlt, BiHomeAlt2, BiExpandHorizontal } from 'react-icons/bi'
 import { FiLogOut } from 'react-icons/fi'
+import { Link } from '@inertiajs/react'
 
 function ProfileNavbar() {
     return (
@@ -65,13 +66,15 @@ function ProfileNavbar() {
                                 </a>
                             </li>
                             <li>
-                                <a
-                                    href={route('home')}
+                                <Link
+                                    href={route('logout')}
+                                    method="POST"
+                                    as="button"
                                     className="flex gap-4 p-2 text-putih hover:text-primary transition font-medium text-lg hover:bg-putih hover:p-2 hover:rounded-sm"
                                 >
                                     <FiLogOut size={25} />
                                     Keluar
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
