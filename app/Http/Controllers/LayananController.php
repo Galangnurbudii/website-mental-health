@@ -111,6 +111,5 @@ class LayananController extends Controller
         ]);
 
         return response()->json($request->all());
-
     }
 }
