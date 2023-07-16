@@ -75,11 +75,23 @@ export default function Article({ popular, articles, topik_terkini, auth }) {
                         ))}
                     </div>
                 </div>
-                {filteredArticles.length ? (
-                    <div className="grid grid-cols-3 gap-4 justify-between">
-                        {filteredArticles.map((article) => (
-                            <ArticleCard key={article.id} article={article} />
-                        ))}
+                {filteredArticles.length > 0 &&
+                    filteredArticles[0] != 'kosong' && (
+                        <div className="grid grid-cols-3 gap-4 justify-between">
+                            {filteredArticles.map((article) => (
+                                <ArticleCard
+                                    key={article.id}
+                                    article={article}
+                                />
+                            ))}
+                        </div>
+                    )}
+
+                {filteredArticles[0] == 'kosong' ? (
+                    <div className="flex flex-col">
+                        <h1>Artikel Tidak Ditemukan</h1>
+
+                        <img src="/storage/images/noArticle.png" alt="" />
                     </div>
                 ) : (
                     <>
