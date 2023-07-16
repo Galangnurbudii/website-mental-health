@@ -36,7 +36,7 @@ function ProfileNavbarAdmin() {
                             </li>
                             <li>
                                 <a
-                                    href={route('artikels')}
+                                    href={route('artikels.index')}
                                     className="flex gap-4 p-2 text-putih hover:text-primary transition font-medium text-lg hover:bg-putih hover:p-2 hover:rounded-md"
                                 >
                                     <FiFileText size={25} />
@@ -45,7 +45,7 @@ function ProfileNavbarAdmin() {
                             </li>
                             <li>
                                 <a
-                                    href={route('psikologs')}
+                                    href={route('psikologs.index')}
                                     className="flex gap-4 p-2 text-putih hover:text-primary transition font-medium text-lg hover:bg-putih hover:p-2 hover:rounded-md"
                                 >
                                     <AiOutlineUser size={25} />
