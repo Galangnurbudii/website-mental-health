@@ -137,7 +137,7 @@ const EditProfile = ({ user }) => {
                             required
                         />
                     </div>
-                    <div className="flex justify-end mt-2">
+                    <div className="flex mt-2">
                         <PrimaryButton>Edit Profile</PrimaryButton>
                     </div>
 

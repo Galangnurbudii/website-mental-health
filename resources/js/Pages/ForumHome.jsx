@@ -4,10 +4,10 @@ import NavBar from '@/Components/NavBar'
 import React from 'react'
 import PrimaryButton from '@/Components/PrimaryButton'
 
-export default function ForumHome({ posts }) {
+export default function ForumHome({ posts, auth }) {
     return (
         <>
-            <NavBar />
+            <NavBar user={auth.user} />
 
             <div className="flex flex-col px-6 md:px-16 lg:px-32 pt-20 pb-32">
                 <div className="relative w-full flex justify-end pb-4">

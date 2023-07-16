@@ -5,7 +5,7 @@ import EmptyTextModal from '@/Components/EmptyTextModal'
 import ValidateTextModal from '@/Components/ValidateTextModal'
 import React, { useState } from 'react'
 
-export default function Forum() {
+export default function Forum({ auth }) {
     const [showMyModal, setShowMyModal] = useState(false)
     const handleOnClose = () => setShowMyModal(false)
 
@@ -27,23 +27,15 @@ export default function Forum() {
 
     return (
         <>
-            <NavBar />
+            <NavBar user={auth.user} />
             <div className="flex items-center justify-center mt-[50px]">
                 <div className="rounded-md w-[79.5%] h-[575px] mb-[50px] bg-cardBlue">
-                    <div className="mt-[26px]">
-                        <input
-                            type="checkbox"
-                            className="ml-[40px] sm:ml-[100px] md:ml-[120px] rounded-sm"
-                            placeholder="Hai"
-                        ></input>
-                        <label type="">Sembunyikan Nama</label>
-                    </div>
-                    <div className="flex justify-center items-center mt-[20px]">
+                    <div className="flex justify-center items-center mt-[20px] pt-14">
                         <textarea
                             id="myTextArea"
                             type="text"
-                            className="resize-none max-h-[750px] border border-black rounded-md p-2 w-[87%] h-[350px]"
-                            placeholder="Ketik di sini . . ."
+                            className="resize-none max-h-[750px] border border-hitam rounded-md p-2 w-[87%] h-[350px]"
+                            placeholder="Tuliskan Cerita Anda di sini..."
                         ></textarea>
                     </div>
                     <div>
@@ -51,13 +43,13 @@ export default function Forum() {
                             <div>
                                 <button
                                     onClick={handlePosting}
-                                    className="static bg-[#4C9BF5] text-[#FFFFFF] text-base rounded-lg mt-[25px] w-[100px] h-[45px] sm:w-[139px] sm:h-[51px] ml-[6.5%] mr-[2%]"
+                                    className="static bg-primary text-putih text-base rounded-lg mt-[25px] w-[100px] h-[45px] sm:w-[139px] sm:h-[51px] ml-[6.5%] mr-[2%]"
                                 >
                                     Posting
                                 </button>
                                 <button
                                     onClick={() => setShowMyModal(true)}
-                                    className="static border-2 border-[#4C9BF5] hover:border-0 hover:bg-[#FF0000] text-black hover:text-[#FFFFFF] w-[85px] h-[45px] sm:w-[120px] sm:h-[51px] text-base rounded-lg mt-[25px]"
+                                    className="static border-2 border-primary hover:border-0 hover:bg-blue-100 text-hitam hover:text-primary w-[85px] h-[45px] sm:w-[120px] sm:h-[51px] text-base rounded-lg mt-[25px]"
                                 >
                                     Batal
                                 </button>

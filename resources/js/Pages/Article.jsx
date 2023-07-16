@@ -8,7 +8,7 @@ import SearchBar from '@/Components/SearchBar'
 import Badge from '@/Components/Badge'
 import BigCard from '@/Components/BigCard'
 
-export default function Article({ popular, articles, topik_terkini }) {
+export default function Article({ popular, articles, topik_terkini, auth }) {
     const [currentPage, setCurrentPage] = useState(0)
 
     const [selectedButton, setSelectedButton] = useState(null)
@@ -47,7 +47,7 @@ export default function Article({ popular, articles, topik_terkini }) {
     return (
         <>
             <Head title="Artikel" />
-            <NavBar />
+            <NavBar user={auth.user} />
 
             <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-32">
                 <SearchBar
