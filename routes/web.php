@@ -99,6 +99,7 @@ Route::get('/dashboard-admin', function () {
 Route::post('/upload', [AdminArtikelController::class, 'uploadImage']);
 Route::post('artikels/{id}', [AdminArtikelController::class, 'update'])->name('updateArtikel');
 Route::resource('artikels', AdminArtikelController::class);
+
 Route::get('/dashboardpsikolog', function () {
     return Inertia::render('DashboardPsikolog');
 })->name('dashboardpsikolog');

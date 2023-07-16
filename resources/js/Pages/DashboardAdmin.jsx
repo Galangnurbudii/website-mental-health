@@ -31,6 +31,94 @@ export default function DashboardAdmin() {
                             Psikolog
                         </button>
                     </div>
+                    <div className="">
+                        <table className="table-auto">
+                            <thead>
+                                <tr className="bg-gray-100">
+                                    <th className="px-4 py-2 text-sm md:text-base">
+                                        ID
+                                    </th>
+                                    <th className="px-4 py-2 text-sm md:text-base">
+                                        Nama Customer
+                                    </th>
+                                    <th className="px-4 py-2 text-sm md:text-base">
+                                        Tanggal Pemesanan
+                                    </th>
+                                    <th className="px-4 py-2 text-sm md:text-base">
+                                        Nama Psikolog
+                                    </th>
+                                    <th className="px-4 py-2 text-sm md:text-base">
+                                        Jenis Layanan
+                                    </th>
+                                    <th className="px-4 py-2 text-sm md:text-base">
+                                        Pembayaran
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td className="border px-4 py-2 text-sm md:text-base">
+                                        Test
+                                    </td>
+                                    <td className="border px-4 py-2 text-sm md:text-base">
+                                        Test
+                                    </td>
+                                    <td className="border px-4 py-2 text-sm md:text-base">
+                                        Test
+                                    </td>
+                                    <td className="border px-4 py-2 text-sm md:text-base">
+                                        Test
+                                    </td>
+                                    <td className="border px-4 py-2 text-sm md:text-base">
+                                        Test
+                                    </td>
+                                    <td className="border px-4 py-2 text-sm md:text-base">
+                                        Test
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className="border px-4 py-2 text-sm md:text-base">
+                                        Test
+                                    </td>
+                                    <td className="border px-4 py-2 text-sm md:text-base">
+                                        Test
+                                    </td>
+                                    <td className="border px-4 py-2 text-sm md:text-base">
+                                        Test
+                                    </td>
+                                    <td className="border px-4 py-2 text-sm md:text-base">
+                                        Test
+                                    </td>
+                                    <td className="border px-4 py-2 text-sm md:text-base">
+                                        Test
+                                    </td>
+                                    <td className="border px-4 py-2 text-sm md:text-base">
+                                        Test
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className="border px-4 py-2 text-sm md:text-base">
+                                        Test
+                                    </td>
+                                    <td className="border px-4 py-2 text-sm md:text-base">
+                                        Test
+                                    </td>
+                                    <td className="border px-4 py-2 text-sm md:text-base">
+                                        Test
+                                    </td>
+                                    <td className="border px-4 py-2 text-sm md:text-base">
+                                        Test
+                                    </td>
+                                    <td className="border px-4 py-2 text-sm md:text-base">
+                                        Test
+                                    </td>
+                                    <td className="border px-4 py-2 text-sm md:text-base">
+                                        Test
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </>

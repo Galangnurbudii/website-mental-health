@@ -31,12 +31,12 @@ function ProfileNavbarAdmin() {
                                     className="flex gap-4 p-2 text-putih hover:text-primary transition font-medium text-lg hover:bg-putih hover:p-2 hover:rounded-md"
                                 >
                                     <BiHomeAlt2 size={25} />
-                                    Beranda
+                                    Dashboard
                                 </a>
                             </li>
                             <li>
                                 <a
-                                    href={route('jadwalkonsultasi')}
+                                    href={route('artikels')}
                                     className="flex gap-4 p-2 text-putih hover:text-primary transition font-medium text-lg hover:bg-putih hover:p-2 hover:rounded-md"
                                 >
                                     <FiFileText size={25} />
@@ -45,7 +45,7 @@ function ProfileNavbarAdmin() {
                             </li>
                             <li>
                                 <a
-                                    href={route('aturketersediaan')}
+                                    href={route('psikologs')}
                                     className="flex gap-4 p-2 text-putih hover:text-primary transition font-medium text-lg hover:bg-putih hover:p-2 hover:rounded-md"
                                 >
                                     <AiOutlineUser size={25} />

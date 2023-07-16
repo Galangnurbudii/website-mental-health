@@ -3,6 +3,8 @@ import { AiOutlineUser, AiOutlineLeftCircle } from 'react-icons/ai'
 import { HiOutlineShoppingCart } from 'react-icons/hi'
 import { BiTrashAlt, BiHomeAlt2, BiExpandHorizontal } from 'react-icons/bi'
 import { FiLogOut } from 'react-icons/fi'
+import { LuCalendarClock } from 'react-icons/lu'
+import { BsCalendar3Week } from 'react-icons/bs'
 
 function ProfileNavbarPsikolog() {
     return (
@@ -30,7 +32,7 @@ function ProfileNavbarPsikolog() {
                                     className="flex gap-4 p-2 text-putih hover:text-primary transition font-medium text-lg hover:bg-putih hover:p-2 hover:rounded-md"
                                 >
                                     <BiHomeAlt2 size={25} />
-                                    Beranda
+                                    Dashboard
                                 </a>
                             </li>
                             <li>
@@ -38,7 +40,7 @@ function ProfileNavbarPsikolog() {
                                     href={route('jadwalkonsultasi')}
                                     className="flex gap-4 p-2 text-putih hover:text-primary transition font-medium text-lg hover:bg-putih hover:p-2 hover:rounded-md"
                                 >
-                                    <AiOutlineUser size={25} />
+                                    <BsCalendar3Week size={25} />
                                     Jadwal Konsultasi
                                 </a>
                             </li>
@@ -47,7 +49,7 @@ function ProfileNavbarPsikolog() {
                                     href={route('aturketersediaan')}
                                     className="flex gap-4 p-2 text-putih hover:text-primary transition font-medium text-lg hover:bg-putih hover:p-2 hover:rounded-md"
                                 >
-                                    <HiOutlineShoppingCart size={25} />
+                                    <LuCalendarClock size={25} />
                                     Atur Ketersediaan
                                 </a>
                             </li>
