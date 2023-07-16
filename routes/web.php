@@ -76,12 +76,6 @@ Route::get('/payment/videocall', function () {
 Route::post('/validasi-layanan', [LayananController::class, 'validasiLayanan'])->name('validasilayanan');
 Route::get('/payment/{id}/{tanggal}/{jam}', [LayananController::class, 'detailPayment'])->name('payment');
 
-
-
-Route::get('/coba', function () {
-    return Inertia::render('Coba');
-})->name('coba');
-
 Route::get('/profil', function () {
     return Inertia::render('Profil');
 })->name('profil');
@@ -119,6 +113,7 @@ Route::middleware('psikolog')->group(function () {
     Route::get('/jadwalkonsultasi', function () {
         return Inertia::render('JadwalKonsultasi');
     })->name('jadwalkonsultasi');
+    
     Route::get('/aturketersediaan', function () {
         return Inertia::render('AturKetersediaan');
     })->name('aturketersediaan');
@@ -156,3 +151,4 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__ . '/auth.php';
+

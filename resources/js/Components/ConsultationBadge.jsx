@@ -1,5 +1,5 @@
 import React from 'react'
-import PrimaryButton from './PrimaryButton'
+import BackUpButton from './BackUpButton'
 
 function ConsultationBadge() {
     return (
@@ -11,17 +11,18 @@ function ConsultationBadge() {
                 Ingin bercerita? Psikolog siap mendengarkan
             </p>
 
-            <div className="border border-disabled rounded-md shadow-md">
+            <div className="border border-gray-300 rounded-md shadow-md">
                 <div className="flex items-center">
                     <img
-                        src="../images/pasangan.jpg"
+                        src="../images/doctorImage.png"
                         alt="Pasangan Supportif Dapat Cegah Depresi"
+                        className="pl-5"
                         style={{
-                            maxWidth: '160px',
-                            maxHeight: '160px',
+                            maxWidth: '120px',
+                            maxHeight: '120px',
                         }}
                     />
-                    <div className="pl-6">
+                    <div className="pl-5">
                         <h3 className="text-hitam text-lg font-semibold pt-4">
                             Psikolog
                         </h3>
@@ -30,7 +31,7 @@ function ConsultationBadge() {
                         </p>
                         <div className="py-4">
                             <a href={route('konsultasi')}>
-                                <PrimaryButton>Konsultasi</PrimaryButton>
+                                <BackUpButton>Konsultasi</BackUpButton>
                             </a>
                         </div>
                     </div>

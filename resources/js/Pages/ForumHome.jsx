@@ -3,10 +3,12 @@ import Footer from '@/Components/Footer'
 import NavBar from '@/Components/NavBar'
 import React from 'react'
 import PrimaryButton from '@/Components/PrimaryButton'
+import { Head } from '@inertiajs/react'
 
 export default function ForumHome({ posts, auth }) {
     return (
         <>
+            <Head title="Forum" />
             <NavBar user={auth.user} />
 
             <div className="flex flex-col px-6 md:px-16 lg:px-32 pt-20 pb-32">

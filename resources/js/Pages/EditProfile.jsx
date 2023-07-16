@@ -48,7 +48,7 @@ const EditProfile = () => {
         <>
             <ProfileNavbar />
             <div className="flex flex-col gap-6 px-6 md:px-16 lg:pl-96 lg:pr-60 pb-32">
-                <h1 className="font-bold text-xl md:text-2xl text-hitam pt-12">
+                <h1 className="font-bold text-2xl md:text-4xl text-hitam pt-12">
                     Edit Profile
                 </h1>
 

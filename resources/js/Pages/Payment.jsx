@@ -60,7 +60,7 @@ export default function Layanan({ psikolog, tanggal, jam }) {
     }
 
     const handleClick = (e) => {
-        e.preventDefault();
+        e.preventDefault()
 
         if (!selectedOption || selectedOption === 'Pilih Metode Pembayaran') {
             setError('Metode Pembayaran harus diisi')
@@ -80,7 +80,7 @@ export default function Layanan({ psikolog, tanggal, jam }) {
             })
             .catch((error) => {
                 // console.log(error.response.data)
-                console.log("halo")
+                console.log('halo')
             })
 
         // openModal()
@@ -102,7 +102,6 @@ export default function Layanan({ psikolog, tanggal, jam }) {
                             w-full
                             sm:w-full 
                             md:w-[60%]
-                            lg:w-[60%]
                             h-full bg-white p-6 md:pl-16 lg:pr-28 md:pr-16
                             flex flex-col"
                 >
@@ -115,13 +114,9 @@ export default function Layanan({ psikolog, tanggal, jam }) {
                             <div
                                 className="w-full shadow-xl border rounded-lg bg-disabledBackground mx-auto my-auto 
                                             md:pb-5 
-                                            xs:p-5
-                                            sm:p-5
-                                            md:p-5
+                                            p-5
                                             lg:p-10 lg:py-20"
                             >
-                                {/* lg:p-10 */}
-
                                 <DetailPayment
                                     imageSrc={psikolog.foto_profil}
                                     names={psikolog.nama}

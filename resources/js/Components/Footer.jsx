@@ -40,7 +40,7 @@ function Footer() {
                     <ul className="text-putih">
                         <li>
                             <a
-                                href="#"
+                                href={route('konsultasi')}
                                 className="mb-3 inline-block text-sm hover:underline"
                             >
                                 Buat Janji
@@ -48,7 +48,7 @@ function Footer() {
                         </li>
                         <li>
                             <a
-                                href="#"
+                                href={route('layanan')}
                                 className="mb-3 inline-block text-sm hover:underline"
                             >
                                 Hubungi Psikolog

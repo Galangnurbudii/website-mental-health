@@ -3,7 +3,7 @@ import Badge from './Badge'
 
 function OtherArticle({ article }) {
     return (
-        <div className="flex items-center">
+        <div className="flex items-center hover:bg-gray-100">
             <img
                 src={article.thumbnail_url}
                 alt="Pasangan Supportif Dapat Cegah Depresi"

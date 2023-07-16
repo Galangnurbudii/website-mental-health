@@ -29,6 +29,11 @@ export default function Home({ articles, quote, auth }) {
             text: 'Beban pikiran terasa mulai menghilang berkat bercerita dengan psikolog',
             nama: 'Beatrice Yusril - Pengusaha',
         },
+        {
+            gambar: 'images/petik.png',
+            text: 'Jangan ragu untuk konsultasi bersama Berani Bicara, Mantap sungguh luar biasa',
+            nama: 'Galang Nurbudi - Pengusaha',
+        },
     ]
 
     return (

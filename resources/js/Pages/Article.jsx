@@ -68,7 +68,7 @@ export default function Article({ popular, articles, topik_terkini, auth }) {
                                     selectedButton === topik
                                         ? 'border-hoverBackground text-hoverBackground'
                                         : 'border-gray-200 text-gray-700'
-                                }   rounded-md px-3 py-1 text-sm font-semibold  mr-2 mb-2 w-auto max-w-xs hover:border-hoverBackground hover:text-hoverBackground`}
+                                }   rounded-md px-3 py-1 text-base font-semibold  mr-2 mb-2 w-auto max-w-xs hover:border-hoverBackground hover:text-hoverBackground`}
                             >
                                 {topik}
                             </button>
@@ -91,7 +91,10 @@ export default function Article({ popular, articles, topik_terkini, auth }) {
                     <div className="flex flex-col">
                         <h1>Artikel Tidak Ditemukan</h1>
 
-                        <img src="/storage/images/noArticle.png" alt="" />
+                        <img
+                            src="/storage/images/noArticle.png"
+                            alt="Tidak Ada Artikel"
+                        />
                     </div>
                 ) : (
                     <>

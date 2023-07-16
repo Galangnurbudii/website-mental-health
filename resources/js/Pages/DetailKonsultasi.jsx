@@ -1,4 +1,4 @@
-import NavProfil from '@/Components/ProfileNavbarAdmin'
+import ProfileNavbar from '@/Components/ProfileNavbar'
 import { useState } from 'react'
 
 export default function DetailKonsultasi() {
@@ -10,7 +10,7 @@ export default function DetailKonsultasi() {
 
     return (
         <div>
-            <NavProfil />
+            <ProfileNavbar />
             <div className="lg:pl-96 md:px-40 px-10 py-16">
                 <h1 className="font-bold text-[26px] pt-5 pb-8">
                     Detail Konsultasi

@@ -78,8 +78,6 @@ export default function Login({ status, canResetPassword }) {
                                 className="w-full flex flex-col 
                                             max-w-[500px] sm:pt-10"
                             >
-                                {/* text-lg sm:text-xl md:text-2xl lg:text-3xl */}
-                                {/*  className='w-full flex flex-col' */}
                                 <h1
                                     className="text-primary 
                                                 text-2xl 
@@ -90,7 +88,7 @@ export default function Login({ status, canResetPassword }) {
                                     Selamat Datang Kembali
                                 </h1>
                                 <p
-                                    className="text-[#333333] 
+                                    className="text-hitam
                                                 text-lg 
                                                 sm:text-xl 
                                                 md:text-2xl 
@@ -100,8 +98,6 @@ export default function Login({ status, canResetPassword }) {
                                     informasi
                                 </p>
                             </div>
-
-                            {/* login box -> w594 h60 */}
                             <div className="w-full flex flex-col">
                                 <div className="w-full mt-2 pb-10">
                                     <InputLabel htmlFor="email" />
@@ -167,8 +163,6 @@ export default function Login({ status, canResetPassword }) {
                                         className="mt-2"
                                     />
                                 </div>
-
-                                {/* max-w-[1240px] mx-auto grid lg:grid-cols-3 */}
                                 <div className="block mb-10 flex justify-between">
                                     <label className="flex items-center">
                                         <Checkbox

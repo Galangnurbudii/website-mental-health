@@ -1,15 +1,15 @@
-import { useRef, useState } from "react";
-import DangerButton from "@/Components/DangerButton";
-import InputError from "@/Components/InputError";
-import InputLabel from "@/Components/InputLabel";
-import Modal from "@/Components/Modal";
-import SecondaryButton from "@/Components/SecondaryButton";
-import TextInput from "@/Components/TextInput";
-import { useForm } from "@inertiajs/react";
+import { useRef, useState } from 'react'
+import DangerButton from '@/Components/DangerButton'
+import InputError from '@/Components/InputError'
+import InputLabel from '@/Components/InputLabel'
+import Modal from '@/Components/Modal'
+import SecondaryButton from '@/Components/SecondaryButton'
+import TextInput from '@/Components/TextInput'
+import { useForm } from '@inertiajs/react'
 
-export default function DeleteUserForm({ className = "" }) {
-    const [confirmingUserDeletion, setConfirmingUserDeletion] = useState(false);
-    const passwordInput = useRef();
+export default function DeleteUserForm({ className = '' }) {
+    const [confirmingUserDeletion, setConfirmingUserDeletion] = useState(false)
+    const passwordInput = useRef()
 
     const {
         data,
@@ -19,42 +19,48 @@ export default function DeleteUserForm({ className = "" }) {
         reset,
         errors,
     } = useForm({
-        password: "",
-    });
+        password: '',
+    })
 
     const confirmUserDeletion = () => {
-        setConfirmingUserDeletion(true);
-    };
+        setConfirmingUserDeletion(true)
+    }
 
     const deleteUser = (e) => {
-        e.preventDefault();
+        e.preventDefault()
 
-        destroy(route("profile.destroy"), {
+        destroy(route('profile.destroy'), {
             preserveScroll: true,
             onSuccess: () => closeModal(),
             onError: () => passwordInput.current.focus(),
             onFinish: () => reset(),
-        });
-    };
+        })
+    }
 
     const closeModal = () => {
-        setConfirmingUserDeletion(false);
+        setConfirmingUserDeletion(false)
 
-        reset();
-    };
+        reset()
+    }
 
     return (
         <section className={`space-y-6 ${className}`}>
             <header>
-                <h2 className="text-lg font-medium text-gray-900">
-                    Delete Account
+                <h2 className="text-lg font-medium text-hitam border-b-2 pb-2">
+                    Hapus Profil
                 </h2>
 
-                <p className="mt-1 text-sm text-gray-600">
-                    Once your account is deleted, all of its resources and data
-                    will be permanently deleted. Before deleting your account,
-                    please download any data or information that you wish to
-                    retain.
+                <p className="mt-1 text-hitam pt-3">
+                    Sebelum menghapus profil Anda, ada beberapa hal yang perlu
+                    diperhatikan:
+                </p>
+                <p className="py-2 pl-2">
+                    1. Penghapusan tidak dapat dibatalkan dan tidak akan ada
+                    cara untuk mendapatkan kembali akun Anda setelah proses
+                    penghapusan dilakukan.
+                </p>
+                <p className="pl-2">
+                    2. Semua data Anda akan terhapus permanen.
                 </p>
             </header>
 
@@ -64,15 +70,15 @@ export default function DeleteUserForm({ className = "" }) {
 
             <Modal show={confirmingUserDeletion} onClose={closeModal}>
                 <form onSubmit={deleteUser} className="p-6">
-                    <h2 className="text-lg font-medium text-gray-900">
-                        Are you sure you want to delete your account?
+                    <h2 className="text-lg font-medium hitam">
+                        Apakah Anda yakin ingin menghapus akun?
                     </h2>
 
-                    <p className="mt-1 text-sm text-gray-600">
-                        Once your account is deleted, all of its resources and
-                        data will be permanently deleted. Please enter your
-                        password to confirm you would like to permanently delete
-                        your account.
+                    <p className="mt-3 text-gray-600">
+                        Setelah akun Anda dihapus, semua sumber dayanya dan data
+                        akan dihapus secara permanen. Silakan masukkan milik
+                        Anda kata sandi untuk mengonfirmasi bahwa Anda ingin
+                        menghapus secara permanen akun Anda.
                     </p>
 
                     <div className="mt-6">
@@ -89,9 +95,9 @@ export default function DeleteUserForm({ className = "" }) {
                             ref={passwordInput}
                             value={data.password}
                             onChange={(e) =>
-                                setData("password", e.target.value)
+                                setData('password', e.target.value)
                             }
-                            className="mt-1 block w-3/4"
+                            className="mt-1 block w-full"
                             isFocused
                             placeholder="Password"
                         />
@@ -102,7 +108,7 @@ export default function DeleteUserForm({ className = "" }) {
                         />
                     </div>
 
-                    <div className="mt-6 flex justify-end">
+                    <div className="mt-6 flex">
                         <SecondaryButton onClick={closeModal}>
                             Cancel
                         </SecondaryButton>
@@ -114,5 +120,5 @@ export default function DeleteUserForm({ className = "" }) {
                 </form>
             </Modal>
         </section>
-    );
+    )
 }
