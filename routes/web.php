@@ -1,15 +1,16 @@
 <?php
 
-use App\Http\Controllers\AdminArtikelController;
-use App\Http\Controllers\ArtikelController;
-use App\Http\Controllers\ForumController;
+use Inertia\Inertia;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ForumController;
+use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PsikologController;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
+use App\Http\Controllers\AdminArtikelController;
 
 
 // Auth::routes(['verify' => true]);
@@ -69,10 +70,7 @@ Route::get('/payment/videocall', function () {
     return Inertia::render('Payment2');
 })->name('payment2');
 
-Route::get('/payment', function () {    
-    return Inertia::render('Payment');
-})->name('payment');
-
+Route::get('/payment/{id}', [LayananController::class, 'detailPayment'])->name('payment');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -109,6 +107,8 @@ Route::get('/jadwalkonsultasi', function () {
     return Inertia::render('JadwalKonsultasi');
 })->name('jadwalkonsultasi');
 
+
+
 Route::get('/jadwalkonsultasiuser', function () {
     return Inertia::render('JadwalKonsultasiUser');
 })->name('jadwalkonsultasiuser');
@@ -124,7 +124,7 @@ Route::get('/aturketersediaan', function () {
 Route::resource('psikologs', PsikologController::class);
 
 Route::get('/profil', function () {
-    return Inertia::render('EditProfile');
+    return Inertia::render('EditProfile', ['user' => Auth::user()]);
 })->name('profil');
 
 Route::get('/hapusprofil', function () {
@@ -134,6 +134,8 @@ Route::get('/hapusprofil', function () {
 Route::get('/error', function () {
     return Inertia::render('NotFound');
 })->name('notFound');
+
+
 
 
 

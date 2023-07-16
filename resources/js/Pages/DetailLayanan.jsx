@@ -623,7 +623,7 @@ export default function DetailLayanan() {
             kabupaten: selectedKabupaten.value,
             jam: jam[activeIndex - 1],
             tanggal: startDate.toISOString().split('T')[0],
-        }
+        }   
         axios
             .post(route('filter'), jsonData)
             .then((response) => {

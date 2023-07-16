@@ -43,8 +43,10 @@ export default function Konsultasi() {
                             pribadi lebih baik
                         </h2>
                     </div>
-                    <Link href={route('konsultasi')}>
-                        <PrimaryButton>Konsultasi Sekarang</PrimaryButton>
+                    <Link href={route('layanan')}>
+                        <PrimaryButton className="text-xs px-2 py-1 w-44 md:w-56 md:text-base">
+                            Konsultasi Sekarang
+                        </PrimaryButton>
                     </Link>
                 </div>
                 <div className="max-full md:flex md:justify-center px-4 md:w-1/2 sm:flex md:self-end">
