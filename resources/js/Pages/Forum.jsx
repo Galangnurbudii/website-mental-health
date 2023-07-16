@@ -4,6 +4,7 @@ import MyModal from '@/Components/MyModal'
 import EmptyTextModal from '@/Components/EmptyTextModal'
 import ValidateTextModal from '@/Components/ValidateTextModal'
 import React, { useState } from 'react'
+import axios from 'axios'
 
 export default function Forum({ auth }) {
     const [showMyModal, setShowMyModal] = useState(false)
@@ -21,7 +22,14 @@ export default function Forum({ auth }) {
             setShowEmptyTextModal(true)
         } else {
             // Kirim ke database
-            setShowValidateTextModal(true)
+            axios
+                .post('/forum-store', { text: textAreaValue, id_user: auth.user.id })
+                .then((response) => {
+                    setShowValidateTextModal(true)
+                })
+                .catch((error) => {
+                    console.log(error.response.data)
+                })
         }
     }
 
