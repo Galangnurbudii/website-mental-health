@@ -86,8 +86,9 @@ class LayananController extends Controller
         }
     }
 
-    public function detailPayment($id)
+    public function detailPayment($id, $jam, $tanggal)
     {
+        // dd($id, $jam, $tanggal);
         $detailPsikolog = Psikolog::join('harga_layanan as h', 'psikolog.id', '=', 'h.id_psikolog')
             ->where('psikolog.id', $id)
             ->first();

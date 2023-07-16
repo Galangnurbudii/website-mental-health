@@ -70,7 +70,7 @@ Route::get('/payment/videocall', function () {
     return Inertia::render('Payment2');
 })->name('payment2');
 
-Route::get('/payment/{id}', [LayananController::class, 'detailPayment'])->name('payment');
+Route::get('/payment/{id}/{jam}/{tanggal}', [LayananController::class, 'detailPayment'])->name('payment');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
