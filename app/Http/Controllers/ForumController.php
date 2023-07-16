@@ -15,4 +15,13 @@ class ForumController extends Controller
         return Inertia::render('ForumHome', ['posts' => $posts]);
     }
 
+    public function store(Request $request)
+    {
+        $konten = Post::create([
+            'konten' => $request->text,
+            'id_user' => $request->id_user
+        ]);
+
+        return response()->json($request->text);
+    }
 }
