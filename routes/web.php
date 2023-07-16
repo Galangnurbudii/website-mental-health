@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -127,9 +128,7 @@ Route::middleware('psikolog')->group(function () {
 });
 
 Route::middleware('admin')->group(function () {
-    Route::get('/dashboard-admin', function () {
-        return Inertia::render('DashboardAdmin');
-    })->name('dashboardadmin');
+    Route::get('/dashboard-admin', [AdminController::class, 'index'])->name('dashboardadmin');
     Route::post('/upload', [AdminArtikelController::class, 'uploadImage']);
     Route::post('artikels/{id}', [AdminArtikelController::class, 'update'])->name('updateArtikel');
     Route::resource('artikels', AdminArtikelController::class);
