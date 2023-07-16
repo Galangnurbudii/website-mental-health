@@ -4,7 +4,7 @@ export default function HapusProfil() {
     return (
         <div>
             <NavProfil2 />
-            <div className="lg:px-96 md:px-40 pl-10 py-20">
+            <div className="lg:pl-96 md:px-40 pl-10 py-20">
                 <h1 className="font-bold text-3xl pt-5 pb-10">
                     Jadwal Konsultasi Hari Ini
                 </h1>

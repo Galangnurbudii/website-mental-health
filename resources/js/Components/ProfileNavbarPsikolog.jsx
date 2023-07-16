@@ -3,6 +3,7 @@ import { AiOutlineUser, AiOutlineLeftCircle } from 'react-icons/ai'
 import { HiOutlineShoppingCart } from 'react-icons/hi'
 import { BiTrashAlt, BiHomeAlt2, BiExpandHorizontal } from 'react-icons/bi'
 import { FiLogOut } from 'react-icons/fi'
+import ProfileNavbarKeluar from './ProfileNavbarKeluar'
 
 function ProfileNavbarPsikolog() {
     return (
@@ -54,7 +55,7 @@ function ProfileNavbarPsikolog() {
                         </ul>
                         <div className="pt-20"></div>
                         <div className="bg-putih h-[0.5vh]"></div>
-                        <ul className="pt-2 space-y-8 mb-12 px-4 mt-8">
+                        {/* <ul className="pt-2 space-y-8 mb-12 px-4 mt-8">
                             <li>
                                 <a
                                     href={route('psikologlogin')}
@@ -64,7 +65,8 @@ function ProfileNavbarPsikolog() {
                                     Keluar
                                 </a>
                             </li>
-                        </ul>
+                        </ul> */}
+                        <ProfileNavbarKeluar />
                     </div>
                 </nav>
             </div>
