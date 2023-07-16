@@ -95,7 +95,7 @@ export default function Article({ popular, articles, topik_terkini }) {
                         <h1 className="font-bold text-xl md:text-2xl text-hitam ">
                             Artikel Lainnya
                         </h1>
-                        <div className="grid grid-cols-3 gap-4 justify-between">
+                        <div className="carousel gap-4 justify-between">
                             {currentArticles.map((article) => (
                                 <ArticleCard
                                     key={article.id}

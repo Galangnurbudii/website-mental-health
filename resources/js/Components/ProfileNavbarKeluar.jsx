@@ -2,8 +2,8 @@ import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import { FiLogOut } from 'react-icons/fi'
 import { FaQuestion } from 'react-icons/fa'
-import PrimaryButton from './PrimaryButton'
 import { Link } from '@inertiajs/inertia-react'
+import BackUpButton from './BackUpButton'
 
 export default function ProfileNavbarKeluar({ desc }) {
     let [isOpen, setIsOpen] = useState(false)
@@ -79,14 +79,14 @@ export default function ProfileNavbarKeluar({ desc }) {
 
                                     <div className="flex gap-3 items-end justify-center pt-5">
                                         <Link href={route('login')}>
-                                            <PrimaryButton className="w-20">
+                                            <BackUpButton className="w-20 h-9 text-sm flex items-center justify-center">
                                                 Ya
-                                            </PrimaryButton>
+                                            </BackUpButton>
                                         </Link>
                                         <div className="mt-4">
                                             <button
                                                 type="button"
-                                                className="w-20 inline-flex justify-center rounded-md border border-primary bg-white px-4 py-2 text-sm font-medium text-primary hover:bg-blue-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                                                className="w-20 h-9 inline-flex justify-center rounded-md border border-primary bg-white px-4 py-2 text-sm font-medium text-primary hover:bg-blue-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                                                 onClick={closeModal}
                                             >
                                                 Tidak
