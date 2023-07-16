@@ -1,7 +1,6 @@
 import React from 'react'
 import { Head, Link, useForm } from '@inertiajs/react'
 import { Inertia } from '@inertiajs/inertia'
-import SearchBar from '@/Components/SearchBar'
 import ReactHtmlParser from 'react-html-parser'
 import ProfileNavbarAdmin from '@/Components/ProfileNavbarAdmin'
 
