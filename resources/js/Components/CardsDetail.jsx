@@ -5,6 +5,8 @@ import PrimaryButton from './PrimaryButton'
 
 export default function CardsDetail({
     psikolog,
+    jam,
+    tanggal,
     imageSrc,
     names,
     jobs,
@@ -14,7 +16,6 @@ export default function CardsDetail({
     fee,
 }) {
     const isDetailLayanan2 = window.location.pathname.includes('detailLayanan2')
-
     return (
         <div className="border border-gray-100 carousel flex-col lg:card-side bg-base-100 shadow-sm rounded-sm overflow-x-auto">
             {/* Picture */}

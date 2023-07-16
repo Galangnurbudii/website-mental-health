@@ -15,7 +15,7 @@ import PrimaryButton from '@/Components/PrimaryButton'
 import { Link } from '@inertiajs/react'
 
 export default function Layanan({ psikolog }) {
-
+    
     let [isOpen, setIsOpen] = useState(false)
 
     function closeModal() {
@@ -57,6 +57,14 @@ export default function Layanan({ psikolog }) {
     const handleClick2 = () => {
         setShowContent(!showContent)
     }
+
+    const handleClick = (e) => {
+        e.prevent
+        const jsonData = {
+
+        }
+    }
+
 
     return (
         <div className="overflow-x-hidden">

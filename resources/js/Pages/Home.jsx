@@ -7,7 +7,7 @@ import React from 'react'
 import CardsCarousel from '@/Components/CardsCarousel'
 import ArticleCard from '@/Components/ArticleCard'
 
-export default function Home({ articles, quote }) {
+export default function Home({ articles, quote, auth }) {
     const Testimonial = [
         {
             gambar: 'images/petik.png',
@@ -33,7 +33,7 @@ export default function Home({ articles, quote }) {
 
     return (
         <>
-            <NavBar />
+            <NavBar user={auth.user} />
             <div className="flex flex-col pb-20 md:pb-40 min-h-screen">
                 <Hero />
                 <div className="py-10 md:py-16 p-6 md:px-16 lg:px-32">
