@@ -25,7 +25,7 @@ function Footer() {
                         </li>
                         <li>
                             <a
-                                href="#"
+                                href={route('syaratdanketentuan')}
                                 className="mb-3 inline-block text-sm hover:underline"
                             >
                                 Syarat dan Ketentuan
