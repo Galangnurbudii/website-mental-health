@@ -14,21 +14,21 @@ class Janji extends Model
     public $timestamps = true;
 
     protected $fillable = [
-        'id_psikolog',
         'id_user',
         'tanggal',
         'jam',
+        'id_layanan',
+        'status'
     ];
 
     // ...
-
-    public function psikolog()
-    {
-        return $this->belongsTo(Psikolog::class, 'id_psikolog');
-    }
-
     public function user()
     {
         return $this->belongsTo(User::class, 'id_user');
+    }
+
+    public function layanan()
+    {
+        return $this->belongsTo(HargaLayanan::class, 'id_layanan');
     }
 }

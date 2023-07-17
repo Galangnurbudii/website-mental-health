@@ -2,6 +2,7 @@ import { FaStar, FaRegCalendarAlt } from 'react-icons/fa'
 import BackUpButton from '@/Components/BackUpButton'
 import { Link } from '@inertiajs/react'
 import PrimaryButton from './PrimaryButton'
+import axios from 'axios'
 
 export default function CardsDetail({
     psikolog,
@@ -14,8 +15,28 @@ export default function CardsDetail({
     badge1,
     badge2,
     fee,
+    auth,
 }) {
     const isDetailLayanan2 = window.location.pathname.includes('detailLayanan2')
+
+    const handleClick = () => {
+        const jsonData = {
+            id_layanan: psikolog.id_layanan,
+            tanggal: tanggal,
+            jam: jam,
+            harga: psikolog.harga,
+        }
+        axios
+            .post(route('makePayment'), jsonData)
+            .then((response) => {
+                console.log(response.data)
+                window.open(response.data.invoice_url)
+            })
+            .catch((error) => {
+                // console.log(error.response.data)
+                console.log('halo')
+            })
+    }
     return (
         <div className="border border-gray-100 carousel flex-col lg:card-side bg-base-100 shadow-sm rounded-sm overflow-x-auto">
             {/* Picture */}
@@ -53,13 +74,15 @@ export default function CardsDetail({
                 </div>
                 <div className="flex justify-between">
                     <h1 className="font-bold text-md lg:pt-0 md:pt-0 sm:pt-0 pt-1 sm:text-base md:text-base lg:text-base">
-                        {fee}
+                        {psikolog.harga}
                     </h1>
-                    <Link href={`/payment/${psikolog.id}/${tanggal}/${jam}`}>
-                        <BackUpButton className="h-0 text-xs lg:text-xs md:text-md sm:text-md">
-                            Konsultasi
-                        </BackUpButton>
-                    </Link>
+
+                    <BackUpButton
+                        onClick={handleClick}
+                        className="h-0 text-xs lg:text-xs md:text-md sm:text-md"
+                    >
+                        Konsultasi
+                    </BackUpButton>
                 </div>
             </div>
         </div>

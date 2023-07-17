@@ -22,6 +22,6 @@ class HargaLayanan extends Model
 
     public function psikolog()
     {
-        return $this->belongsTo(Psikolog::class, 'id_psikolog');
+        return $this->belongsTo(Psikolog::class, 'id_psikolog');    
     }
 }

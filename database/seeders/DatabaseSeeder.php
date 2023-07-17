@@ -20,8 +20,8 @@ class DatabaseSeeder extends Seeder
         $this->call(QuoteSeeder::class);
         $this->call(PostSeeder::class);
         $this->call(TanggalTidakTersediaSeeder::class);
-        $this->call(JanjiSeeder::class);
         $this->call(HargaLayananSeeder::class);
+        // $this->call(JanjiSeeder::class);
 
     }
 }
