@@ -35,7 +35,7 @@ export default function AdminLogin({ status1, canResetPassword1 }) {
 
     return (
         <GuestLayout>
-            <Head title="Masuk Psikolog" />
+            <Head title="Log in" />
 
             {status1 && (
                 <div className="mb-4 font-medium text-sm text-green-600">
@@ -44,24 +44,70 @@ export default function AdminLogin({ status1, canResetPassword1 }) {
             )}
 
             <form onSubmit={submit}>
-                <div className="w-full h-full lg:flex md:flex md:justify-center lg:overflow-hidden bg-cardBlue">
-                    <div className="relative md:w-1/2 md:flex md:justify-center md:items-center lg:h-full lg:flex-col">
+                <div className="w-full h-full lg:flex md:flex md:justify-center lg:overflow-hidden bg-[#B2D4FB]">
+                    {/* left side */}
+                    <div
+                        className="relative                    
+                                    md:w-1/2
+                                    md:flex
+                                    md:justify-center
+                                    md:items-center
+                                    lg:h-full
+                                    lg:w-1/2 lg:flex lg:flex-col"
+                    >
+                        {/* put left side image here */}
                         <img
-                            className="lg:w-full md:h-full object-cover"
+                            className="lg:h-full lg:w-full 
+                            md:h-full
+                            object-cover"
                             src="images/Psikolog Login.png"
                         />
                     </div>
-                    <div className="md:w-3/4 lg:w-1/2 h-full p-10 md:p-26 lg:p-6 xl:p-20 2xl:p-32 flex flex-col justify-between items-center">
-                        <div className="w-full flex flex-col max-w-[715px] p-10 sm:pt-8 sm:px-14 sm:pb-16 bg-putih rounded-2xl">
-                            <div className="w-full flex flex-col max-w-[500px] sm:pt-10 md:pt-5 lg:pt-10">
-                                <h1 className="text-primary text-2xl lg:text-[34px] font-bold sm:mb-2 lg:mb-5">
+
+                    {/* right side */}
+                    <div
+                        className="md:w-3/4
+                                    lg:w-1/2 h-full
+                                    p-20  md:p-26 lg:p-6 xl:p-24 2xl:p-32
+                                    flex flex-col justify-between items-center"
+                    >
+                        <div
+                            className="w-full flex flex-col 
+                                        max-w-[715px] 
+                                        p-10 sm:pt-8 sm:px-14 sm:pb-16
+                                        bg-white rounded-2xl"
+                        >
+                            {/* title */}
+
+                            <div
+                                className="w-full flex flex-col 
+                                            max-w-[500px] 
+                                            sm:pt-10 md:pt-5 lg:pt-10"
+                            >
+                                {/* text-lg sm:text-xl md:text-2xl lg:text-3xl */}
+                                {/*  className='w-full flex flex-col' */}
+                                <h1
+                                    className="text-primary 
+                                                text-2xl
+                                                lg:text-[34px] font-bold 
+                                                sm:mb-2 lg:mb-5"
+                                >
                                     Selamat Datang Psikolog
                                 </h1>
-                                <p className="text-hitam text-base md:text-xl font-semibold lg:mb-0 pl-1 pb-10">
+                                <p
+                                    className="text-[#333333] 
+                                                text-lg 
+                                                sm:text-base 
+                                                md:text-xl
+                                                font-semibold 
+                                                lg:mb-0 pl-1 sm:pb-10"
+                                >
                                     Siap membantu pelanggan untuk menemukan
                                     solusinya
                                 </p>
                             </div>
+
+                            {/* login box -> w594 h60 */}
                             <div className="w-full flex flex-col">
                                 <div className="w-full mt-4 pb-10">
                                     <InputLabel htmlFor="email" />
@@ -127,6 +173,7 @@ export default function AdminLogin({ status1, canResetPassword1 }) {
                                         className="mt-2"
                                     />
                                 </div>
+                                {/* max-w-[1240px] mx-auto grid lg:grid-cols-3 */}
                                 <div className="mb-10 flex justify-between">
                                     <label className="flex items-center">
                                         <Checkbox
@@ -170,7 +217,7 @@ export default function AdminLogin({ status1, canResetPassword1 }) {
                                             href={route('register')}
                                             className="font-semibold text-sm text-gray-600 hover:text-gray-900 rounded-md"
                                         >
-                                            Don’t have an account?
+                                            Don’t have an account?{' '}
                                             <span className="text-primary">
                                                 Sign up for free
                                             </span>
