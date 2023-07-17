@@ -113,6 +113,10 @@ Route::get('/error', function () {
     return Inertia::render('NotFound');
 })->name('notFound');
 
+Route::get('/snk', function () {
+    return Inertia::render('SyaratDanKetentuan');
+})->name('snk');
+
 
 
 Route::middleware('auth')->group(function () {
