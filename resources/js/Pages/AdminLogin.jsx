@@ -44,38 +44,25 @@ export default function AdminLogin({ status1, canResetPassword1 }) {
             )}
 
             <form onSubmit={submit}>
-                <div className="w-full h-full lg:flex md:flex md:justify-center lg:overflow-hidden bg-[#B2D4FB] ">
-                    {/* left side */}
-                    <div
-                        className="relative                    
-                                    md:w-1/2
-                                    md:flex
-                                    md:justify-center
-                                    md:items-center
-                                    lg:h-full
-                                    lg:w-1/2 lg:flex lg:flex-col"
-                    >
-                        {/* put left side image here */}
+                <div className="w-full min-h-screen md:flex md:justify-center lg:overflow-hidden bg-cardBlue">
+                    <div className="md:w-1/2 md:flex md:justify-center md:items-center lg:flex-col">
                         <img
-                            className="lg:h-full lg:w-full 
-                            md:h-full
+                            className="lg:w-full md:h-full
                             object-cover"
                             src="images/Admin Login.png"
                         />
                     </div>
-
-                    {/* right side */}
                     <div
                         className="md:w-3/4
-                                    lg:w-1/2 h-full
-                                    p-10 md:p-26 lg:p-6 xl:p-10 2xl:p-32
-                                    flex flex-col justify-between items-center"
+                        lg:w-1/2 h-full
+                        p-20  md:p-26 lg:p-6 xl:p-24 2xl:p-32
+                        flex flex-col justify-between items-center"
                     >
                         <div
                             className="w-full flex flex-col 
-                                        max-w-[715px] 
-                                        pt-0 sm:pt-8 sm:px-14 sm:pb-16
-                                        bg-white rounded-2xl"
+                            max-w-[715px] 
+                            p-10 sm:pt-8 sm:px-14 sm:pb-16
+                            bg-white rounded-2xl"
                         >
                             {/* title */}
 
@@ -84,8 +71,6 @@ export default function AdminLogin({ status1, canResetPassword1 }) {
                                             max-w-[500px] 
                                             sm:pt-10 md:pt-5 lg:pt-10"
                             >
-                                {/* text-lg sm:text-xl md:text-2xl lg:text-3xl */}
-                                {/*  className='w-full flex flex-col' */}
                                 <h1
                                     className="text-primary 
                                                 text-2xl
@@ -94,20 +79,12 @@ export default function AdminLogin({ status1, canResetPassword1 }) {
                                 >
                                     Selamat Datang Admin
                                 </h1>
-                                <p
-                                    className="text-[#333333] 
-                                                text-lg 
-                                                sm:text-base 
-                                                md:text-xl
-                                                font-semibold 
-                                                lg:mb-0 pl-1 sm:pb-10"
-                                >
+                                <p className="text-hitam text-base md:text-lg font-semibold lg:mb-0 pl-1 sm:pb-10">
                                     Siap memberikan pelayanan terbaik kepada
                                     pelanggan
                                 </p>
                             </div>
 
-                            {/* login box -> w594 h60 */}
                             <div className="w-full flex flex-col">
                                 <div className="w-full mt-4 pb-10">
                                     <InputLabel htmlFor="email" />
@@ -172,7 +149,6 @@ export default function AdminLogin({ status1, canResetPassword1 }) {
                                         className="mt-2"
                                     />
                                 </div>
-                                {/* max-w-[1240px] mx-auto grid lg:grid-cols-3 */}
                                 <div className="mb-10 flex justify-between">
                                     <label className="flex items-center">
                                         <Checkbox
@@ -194,7 +170,7 @@ export default function AdminLogin({ status1, canResetPassword1 }) {
                                     {canResetPassword1 || (
                                         <Link
                                             href={route('password.request')}
-                                            className="font-semibold text-sm text-primary hover:text-[#2d8efd] rounded-md"
+                                            className="font-semibold text-sm text-primary hover:text-hoverBackground rounded-md"
                                         >
                                             Lupa Password?
                                         </Link>
