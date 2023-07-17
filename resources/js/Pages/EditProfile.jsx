@@ -8,34 +8,13 @@ import PrimaryButton from '@/Components/PrimaryButton'
 
 const EditProfile = () => {
     const user = usePage().props.auth.user
-    const [formData, setFormData] = useState({
-        name: user.name,
-        email: user.email,
-        no_telepon: '081529518xxx',
-        alamat: 'Ponorogo, Jawa Timur',
-        profile_photo: null,
-    })
-
-    const handleChange = (e) => {
-        const { name, value, files } = e.target
-
-        if (name === 'profile_photo') {
-            setFormData((prevFormData) => ({
-                ...prevFormData,
-                [name]: files[0],
-            }))
-        } else {
-            setFormData((prevFormData) => ({
-                ...prevFormData,
-                [name]: value,
-            }))
-        }
-    }
 
     const { data, setData, patch, errors, processing, recentlySuccessful } =
         useForm({
             name: user.name,
             email: user.email,
+            no_telepon: user.nomor_telfon,
+            alamat: user.alamat,
         })
 
     const handleSubmit = (e) => {
@@ -60,19 +39,11 @@ const EditProfile = () => {
                         >
                             <div className="rounded-full overflow-hidden w-48 h-48 md:w-56 md:h-56">
                                 <img
-                                    src="../../images/fotoProfil.jpeg"
+                                    src={user.profile_picture_url}
                                     alt="Profile Photo"
                                     className="w-full h-full object-cover"
                                 />
                             </div>
-                            <input
-                                id="profile_photo"
-                                type="file"
-                                name="profile_photo"
-                                accept="image/*"
-                                onChange={handleChange}
-                                className="hidden"
-                            />
                         </label>
                     </div>
 
@@ -122,8 +93,10 @@ const EditProfile = () => {
                             type="text"
                             name="no_telepon"
                             className="rounded-md"
-                            value={formData.no_telepon}
-                            onChange={handleChange}
+                            value={data.no_telepon}
+                            onChange={(e) =>
+                                setData('no_telepon', e.target.value)
+                            }
                             required
                         />
                     </div>
@@ -140,8 +113,8 @@ const EditProfile = () => {
                             type="text"
                             name="alamat"
                             className="rounded-md"
-                            value={formData.alamat}
-                            onChange={handleChange}
+                            value={data.alamat}
+                            onChange={(e) => setData('alamat', e.target.value)}
                             required
                         />
                     </div>

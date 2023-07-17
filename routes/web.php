@@ -124,9 +124,9 @@ Route::middleware('psikolog')->group(function () {
     })->name('aturketersediaan');
 });
 
+Route::post('/upload', [AdminArtikelController::class, 'uploadImage']);
 Route::middleware('admin')->group(function () {
     Route::get('/dashboard-admin', [AdminController::class, 'index'])->name('dashboardadmin');
-    Route::post('/upload', [AdminArtikelController::class, 'uploadImage']);
     Route::post('artikels/{id}', [AdminArtikelController::class, 'update'])->name('updateArtikel');
     Route::resource('artikels', AdminArtikelController::class);
     Route::resource('psikologs', PsikologController::class);
