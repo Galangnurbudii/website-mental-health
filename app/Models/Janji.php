@@ -18,7 +18,8 @@ class Janji extends Model
         'tanggal',
         'jam',
         'id_layanan',
-        'status'
+        'payment_status',
+        'payment_link'
     ];
 
     // ...

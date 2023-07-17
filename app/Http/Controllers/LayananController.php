@@ -33,19 +33,19 @@ class LayananController extends Controller
                     'amount' => $request->harga
                 ]);
 
-
-        $data = json_decode($data_request);
+        $startIndex = strpos($data_request, '"invoice_url":"') + strlen('"invoice_url":"');
+        $endIndex = strpos($data_request, '","available_banks"');
+        $invoiceUrl = substr($data_request, $startIndex, $endIndex - $startIndex);
 
         Janji::create([
             'id_user' => Auth::user()->id,
             'id_layanan' => $request->id_layanan,
             'tanggal' => $request->tanggal,
             'jam' => $request->jam,
-            'harga' => $request->harga,
-            'payment_status' => $data->data->payment_status,
-            'payment_link' => $data->data->invoice_url,
+            'payment_status' => 'pending',
+            'payment_link' => $invoiceUrl,
         ]);
-
+        error_log($request->tanggal);
         return response($data_request);
 
     }

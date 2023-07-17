@@ -655,7 +655,7 @@ export default function DetailLayanan({ auth }) {
 
     return (
         <div className="overflow-x-hidden">
-            <NavBar />
+            <NavBar user={auth.user} />
             <Header
                 pages2="Konsultasi"
                 currpages2="Layanan"
@@ -687,8 +687,9 @@ export default function DetailLayanan({ auth }) {
 
                                         <div className="pt-5 grid md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-1 px-3 pb-5 gap-4">
                                             {availablePsikolog.map(
-                                                (psikolog) => (
+                                                (psikolog, key) => (
                                                     <CardsDetail
+                                                        key={key}
                                                         psikolog={psikolog}
                                                         imageSrc={`${psikolog.foto_profil}`}
                                                         names={psikolog.nama}

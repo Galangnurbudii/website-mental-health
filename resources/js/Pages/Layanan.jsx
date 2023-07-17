@@ -4,15 +4,11 @@ import Header from '@/Components/Header'
 import LeftSideLayanan from '@/Components/LeftSideLayanan'
 import CardsLayanan from '@/Components/CardsLayanan'
 
-export default function Layanan() {
-
+export default function Layanan({ auth }) {
     return (
         <div className="overflow-x-hidden">
-            <NavBar />
-            <Header 
-                pages = "Konsultasi"            
-                currpages = "Layanan"                
-            />
+            <NavBar user={auth.user} />
+            <Header pages="Konsultasi" currpages="Layanan" />
 
             <div className="w-full flex items-start sm:flex-col md:flex-row lg:flex-row">
                 {/* left side */}
