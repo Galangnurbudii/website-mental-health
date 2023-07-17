@@ -19,11 +19,8 @@ class PsikologFactory extends Factory
     public function definition()
     {
         $faker = Faker::create('id_ID');
-        $password = $faker->password;
         return [
             'nama' => $faker->name,
-            'email' => $faker->unique()->safeEmail,
-            'password' => bcrypt($password),
             'rating' => $faker->randomFloat(2, 1, 5),
             'bidang_keahlian' => $faker->text(20),
             'tahun_pengalaman' => $faker->numberBetween(1, 15),

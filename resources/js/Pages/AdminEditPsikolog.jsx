@@ -3,12 +3,11 @@ import EditPsikologModal from '@/Components/EditPsikologModal'
 import { Head, useForm, usePage, Link } from '@inertiajs/react'
 
 export default function AdminEditPsikolog(props) {
-    const { psikologs } = usePage().props
+    const { psikologs, email } = usePage().props
     // console.log(psikologs);
     const { data, setData, put, errors } = useForm({
         nama: psikologs.nama || '',
-        email: psikologs.email || '',
-        password: psikologs.password || '',
+        email: email || '',
         rating: psikologs.rating || '',
         bidang_keahlian: psikologs.bidang_keahlian || '',
         tahun_pengalaman: psikologs.tahun_pengalaman || '',
@@ -81,24 +80,6 @@ export default function AdminEditPsikolog(props) {
                             required
                         />
                         <span className="text-red-600">{errors.email}</span>
-                    </div>
-                    <div className="mb-4">
-                        <label className="">Password</label>
-                        <input
-                            id="password"
-                            placeholder="Password"
-                            type="password"
-                            className="w-full px-4 py-2 rounded-lg"
-                            label="password"
-                            name="password"
-                            isFocused={true}
-                            value={data.password}
-                            onChange={(e) =>
-                                setData('password', e.target.value)
-                            }
-                            required
-                        />
-                        <span className="text-red-600">{errors.password}</span>
                     </div>
                     <div className="mb-4">
                         <label className="">Rating</label>
