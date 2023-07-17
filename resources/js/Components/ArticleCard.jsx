@@ -36,7 +36,7 @@ function ArticleCard({ article }) {
                             {tanggal}
                         </p>
                     </div>
-                    <p className="text-sm md:text-base line-clamp-3">
+                    <p className="text-sm md:text-base line-clamp-3 text-ellipsis overflow-hidden ...">
                         {detail}
                     </p>
                 </div>

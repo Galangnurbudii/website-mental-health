@@ -17,7 +17,7 @@ function Footer() {
                     <ul className="text-putih">
                         <li>
                             <a
-                                href="#"
+                                href={route('tentangkami')}
                                 className="mb-3 inline-block text-sm hover:underline"
                             >
                                 Tentang Kami
