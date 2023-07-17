@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Janji;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -58,6 +60,25 @@ class ProfileController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return Redirect::route('/');
+        return Redirect::route('home');
+    }
+
+    public function jadwalKonsultasi()
+    {
+        // carilah Janji yang id usernya sama dengan Auth::->user()
+        $list_janji = DB::table('janji')
+            ->join('harga_layanan', 'janji.id_layanan', '=', 'harga_layanan.id')
+            ->join('psikolog', 'harga_layanan.id_psikolog', '=', 'psikolog.id')
+            ->select('janji.*', 'harga_layanan.*', 'psikolog.*')
+            ->get();
+        // dd($list_janji);
+        return Inertia::render('JadwalKonsultasiUser', ['list_janji' => $list_janji]);
+
+    }
+    public function detailKonsultasi($id)
+    {
+        $janji = Janji::find($id);
+        // dd($janji);
+        return Inertia::render('DetailKonsultasi', $janji);
     }
 }

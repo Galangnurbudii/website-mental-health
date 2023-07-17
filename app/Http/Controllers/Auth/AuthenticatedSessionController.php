@@ -34,6 +34,12 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        if ($request->user()->role == 'admin') {
+            return redirect()->route('dashboardadmin');
+        } else if ($request->user()->role == 'psikolog') {
+            return redirect()->route('dashboardpsikolog');
+        }
+
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 
@@ -47,6 +53,12 @@ class AuthenticatedSessionController extends Controller
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
+
+        if ($request->user()->role == 'admin') {
+            return redirect('/admin-login');
+        } else if ($request->user()->role == 'psikolog') {
+            return redirect('/psikolog-login');
+        }
 
         return redirect('/');
     }

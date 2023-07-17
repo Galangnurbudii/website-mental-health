@@ -21,7 +21,7 @@ return new class extends Migration {
             $table->enum('jam_selesai', ['12:00', '14:00', '16:00', '18:00']);
             $table->timestamps();
 
-            $table->foreign('id_psikolog')->references('id')->on('psikolog');
+            $table->foreign('id_psikolog')->references('id')->on('psikolog')->onDelete('cascade');
         });
 
     }

@@ -16,10 +16,10 @@ class PsikologMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($request->user() && $request->user()->role === 'admin') {
+        if ($request->user() && $request->user()->role === 'psikolog') {
 
             return $next($request);
         }
-        return redirect('home');
+        return redirect('/');
     }
 }
