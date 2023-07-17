@@ -3,21 +3,21 @@ import { Head, Link, useForm } from '@inertiajs/react'
 import { Inertia } from '@inertiajs/inertia'
 // import { AiOutlineSearch } from 'react-icons/ai'
 import SearchBar from '@/Components/SearchBar'
-import SidebarPsikolog from '@/Components/SidebarPsikolog'
+import SidebarAdmin from '@/Components/SidebarAdmin'
 
 export default function AdminIndexPsikolog(props) {
     function destroy(e) {
-        if (confirm('Are you sure you want to delete this user?')) {
+        if (confirm('Apakah Anda yakin menghapus akun ini?')) {
             Inertia.delete(route('psikologs.destroy', e.currentTarget.id))
         }
     }
 
     return (
-        <div className="flex">
+        <>
             <Head title="Buat Akun Psikolog" />
-            <SidebarPsikolog />
-            <div className="flex flex-col justify-between gap-8 md:gap-12 px-6 pt-20 pb-32 md:px-16 lg:px-12">
-                <SearchBar />
+            <SidebarAdmin />
+            <div className="flex flex-col gap-6 px-6 md:px-16 lg:pl-96 lg:px-0 pb-32 pt-12">
+                {/* <SearchBar /> */}
                 <a className="w-[134px]" href={route('psikologs.create')}>
                     <button className="px-4 py-2 text-sm text-white bg-blue-500 rounded font-bold">
                         Create Psikolog
@@ -107,6 +107,6 @@ export default function AdminIndexPsikolog(props) {
                     </tbody>
                 </table>
             </div>
-        </div>
+        </>
     )
 }
