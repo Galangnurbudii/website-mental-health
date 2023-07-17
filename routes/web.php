@@ -73,6 +73,8 @@ Route::get('/payment/videocall', function () {
     return Inertia::render('Payment2');
 })->name('payment2');
 
+Route::post('/payment', [LayananController::class, 'makePayment'])->name('makePayment');
+
 Route::post('/validasi-layanan', [LayananController::class, 'validasiLayanan'])->name('validasilayanan');
 Route::get('/payment/{id}/{tanggal}/{jam}', [LayananController::class, 'detailPayment'])->name('payment');
 
@@ -122,7 +124,7 @@ Route::middleware('psikolog')->group(function () {
     Route::get('/jadwalkonsultasi', function () {
         return Inertia::render('JadwalKonsultasi');
     })->name('jadwalkonsultasi');
-    
+
     Route::get('/aturketersediaan', function () {
         return Inertia::render('AturKetersediaan');
     })->name('aturketersediaan');
@@ -160,4 +162,3 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__ . '/auth.php';
-

@@ -4,7 +4,7 @@ import { FiFileText } from 'react-icons/fi'
 import { Link, Head } from '@inertiajs/react'
 import SidebarAdmin from '@/Components/SidebarAdmin'
 
-export default function DashboardAdmin() {
+export default function DashboardAdmin({ list_janji }) {
     return (
         <>
             <div className="flex flex-col gap-6 px-6 md:px-16 lg:pl-96 lg:pr-60 pb-32">
@@ -48,77 +48,52 @@ export default function DashboardAdmin() {
                                         Tanggal Pemesanan
                                     </th>
                                     <th className="px-4 py-2 text-sm md:text-base">
+                                        Jam
+                                    </th>
+                                    <th className="px-4 py-2 text-sm md:text-base">
                                         Nama Psikolog
                                     </th>
                                     <th className="px-4 py-2 text-sm md:text-base">
                                         Jenis Layanan
                                     </th>
                                     <th className="px-4 py-2 text-sm md:text-base">
-                                        Pembayaran
+                                        Status
+                                    </th>
+                                    <th className="px-4 py-2 text-sm md:text-base">
+                                        Payment Link
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td className="border px-4 py-2 text-sm md:text-base">
-                                        Test
-                                    </td>
-                                    <td className="border px-4 py-2 text-sm md:text-base">
-                                        Test
-                                    </td>
-                                    <td className="border px-4 py-2 text-sm md:text-base">
-                                        Test
-                                    </td>
-                                    <td className="border px-4 py-2 text-sm md:text-base">
-                                        Test
-                                    </td>
-                                    <td className="border px-4 py-2 text-sm md:text-base">
-                                        Test
-                                    </td>
-                                    <td className="border px-4 py-2 text-sm md:text-base">
-                                        Test
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td className="border px-4 py-2 text-sm md:text-base">
-                                        Test
-                                    </td>
-                                    <td className="border px-4 py-2 text-sm md:text-base">
-                                        Test
-                                    </td>
-                                    <td className="border px-4 py-2 text-sm md:text-base">
-                                        Test
-                                    </td>
-                                    <td className="border px-4 py-2 text-sm md:text-base">
-                                        Test
-                                    </td>
-                                    <td className="border px-4 py-2 text-sm md:text-base">
-                                        Test
-                                    </td>
-                                    <td className="border px-4 py-2 text-sm md:text-base">
-                                        Test
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td className="border px-4 py-2 text-sm md:text-base">
-                                        Test
-                                    </td>
-                                    <td className="border px-4 py-2 text-sm md:text-base">
-                                        Test
-                                    </td>
-                                    <td className="border px-4 py-2 text-sm md:text-base">
-                                        Test
-                                    </td>
-                                    <td className="border px-4 py-2 text-sm md:text-base">
-                                        Test
-                                    </td>
-                                    <td className="border px-4 py-2 text-sm md:text-base">
-                                        Test
-                                    </td>
-                                    <td className="border px-4 py-2 text-sm md:text-base">
-                                        Test
-                                    </td>
-                                </tr>
+                                {list_janji &&
+                                    list_janji.map((janji) => (
+                                        <tr>
+                                            <td className="border px-4 py-2 text-sm md:text-base">
+                                                {janji.id}
+                                            </td>
+                                            <td className="border px-4 py-2 text-sm md:text-base">
+                                                {janji.name}
+                                            </td>
+                                            <td className="border px-4 py-2 text-sm md:text-base">
+                                                {janji.tanggal}
+                                            </td>
+                                            <td className="border px-4 py-2 text-sm md:text-base">
+                                                {janji.jam}
+                                            </td>
+                                            <td className="border px-4 py-2 text-sm md:text-base">
+                                                {janji.nama}
+                                            </td>
+                                            <td className="border px-4 py-2 text-sm md:text-base">
+                                                {janji.jenis_layanan}
+                                            </td>
+                                            <td className="border px-4 py-2 text-sm md:text-base">
+                                                {janji.payment_status}
+                                            </td>
+                                            <td className="border px-4 py-2 text-sm md:text-base text-ellipsis overflow-hidden">
+                                                {janji.payment_link}
+                                            </td>
+                                        </tr>
+                                    ))}
                             </tbody>
                         </table>
                     </div>

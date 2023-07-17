@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Janji;
-use Illuminate\Http\Request;
-use App\Models\Psikolog;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
+use App\Models\Janji;
+use App\Models\Psikolog;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Validator;
 
 class LayananController extends Controller
 {
@@ -16,9 +20,38 @@ class LayananController extends Controller
         return Inertia::render('DetailLayanan');
     }
 
-    public function filter(Request $request)
+    public function makePayment(Request $request)
     {
 
+
+        $secret_key = 'Basic ' . config('xendit.key_auth');
+        $external_id = Str::random(10);
+        $data_request = Http::withHeaders([
+            'Authorization' => $secret_key
+        ])->post('https://api.xendit.co/v2/invoices', [
+                    'external_id' => $external_id,
+                    'amount' => $request->harga
+                ]);
+
+        $startIndex = strpos($data_request, '"invoice_url":"') + strlen('"invoice_url":"');
+        $endIndex = strpos($data_request, '","available_banks"');
+        $invoiceUrl = substr($data_request, $startIndex, $endIndex - $startIndex);
+
+        Janji::create([
+            'id_user' => Auth::user()->id,
+            'id_layanan' => $request->id_layanan,
+            'tanggal' => $request->tanggal,
+            'jam' => $request->jam,
+            'payment_status' => 'pending',
+            'payment_link' => $invoiceUrl,
+        ]);
+        error_log($request->tanggal);
+        return response($data_request);
+
+    }
+
+    public function filter(Request $request)
+    {
         if ($request->type == 'offline') {
             $validator = Validator::make($request->all(), [
                 'provinsi' => 'required',
@@ -34,24 +67,25 @@ class LayananController extends Controller
                 $kabupaten = $request->kabupaten;
                 $jam = $request->jam;
                 $tanggal = $request->tanggal;
-                $available_psikolog = Psikolog::select('psikolog.id', 'psikolog.nama', 'psikolog.foto_profil', 'psikolog.bidang_keahlian', 'psikolog.tahun_pengalaman', 'psikolog.rating', 'h.harga', 'h.jenis_layanan', 'psikolog.nomor_str', 'psikolog.kota', 'psikolog.provinsi', 'psikolog.lulusan')
-                    ->join('harga_layanan as h', 'psikolog.id', '=', 'h.id_psikolog')
-                    ->whereNotIn('psikolog.id', function ($query) use ($tanggal, $jam) {
-                        $query->select('j.id_psikolog')
-                            ->from('janji as j')
-                            ->where('j.tanggal', $tanggal)
-                            ->where('j.jam', $jam)
-                            ->union(function ($query) use ($tanggal) {
-                                $query->select('t.id_psikolog')
-                                    ->from('tanggal_tidak_tersedia as t')
-                                    ->whereDate('t.tanggal_mulai', '<=', $tanggal)
-                                    ->whereDate('t.tanggal_selesai', '>=', $tanggal);
-                            });
-                    })
-                    ->where('psikolog.provinsi', $provinsi)
-                    ->where('psikolog.kota', $kabupaten)
-                    ->where('h.jenis_layanan', 'offline')
-                    ->get();
+                $available_psikolog = DB::select("
+            SELECT  p.*,h.id AS id_layanan, h.harga as harga
+            FROM psikolog p
+            JOIN harga_layanan h ON p.id = h.id_psikolog
+            WHERE p.id NOT IN (
+                SELECT h.id_psikolog
+                FROM janji j
+                JOIN harga_layanan h ON j.id_layanan = h.id
+                WHERE j.tanggal = ? AND j.jam = ?
+                UNION
+                SELECT p.id
+                FROM psikolog p
+                JOIN tanggal_tidak_tersedia t ON p.id = t.id_psikolog
+                WHERE ? BETWEEN t.tanggal_mulai AND t.tanggal_selesai
+            )
+            AND p.provinsi = ?
+            AND p.kota = ?
+            AND h.jenis_layanan = ?
+        ", [$tanggal, $jam, $tanggal, $provinsi, $kabupaten, 'offline']);
                 return response()->json($available_psikolog);
             }
         }
@@ -59,33 +93,34 @@ class LayananController extends Controller
             $validator = Validator::make($request->all(), [
                 'jam' => 'required',
                 'tanggal' => 'required',
-
             ]);
             if ($validator->fails()) {
                 return redirect()->back()->withErrors($validator);
             } else {
                 $jam = $request->jam;
                 $tanggal = $request->tanggal;
-                $available_psikolog = Psikolog::select('psikolog.id', 'psikolog.nama', 'psikolog.foto_profil', 'psikolog.bidang_keahlian', 'psikolog.tahun_pengalaman', 'psikolog.rating', 'h.harga', 'h.jenis_layanan', 'psikolog.nomor_str', 'psikolog.kota', 'psikolog.provinsi', 'psikolog.lulusan')
-                    ->join('harga_layanan as h', 'psikolog.id', '=', 'h.id_psikolog')
-                    ->whereNotIn('psikolog.id', function ($query) use ($tanggal, $jam) {
-                        $query->select('j.id_psikolog')
-                            ->from('janji as j')
-                            ->where('j.tanggal', $tanggal)
-                            ->where('j.jam', $jam)
-                            ->union(function ($query) use ($tanggal) {
-                                $query->select('t.id_psikolog')
-                                    ->from('tanggal_tidak_tersedia as t')
-                                    ->whereDate('t.tanggal_mulai', '<=', $tanggal)
-                                    ->whereDate('t.tanggal_selesai', '>=', $tanggal);
-                            });
-                    })
-                    ->where('h.jenis_layanan', 'online')
-                    ->get();
+                $available_psikolog = DB::select("
+            SELECT  p.*,h.id AS id_layanan,h.harga as harga
+            FROM psikolog p
+            JOIN harga_layanan h ON p.id = h.id_psikolog
+            WHERE p.id NOT IN (
+                SELECT h.id_psikolog
+                FROM janji j
+                JOIN harga_layanan h ON j.id_layanan = h.id
+                WHERE j.tanggal = ? AND j.jam = ?
+                UNION
+                SELECT p.id
+                FROM psikolog p
+                JOIN tanggal_tidak_tersedia t ON p.id = t.id_psikolog
+                WHERE ? BETWEEN t.tanggal_mulai AND t.tanggal_selesai
+            )
+            AND h.jenis_layanan = ?
+        ", [$tanggal, $jam, $tanggal, 'online']);
                 return response()->json($available_psikolog);
             }
         }
     }
+
 
     public function detailPayment($id, $tanggal, $jam)
     {
@@ -105,7 +140,7 @@ class LayananController extends Controller
     {
         $janji = Janji::create([
             'id_psikolog' => $request->id_psikolog,
-            'id_user' =>  $request->id_user,
+            'id_user' => $request->id_user,
             'jam' => $request->jam,
             'tanggal' => $request->tanggal
         ]);

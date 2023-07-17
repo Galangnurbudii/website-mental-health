@@ -10,7 +10,7 @@ import LeftSideLayanan from '@/Components/LeftSideLayanan'
 import Header from '@/Components/Header'
 import Select from 'react-select'
 
-export default function DetailLayanan() {
+export default function DetailLayanan({ auth }) {
     // const [nama, rating] = psikolog;
 
     // Dropdown Menu
@@ -623,7 +623,7 @@ export default function DetailLayanan() {
             kabupaten: selectedKabupaten.value,
             jam: jam[activeIndex - 1],
             tanggal: startDate.toISOString().split('T')[0],
-        }   
+        }
         axios
             .post(route('filter'), jsonData)
             .then((response) => {
@@ -655,7 +655,7 @@ export default function DetailLayanan() {
 
     return (
         <div className="overflow-x-hidden">
-            <NavBar />
+            <NavBar user={auth.user} />
             <Header
                 pages2="Konsultasi"
                 currpages2="Layanan"
@@ -687,8 +687,9 @@ export default function DetailLayanan() {
 
                                         <div className="pt-5 grid md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-1 px-3 pb-5 gap-4">
                                             {availablePsikolog.map(
-                                                (psikolog) => (
+                                                (psikolog, key) => (
                                                     <CardsDetail
+                                                        key={key}
                                                         psikolog={psikolog}
                                                         imageSrc={`${psikolog.foto_profil}`}
                                                         names={psikolog.nama}
@@ -699,8 +700,14 @@ export default function DetailLayanan() {
                                                         badge1={`${psikolog.tahun_pengalaman} tahun`}
                                                         badge2={psikolog.rating}
                                                         fee={`Rp${psikolog.harga}0`}
-                                                        jam= {jam[activeIndex - 1]}
-                                                        tanggal={startDate.toISOString().split('T')[0]}
+                                                        jam={
+                                                            jam[activeIndex - 1]
+                                                        }
+                                                        tanggal={
+                                                            startDate
+                                                                .toISOString()
+                                                                .split('T')[0]
+                                                        }
                                                     />
                                                 )
                                             )}
