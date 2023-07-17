@@ -71,8 +71,7 @@ function ProfileNavbar() {
                                 <Link
                                     href={route('logout')}
                                     method="POST"
-                                    as="button"
-                                    className="flex gap-4 p-2 text-putih hover:text-primary transition font-medium text-lg hover:bg-putih hover:p-2 hover:w-full hover:rounded-sm"
+                                    className="flex gap-4 p-2 text-putih hover:text-primary transition font-medium text-lg hover:bg-putih hover:p-2 hover:rounded-sm"
                                 >
                                     <FiLogOut size={25} />
                                     Keluar
