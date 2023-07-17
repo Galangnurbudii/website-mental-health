@@ -33,8 +33,7 @@ export default function CardsDetail({
                 window.open(response.data.invoice_url)
             })
             .catch((error) => {
-                // console.log(error.response.data)
-                console.log('halo')
+                console.log(error.response.data)
             })
     }
     return (
