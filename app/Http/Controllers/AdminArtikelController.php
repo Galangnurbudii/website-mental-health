@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Artikel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Validator;
@@ -15,7 +16,7 @@ class AdminArtikelController extends Controller
     public function index()
     {
         $artikel = Artikel::all();
-    return Inertia::render('AdminIndexArtikel', ['artikels' => $artikel]);
+        return Inertia::render('AdminIndexArtikel', ['artikels' => $artikel]);
     }
 
     public function create()
@@ -48,12 +49,12 @@ class AdminArtikelController extends Controller
 
     public function store(Request $request)
     {
+        $id_user = Auth::user()->id;
         // Validasi input
         $validator = Validator::make($request->all(), [
             'judul' => 'required',
             'tag' => 'required',
             'detail' => 'required',
-            'id_user' => 'required',
             'thumbnail' => 'required|image',
             'thumbnail.*' => 'mimes:jpg, jpeg, png|max:2048'
         ]);
@@ -68,7 +69,7 @@ class AdminArtikelController extends Controller
                 'judul' => $request->judul,
                 'tag' => $request->tag,
                 'detail' => $request->detail,
-                'id_user' => $request->id_user,
+                'id_user' => $id_user,
                 'thumbnail_url' => $thumbnailPath
             ]);
 
@@ -86,12 +87,13 @@ class AdminArtikelController extends Controller
 
     public function update(Request $request, $id)
     {
+        $id_user = Auth::user()->id;
+
         // Validasi input
         $validator = Validator::make($request->all(), [
             'judul' => 'required',
             'tag' => 'required',
             'detail' => 'required',
-            'id_user' => 'required',
             'thumbnail' => 'image',
             'thumbnail.*' => 'mimes:jpg,jpeg,png|max:2048'
         ]);
@@ -99,7 +101,6 @@ class AdminArtikelController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         } else {
-            // Ambil artikel berdasarkan ID
             $artikel = Artikel::findOrFail($id);
 
             // Update data artikel
@@ -107,7 +108,7 @@ class AdminArtikelController extends Controller
                 'judul' => $request->judul,
                 'tag' => $request->tag,
                 'detail' => $request->detail,
-                'id_user' => $request->id_user,
+                'id_user' => $id_user,
             ]);
 
             // Periksa apakah ada file thumbnail yang diupload

@@ -10,8 +10,7 @@ export default function AdminEditArtikel() {
         judul: artikels.judul || '',
         tag: artikels.tag || '',
         detail: artikels.detail || '',
-        id_user: artikels.id_user || '',
-        thumbnail: null,
+        thumbnail: '',
     })
 
     const _handleEditorChange = (e) => {
@@ -72,21 +71,6 @@ export default function AdminEditArtikel() {
                             required
                         />
                         <span className="text-red-600">{errors.tag}</span>
-                    </div>
-                    <div className="mb-4">
-                        <label className="">Id user</label>
-                        <input
-                            id="id_user"
-                            placeholder="Id user"
-                            type="number"
-                            className="w-full px-4 py-2"
-                            label="id_user"
-                            name="id_user"
-                            value={data.id_user}
-                            onChange={(e) => setData('id_user', e.target.value)}
-                            required
-                        />
-                        <span className="text-red-600">{errors.id_user}</span>
                     </div>
                     <div className="mb-4">
                         <label className="">Thumbnail</label>
