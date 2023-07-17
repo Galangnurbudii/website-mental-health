@@ -53,14 +53,12 @@ export default function Login({ status, canResetPassword }) {
                                     md:justify-center
                                     md:items-center
                                     lg:h-full
-                                    lg:w-1/2 lg:flex lg:flex-col"
+                                    lg:w-1/2 lg:flex-col"
                     >
                         {/* put left side image here */}
                         <img
-                            className="lg:h-full lg:w-full 
-                            md:h-full               
-                            object-cover"
-                            src="images/login.png"
+                            className="lg:w-full md:h-full object-cover"
+                            src="images/login.jpg"
                         />
                     </div>
 
@@ -78,22 +76,10 @@ export default function Login({ status, canResetPassword }) {
                                 className="w-full flex flex-col 
                                             max-w-[500px] sm:pt-10"
                             >
-                                <h1
-                                    className="text-primary 
-                                                text-2xl 
-                                                sm:text-3xl 
-                                                md:text-3xl 
-                                                lg:text-[42px] font-bold mb-5"
-                                >
+                                <h1 className="text-primary text-2xl md:text-3xl lg:text-[42px] font-bold mb-5">
                                     Selamat Datang Kembali
                                 </h1>
-                                <p
-                                    className="text-hitam
-                                                text-lg 
-                                                sm:text-xl 
-                                                md:text-2xl 
-                                                lg:text-2xl font-semibold mb-7 px-1"
-                                >
+                                <p className="text-hitam text-lg sm:text-xl md:text-2xl  font-semibold mb-7 px-1">
                                     Masuk ke Berani Bicara. Isikan detail
                                     informasi
                                 </p>
@@ -175,7 +161,7 @@ export default function Login({ status, canResetPassword }) {
                                                 )
                                             }
                                         />
-                                        <span className="font-semibold ml-2 text-sm text-gray-600">
+                                        <span className="font-semibold text-sm md:text-base ml-2 text-gray-600">
                                             Ingat saya
                                         </span>
                                     </label>
@@ -196,7 +182,7 @@ export default function Login({ status, canResetPassword }) {
                                     </BackUpButton>
                                 </div>
 
-                                <div className="flex justify-center mt-4">
+                                <div className="flex justify-center pt-8">
                                     {canResetPassword && (
                                         <Link
                                             href={route('register')}

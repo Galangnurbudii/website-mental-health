@@ -42,61 +42,29 @@ export default function Register() {
     return (
         <GuestLayout>
             <Head title="Register" />
-
             <form onSubmit={submit}>
-                <div className="w-full h-screen lg:flex md:flex md:justify-center">
-                    {/* left side */}
-                    <div
-                        className="relative                    
-                                    md:w-1/2
-                                    md:flex
-                                    md:justify-center
-                                    md:items-center
-                                    lg:h-full
-                                    lg:w-1/2 lg:flex lg:flex-col"
-                    >
-                        {/* put left side image here */}
+                <div className="w-full h-screen md:flex md:justify-center">
+                    <div className="relative md:w-1/2 md:flex md:justify-center md:items-center lg:h-full lg:flex lg:flex-col">
                         <img
-                            className="lg:h-full lg:w-full 
-                            md:h-full               
-                            object-cover"
+                            className="lg:w-full md:h-full object-cover"
                             src="images/register.png"
-                            alt=""
+                            alt="Gambar Buat Akun"
                         />
                     </div>
 
-                    {/* right side */}
-                    <div
-                        className="md:w-3/4
-                                    lg:w-1/2 h-full
-
-                                    md:p-20 lg:p-10 
-                                    flex flex-col justify-between items-center p-10"
-                    >
-                        <div className="w-full flex flex-col max-w-[525px] sm:pt-8">
+                    <div className="md:w-3/4 lg:w-1/2 h-full md:p-20 lg:p-10 flex flex-col justify-between items-center p-10">
+                        <div className="w-full flex flex-col max-w-[525px] pt-4">
                             {/* title */}
-                            <div
-                                className="w-full flex flex-col 
-                                            max-w-[500px] sm:pt-10"
-                            >
-                                <h1
-                                    className="text-primary 
-                                                text-2xl 
-                                                sm:text-3xl 
-                                                md:text-3xl 
-                                                lg:text-[42px] font-bold mb-5"
-                                >
+                            <div className="w-full flex flex-col max-w-[500px]">
+                                <h1 className="text-primary text-2xl md:text-4xl font-bold mb-5">
                                     Bergabung ke Komunitas
                                 </h1>
-                                <p className="text-[#333333] text-2xl font-semibold mb-7">
+                                <p className="text-hitam text-2xl font-semibold pb-7">
                                     Jangan merasa sendiri. Cintai dirimu bersama
                                     kami
                                 </p>
                             </div>
-
-                            {/* login box -> w594 h60 */}
-                            {/* RegisteredUserController */}
-                            <div>
+                            <div className="">
                                 <div className="w-full mt-4 mb-7">
                                     <InputLabel htmlFor="name" />
 
@@ -222,7 +190,6 @@ export default function Register() {
                                         message={errors.name}
                                         className="mt-2"
                                     />
-                                              
                                 </div>
                                 <div className="block mb-10">
                                     <label className="flex items-center">
@@ -237,7 +204,7 @@ export default function Register() {
                                             }
                                             required
                                         />
-                                        <span className="font-semibold ml-2 text-sm text-gray-600">
+                                        <span className="font-semibold text-sm md:text-base ml-2 text-gray-600">
                                             Saya setuju dengan{' '}
                                             <span className="text-primary">
                                                 ketentuan dan persyaratan
@@ -250,7 +217,7 @@ export default function Register() {
                                     Buat Akun
                                 </BackUpButton>
 
-                                <div className="flex justify-center mt-4">
+                                <div className="flex justify-center pt-4">
                                     <Link
                                         href={route('login')}
                                         className="font-semibold text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none"
