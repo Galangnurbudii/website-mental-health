@@ -37,6 +37,9 @@ class LayananController extends Controller
         $endIndex = strpos($data_request, '","available_banks"');
         $invoiceUrl = substr($data_request, $startIndex, $endIndex - $startIndex);
 
+
+
+
         Janji::create([
             'id_user' => Auth::user()->id,
             'id_layanan' => $request->id_layanan,
@@ -44,9 +47,22 @@ class LayananController extends Controller
             'jam' => $request->jam,
             'payment_status' => 'pending',
             'payment_link' => $invoiceUrl,
+            'doc_no' => $external_id
         ]);
         error_log($request->tanggal);
         return response($data_request);
+
+    }
+
+    public function callback(Request $request)
+    {
+        $data = request()->all();
+        $status = $data['status'];
+        $external_id = $data['external_id'];
+        Janji::where('doc_no', $external_id)->update([
+            'payment_status' => $status
+        ]);
+        return response()->json($data);
 
     }
 

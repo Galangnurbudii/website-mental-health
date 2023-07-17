@@ -29,9 +29,6 @@ export default function AdminIndexPsikolog(props) {
                         <tr className="bg-gray-100">
                             <th className="px-4 py-2 w-20">No.</th>
                             <th className="px-4 py-2">Nama</th>
-                            <th className="px-4 py-2" colSpan="2">
-                                Email
-                            </th>
                             <th className="px-4 py-2">Rating</th>
                             <th className="px-4 py-2">Bidang Keahlian</th>
                             <th className="px-4 py-2">Tahun Pengalaman</th>
@@ -51,9 +48,6 @@ export default function AdminIndexPsikolog(props) {
                                 </td>
                                 <td className="border px-4 py-2">
                                     {psikolog.nama}
-                                </td>
-                                <td className="border px-4 py-2" colSpan="2">
-                                    {psikolog.email}
                                 </td>
                                 <td className="border px-4 py-2">
                                     {psikolog.rating}

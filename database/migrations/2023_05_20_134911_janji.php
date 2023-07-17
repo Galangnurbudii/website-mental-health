@@ -21,7 +21,7 @@ return new class extends Migration {
             $table->timestamps();
             $table->string('payment_status');
             $table->text('payment_link');
-
+            $table->string('doc_no')->nullable();
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('id_layanan')->references('id')->on('harga_layanan')->onDelete('cascade');
         });

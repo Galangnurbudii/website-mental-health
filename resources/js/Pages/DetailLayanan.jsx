@@ -686,29 +686,53 @@ export default function DetailLayanan({ auth }) {
                                         // Section 2
 
                                         <div className="pt-5 grid md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-1 px-3 pb-5 gap-4">
-                                            {availablePsikolog.map(
-                                                (psikolog, key) => (
-                                                    <CardsDetail
-                                                        key={key}
-                                                        psikolog={psikolog}
-                                                        imageSrc={`${psikolog.foto_profil}`}
-                                                        names={psikolog.nama}
-                                                        jobs="Psikolog"
-                                                        text={
-                                                            psikolog.bidang_keahlian
-                                                        }
-                                                        badge1={`${psikolog.tahun_pengalaman} tahun`}
-                                                        badge2={psikolog.rating}
-                                                        fee={`Rp${psikolog.harga}0`}
-                                                        jam={
-                                                            jam[activeIndex - 1]
-                                                        }
-                                                        tanggal={
-                                                            startDate
-                                                                .toISOString()
-                                                                .split('T')[0]
-                                                        }
-                                                    />
+                                            {availablePsikolog.length == 0 ? (
+                                                <div className="w-full text-bold">
+                                                    Yah, Psikolognya pada sibuk
+                                                    nih
+                                                    <div className="flex justify-center">
+                                                        <img
+                                                            src="/images/noPsikolog.png"
+                                                            className
+                                                            alt=""
+                                                            width={400}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            ) : (
+                                                availablePsikolog.map(
+                                                    (psikolog, key) => (
+                                                        <CardsDetail
+                                                            key={key}
+                                                            psikolog={psikolog}
+                                                            imageSrc={`${psikolog.foto_profil}`}
+                                                            names={
+                                                                psikolog.nama
+                                                            }
+                                                            jobs="Psikolog"
+                                                            text={
+                                                                psikolog.bidang_keahlian
+                                                            }
+                                                            badge1={`${psikolog.tahun_pengalaman} tahun`}
+                                                            badge2={
+                                                                psikolog.rating
+                                                            }
+                                                            fee={`Rp${psikolog.harga}0`}
+                                                            jam={
+                                                                jam[
+                                                                    activeIndex -
+                                                                        1
+                                                                ]
+                                                            }
+                                                            tanggal={
+                                                                startDate
+                                                                    .toISOString()
+                                                                    .split(
+                                                                        'T'
+                                                                    )[0]
+                                                            }
+                                                        />
+                                                    )
                                                 )
                                             )}
                                         </div>

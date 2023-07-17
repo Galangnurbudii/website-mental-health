@@ -11,7 +11,7 @@ import Header from '@/Components/Header'
 import Select from 'react-select'
 import CardsDetail from '@/Components/CardsDetail'
 
-export default function DetailLayanan() {
+export default function DetailLayanan({ auth }) {
     // const [nama, rating] = psikolog;
 
     // Empty Validation for Dropdown Menu Lokasi
@@ -33,7 +33,7 @@ export default function DetailLayanan() {
 
         const jsonData = {
             type: 'online',
-            jam: jam[activeIndex - 1],  
+            jam: jam[activeIndex - 1],
             tanggal: startDate.toISOString().split('T')[0],
         }
         axios
@@ -68,7 +68,7 @@ export default function DetailLayanan() {
 
     return (
         <div className="overflow-x-hidden">
-            <NavBar />
+            <NavBar user={auth.user} />
             <Header
                 pages2="Konsultasi"
                 currpages2="Layanan"
@@ -98,22 +98,52 @@ export default function DetailLayanan() {
                                     {showContent ? (
                                         // Section 2
                                         <div className="pt-5 grid md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-1 px-3 pb-5 gap-4">
-                                            {availablePsikolog.map(
-                                                (psikolog) => (
-                                                    <CardsDetail
-                                                        psikolog={psikolog}
-                                                        imageSrc={`${psikolog.foto_profil}`}
-                                                        names={psikolog.nama}
-                                                        jobs="Psikolog"
-                                                        text={
-                                                            psikolog.bidang_keahlian
-                                                        }
-                                                        badge1={`${psikolog.tahun_pengalaman} tahun`}
-                                                        badge2={psikolog.rating}
-                                                        fee={`Rp${psikolog.harga}0`}
-                                                        jam= {jam[activeIndex - 1]}
-                                                        tanggal={startDate.toISOString().split('T')[0]}
-                                                    />
+                                            {availablePsikolog.length == 0 ? (
+                                                <div className="w-full text-bold">
+                                                    Yah, Psikolognya pada sibuk
+                                                    nih
+                                                    <div className="flex justify-center">
+                                                        <img
+                                                            src="/images/noPsikolog.png"
+                                                            className
+                                                            alt=""
+                                                            width={400}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            ) : (
+                                                availablePsikolog.map(
+                                                    (psikolog) => (
+                                                        <CardsDetail
+                                                            psikolog={psikolog}
+                                                            imageSrc={`${psikolog.foto_profil}`}
+                                                            names={
+                                                                psikolog.nama
+                                                            }
+                                                            jobs="Psikolog"
+                                                            text={
+                                                                psikolog.bidang_keahlian
+                                                            }
+                                                            badge1={`${psikolog.tahun_pengalaman} tahun`}
+                                                            badge2={
+                                                                psikolog.rating
+                                                            }
+                                                            fee={`Rp${psikolog.harga}0`}
+                                                            jam={
+                                                                jam[
+                                                                    activeIndex -
+                                                                        1
+                                                                ]
+                                                            }
+                                                            tanggal={
+                                                                startDate
+                                                                    .toISOString()
+                                                                    .split(
+                                                                        'T'
+                                                                    )[0]
+                                                            }
+                                                        />
+                                                    )
                                                 )
                                             )}
                                         </div>

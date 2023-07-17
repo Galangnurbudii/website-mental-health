@@ -122,17 +122,15 @@ Route::middleware('psikolog')->group(function () {
     Route::get('/aturketersediaan', function () {
         return Inertia::render('AturKetersediaan');
     })->name('aturketersediaan');
-
-    Route::resource('psikologs', PsikologController::class);
-
 });
 
+Route::post('/callback', [LayananController::class, 'callback']);
+Route::post('/upload', [AdminArtikelController::class, 'uploadImage']);
 Route::middleware('admin')->group(function () {
     Route::get('/dashboard-admin', [AdminController::class, 'index'])->name('dashboardadmin');
-    Route::post('/upload', [AdminArtikelController::class, 'uploadImage']);
     Route::post('artikels/{id}', [AdminArtikelController::class, 'update'])->name('updateArtikel');
     Route::resource('artikels', AdminArtikelController::class);
-
+    Route::resource('psikologs', PsikologController::class);
 });
 
 Route::middleware('auth')->group(function () {

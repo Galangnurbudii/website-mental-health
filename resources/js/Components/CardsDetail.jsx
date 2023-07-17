@@ -31,10 +31,10 @@ export default function CardsDetail({
             .then((response) => {
                 console.log(response.data)
                 window.open(response.data.invoice_url)
+                window.location.href = '/jadwalkonsultasiuser'
             })
             .catch((error) => {
-                // console.log(error.response.data)
-                console.log('halo')
+                console.log(error.response.data)
             })
     }
     return (

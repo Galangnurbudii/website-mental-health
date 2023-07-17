@@ -5,7 +5,6 @@ export default function AdminCreatePsikolog() {
     const { data, setData, post, processing, errors, reset } = useForm({
         nama: '',
         email: '',
-        password: '',
         rating: '',
         bidang_keahlian: '',
         tahun_pengalaman: '',
@@ -64,24 +63,6 @@ export default function AdminCreatePsikolog() {
                             required
                         />
                         <span className="text-red-600">{errors.email}</span>
-                    </div>
-                    <div className="mb-4">
-                        <label className="">Password</label>
-                        <input
-                            id="password"
-                            placeholder="Password"
-                            type="password"
-                            className="w-full px-4 py-2 rounded-lg"
-                            label="password"
-                            name="password"
-                            isFocused={true}
-                            value={data.password}
-                            onChange={(e) =>
-                                setData('password', e.target.value)
-                            }
-                            required
-                        />
-                        <span className="text-red-600">{errors.password}</span>
                     </div>
                     <div className="mb-4">
                         <label className="">Rating</label>
