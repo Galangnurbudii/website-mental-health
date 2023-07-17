@@ -4,8 +4,13 @@ import { BiHomeAlt2, BiExpandHorizontal } from 'react-icons/bi'
 import { FiLogOut, FiFileText } from 'react-icons/fi'
 import { MdOutlineArticle } from 'react-icons/md'
 import ProfileNavbarKeluar from './ProfileNavbarKeluar'
-
+import { Link } from '@inertiajs/react'
 function ProfileNavbarAdmin() {
+    const handleLogout = () => {
+        console.log('test')
+        post(route('logout'))
+    }
+
     return (
         <div className=" flex items-end justify-end px-4 pb-6">
             <button className="fixed bottom-8 right-6 z-30 lg:hidden peer h-14 w-14 rounded-full bg-primary hover:bg-clickedBackground focus:bg-clickedBackground active:bg-clickedBackground transition items-end">
@@ -66,7 +71,19 @@ function ProfileNavbarAdmin() {
                                 </a>
                             </li>
                         </ul> */}
-                        <ProfileNavbarKeluar />
+                        <ul className="space-y-8 mb-12 px-4 mt-8">
+                            <li>
+                                <Link
+                                    href={route('logout')}
+                                    method="post"
+                                    className="flex cursor-pointer gap-4 p-2 text-putih hover:text-primary transition font-medium text-lg hover:bg-putih hover:p-2 hover:rounded-md"
+                                >
+                                    <FiLogOut size={25} />
+                                    Keluar
+                                </Link>
+                            </li>
+                        </ul>
+                        {/* <ProfileNavbarKeluar handleLogut={handleLogout} /> */}
                     </div>
                 </nav>
             </div>

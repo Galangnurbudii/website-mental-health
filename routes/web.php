@@ -91,13 +91,7 @@ Route::get('/psikolog-login', function () {
     return Inertia::render('PsikologLogin');
 })->name('psikologlogin');
 
-Route::get('/jadwalkonsultasiuser', function () {
-    return Inertia::render('JadwalKonsultasiUser');
-})->name('jadwalkonsultasiuser');
 
-Route::get('/detailkonsultasi', function () {
-    return Inertia::render('DetailKonsultasi');
-})->name('detailkonsultasi');
 
 Route::get('/hapusprofil', function () {
     return Inertia::render('HapusProfil');
@@ -142,6 +136,10 @@ Route::middleware('admin')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
+
+    Route::get('/jadwalkonsultasiuser', [ProfileController::class, 'jadwalKonsultasi'])->name('jadwalkonsultasiuser');
+
+    Route::get('/detailkonsultasi/{id}', [ProfileController::class, 'detailKonsultasi'])->name('detailkonsultasi');
     Route::get('/forum-home', [ForumController::class, 'index'])->name('forumHome');
 
     Route::get('/forum', function () {

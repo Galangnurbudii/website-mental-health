@@ -1,8 +1,32 @@
 import ProfileNavbar from '@/Components/ProfileNavbar'
+import { TransactionCard } from '@/Components/TransactionCard'
 import { Link } from '@inertiajs/react'
 import { useState, useEffect } from 'react'
 
-export default function JadwalKonsultasiUser() {
+export default function JadwalKonsultasiUser({ list_janji }) {
+    const currentDate = new Date()
+    const upcoming_janji = []
+    const history_janji = []
+
+    list_janji.reduce(
+        (acc, janji) => {
+            const janjiDate = new Date(janji.tanggal)
+            const category = janjiDate >= currentDate ? 'upcoming' : 'history'
+
+            janji.category = category // Menambahkan atribut "category" pada objek janji
+
+            if (janjiDate >= currentDate) {
+                acc.upcoming_janji.push(janji)
+            } else {
+                acc.history_janji.push(janji)
+            }
+
+            return acc
+        },
+        { upcoming_janji, history_janji }
+    )
+    console.log(list_janji[0])
+
     const [selectedFilter, setSelectedFilter] = useState('Tidak Ada')
     const [showData, setShowData] = useState(false)
 
@@ -32,7 +56,7 @@ export default function JadwalKonsultasiUser() {
                             onChange={handleFilterChange}
                         >
                             <option value="Tidak Ada">Tidak Ada</option>
-                            <option value="Hari ini">Hari ini</option>
+                            <option value="Akan Datang">Akan Datang</option>
                             <option value="Selesai">Selesai</option>
                         </select>
                     </div>
@@ -40,35 +64,12 @@ export default function JadwalKonsultasiUser() {
 
                 {showData &&
                     (selectedFilter === 'Tidak Ada' ||
-                        selectedFilter === 'Hari ini') && (
-                        <Link href={route('detailkonsultasi')}>
-                            <div className="flex flex-row gap-2 md:gap-8">
-                                <div className="bg-primary px-1"></div>
-                                <div className="w-full shadow-xl rounded-lg border border-gray-300 bg-putih text-hitam">
-                                    <div className="flex flex-col gap-4 p-4 md:p-10">
-                                        <p className="font-bold text-lg">
-                                            Senin, 18 Juli 2023 - 09.00 AM
-                                        </p>
-                                        <h3 className="font-semibold">
-                                            Nama Pasien : Galang Nurbudi Utomo
-                                        </h3>
-                                        <h3 className="font-medium">
-                                            Tipe Konsultasi : Online
-                                        </h3>
-                                        <h3 className="font-medium">
-                                            Link zoom :
-                                            <a
-                                                className="hover:text-primary"
-                                                href="https://binus.zoom.us/j/97275854825#success"
-                                            >
-                                                {' '}
-                                                https://binus.zoom.us/j/97275854825#success
-                                            </a>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
+                        selectedFilter === 'Akan Datang') && (
+                        <>
+                            {upcoming_janji.map((janji, key) => (
+                                <TransactionCard key={key} janji={janji} />
+                            ))}
+                        </>
                     )}
 
                 <h1 className="text-hitam font-bold text-2xl md:text-4xl pt-5 md:pt-20 md:pb-10">
@@ -78,34 +79,11 @@ export default function JadwalKonsultasiUser() {
                 {showData &&
                     (selectedFilter === 'Tidak Ada' ||
                         selectedFilter === 'Selesai') && (
-                        <Link href={route('detailkonsultasi')}>
-                            <div className="flex flex-row gap-2 md:gap-8">
-                                <div className="bg-gray-400 px-1"></div>
-                                <div className="w-full shadow-xl rounded-lg border border-gray-300 bg-putih text-hitam">
-                                    <div className="flex flex-col gap-4 p-4 md:p-10">
-                                        <p className="font-bold text-lg">
-                                            Senin, 18 Juli 2023 - 09.00 AM
-                                        </p>
-                                        <h3 className="font-semibold">
-                                            Nama Pasien : Galang Nurbudi Utomo
-                                        </h3>
-                                        <h3 className="font-medium">
-                                            Tipe Konsultasi : Online
-                                        </h3>
-                                        <h3 className="font-medium">
-                                            Link zoom :
-                                            <a
-                                                className="hover:text-primary"
-                                                href="https://binus.zoom.us/j/97275854825#success"
-                                            >
-                                                {' '}
-                                                https://binus.zoom.us/j/97275854825#success
-                                            </a>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
+                        <>
+                            {history_janji.map((janji, key) => (
+                                <TransactionCard key={key} janji={janji} />
+                            ))}
+                        </>
                     )}
             </div>
         </>

@@ -16,7 +16,7 @@ export default function ProfileNavbarKeluar({ desc }) {
     }
 
     function Link() {
-        window.location.href = '/login'
+        fetch(route('logout'), { method: 'POST' })
     }
 
     return (
@@ -29,7 +29,7 @@ export default function ProfileNavbarKeluar({ desc }) {
                 <li>
                     <a
                         onClick={openModal}
-                        className="flex gap-4 p-2 text-putih hover:text-primary transition font-medium text-lg hover:bg-putih hover:p-2 hover:rounded-md"
+                        className="flex cursor-pointer gap-4 p-2 text-putih hover:text-primary transition font-medium text-lg hover:bg-putih hover:p-2 hover:rounded-md"
                     >
                         <FiLogOut size={25} />
                         Keluar
@@ -82,6 +82,7 @@ export default function ProfileNavbarKeluar({ desc }) {
 
                                     <div className="flex gap-3 items-end justify-center pt-5">
                                         {/* <Link href={route('/layanan')}> */}
+
                                         <BackUpButton
                                             onClick={Link}
                                             className="w-20 h-9 text-sm flex items-center justify-center"
