@@ -69,6 +69,7 @@ class ProfileController extends Controller
         $list_janji = DB::table('janji')
             ->join('harga_layanan', 'janji.id_layanan', '=', 'harga_layanan.id')
             ->join('psikolog', 'harga_layanan.id_psikolog', '=', 'psikolog.id')
+            ->where('janji.id_user', '=', Auth::user()->id)
             ->select('janji.*', 'harga_layanan.*', 'psikolog.*')
             ->get();
         // dd($list_janji);
