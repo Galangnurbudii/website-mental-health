@@ -107,6 +107,15 @@ Route::get('/error', function () {
     return Inertia::render('NotFound');
 })->name('notFound');
 
+Route::get('/tentangkami', function () {
+    return Inertia::render('TentangKami');
+})->name('tentangkami');
+
+Route::get('/syaratketentuan', function () {
+    return Inertia::render('SyaratDanKetentuan');
+})->name('syaratdanketentuan');
+
+
 Route::middleware('psikolog')->group(function () {
     Route::get('/dashboardpsikolog', function () {
         return Inertia::render('DashboardPsikolog');

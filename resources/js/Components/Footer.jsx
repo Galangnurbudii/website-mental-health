@@ -17,7 +17,7 @@ function Footer() {
                     <ul className="text-putih">
                         <li>
                             <a
-                                href="#"
+                                href={route('tentangkami')}
                                 className="mb-3 inline-block text-sm hover:underline"
                             >
                                 Tentang Kami
@@ -25,7 +25,7 @@ function Footer() {
                         </li>
                         <li>
                             <a
-                                href="#"
+                                href={route('syaratdanketentuan')}
                                 className="mb-3 inline-block text-sm hover:underline"
                             >
                                 Syarat dan Ketentuan
@@ -78,7 +78,7 @@ function Footer() {
                     <ul className="text-putih flex flex-row">
                         <li>
                             <a
-                                href="#"
+                                href="https://www.facebook.com/"
                                 className="mr-3 flex h-9 w-9 items-center justify-center text-putih hover:bg-primary hover:text-putih"
                             >
                                 <FaFacebookSquare size={25} />
@@ -86,7 +86,7 @@ function Footer() {
                         </li>
                         <li>
                             <a
-                                href="#"
+                                href="https://www.instagram.com/beranibicara_consultation/"
                                 className="mr-3 flex h-9 w-9 items-center justify-center text-putih hover:bg-primary hover:text-putih"
                             >
                                 <FaInstagram size={25} />
@@ -94,7 +94,7 @@ function Footer() {
                         </li>
                         <li>
                             <a
-                                href="#"
+                                href="https://twitter.com/i/flow/login?redirect_after_login=%2F"
                                 className="mr-3 flex h-9 w-9 items-center justify-center text-putih hover:bg-primary hover:text-putih"
                             >
                                 <FaTwitterSquare size={25} />
@@ -105,26 +105,6 @@ function Footer() {
             </div>
 
             <div className="w-full border-t border-putih pt-6">
-                {/* <div className="mb-3 flex items-center justify-center">
-                    <a
-                        href="#"
-                        className="mr-3 flex h-9 w-9 items-center justify-center text-putih hover:bg-primary hover:text-putih"
-                    >
-                        <FaFacebookSquare size={25} />
-                    </a>
-                    <a
-                        href="#"
-                        className="mr-3 flex h-9 w-9 items-center justify-center text-putih hover:bg-primary hover:text-putih"
-                    >
-                        <FaInstagram size={25} />
-                    </a>
-                    <a
-                        href="#"
-                        className="mr-3 flex h-9 w-9 items-center justify-center text-putih hover:bg-primary hover:text-putih"
-                    >
-                        <FaTwitterSquare size={25} />
-                    </a>
-                </div> */}
                 <p className="text-center text-xs font-medium text-putih">
                     Dibuat dengan <span className="text-red-500">❤️</span> oleh
                     Keluarga Gembira
