@@ -15,8 +15,6 @@ return new class extends Migration {
         Schema::create('psikolog', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('email')->unique();
-            $table->string('password');
             $table->float('rating');
             $table->string('bidang_keahlian');
             $table->integer('tahun_pengalaman');
@@ -27,7 +25,7 @@ return new class extends Migration {
             $table->string('lulusan');
             $table->string('foto_profil');
             $table->timestamps();
-            $table->unsignedBigInteger('id_user')->nullable();
+            $table->unsignedBigInteger('id_user');
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
         });
     }

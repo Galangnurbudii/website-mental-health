@@ -26,6 +26,7 @@ class Psikolog extends Model
         'kota',
         'lulusan',
         'foto_profil',
+        'id_user',
     ];
 
     // ...
