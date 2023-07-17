@@ -688,15 +688,18 @@ export default function DetailLayanan({ auth }) {
                                         <div className="pt-5 grid md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-1 px-3 pb-5 gap-4">
                                             {availablePsikolog.length == 0 ? (
                                                 <div className="w-full text-bold">
-                                                    Yah, Psikolognya pada sibuk
-                                                    nih
-                                                    <div className="flex justify-center">
+                                                    <div className="flex flex-col justify-center items-center gap-2">
                                                         <img
                                                             src="/images/noPsikolog.png"
                                                             className
                                                             alt=""
                                                             width={400}
                                                         />
+                                                        <p className="text-hitam font-medium text-2xl">
+                                                            {' '}
+                                                            Mohon maaf, Psikolog
+                                                            sedang sibuk
+                                                        </p>
                                                     </div>
                                                 </div>
                                             ) : (
@@ -890,7 +893,6 @@ export default function DetailLayanan({ auth }) {
                                                 {errorMessage}
                                             </p>
                                             <BackUpButton
-                                                className="h-0"
                                                 onClick={handleClick2}
                                             >
                                                 Lanjut
