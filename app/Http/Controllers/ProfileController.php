@@ -85,8 +85,7 @@ class ProfileController extends Controller
             ->join('psikolog', 'harga_layanan.id_psikolog', '=', 'psikolog.id')
             ->where('janji.id', '=', $id)
             ->select('janji.*', 'harga_layanan.*', 'psikolog.*')
-            ->get();
-        dd($janji);
-        return Inertia::render('DetailKonsultasi', $janji);
+            ->get()->first();
+        return Inertia::render('DetailKonsultasi', ['janji' => $janji]);
     }
 }
