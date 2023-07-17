@@ -37,7 +37,7 @@ class ProfileController extends Controller
             $request->user()->email_verified_at = null;
         }
 
-        
+
 
         $request->user()->save();
 
@@ -80,8 +80,13 @@ class ProfileController extends Controller
     }
     public function detailKonsultasi($id)
     {
-        $janji = Janji::find($id);
-        // dd($janji);
+        $janji = DB::table('janji')
+            ->join('harga_layanan', 'janji.id_layanan', '=', 'harga_layanan.id')
+            ->join('psikolog', 'harga_layanan.id_psikolog', '=', 'psikolog.id')
+            ->where('janji.id', '=', $id)
+            ->select('janji.*', 'harga_layanan.*', 'psikolog.*')
+            ->get();
+        dd($janji);
         return Inertia::render('DetailKonsultasi', $janji);
     }
 }

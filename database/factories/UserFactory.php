@@ -25,7 +25,7 @@ class UserFactory extends Factory
             'role' => $roles[array_rand($roles)],
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
             // password
-            'profile_picture' => '/images/profile.png',
+            'profile_picture_url' => '/images/profile.png',
             'alamat' => 'Tulis alamat anda',
             'remember_token' => Str::random(10),
 

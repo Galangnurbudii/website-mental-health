@@ -19,9 +19,9 @@ export function TransactionCard({ janji, key }) {
             <div className="flex flex-row gap-2 md:gap-8">
                 <div
                     className={
-                        (janji.category == 'upcoming'
+                        janji.category == 'upcoming'
                             ? 'bg-primary px-1'
-                            : 'bg-gray-300  px-1')
+                            : 'bg-gray-300  px-1'
                     }
                 ></div>
 
@@ -53,6 +53,12 @@ export function TransactionCard({ janji, key }) {
                             <h3 className="font-medium">
                                 {`Alamat : ${janji.kota}, ${janji.provinsi}`}
                             </h3>
+                        )}
+
+                        {janji.payment_status == 'pending' ? (
+                            <h3 className="text-red-600	">Status : Pending </h3>
+                        ) : (
+                            <h3 className="text-green-600	">Status : Success</h3>
                         )}
                     </div>
                 </div>

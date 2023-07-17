@@ -19,7 +19,8 @@ class Janji extends Model
         'jam',
         'id_layanan',
         'payment_status',
-        'payment_link'
+        'payment_link',
+        'doc_no'
     ];
 
     // ...

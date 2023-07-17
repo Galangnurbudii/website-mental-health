@@ -1,7 +1,7 @@
 import ProfileNavbar from '@/Components/ProfileNavbar'
 import { useState } from 'react'
 
-export default function DetailKonsultasi({janji}) {
+export default function DetailKonsultasi({ janji }) {
     const [selectedFilter, setSelectedFilter] = useState('')
 
     const handleFilterChange = (event) => {
@@ -20,7 +20,7 @@ export default function DetailKonsultasi({janji}) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
                     <p className="text-hitam text-lg font-semibold">Nama</p>
                     <p className="text-hitam text-lg font-medium">
-                        : {janji}
+                        : {janji.nama}
                     </p>
                     <p className="text-hitam text-lg font-semibold">
                         Bidang Keahlian

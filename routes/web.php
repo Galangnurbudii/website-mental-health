@@ -127,6 +127,7 @@ Route::middleware('psikolog')->group(function () {
 
 });
 
+Route::post('/callback', [LayananController::class, 'callback']);
 Route::post('/upload', [AdminArtikelController::class, 'uploadImage']);
 Route::middleware('admin')->group(function () {
     Route::get('/dashboard-admin', [AdminController::class, 'index'])->name('dashboardadmin');
