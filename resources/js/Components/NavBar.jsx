@@ -16,7 +16,7 @@ const Navbar = ({ user }) => {
                 <Link href={route('home')}>Berani Bicara</Link>
             </h1>
             <ul className="hidden md:flex md:flex-row md:items-center">
-                <li className="p-4 text-hitam font-medium text-lg hover:text-primary hover:font-semibold">
+                <li className="p-4 text-hitam font-medium text-lg hover:text-primary hover:font-semibold ">
                     <Link href={route('home')}>Beranda</Link>
                 </li>
                 <li className="p-4 text-hitam font-medium text-lg hover:text-primary hover:font-semibold">
