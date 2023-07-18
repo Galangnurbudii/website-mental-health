@@ -1,6 +1,6 @@
 import Checkbox from '@/Components/Checkbox'
 import PrimaryButton from '@/Components/PrimaryButton'
-import DeleteUserForm from './profile/Partials/DeleteUserForm'
+import DeleteUserForm from './Profile/Partials/DeleteUserForm'
 
 import { useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'

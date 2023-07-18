@@ -2,7 +2,7 @@ import DateRangePickers from '@/Components/DateRangePickers'
 import { useState } from 'react'
 import SidebarPsikolog from '@/Components/SidebarPsikolog'
 
-export default function JadwalKonsultasi() {
+export default function JadwalKonsultasi({list_janji}) {
     const [selectedFilter, setSelectedFilter] = useState('')
 
     const handleFilterChange = (event) => {

@@ -79,7 +79,7 @@ export default function CardsDetail({
 
                     <BackUpButton
                         onClick={handleClick}
-                        className="h-0 text-xs lg:text-xs md:text-md sm:text-md"
+                        className="text-xs lg:text-xs md:text-md sm:text-md"
                     >
                         Konsultasi
                     </BackUpButton>

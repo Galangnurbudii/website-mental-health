@@ -88,13 +88,13 @@ export default function Article({ popular, articles, topik_terkini, auth }) {
                     )}
 
                 {filteredArticles[0] == 'kosong' ? (
-                    <div className="flex flex-col">
-                        <h1>Artikel Tidak Ditemukan</h1>
-
+                    <div className="flex flex-col items-center">
                         <img
+                            width={500}
                             src="/storage/images/noArticle.png"
                             alt="Tidak Ada Artikel"
                         />
+                        <h1 className='font-semibold mt-2'>Artikel Tidak Ditemukan</h1>
                     </div>
                 ) : (
                     <>

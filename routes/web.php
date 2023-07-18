@@ -111,13 +111,9 @@ Route::get('/syaratketentuan', function () {
 
 
 Route::middleware('psikolog')->group(function () {
-    Route::get('/dashboardpsikolog', function () {
-        return Inertia::render('DashboardPsikolog');
-    })->name('dashboardpsikolog');
+    Route::get('/dashboardpsikolog', [PsikologController::class, 'dashboardPsikolog'])->name('dashboardpsikolog');
 
-    Route::get('/jadwalkonsultasi', function () {
-        return Inertia::render('JadwalKonsultasi');
-    })->name('jadwalkonsultasi');
+    Route::get('/jadwalkonsultasi', [PsikologController::class, 'jadwalKonsultasi'])->name('jadwalkonsultasi');
 
     Route::get('/aturketersediaan', function () {
         return Inertia::render('AturKetersediaan');

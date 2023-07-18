@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Psikolog;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
@@ -17,6 +18,36 @@ class PsikologController extends Controller
     {
         $psikologs = Psikolog::all();
         return Inertia::render('AdminIndexPsikolog', ['psikologs' => $psikologs]);
+    }
+
+    public function jadwalKonsultasi()
+    {
+
+        $id_psikolog = Psikolog::where('id_user', '=', Auth::user()->id)->get()->first()->id;
+
+
+        $list_janji = DB::table('janji')
+            ->join('harga_layanan', 'janji.id_layanan', '=', 'harga_layanan.id')
+            ->join('psikolog', 'harga_layanan.id_psikolog', '=', 'psikolog.id')
+            ->where('janji.id_user', '=', $id_psikolog)
+            ->select('janji.*', 'harga_layanan.*', 'psikolog.*')
+            ->get();
+        return Inertia::render('JadwalKonsultasi', ['list_janji' => $list_janji]);
+
+    }
+
+    public function dashboardPsikolog()
+    {
+        $id_psikolog = Psikolog::where('id_user', '=', Auth::user()->id)->get()->first()->id;
+        $list_janji = DB::table('janji')
+            ->join('harga_layanan', 'janji.id_layanan', '=', 'harga_layanan.id')
+            ->join('psikolog', 'harga_layanan.id_psikolog', '=', 'psikolog.id')
+            ->where('janji.id_user', '=', $id_psikolog)
+            ->select('janji.*', 'harga_layanan.*', 'psikolog.*')
+            ->get();
+
+        // dd($list_janji);
+        return Inertia::render('DashboardPsikolog', ['list_janji' => $list_janji]);
     }
 
     public function create()

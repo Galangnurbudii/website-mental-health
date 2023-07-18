@@ -269,7 +269,6 @@ export default function DetailLayanan({ auth }) {
                                                 {errorMessage}
                                             </p>
                                             <BackUpButton
-                                                className="h-0"
                                                 onClick={handleClick2}
                                             >
                                                 Lanjut

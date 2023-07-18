@@ -6,9 +6,11 @@ import Footer from '@/Components/Footer'
 import NavBar from '@/Components/NavBar'
 import OtherArticle from '@/Components/OtherArticle'
 import { Link } from '@inertiajs/react'
+import ReactHtmlParser from 'react-html-parser'
 
 export default function ArticleDetail({
     article,
+    auth,
     topik_terkini,
     other_article,
 }) {
@@ -16,7 +18,7 @@ export default function ArticleDetail({
 
     return (
         <div className="bg-putih h-screen w-full">
-            <NavBar />
+            <NavBar user={auth.user} />
             <Directory articleTitle={`${article.judul}`} />
 
             <div className="grid grid-cols lg:grid-cols-[4fr_2fr] gap-10 px-6 pt-20 pb-32 md:px-16 lg:px-20">
@@ -24,17 +26,25 @@ export default function ArticleDetail({
                     <h1 className="text-4xl text-hitam font-bold pt-10">
                         {judul}
                     </h1>
-                    <img src={article.thumbnail_url} alt="Gambar Artikel" />
+                    <div className="flex justify-center">
+                        <img
+                            src={article.thumbnail_url}
+                            width={500}
+                            alt="Gambar Artikel"
+                        />
+                    </div>
                     <div className="flex flex-col justify-between gap-4">
-                        <p className="text-hitam text-base">{detail}</p>
+                        <p className="text-hitam text-base">
+                            {ReactHtmlParser(detail)}
+                        </p>
                     </div>
                 </div>
                 <div className="hidden lg:block">
                     <div className="flex flex-col gap-6">
                         <h3 className="text-hitam text-2xl font-bold">
-                            Rekomendasi Topik
+                            Artikel Lainnya
                         </h3>
-                        <div className="flex flex-row">
+                        {/* <div className="flex flex-row">
                             {Object.values(topik_terkini).map((topik) => (
                                 <button
                                     onClick={() => handleClick(topik)}
@@ -43,7 +53,7 @@ export default function ArticleDetail({
                                     {topik}
                                 </button>
                             ))}
-                        </div>
+                        </div> */}
 
                         {other_article.map((article) => (
                             <Link href={route('articleDetail', article.id)}>

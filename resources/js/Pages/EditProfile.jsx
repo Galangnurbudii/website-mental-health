@@ -8,6 +8,7 @@ import PrimaryButton from '@/Components/PrimaryButton'
 
 const EditProfile = () => {
     const user = usePage().props.auth.user
+    console.log(user.profile_picture_url)
 
     const { data, setData, patch, errors, processing, recentlySuccessful } =
         useForm({

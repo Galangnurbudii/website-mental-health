@@ -21,7 +21,7 @@ return new class extends Migration {
             $table->enum('role', ['user', 'admin', 'psikolog']);
             $table->string('nomor_telfon')->default('');
             $table->text('alamat')->default('');
-            $table->string('profile_picture_url')->default('');
+            $table->string('profile_picture_url')->default('/images/profile.png');
             $table->rememberToken();
             $table->timestamps();
         });

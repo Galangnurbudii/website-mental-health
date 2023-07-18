@@ -7,7 +7,7 @@ function Footer() {
             <div className="flex flex-wrap sm:flex-row-wrap mx-auto">
                 <div className="mb-8 sm:mb-0 w-full px-4 md:pl-16 font-medium text-putih md:w-1/5">
                     <h2 className="mb-3 text-3xl font-bold text-putih">
-                        <a href="">Mental Health</a>
+                        <a href="">Berani Bicara</a>
                     </h2>
                 </div>
                 <div className="mb-8 w-2/3 px-4 md:w-1/6">
