@@ -43,7 +43,7 @@ class PsikologController extends Controller
         $list_janji = DB::table('janji')
             ->join('harga_layanan', 'janji.id_layanan', '=', 'harga_layanan.id')
             ->join('psikolog', 'harga_layanan.id_psikolog', '=', 'psikolog.id')
-            ->where('janji.id_user', '=', $id_psikolog)
+            ->where('harga_layanan.id_psikolog', '=', $id_psikolog)
             ->select('janji.*', 'harga_layanan.*', 'psikolog.*')
             ->get();
 

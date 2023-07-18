@@ -15,7 +15,7 @@ export function TransactionCard({ janji, key }) {
     }
 
     return (
-        <Link href={route('detailkonsultasi', janji.id)}>
+        <Link href={route('detailkonsultasi', janji.doc_no)}>
             <div className="flex flex-row gap-2 md:gap-8">
                 <div
                     className={

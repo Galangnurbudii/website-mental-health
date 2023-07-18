@@ -17,15 +17,13 @@ export default function DashboradPsikolog({ list_janji }) {
                     />
                 </div>
             ) : (
-                <div className="lg:pl-96 md:px-40 pl-10 py-20">
+                <div className="flex flex-col gap-6 px-6 md:px-16 lg:pl-96 lg:pr-60 pb-32">
                     <h1 className="font-bold text-3xl pt-5 pb-10">
                         Jadwal Konsultasi
                     </h1>
-                    <div className="border-l-4 border-primary px-10">
-                        {list_janji.map((janji, key) => (
-                            <TransactionCard key={key} janji={janji} />
-                        ))}
-                    </div>
+                    {list_janji.map((janji, key) => (
+                        <TransactionCard key={key} janji={janji} />
+                    ))}
                 </div>
             )}
         </div>

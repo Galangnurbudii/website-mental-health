@@ -94,7 +94,9 @@ export default function Article({ popular, articles, topik_terkini, auth }) {
                             src="/storage/images/noArticle.png"
                             alt="Tidak Ada Artikel"
                         />
-                        <h1 className='font-semibold mt-2'>Artikel Tidak Ditemukan</h1>
+                        <h1 className="font-semibold mt-2">
+                            Artikel Tidak Ditemukan
+                        </h1>
                     </div>
                 ) : (
                     <>
@@ -110,7 +112,7 @@ export default function Article({ popular, articles, topik_terkini, auth }) {
                         <h1 className="font-bold text-xl md:text-2xl text-hitam ">
                             Artikel Lainnya
                         </h1>
-                        <div className="grid grid-cols-3 gap-4 justify-between">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-between">
                             {currentArticles.map((article) => (
                                 <ArticleCard
                                     key={article.id}

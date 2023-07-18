@@ -109,12 +109,12 @@ Route::get('/syaratketentuan', function () {
     return Inertia::render('SyaratDanKetentuan');
 })->name('syaratdanketentuan');
 
-Route::post('/tanggal-tidak-tersedia', [PsikologController::class, 'tanggalTakTersedia'])->name('tanggalTakTersedia');
 
 
 Route::middleware('psikolog')->group(function () {
     Route::get('/dashboardpsikolog', [PsikologController::class, 'dashboardPsikolog'])->name('dashboardpsikolog');
 
+    Route::post('/tanggal-tidak-tersedia', [PsikologController::class, 'tanggalTakTersedia'])->name('tanggalTakTersedia');
     Route::get('/jadwalkonsultasi', [PsikologController::class, 'jadwalKonsultasi'])->name('jadwalkonsultasi');
 
     Route::get('/aturketersediaan', [PsikologController::class, 'getDataFromPsikolog'])->name('aturketersediaan');
