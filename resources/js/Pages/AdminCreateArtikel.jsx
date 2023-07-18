@@ -9,7 +9,6 @@ export default function AdminCreatePsikolog() {
     const { data, setData, post, processing, errors, reset } = useForm({
         judul: '',
         tag: '',
-        id_user: '',
         detail: '',
         thumbnail: null,
     })
@@ -71,21 +70,6 @@ export default function AdminCreatePsikolog() {
                             required
                         />
                         <span className="text-red-600">{errors.tag}</span>
-                    </div>
-                    <div className="mb-4">
-                        <label className="">Id user</label>
-                        <input
-                            id="id_user"
-                            placeholder="Id user"
-                            type="number"
-                            className="w-full px-4 py-2"
-                            label="id_user"
-                            name="id_user"
-                            value={data.id_user}
-                            onChange={(e) => setData('id_user', e.target.value)}
-                            required
-                        />
-                        <span className="text-red-600">{errors.id_user}</span>
                     </div>
                     <div className="mb-4">
                         <label className="">Thumbnail</label>

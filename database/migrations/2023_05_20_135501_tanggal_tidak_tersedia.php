@@ -16,9 +16,7 @@ return new class extends Migration {
             $table->id();
             $table->unsignedBigInteger('id_psikolog');
             $table->date('tanggal_mulai');
-            $table->enum('jam_mulai', ['10:00', '12:00', '14:00', '16:00']);
             $table->date('tanggal_selesai');
-            $table->enum('jam_selesai', ['12:00', '14:00', '16:00', '18:00']);
             $table->timestamps();
 
             $table->foreign('id_psikolog')->references('id')->on('psikolog')->onDelete('cascade');

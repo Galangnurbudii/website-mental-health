@@ -23,7 +23,10 @@ export default function Forum({ auth }) {
         } else {
             // Kirim ke database
             axios
-                .post('/forum-store', { text: textAreaValue, id_user: auth.user.id })
+                .post('/forum-store', {
+                    text: textAreaValue,
+                    id_user: auth.user.id,
+                })
                 .then((response) => {
                     setShowValidateTextModal(true)
                 })
@@ -72,6 +75,9 @@ export default function Forum({ auth }) {
                             visible={showEmptyTextModal}
                         />
                         <ValidateTextModal
+                            route="/forum-home"
+                            text1="Postingan Berhasil Diunggah"
+                            text2="Selamat postingan Anda berhasil diunggah ke dalam forum"
                             onClose={handleOnCloseTextValidate}
                             visible={showValidateTextModal}
                         />

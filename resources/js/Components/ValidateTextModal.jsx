@@ -2,7 +2,7 @@ import React from 'react'
 import { FaCheck } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
 
-export default function ValidateTextModal({visible, onClose}) {
+export default function ValidateTextModal({visible, onClose, text1, text2,route}) {
     const handleOnClose = (e) => {
         if (e.target.id == "container") onClose();
     };
@@ -16,7 +16,7 @@ export default function ValidateTextModal({visible, onClose}) {
                 <div className="absolute border border-black bg-[#FFFFFF] rounded-md text-center
                                  pt-[10px]
                                 justify-center items-center">
-                    <a href={route("forumHome")}>
+                    <a href={route}>
                         <div className='relative'>
                             <IoClose
                                 className='absolute mt-4 right-6'
@@ -33,10 +33,10 @@ export default function ValidateTextModal({visible, onClose}) {
                         />
                     </div>
                     <h1 className='font-bold text-2xl'>
-                        Postingan Berhasil Diunggah
+                        {text1}
                     </h1>
                     <h2 className='mb-16 mx-20 font-semibold'>
-                        Selamat postingan Anda berhasil diunggah ke dalam forum
+                        {text2}
                     </h2>
                 </div>
             </div>

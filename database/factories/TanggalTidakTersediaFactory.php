@@ -23,9 +23,7 @@ class TanggalTidakTersediaFactory extends Factory
         return [
             'id_psikolog' => Psikolog::inRandomOrder()->first()->id,
             'tanggal_mulai' => $this->faker->date(),
-            'jam_mulai' => $this->faker->randomElement(['10:00', '12:00', '14:00', '16:00']),
             'tanggal_selesai' => $this->faker->date(),
-            'jam_selesai' => $this->faker->randomElement(['12:00', '14:00', '16:00', '18:00']),
         ];
     }
 }

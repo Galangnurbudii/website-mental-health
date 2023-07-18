@@ -12,7 +12,7 @@ use App\Http\Controllers\LayananController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PsikologController;
 use App\Http\Controllers\AdminArtikelController;
-
+use App\Models\Psikolog;
 
 // Auth::routes(['verify' => true]);
 
@@ -109,15 +109,15 @@ Route::get('/syaratketentuan', function () {
     return Inertia::render('SyaratDanKetentuan');
 })->name('syaratdanketentuan');
 
+Route::post('/tanggal-tidak-tersedia', [PsikologController::class, 'tanggalTakTersedia'])->name('tanggalTakTersedia');
+
 
 Route::middleware('psikolog')->group(function () {
     Route::get('/dashboardpsikolog', [PsikologController::class, 'dashboardPsikolog'])->name('dashboardpsikolog');
 
     Route::get('/jadwalkonsultasi', [PsikologController::class, 'jadwalKonsultasi'])->name('jadwalkonsultasi');
 
-    Route::get('/aturketersediaan', function () {
-        return Inertia::render('AturKetersediaan');
-    })->name('aturketersediaan');
+    Route::get('/aturketersediaan', [PsikologController::class, 'getDataFromPsikolog'])->name('aturketersediaan');
 });
 
 Route::post('/callback', [LayananController::class, 'callback']);

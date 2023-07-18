@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Psikolog;
+use App\Models\TanggalTidakTersedia;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -161,5 +162,31 @@ class PsikologController extends Controller
             $psikolog->delete();
         }
         return redirect()->route('psikologs.index');
+    }
+
+    public function getDataFromPsikolog()
+    {
+        $id = Auth::user()->id;
+
+        $psikolog = Psikolog::where('id_user', $id)->first();
+        // dd($psikolog);
+
+        if ($psikolog) {
+            return Inertia::render('AturKetersediaan', ['psikolog' => $psikolog]);
+        } else {
+            return response()->json(['error' => 'Psikolog tidak ditemukan']);
+        }
+    }
+
+    public function tanggalTakTersedia(Request $request)
+    {
+        // dd($request);
+        $tanggaltidaktersedia = TanggalTidakTersedia::create([
+            'id_psikolog' => $request->id_psikolog,
+            'tanggal_mulai' => $request->tanggal_mulai,
+            'tanggal_selesai' => $request->tanggal_selesai
+        ]);
+
+        return redirect()->route('dashboardpsikolog');
     }
 }

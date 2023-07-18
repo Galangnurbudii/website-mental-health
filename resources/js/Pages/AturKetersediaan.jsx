@@ -1,8 +1,48 @@
 import DateRangePickers from '@/Components/DateRangePickers'
 import PopupEdit from '@/Components/PopupEdit'
 import SidebarPsikolog from '@/Components/SidebarPsikolog'
+import ValidateTextModal from '@/Components/ValidateTextModal'
+import { useState } from 'react'
 
-export default function AturKetersediaan() {
+export default function AturKetersediaan({ psikolog }) {
+    // const userId = auth.user.id
+
+    // console.log(psikolog.id)
+
+    const [showValidateTextModal, setShowValidateTextModal] = useState(false)
+    const handleOnCloseTextValidate = () => setShowValidateTextModal(false)
+
+    const [startDate, setStartDate] = useState(new Date())
+    const [endDate, setEndDate] = useState(null)
+
+    const changeStartDate = (date) => {
+        setStartDate(date)
+    }
+
+    const changeEndDate = (date) => {
+        setEndDate(date)
+    }
+
+    const handleSubmit = (e) => {
+        // console.log('Selected Start Date:', startDate)
+        // console.log('Selected End Date:', endDate)
+
+        const jsonData = {
+            id_psikolog: psikolog.id,
+            tanggal_mulai: startDate.toISOString().split('T')[0],
+            tanggal_selesai: endDate.toISOString().split('T')[0],
+        }
+        axios
+            .post(route('tanggalTakTersedia'), jsonData)
+            .then((response) => {
+                setShowValidateTextModal(true)
+                console.log(response.data)
+            })
+            .catch((error) => {
+                console.log(error.response.data)
+            })
+    }
+
     return (
         <>
             <SidebarPsikolog />
@@ -21,7 +61,7 @@ export default function AturKetersediaan() {
                         className="flex items-center border border-gray-500 input input-bordered w-full max-w-3xl focus:outline-none"
                         readOnly
                     >
-                        Putu Agus Parimartha
+                        {psikolog.nama}
                     </h1>
                     <h3 className="font-semibold">
                         Nomor Surat Tanda Registrasi
@@ -30,21 +70,21 @@ export default function AturKetersediaan() {
                         className="flex items-center border border-gray-500 input input-bordered w-full max-w-3xl focus:outline-none"
                         readOnly
                     >
-                        3321601321068534
+                        {psikolog.nomor_str}
                     </h1>
                     <h3 className="font-semibold pb-2">Lokasi Praktik</h3>
                     <h1
                         className="flex items-center border border-gray-500 input input-bordered w-full max-w-3xl focus:outline-none"
                         readOnly
                     >
-                        Denpasar, Bali
+                        {psikolog.provinsi}, {psikolog.kota}
                     </h1>
                     <h3 className="font-semibold pb-2">Pengalaman Praktik</h3>
                     <h1
                         className="flex items-center border border-gray-500 input input-bordered w-full max-w-3xl focus:outline-none"
                         readOnly
                     >
-                        3321601321068534
+                        {psikolog.tahun_pengalaman} Tahun
                     </h1>
                 </div>
 
@@ -56,13 +96,30 @@ export default function AturKetersediaan() {
                 </h2>
                 <div className="pb-10">
                     <div className="flex justify-between">
-                        <DateRangePickers />
+                        <DateRangePickers
+                            changeStartDate={changeStartDate}
+                            changeEndDate={changeEndDate}
+                        />
                     </div>
                 </div>
                 <div>
-                    <PopupEdit
+                    <button
+                        className="`inline-flex items-center px-4 py-2 bg-primary border border-transparent rounded-md font-semibold text-s text-white  tracking-widest hover:bg-[#2d8efd] transition ease-in-out duration-150"
+                        onClick={() => handleSubmit()}
+                    >
+                        {' '}
+                        Edit Status
+                    </button>
+                    {/* <PopupEdit
                         name={'Edit Status'}
                         titledesc={'Status sudah berhasil diubah'}
+                    /> */}
+                    <ValidateTextModal
+                        route="/dashboardpsikolog"
+                        text1="Edit Status Berhasil"
+                        text2="Tanggal Tidak Tersedia Berhasil Diunggah"
+                        onClose={handleOnCloseTextValidate}
+                        visible={showValidateTextModal}
                     />
                 </div>
             </div>

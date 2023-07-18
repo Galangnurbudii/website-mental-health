@@ -5,6 +5,7 @@ import 'react-datepicker/dist/react-datepicker.css'
 export default function DatePickers({ changeDate }) {
     const today = new Date()
     const [startDate, setStartDate] = useState(today)
+    
     const handleSelect = (date) => {
         setStartDate(date)
         changeDate(date)
