@@ -63,7 +63,7 @@ export default function DetailKonsultasi({ janji }) {
                     <p className="text-hitam text-lg font-semibold">
                         Payment Status
                     </p>
-                    {janji.payment_status === 'pending' ? (
+                    {janji.payment_status == 'pending' ? (
                         <p className="text-red-600 text-lg font-medium">
                             : Pending
                         </p>
